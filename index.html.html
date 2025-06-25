@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفارس للأعمال - الحل القانوني والإداري</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Amiri and Noto Kufi Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Define custom CSS variables for the color palette */
+        :root {
+            --color-background-light: #FBF7F1; /* Beige warm */
+            --color-primary-text: #1B2A41; /* Dark blue */
+            --color-headings-cta: #D4C29A; /* Light gold/creamy */
+            --color-secondary-text: #6E6E6E; /* Medium gray */
+        }
+        body {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            background-color: var(--color-background-light);
+            color: var(--color-primary-text);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Amiri', serif;
+            color: var(--color-primary-text); /* Default for headings */
+        }
+        /* Override specifically for Hero Section H2 to be gold */
+        .hero-section-h2 {
+            color: var(--color-headings-cta) !important; /* Ensure it's gold */
+        }
+
+        /* Custom styles for buttons based on the new palette */
+        .btn-primary {
+            background-color: var(--color-headings-cta); /* Light gold */
+            color: var(--color-primary-text); /* Dark blue text on gold */
+            padding: 12px 24px;
+            border-radius: 9999px; /* Fully rounded */
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #C0B08E; /* Slightly darker gold on hover */
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-headings-cta); /* Light gold text */
+            border: 2px solid var(--color-headings-cta); /* Light gold border */
+            padding: 12px 24px;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-headings-cta);
+            color: var(--color-primary-text);
+        }
+        .card-icon {
+            color: var(--color-primary-text); /* Dark blue for icons in service cards */
+        }
+        /* Styling for the quick request form inputs */
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 0.5rem; /* Rounded corners */
+            border: 1px solid #d1d5db; /* Light gray border */
+            outline: none; /* Remove outline on focus */
+            transition: border-color 0.3s ease;
+            color: var(--color-primary-text); /* Ensure text color is primary */
+            background-color: #ffffff; /* White background for inputs */
+        }
+        .form-input:focus {
+            border-color: var(--color-headings-cta); /* Gold border on focus */
+        }
+
+        /* Specific styles for responsive spacing */
+        .section-margin-y {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        .section-padding-x {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        .section-padding-y {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .section-margin-y {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .section-padding-x {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .section-padding-y {
+                padding-top: 16px;
+                padding-bottom: 16px;
+            }
+        }
+
+        /* Footer specific alignment for columns */
+        /* Default: centered for mobile */
+        .footer-col-header,
+        .footer-col-content {
+            text-align: center;
+        }
+        .footer-col-content p {
+            justify-content: center; /* For flex items like phone/email lines */
+        }
+        
+        /* Desktop: right-aligned for RTL */
+        @media (min-width: 768px) {
+            .footer-col-header {
+                text-align: right; /* Right align on desktop */
+            }
+            .footer-col-content {
+                text-align: right; /* Right align on desktop */
+            }
+            .footer-col-content.contact-info p {
+                justify-content: flex-end; /* Right align for flex items */
+            }
+        }
+    </style>
+</head>
+<body class="text-[var(--color-primary-text)]">
+
+    <!-- 1. الواجهة الرئيسية – Hero Section -->
+    <header class="bg-gradient-to-r from-[var(--color-primary-text)] to-[#2A3F5B] text-white py-20 px-4 md:px-8 lg:px-16 rounded-b-3xl shadow-xl section-padding-y md:section-padding-y">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style="color: var(--color-headings-cta);">
+                <i class="fas fa-balance-scale-right mr-3"></i> نُقدّم لك الحل القانوني والإداري بثقة واحتراف
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 font-arabic-text">
+                "الفارس للأعمال" مكتب معتمد يقدّم خدمات قانونية وتعقيب إلكتروني بااحترافية عالية. نُمكّن الأفراد والمنشآت من إنجاز معاملاتهم وحماية مصالحهم بكفاءة والتزام.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                <a href="#quick-request-footer" class="btn-primary">
+                    طلب استشارة قانونية
+                </a>
+                <a href="#footer" class="btn-secondary">
+                    تواصل معنا الآن
+                </a>
+            </div>
+            <!-- الشريط المعلوماتي الفوري (تم حذف معلومات التواصل منه) -->
+            <div class="mt-12 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white border-opacity-20 flex flex-wrap justify-center gap-4 text-sm md:text-base font-arabic-text">
+                <!-- تم حذف معلومات التواصل من هنا لتبسيط الهيدر -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. شريحة عرض الخدمات الرئيسية – Services Highlights -->
+    <section class="bg-[var(--color-background-light)] rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-amiri font-bold mb-12">مجالات خدماتنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- بطاقة 1: الخدمات القانونية -->
+                <a href="legal-services-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-gavel"></i></div>
+                    <h3 class="text-xl font-amiri font-semibold mb-2">الخدمات القانونية</h3>
+                    <p class="text-[var(--color-secondary-text)] font-arabic-text">استشارات، صياغة عقود ومذكرات، تنفيذ أحكام قضائية.</p>
+                </a>
+                <!-- بطاقة 2: تعقيب المعاملات الحكومية والإدارية -->
+                <a href="government-transactions-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="text-xl font-amiri font-semibold mb-2">تعقيب المعاملات الحكومية والإدارية</h3>
+                    <p class="text-[var(--color-secondary-text)] font-arabic-text">تأسيس شركات، متابعة إجراءات الجهات الحكومية والتراخيص.</p>
+                </a>
+                <!-- بطاقة 3: الاشتراك بالباقات -->
+                <a href="packages-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-xl font-amiri font-semibold mb-2">الاشتراك بالباقات</h3>
+                    <p class="text-[var(--color-secondary-text)] font-arabic-text">دعم شهري مستمر للمنشآت والأفراد في عدة مجالات.</p>
+                </a>
+                 <!-- بطاقة 4: الإقرارات الزكوية والضريبية (خدمة جديدة) -->
+                <a href="zakat-tax-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3 class="text-xl font-amiri font-semibold mb-2">الإقرارات الزكوية والضريبية</h3>
+                    <p class="text-[var(--color-secondary-text)] font-arabic-text">إعداد وتقديم الإقرارات بدقة على يد محاسبين قانونيين.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. من نحن – نبذة موجزة -->
+    <section class="bg-[var(--color-primary-text)] text-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-amiri font-bold mb-8" style="color: var(--color-headings-cta);">من نحن</h2>
+            <p class="text-lg text-white leading-relaxed max-w-3xl mx-auto font-arabic-text">
+                شركة "الفارس للأعمال" مرخّصة رسميًا لتقديم الخدمات القانونية والتعقيب الإداري. نعمل بفريق متخصص يقوده محامٍ مرخّص، ونعتمد على أسلوب احترافي يجمع بين المعرفة النظامية، والدقة التنفيذية، ورضا العميل.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. شهادات العملاء – Testimonials -->
+    <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-amiri font-bold mb-12">شهادات عملائنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- شهادة عميل 1 -->
+                <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg border-t-4 border-[var(--color-headings-cta)]">
+                    <p class="text-[var(--color-primary-text)] text-lg italic mb-4 font-arabic-text">
+                        "من أفضل المكاتب اللي تعاملت معهم.. دقة وسرعة، خصوصًا في تنفيذ الحكم اللي كان لي أكثر من سنة أركض وراه."
+                    </p>
+                    <p class="font-semibold text-[var(--color-secondary-text)] font-arabic-text">ــ (عميل في مجال المقاولات)</p>
+                </div>
+                <!-- شهادة عميل 2 -->
+                <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg border-t-4 border-[var(--color-headings-cta)]">
+                    <p class="text-[var(--color-primary-text)] text-lg italic mb-4 font-arabic-text">
+                        "سجّلت الشركة وعقود الشراكة وكل شي من خلالهم. وفّروا علي وقت وجهد كثير."
+                    </p>
+                    <p class="font-semibold text-[var(--color-secondary-text)] font-arabic-text">ــ (رائد أعمال – جدة)</p>
+                </div>
+                <!-- شهادة عميل 3 -->
+                <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg border-t-4 border-[var(--color-headings-cta)]">
+                    <p class="text-[var(--color-primary-text)] text-lg italic mb-4 font-arabic-text">
+                        "اللي يميّزهم صدق المتابعة، ما تتصل إلا وهم قد خلّصوا الإجراء، حتى لو من منصات معقدة مثل ناجز أو بلدي."
+                    </p>
+                    <p class="font-semibold text-[var(--color-secondary-text)] font-arabic-text">ــ (صاحبة منشأة تجارية)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. طلب خدمة سريع (Main Page Section - Now a hidden placeholder, content moved to footer) -->
+    <section id="quick-request" class="hidden">
+        <!-- The form content is now primarily in the footer -->
+    </section>
+
+    <!-- 6. تذييل الموقع – Footer (Now includes Contact Us and Quick Request form) -->
+    <footer id="footer" class="bg-[var(--color-primary-text)] text-white py-10 px-4 md:px-8 lg:px-16 mt-auto rounded-t-3xl shadow-xl">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 font-arabic-text">
+            <!-- عن الفارس للأعمال -->
+            <div class="footer-col-header">
+                <h3 class="text-xl font-amiri font-bold mb-6" style="color: var(--color-headings-cta);">عن الفارس للأعمال</h3>
+                <ul class="space-y-3 text-gray-300 footer-col-content">
+                    <li><a href="our-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">خدماتنا</a></li>
+                    <li><a href="vision-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">رؤيتنا</a></li>
+                    <li><a href="licenses-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">التراخيص</a></li>
+                    <!-- تم حذف رابط الفريق مبدئياً -->
+                </ul>
+            </div>
+            <!-- روابط سريعة -->
+            <div class="footer-col-header">
+                <h3 class="text-xl font-amiri font-bold mb-6" style="color: var(--color-headings-cta);">روابط سريعة</h3>
+                <ul class="space-y-3 text-gray-300 footer-col-content">
+                    <li><a href="homepage-html-v1.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الصفحة الرئيسية</a></li>
+                    <li><a href="legal-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الخدمات القانونية</a></li>
+                    <li><a href="government-transactions-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">تعقيب المعاملات الحكومية</a></li>
+                    <li><a href="packages-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الاشتراك بالباقات</a></li>
+                    <li><a href="zakat-tax-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الإقرارات الزكوية والضريبية</a></li>
+                    <li><a href="faq-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الأسئلة الشائعة</a></li>
+                    <li><a href="privacy-policy-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">سياسة الخصوصية</a></li>
+                </ul>
+            </div>
+            <!-- معلومات التواصل ونموذج الاتصال في عمود خاص جديد (MD: col-span-2) -->
+            <div id="quick-request-footer" class="md:col-span-2 footer-col-header">
+                <h3 class="text-xl font-amiri font-bold mb-6" style="color: var(--color-headings-cta);">تواصل معنا</h3>
+                <div class="space-y-3 text-gray-300 footer-col-content contact-info mb-8">
+                    <p class="flex items-center justify-center md:justify-end"><i class="fas fa-phone-alt ml-3 text-[var(--color-headings-cta)]"></i>0555490800</p>
+                    <p class="flex items-center justify-center md:justify-end"><i class="fas fa-mobile-alt ml-3 text-[var(--color-headings-cta)]"></i>0555648602</p>
+                    <p class="flex items-center justify-center md:justify-end"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>info@alfarissa.org</p>
+                    <p class="flex items-center justify-center md:justify-end"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>legal@alfarissa.org</p>
+                    <p class="flex items-center justify-center md:justify-end"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>clients@alfarissa.org</p>
+                    <p class="flex items-center justify-center md:justify-end mt-4"><i class="fas fa-map-marker-alt ml-3 text-[var(--color-headings-cta)]"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
+                </div>
+
+                <!-- نموذج التواصل السريع داخل الفوتر -->
+                <div class="footer-form-container mt-8 text-center md:text-right">
+                    <h4 class="text-lg font-amiri font-semibold mb-4" style="color: var(--color-headings-cta);">أرسل لنا رسالة سريعة</h4>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" id="footerFullName" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" id="footerPhoneNumber" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
+                        </div>
+                        <div class="mb-4">
+                            <textarea id="footerDescription" name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full text-md">
+                            إرسال الطلب <i class="fas fa-paper-plane mr-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- شريط سفلي لحقوق الملكية -->
+            <div class="md:col-span-4 border-t border-gray-700 pt-4 mt-8 text-center text-gray-500 text-sm font-arabic-text">
+                جميع الحقوق محفوظة © الفارس للأعمال 2025
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set up font classes for easy use
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        amiri: ['Amiri', 'serif'],
+                        'arabic-text': ['Noto Kufi Arabic', 'sans-serif'],
+                    },
+                },
+            },
+        };
+
+        // Function to handle automatic population of service type in the main Quick Request form (now hidden)
+        // This function would ideally be more complex if the form was still visible.
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceTypeSelect = document.getElementById('serviceType');
+            const selectedService = localStorage.getItem('selectedServiceType');
+
+            if (selectedService && serviceTypeSelect) {
+                let optionExists = false;
+                for (let i = 0; i < serviceTypeSelect.options.length; i++) {
+                    if (serviceTypeSelect.options[i].value === selectedService) {
+                        serviceTypeSelect.value = selectedService;
+                        optionExists = true;
+                        break;
+                    }
+                }
+                // If specific option doesn't exist, try to find a broader category
+                if (!optionExists) {
+                    if (selectedService.startsWith('قضايا_احوال_شخصية')) {
+                        serviceTypeSelect.value = 'قضايا_احوال_شخصية'; // General for all personal status sub-categories
+                    } else if (selectedService.includes('قضايا_المحاكم_العامة') || selectedService.includes('قضايا_عقارية') || selectedService.includes('مطالبات_مدنية') || selectedService.includes('تصحي_اوضاع') || selectedService.includes('قضايا_ملكية_فكرية')) {
+                        serviceTypeSelect.value = 'قضايا_المحاكم_العامة';
+                    } else if (selectedService.startsWith('قضايا_المحاكم_التجارية') || selectedService.includes('منازعات_الشركات') || selectedService.includes('عقود_مطالبات_تجارية') || selectedService.includes('منافسة_ممارسات_تجارية') || selectedService.includes('تحكيم_تجاري')) {
+                        serviceTypeSelect.value = 'قضايا_المحاكم_التجارية';
+                    } else if (selectedService.startsWith('قضايا_المحاكم_العمالية') || selectedService.includes('حقوق_العمال') || selectedService.includes('تمثيل_اصحاب_العمل') || selectedService.includes('استشارات_عمالية')) {
+                        serviceTypeSelect.value = 'قضايا_المحاكم_العمالية';
+                    } else if (selectedService.includes('تأسيس_الشركات') || selectedService.includes('تعديل_الشركات') || selectedService.includes('مستثمرين_اجانب')) {
+                        serviceTypeSelect.value = 'تأسيس_شركات_واستثمار';
+                    } else if (selectedService.includes('وزارة_العدل_ناجز') || selectedService.includes('وزارة_التجارة') || selectedService.includes('البلديات') || selectedService.includes('موارد_بشرية_تنمية_اجتماعية')) {
+                        serviceTypeSelect.value = 'تعقيب_معاملات_حكومية';
+                    } else if (selectedService.includes('تراخيص_انشطة_تجارية') || selectedService.includes('تراخيص_دفاع_مدني_صحة') || selectedService.includes('تراخيص_بيئية_سياحية_زراعية')) {
+                        serviceTypeSelect.value = 'استخراج_وتجديد_التراخيص';
+                    } else if (selectedService.includes('منصة_قوى') || selectedService.includes('منصة_ab_jsher') || selectedService.includes('منصة_بلدي') || selectedService.includes('منصات_حكومية_اخرى')) {
+                        serviceTypeSelect.value = 'خدمات_التعقيب_الإلكتروني';
+                    } else if (selectedService.includes('الضمان_الاجتماعي') || selectedService.includes('حساب_المواطن') || selectedService.includes('بنك_التنمية_الاجتماعية') || selectedService.includes('دعم_ريف_للاسر_المنتجة') || selectedService.includes('رخص_العمل_الحر')) {
+                        serviceTypeSelect.value = 'خدمات_Ddm_Ajtm_Wal_Amal_Hr';
+                    }
+                    else {
+                        serviceTypeSelect.value = ''; // Fallback
+                    }
+                }
+
+                // Clear the item from local storage after using it
+                localStorage.removeItem('selectedServiceType');
+            }
+        });
+    </script>
+</body>
+</html>
