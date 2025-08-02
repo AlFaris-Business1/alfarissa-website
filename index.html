@@ -105,6 +105,47 @@
             }
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 28px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 16px rgba(0,0,0,0.25);
+        }
+        .whatsapp-float:focus {
+            outline: none;
+        }
+        .whatsapp-float i {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
         /* Footer specific alignment for columns */
         /* Default: centered for mobile */
         .footer-col-header,
@@ -141,10 +182,10 @@
                 "الفارس للأعمال" مكتب معتمد يقدّم خدمات قانونية وتعقيب إلكتروني بااحترافية عالية. نُمكّن الأفراد والمنشآت من إنجاز معاملاتهم وحماية مصالحهم بكفاءة والتزام.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
-                <a href="#quick-request-footer" class="btn-primary">
+                <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات القانونية" class="btn-primary" target="_blank" rel="noopener">
                     طلب استشارة قانونية
                 </a>
-                <a href="#footer" class="btn-secondary">
+                <a href="https://wa.me/966555490800?text=مرحباً، أود التواصل معكم" class="btn-secondary" target="_blank" rel="noopener">
                     تواصل معنا الآن
                 </a>
             </div>
@@ -356,6 +397,11 @@
             }
         });
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
 <!-- rebuild -->
