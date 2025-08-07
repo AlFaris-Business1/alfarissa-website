@@ -8,11 +8,11 @@
     --color-primary-light: #2A3F5B; /* Lighter blue */
     --color-headings-cta: #D4C29A; /* Light gold/creamy */
     --color-headings-cta-dark: #C0B08E; /* Darker gold */
-    --color-secondary-text: #6E6E6E; /* Medium gray */
+    --color-secondary-text: #4A4A4A; /* Darker gray for better contrast */
     --color-accent: #E6D4A8; /* Light gold accent */
     --color-success: #10b981; /* Green for success */
     --color-warning: #f59e0b; /* Orange for warnings */
-    --color-border: rgba(212, 194, 154, 0.3); /* Gold border */
+    --color-border: rgba(212, 194, 154, 0.4); /* Stronger gold border */
     
     /* Enhanced Typography */
     --font-family-primary: 'Noto Kufi Arabic', sans-serif;
@@ -86,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     margin: 0 0 var(--spacing-md) 0;
     letter-spacing: -0.025em;
+    text-align: right; /* Ensure RTL alignment for headings */
 }
 
 h1 {
@@ -123,6 +124,18 @@ p {
     font-size: var(--font-size-base);
     line-height: 1.7;
     color: var(--color-primary-text);
+    text-align: right; /* Ensure RTL alignment for paragraphs */
+}
+
+/* Enhanced list styling for RTL */
+ul, ol {
+    text-align: right;
+    direction: rtl;
+}
+
+li {
+    text-align: right;
+    direction: rtl;
 }
 
 a {
@@ -303,15 +316,16 @@ main {
     outline: none;
     transition: all 0.3s ease;
     color: var(--color-primary-text);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     font-family: var(--font-family-primary);
     font-size: var(--font-size-base);
     backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .form-input::placeholder {
     color: var(--color-secondary-text);
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .form-input:focus {
@@ -708,7 +722,7 @@ textarea.form-input {
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
-    color: #d1d5db;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 @media (min-width: 768px) {
@@ -1059,7 +1073,7 @@ textarea.form-input {
 .service-overview-card {
     background-color: white;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -1067,12 +1081,14 @@ textarea.form-input {
     text-align: center;
     transition: all 0.3s ease;
     border-top: 4px solid var(--color-headings-cta);
+    border: 1px solid rgba(212, 194, 154, 0.2);
     min-height: 220px;
 }
 
 .service-overview-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-color: var(--color-headings-cta);
 }
 
 .service-overview-card .icon {
@@ -1570,6 +1586,7 @@ textarea.form-input {
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-headings-cta);
 }
 
 .service-card:hover::before {
@@ -1861,7 +1878,7 @@ textarea.form-input {
 }
 
 .footer-col-content ul li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
@@ -1927,15 +1944,16 @@ textarea.form-input {
     background: white;
     border-radius: 16px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--color-border);
     transition: all 0.3s ease;
     overflow: hidden;
 }
 
 .faq-accordion-item.enhanced:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
+    border-color: var(--color-headings-cta);
 }
 
 .faq-accordion-header.enhanced {
