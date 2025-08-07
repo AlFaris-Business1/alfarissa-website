@@ -16,22 +16,24 @@
     <!-- Header -->
     
     <!-- Navigation Bar -->
+    <!-- Navigation Bar - Simplified -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">الفارس للأعمال</a>
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-balance-scale-right ml-2"></i>
+                الفارس للأعمال
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="our-services-page.html">خدماتنا</a></li>
                 <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                <li><a href="government-transactions-page.html">تعقيب المعاملات</a></li>
+                <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
                 <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
-                <li><a href="vision-page.html">رؤيتنا</a></li>
-                <li><a href="licenses-page.html">التراخيص</a></li>
-                <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
-                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener">تواصل معنا</a></li>
+                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
             </ul>
+            <div class="nav-mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
@@ -145,9 +147,63 @@
             </div>
             <!-- روابط سريعة -->
             <div>
-                <h3 class="text-xl font-amiri font-bold mb-4" style="color: var(--color-headings-cta);">روابط سريعة</h3>
-                <ul class="space-y-3 text-gray-300">
-                    <li><a href="index.html" class="hover:text-[var(--color-headings-cta)]">الصفحة الرئيسية</a></li>
-                    <li><a href="legal-services-page.html" class="hover:text-[var(--color-headings-cta)]">الخدمات القانونية</a></li>
-                    <li><a href="government-transactions-page.html" class="hover:text-[var(--color-headings-cta)]">تعقيب المعاملات الحكومية</a></li>
-                    <li><a href="packages-page.html" class="hover:text-[var(--color-headings-cta)]">الاشتراك بالباقات</a></
+                <div class="footer-col-header">
+                    <h3>روابط سريعة</h3>
+                </div>
+                <div class="footer-col-content">
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                        <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
+                        <li><a href="packages-page.html">الباقات</a></li>
+                        <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
+                        <li><a href="vision-page.html">رؤيتنا</a></li>
+                        <li><a href="licenses-page.html">التراخيص</a></li>
+                        <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- معلومات التواصل ونموذج الاتصال -->
+            <div style="grid-column: span 2;">
+                <div class="footer-col-header">
+                    <h3>تواصل معنا</h3>
+                </div>
+                <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
+                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
+                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
+                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
+                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
+                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
+                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
+                </div>
+
+                <!-- نموذج التواصل السريع -->
+                <div class="footer-form-container">
+                    <h4>أرسل لنا رسالة سريعة</h4>
+                    <form>
+                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
+                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
+                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
+                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
+                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- شريط سفلي لحقوق الملكية -->
+        <div class="footer-copyright">
+            جميع الحقوق محفوظة © الفارس للأعمال 2025
+        </div>
+    </footer>
+
+    <!-- Common JavaScript -->
+    <script src="js/common.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

@@ -15,78 +15,173 @@
 </head>
 <body class="text-[var(--color-primary-text)]">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar - Simplified -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">الفارس للأعمال</a>
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-balance-scale-right ml-2"></i>
+                الفارس للأعمال
+            </a>
             <ul class="nav-menu">
-                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html" class="nav-active">الرئيسية</a></li>
                 <li><a href="our-services-page.html">خدماتنا</a></li>
                 <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                <li><a href="government-transactions-page.html">تعقيب المعاملات</a></li>
+                <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
                 <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
-                <li><a href="vision-page.html">رؤيتنا</a></li>
-                <li><a href="licenses-page.html">التراخيص</a></li>
-                <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
-                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener">تواصل معنا</a></li>
+                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
             </ul>
+            <div class="nav-mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <!-- 1. الواجهة الرئيسية – Hero Section -->
-    <header class="bg-gradient-to-r from-[var(--color-primary-text)] to-[#2A3F5B] text-white py-20 px-4 md:px-8 lg:px-16 rounded-b-3xl shadow-xl section-padding-y md:section-padding-y">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style="color: var(--color-headings-cta);">
-                <i class="fas fa-balance-scale-right mr-3"></i> الفارس للأعمال - شريكك في النجاح القانوني والإداري
-            </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90 font-arabic-text">
-                "الفارس للأعمال" مكتب معتمد يقدّم خدمات قانونية وتعقيب إلكتروني بااحترافية عالية. نُمكّن الأفراد والمنشآت من إنجاز معاملاتهم وحماية مصالحهم بكفاءة والتزام.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
-                <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات القانونية" class="btn-primary" target="_blank" rel="noopener">
+    <!-- Enhanced Hero Section -->
+    <header class="hero-banner">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo-section">
+                <div class="hero-logo">
+                    <i class="fas fa-balance-scale-right"></i>
+                </div>
+                <h1 class="hero-title">الفارس للأعمال</h1>
+                <div class="hero-subtitle">شريكك في النجاح القانوني والإداري</div>
+            </div>
+            
+            <div class="hero-description">
+                <p>مكتب معتمد يقدّم خدمات قانونية وتعقيب إلكتروني بااحترافية عالية</p>
+                <p>نُمكّن الأفراد والمنشآت من إنجاز معاملاتهم وحماية مصالحهم بكفاءة والتزام</p>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات القانونية" class="btn-hero-primary" target="_blank" rel="noopener">
+                    <i class="fas fa-comments ml-2"></i>
                     طلب استشارة قانونية
                 </a>
-                <a href="https://wa.me/966555490800?text=مرحباً، أود التواصل معكم" class="btn-secondary" target="_blank" rel="noopener">
-                    تواصل معنا الآن
+                <a href="our-services-page.html" class="btn-hero-secondary">
+                    <i class="fas fa-arrow-left ml-2"></i>
+                    استكشف خدماتنا
                 </a>
             </div>
-            <!-- الشريط المعلوماتي الفوري (تم حذف معلومات التواصل منه) -->
-            <div class="mt-12 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white border-opacity-20 flex flex-wrap justify-center gap-4 text-sm md:text-base font-arabic-text">
-                <!-- تم حذف معلومات التواصل من هنا لتبسيط الهيدر -->
+            
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>مرخص رسمياً</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>فريق متخصص</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <span>خدمة سريعة</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>سرية تامة</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- 2. شريحة عرض الخدمات الرئيسية – Services Highlights -->
-    <section class="bg-[var(--color-background-light)] rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-amiri font-bold mb-12">مجالات خدماتنا</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- بطاقة 1: الخدمات القانونية -->
-                <a href="legal-services-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-gavel"></i></div>
-                    <h3 class="text-xl font-amiri font-semibold mb-2">الخدمات القانونية</h3>
-                    <p class="text-[var(--color-secondary-text)] font-arabic-text">استشارات، صياغة عقود ومذكرات، تنفيذ أحكام قضائية.</p>
-                </a>
-                <!-- بطاقة 2: تعقيب المعاملات الحكومية والإدارية -->
-                <a href="government-transactions-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-building"></i></div>
-                    <h3 class="text-xl font-amiri font-semibold mb-2">تعقيب المعاملات الحكومية والإدارية</h3>
-                    <p class="text-[var(--color-secondary-text)] font-arabic-text">تأسيس شركات، متابعة إجراءات الجهات الحكومية والتراخيص.</p>
-                </a>
-                <!-- بطاقة 3: الاشتراك بالباقات -->
-                <a href="packages-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 class="text-xl font-amiri font-semibold mb-2">الاشتراك بالباقات</h3>
-                    <p class="text-[var(--color-secondary-text)] font-arabic-text">دعم شهري مستمر للمنشآت والأفراد في عدة مجالات.</p>
-                </a>
-                 <!-- بطاقة 4: الإقرارات الزكوية والضريبية (خدمة جديدة) -->
-                <a href="zakat-tax-page.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-calculator"></i></div>
-                    <h3 class="text-xl font-amiri font-semibold mb-2">الإقرارات الزكوية والضريبية</h3>
-                    <p class="text-[var(--color-secondary-text)] font-arabic-text">إعداد وتقديم الإقرارات بدقة على يد محاسبين قانونيين.</p>
+    <!-- Services Section - Modern Design -->
+    <section class="services-section">
+        <div class="container mx-auto">
+            <div class="services-header">
+                <h2 class="section-title">مجالات خدماتنا المتخصصة</h2>
+                <p class="section-subtitle">نقدم لك حلولاً شاملة ومتكاملة في المجال القانوني والإداري</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- خدمة 1: الخدمات القانونية -->
+                <div class="service-card featured">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>الخدمات القانونية</h3>
+                        <p>استشارات قانونية، صياغة عقود ومذكرات، تنفيذ أحكام قضائية</p>
+                        <ul class="service-features">
+                            <li>استشارات متخصصة</li>
+                            <li>صياغة العقود</li>
+                            <li>تنفيذ الأحكام</li>
+                        </ul>
+                    </div>
+                    <a href="legal-services-page.html" class="service-btn">
+                        <span>اعرف المزيد</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- خدمة 2: المعاملات الحكومية -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>المعاملات الحكومية</h3>
+                        <p>تأسيس شركات، متابعة إجراءات الجهات الحكومية والتراخيص</p>
+                        <ul class="service-features">
+                            <li>تأسيس الشركات</li>
+                            <li>التراخيص</li>
+                            <li>المتابعة الحكومية</li>
+                        </ul>
+                    </div>
+                    <a href="government-transactions-page.html" class="service-btn">
+                        <span>اعرف المزيد</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- خدمة 3: الباقات -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>الباقات المتكاملة</h3>
+                        <p>دعم شهري مستمر للمنشآت والأفراد في عدة مجالات</p>
+                        <ul class="service-features">
+                            <li>دعم شهري</li>
+                            <li>متابعة مستمرة</li>
+                            <li>خدمات متنوعة</li>
+                        </ul>
+                    </div>
+                    <a href="packages-page.html" class="service-btn">
+                        <span>اعرف المزيد</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+                <!-- خدمة 4: الإقرارات الزكوية -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>الإقرارات الزكوية</h3>
+                        <p>إعداد وتقديم الإقرارات بدقة على يد محاسبين قانونيين</p>
+                        <ul class="service-features">
+                            <li>إعداد الإقرارات</li>
+                            <li>محاسبون مختصون</li>
+                            <li>دقة عالية</li>
+                        </ul>
+                    </div>
+                    <a href="zakat-tax-page.html" class="service-btn">
+                        <span>اعرف المزيد</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="services-cta">
+                <a href="our-services-page.html" class="btn-services-all">
+                    <i class="fas fa-list ml-2"></i>
+                    عرض جميع الخدمات
                 </a>
             </div>
         </div>
