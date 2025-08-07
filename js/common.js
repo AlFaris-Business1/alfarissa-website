@@ -67,6 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle form submissions
     initializeFormHandlers();
+    
+    // Initialize smooth scrolling
+    initializeSmoothScrolling();
 });
 
 // Function to highlight active navigation item
@@ -222,5 +225,35 @@ function showNotification(message, type = 'info') {
 // Function to store selected service and navigate to contact
 function selectServiceAndContact(serviceType) {
     localStorage.setItem('selectedServiceType', serviceType);
-    window.location.href = 'index.html#quick-request-footer';
+    window.location.href = 'index.html#contact';
+}
+
+// Function to initialize smooth scrolling
+function initializeSmoothScrolling() {
+    // Handle smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Handle hash navigation on page load
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 100);
+    }
 }

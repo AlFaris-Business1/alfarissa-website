@@ -1099,6 +1099,370 @@ textarea.form-input {
 
 .section-title::after {
     content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-secondary-text);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Service Cards Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Service Card Styles with Priority System */
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--color-border);
+    transition: all 0.3s ease;
+}
+
+/* Priority High Cards */
+.service-card.priority-high {
+    border-color: rgba(212, 194, 154, 0.3);
+    transform: scale(1.02);
+}
+
+.service-card.priority-high::before {
+    background: linear-gradient(90deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    height: 6px;
+}
+
+/* Priority Medium Cards */
+.service-card.priority-medium::before {
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-text));
+    height: 4px;
+}
+
+/* Priority Badge */
+.service-priority-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    color: var(--color-primary-text);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 3;
+    box-shadow: 0 4px 10px rgba(212, 194, 154, 0.3);
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-headings-cta);
+}
+
+.service-card.priority-high:hover {
+    transform: translateY(-10px) scale(1.04);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(212, 194, 154, 0.3);
+}
+
+.service-icon i {
+    font-size: 2.2rem;
+    color: var(--color-primary-text);
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary-text);
+    margin-bottom: 12px;
+}
+
+.service-content p {
+    color: var(--color-secondary-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    color: var(--color-primary-text);
+    font-size: 0.95rem;
+}
+
+.service-features li i {
+    color: var(--color-headings-cta);
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--color-primary-text), var(--color-primary-light));
+    color: var(--color-headings-cta);
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(27, 42, 65, 0.2);
+}
+
+.service-btn:hover {
+    background: linear-gradient(135deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    color: var(--color-primary-text);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 194, 154, 0.4);
+}
+
+/* Services CTA */
+.services-cta {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contact Enhancement Styles */
+.contact-methods {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-method:hover {
+    background: rgba(212, 194, 154, 0.2);
+    transform: translateX(-5px);
+}
+
+.contact-method i {
+    color: var(--color-headings-cta);
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-quick-actions {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-contact-whatsapp,
+.btn-contact-general {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-contact-whatsapp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-contact-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.btn-contact-general {
+    background: linear-gradient(135deg, var(--color-headings-cta), var(--color-headings-cta-dark));
+    color: var(--color-primary-text);
+    box-shadow: 0 4px 15px rgba(212, 194, 154, 0.3);
+}
+
+.btn-contact-general:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 194, 154, 0.4);
+    color: var(--color-primary-text);
+}
+
+/* Hero Enhancement Styles */
+.hero-intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(212, 194, 154, 0.2);
+    color: var(--color-headings-cta);
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 2px solid rgba(212, 194, 154, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.hero-badge i {
+    font-size: 1.1rem;
+}
+
+.hero-description {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.hero-mission {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Smooth Scroll */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-card.priority-high {
+        transform: none;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .service-priority-badge {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .contact-quick-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .hero-mission {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 60px 15px;
+    }
+    
+    .service-card {
+        padding: 20px 15px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .hero-badge {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+.section-title::after {
+    content: '';
     width: 80px;
     height: 4px;
     background: linear-gradient(90deg, var(--color-headings-cta), #E6D4A8);
