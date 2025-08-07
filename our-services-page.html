@@ -8,210 +8,30 @@
     <!-- Google Fonts for Noto Kufi Arabic -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Define custom CSS variables for the color palette */
-        :root {
-            --color-background-light: #FBF7F1; /* Beige warm */
-            --color-primary-text: #1B2A41; /* Dark blue */
-            --color-headings-cta: #D4C29A; /* Light gold/creamy */
-            --color-secondary-text: #6E6E6E; /* Medium gray */
-        }
-        body {
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            background-color: var(--color-background-light);
-            color: var(--color-primary-text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            color: var(--color-primary-text);
-        }
-        /* Override specifically for Hero Section H2 to be gold */
-        .hero-section-h2 {
-            color: var(--color-headings-cta) !important; /* Ensure it's gold */
-        }
-
-        main {
-            flex-grow: 1;
-        }
-        /* Custom styles for buttons based on the new palette */
-        .btn-primary {
-            background-color: var(--color-headings-cta); /* Light gold */
-            color: var(--color-primary-text); /* Dark blue text on gold */
-            padding: 12px 24px;
-            border-radius: 9999px; /* Fully rounded */
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .btn-primary:hover {
-            background-color: #C0B08E; /* Slightly darker gold on hover */
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-headings-cta); /* Light gold text */
-            border: 2px solid var(--color-headings-cta); /* Light gold border */
-            padding: 12px 24px;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .btn-secondary:hover {
-            background-color: var(--color-headings-cta);
-            color: var(--color-primary-text);
-        }
-        .card-icon {
-            color: var(--color-primary-text); /* Dark blue for icons */
-        }
-
-        /* Specific styles for responsive spacing */
-        .section-margin-y {
-            margin-top: 60px;
-            margin-bottom: 60px;
-        }
-        .section-padding-x {
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        .section-padding-y {
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-        @media (max-width: 768px) {
-            .section-margin-y {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-            .section-padding-x {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-            .section-padding-y {
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 2px 2px 16px rgba(0,0,0,0.25);
-        }
-        .whatsapp-float:focus {
-            outline: none;
-        }
-        .whatsapp-float i {
-            margin: 0;
-        }
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-        /* Service category overview cards */
-        .service-overview-card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--color-headings-cta);
-            min-height: 220px; /* Ensure consistent height */
-        }
-        .service-overview-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-        .service-overview-card .icon {
-            font-size: 3.5rem;
-            color: var(--color-primary-text);
-            margin-bottom: 0.75rem;
-        }
-        .service-overview-card h3 {
-            font-size: 1.5rem;
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            font-weight: 700;
-            color: var(--color-primary-text);
-            margin-bottom: 0.5rem;
-        }
-        .service-overview-card p {
-            font-size: 1rem;
-            color: var(--color-secondary-text);
-            flex-grow: 1; /* Allows paragraph to take available space */
-        }
-        .service-overview-card .btn-more-details {
-            background-color: var(--color-primary-text);
-            color: var(--color-headings-cta);
-            padding: 8px 16px;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border: 1px solid var(--color-primary-text);
-        }
-        .service-overview-card .btn-more-details:hover {
-            background-color: var(--color-headings-cta);
-            color: var(--color-primary-text);
-        }
-    </style>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body class="text-[var(--color-primary-text)]">
 
-    <header class="bg-[var(--color-primary-text)] text-white py-8 px-4 md:px-8 lg:px-16 shadow-xl">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-3xl font-amiri font-bold mb-4 md:mb-0">
-                <a href="homepage-html-v1.html" class="text-white hover:text-[var(--color-headings-cta)] transition-colors">الفارس للأعمال</a>
-            </h1>
-            <nav>
-                <ul class="flex flex-wrap justify-center gap-6 text-lg font-arabic-text">
-                    <li><a href="homepage-html-v1.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الرئيسية</a></li>
-                    <li><a href="our-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors font-semibold border-b-2 border-[var(--color-headings-cta)] pb-1">خدماتنا</a></li>
-                    <li><a href="legal-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الخدمات القانونية</a></li>
-                    <li><a href="government-transactions-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">تعقيب المعاملات الحكومية</a></li>
-                    <li><a href="packages-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الاشتراك بالباقات</a></li>
-                    <li><a href="zakat-tax-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الإقرارات الزكوية والضريبية</a></li>
-                    <li><a href="vision-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">رؤيتنا</a></li>
-                    <li><a href="licenses-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">التراخيص</a></li>
-                    <li><a href="team-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الفريق</a></li>
-                    <li><a href="faq-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الأسئلة الشائعة</a></li>
-                    <li><a href="privacy-policy-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">سياسة الخصوصية</a></li>
-                    <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="hover:text-[var(--color-headings-cta)] transition-colors" target="_blank" rel="noopener">اطلب خدمة</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">الفارس للأعمال</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="our-services-page.html" class="active">خدماتنا</a></li>
+                <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                <li><a href="government-transactions-page.html">تعقيب المعاملات</a></li>
+                <li><a href="packages-page.html">الباقات</a></li>
+                <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
+                <li><a href="vision-page.html">رؤيتنا</a></li>
+                <li><a href="licenses-page.html">التراخيص</a></li>
+                <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener">تواصل معنا</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <main class="section-padding-y section-padding-x">
         <section class="bg-[var(--color-primary-text)] text-white py-16 px-4 md:px-8 lg:px-16 rounded-xl shadow-md text-center section-margin-y section-padding-y relative overflow-hidden">
