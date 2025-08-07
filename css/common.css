@@ -1,32 +1,174 @@
 /* الفارس للأعمال - ملف CSS مشترك */
 
-/* Define custom CSS variables for the color palette */
+/* Define custom CSS variables for the enhanced color palette */
 :root {
     --color-background-light: #FBF7F1; /* Beige warm */
+    --color-background-gradient: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 100%);
     --color-primary-text: #1B2A41; /* Dark blue */
+    --color-primary-light: #2A3F5B; /* Lighter blue */
     --color-headings-cta: #D4C29A; /* Light gold/creamy */
+    --color-headings-cta-dark: #C0B08E; /* Darker gold */
     --color-secondary-text: #6E6E6E; /* Medium gray */
+    --color-accent: #E6D4A8; /* Light gold accent */
+    --color-success: #10b981; /* Green for success */
+    --color-warning: #f59e0b; /* Orange for warnings */
+    --color-border: rgba(212, 194, 154, 0.3); /* Gold border */
+    
+    /* Enhanced Typography */
+    --font-family-primary: 'Noto Kufi Arabic', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
 }
 
-/* Base Styles */
+/* Enhanced Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
 body {
-    font-family: 'Noto Kufi Arabic', sans-serif;
-    background-color: var(--color-background-light);
+    font-family: var(--font-family-primary);
+    background: var(--color-background-gradient);
     color: var(--color-primary-text);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
+/* Enhanced Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-family: var(--font-family-primary);
     color: var(--color-primary-text);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 var(--spacing-md) 0;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: var(--font-size-5xl);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+}
+
+h6 {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--color-primary-text);
+}
+
+a {
+    color: var(--color-headings-cta);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-headings-cta-dark);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    h3 {
+        font-size: var(--font-size-xl);
+    }
 }
 
 main {
     flex-grow: 1;
+}
+
+/* Enhanced Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
 }
 
 /* Override specifically for Hero Section H2 to be gold */
@@ -34,44 +176,117 @@ main {
     color: var(--color-headings-cta) !important;
 }
 
-/* Button Styles */
+/* Enhanced Button System */
 .btn-primary {
-    background-color: var(--color-headings-cta);
+    background: linear-gradient(135deg, var(--color-headings-cta) 0%, var(--color-accent) 100%);
     color: var(--color-primary-text);
-    padding: 12px 24px;
-    border-radius: 9999px;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    border-radius: var(--radius-full);
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
     border: none;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-family-primary);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .btn-primary:hover {
-    background-color: #C0B08E;
+    background: linear-gradient(135deg, var(--color-headings-cta-dark) 0%, var(--color-headings-cta) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background: transparent;
     color: var(--color-headings-cta);
     border: 2px solid var(--color-headings-cta);
-    padding: 12px 24px;
-    border-radius: 9999px;
+    padding: calc(var(--spacing-lg) - 2px) calc(var(--spacing-2xl) - 2px);
+    border-radius: var(--radius-full);
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family-primary);
+    backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-headings-cta);
+    background: var(--color-headings-cta);
     color: var(--color-primary-text);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Button Sizes */
+.btn-sm {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+    padding: var(--spacing-xl) var(--spacing-3xl);
+    font-size: var(--font-size-lg);
+}
+
+/* Button States */
+.btn-loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn-loading::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: var(--spacing-sm);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Card and Icon Styles */
@@ -79,21 +294,94 @@ main {
     color: var(--color-primary-text);
 }
 
-/* Form Input Styles */
+/* Enhanced Form Input Styles */
 .form-input {
     width: 100%;
-    padding: 12px;
-    border-radius: 0.5rem;
-    border: 1px solid #d1d5db;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     color: var(--color-primary-text);
-    background-color: #ffffff;
-    font-family: 'Noto Kufi Arabic', sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    backdrop-filter: blur(10px);
+}
+
+.form-input::placeholder {
+    color: var(--color-secondary-text);
+    opacity: 0.7;
 }
 
 .form-input:focus {
     border-color: var(--color-headings-cta);
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(212, 194, 154, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-input:hover {
+    border-color: var(--color-headings-cta-dark);
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--color-primary-text);
+    font-size: var(--font-size-sm);
+}
+
+/* Select Styles */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: left 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+    padding-left: 40px;
+}
+
+/* Textarea Styles */
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Form Validation States */
+.form-input.error {
+    border-color: #ef4444;
+    background-color: rgba(254, 242, 242, 0.9);
+}
+
+.form-input.success {
+    border-color: var(--color-success);
+    background-color: rgba(240, 253, 244, 0.9);
+}
+
+.form-error-message {
+    color: #ef4444;
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.form-success-message {
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
 }
 
 /* Responsive Spacing */
