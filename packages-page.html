@@ -10,198 +10,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Define custom CSS variables for the color palette */
-        :root {
-            --color-background-light: #FBF7F1; /* Beige warm */
-            --color-primary-text: #1B2A41; /* Dark blue */
-            --color-headings-cta: #D4C29A; /* Light gold/creamy */
-            --color-secondary-text: #6E6E6E; /* Medium gray */
-            --color-card-light-gray: #F0F0F0; /* Light gray for some cards */
-            --color-card-light-blue: #D9E3F0; /* Light bluish gray for some cards */
-        }
-        body {
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            background-color: var(--color-background-light);
-            color: var(--color-primary-text);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            color: var(--color-primary-text);
-        }
-        main {
-            flex-grow: 1;
-        }
-        /* Custom styles for buttons based on the new palette */
-        .btn-primary {
-            background-color: var(--color-headings-cta); /* Light gold */
-            color: var(--color-primary-text); /* Dark blue text on gold */
-            padding: 12px 24px;
-            border-radius: 9999px; /* Fully rounded */
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .btn-primary:hover {
-            background-color: #C0B08E; /* Slightly darker gold on hover */
-        }
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--color-headings-cta); /* Light gold text */
-            border: 2px solid var(--color-headings-cta); /* Light gold border */
-            padding: 12px 24px;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .btn-secondary:hover {
-            background-color: var(--color-headings-cta);
-            color: var(--color-primary-text);
-        }
-        .card-icon {
-            color: var(--color-primary-text); /* Dark blue for icons */
-        }
-
-        /* Specific styles for responsive spacing */
-        .section-margin-y {
-            margin-top: 60px;
-            margin-bottom: 60px;
-        }
-        .section-padding-x {
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-        .section-padding-y {
-            padding-top: 40px;
-            padding-bottom: 40px;
-        }
-        @media (max-width: 768px) {
-            .section-margin-y {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-            .section-padding-x {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-            .section-padding-y {
-                padding-top: 16px;
-                padding-bottom: 16px;
-            }
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 28px;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 2px 2px 16px rgba(0,0,0,0.25);
-        }
-        .whatsapp-float:focus {
-            outline: none;
-        }
-        .whatsapp-float i {
-            margin: 0;
-        }
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
-
-        /* Accordion styles */
-        .accordion-item {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.25rem;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.125rem;
-            color: var(--color-primary-text);
-            font-family: 'Noto Kufi Arabic', sans-serif;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            padding: 0 1.25rem;
-            color: var(--color-secondary-text);
-            font-family: 'Noto Kufi Arabic', sans-serif;
-        }
-        .accordion-content.active {
-            max-height: 500px; /* Max height to allow transition */
-            padding-bottom: 1.25rem;
-        }
-        .accordion-icon {
-            transition: transform 0.3s ease;
-        }
-        .accordion-icon.rotate {
-            transform: rotate(180deg);
-        }
-    </style>
-</head>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    </head>
 <body class="text-[var(--color-primary-text)]">
 
     <!-- Header (similar to homepage for consistency) -->
-    <header class="bg-[var(--color-primary-text)] text-white py-8 px-4 md:px-8 lg:px-16 shadow-xl">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-3xl font-amiri font-bold mb-4 md:mb-0">
-                <a href="homepage-html-v1.html" class="text-white hover:text-[var(--color-headings-cta)] transition-colors">الفارس للأعمال</a>
-            </h1>
-            <nav>
-                <ul class="flex flex-wrap justify-center gap-6 text-lg font-arabic-text">
-                    <li><a href="homepage-html-v1.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الرئيسية</a></li>
-                    <li><a href="our-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">خدماتنا</a></li>
-                    <li><a href="legal-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الخدمات القانونية</a></li>
-                    <li><a href="government-transactions-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">تعقيب المعاملات الحكومية</a></li>
-                    <li><a href="packages-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors font-semibold border-b-2 border-[var(--color-headings-cta)] pb-1">الاشتراك بالباقات</a></li>
-                    <li><a href="zakat-tax-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الإقرارات الزكوية والضريبية</a></li>
-                    <li><a href="vision-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">رؤيتنا</a></li>
-                    <li><a href="licenses-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">التراخيص</a></li>
-                    <li><a href="team-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الفريق</a></li>
-                    <li><a href="faq-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الأسئلة الشائعة</a></li>
-                    <li><a href="privacy-policy-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">سياسة الخصوصية</a></li>
-                    <li><a href="https://wa.me/966555490800?text=مرحباً، أود طلب خدمة أو باقة اشتراك" class="hover:text-[var(--color-headings-cta)] transition-colors" target="_blank" rel="noopener">اطلب خدمة</a></li>
-                </ul>
-            </nav>
+    
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">الفارس للأعمال</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="our-services-page.html">خدماتنا</a></li>
+                <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                <li><a href="government-transactions-page.html">تعقيب المعاملات</a></li>
+                <li><a href="packages-page.html">الباقات</a></li>
+                <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
+                <li><a href="vision-page.html">رؤيتنا</a></li>
+                <li><a href="licenses-page.html">التراخيص</a></li>
+                <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener">تواصل معنا</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main class="py-16 px-4 md:px-8 lg:px-16">
+<main class="py-16 px-4 md:px-8 lg:px-16">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-8">الاشتراك بالباقات</h2>
             <p class="text-lg text-[var(--color-secondary-text)] leading-relaxed max-w-4xl mx-auto mb-12">
@@ -289,89 +125,78 @@
     </main>
 
     <!-- Footer (similar to homepage for consistency) -->
-    <footer id="footer" class="bg-[var(--color-primary-text)] text-white py-10 px-4 md:px-8 lg:px-16 mt-auto rounded-t-3xl shadow-xl">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 font-arabic-text">
+        <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
             <!-- عن الفارس للأعمال -->
-            <div class="footer-col-header">
-                <h3 class="text-xl font-amiri font-bold mb-6" style="color: var(--color-headings-cta);">عن الفارس للأعمال</h3>
-                <ul class="space-y-3 text-gray-300 footer-col-content">
-                    <li><a href="our-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">خدماتنا</a></li>
-                    <li><a href="vision-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">رؤيتنا</a></li>
-                    <li><a href="licenses-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">التراخيص</a></li>
-                    <li><a href="team-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الفريق</a></li>
-                </ul>
-            </div>
-            <!-- روابط سريعة -->
-            <div class="footer-col-header">
-                <h3 class="text-xl font-amiri font-bold mb-6" style="color: var(--color-headings-cta);">روابط سريعة</h3>
-                <ul class="space-y-3 text-gray-300 footer-col-content">
-                    <li><a href="homepage-html-v1.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الصفحة الرئيسية</a></li>
-                    <li><a href="legal-services-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الخدمات القانونية</a></li>
-                    <li><a href="government-transactions-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">تعقيب المعاملات الحكومية</a></li>
-                    <li><a href="packages-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الاشتراك بالباقات</a></li>
-                    <li><a href="zakat-tax-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الإقرارات الزكوية والضريبية</a></li>
-                    <li><a href="faq-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">الأسئلة الشائعة</a></li>
-                    <li><a href="privacy-policy-page.html" class="hover:text-[var(--color-headings-cta)] transition-colors">سياسة الخصوصية</a></li>
-                </ul>
-            </div>
-            <!-- معلومات التواصل -->
-            <div class="md:col-span-1 lg:col-span-2">
-                <h3 class="text-xl font-amiri font-bold mb-4" style="color: var(--color-headings-cta);">معلومات التواصل</h3>
-                <div class="space-y-2 text-gray-300 text-sm">
-                    <p class="flex items-center md:justify-end justify-center"><i class="fas fa-phone-alt ml-3 text-[var(--color-headings-cta)]"></i>0555490800</p>
-                    <p class="flex items-center md:justify-end justify-center"><i class="fas fa-mobile-alt ml-3 text-[var(--color-headings-cta)]"></i>0555648602</p>
-                    <p class="flex items-center md:justify-end justify-center"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>info@alfarissa.org</p>
-                    <p class="flex items-center md:justify-end justify-center"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>legal@alfarissa.org</p>
-                    <p class="flex items-center md:justify-end justify-center"><i class="fas fa-envelope ml-3 text-[var(--color-headings-cta)]"></i>clients@alfarissa.org</p>
+            <div>
+                <div class="footer-col-header">
+                    <h3>عن الفارس للأعمال</h3>
+                </div>
+                <div class="footer-col-content">
+                    <ul>
+                        <li><a href="our-services-page.html">خدماتنا</a></li>
+                        <li><a href="vision-page.html">رؤيتنا</a></li>
+                        <li><a href="licenses-page.html">التراخيص</a></li>
+                    </ul>
                 </div>
             </div>
-            <!-- العنوان الوطني الرسمي -->
-            <div class="md:col-span-3 lg:col-span-4 text-center mt-6 pt-4 border-t border-gray-700">
-                <h3 class="lg:text-xl md:text-xl font-bold mb-2" style="color: var(--color-headings-cta);">العنوان الوطني الرسمي</h3>
-                <p class="text-gray-300 text-sm">جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
+            <!-- روابط سريعة -->
+            <div>
+                <div class="footer-col-header">
+                    <h3>روابط سريعة</h3>
+                </div>
+                <div class="footer-col-content">
+                    <ul>
+                        <li><a href="index.html">الصفحة الرئيسية</a></li>
+                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                        <li><a href="government-transactions-page.html">تعقيب المعاملات الحكومية</a></li>
+                        <li><a href="packages-page.html">الاشتراك بالباقات</a></li>
+                        <li><a href="zakat-tax-page.html">الإقرارات الزكوية والضريبية</a></li>
+                        <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- معلومات التواصل ونموذج الاتصال -->
+            <div style="grid-column: span 2;">
+                <div class="footer-col-header">
+                    <h3>تواصل معنا</h3>
+                </div>
+                <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
+                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
+                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
+                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
+                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
+                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
+                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
+                </div>
+
+                <!-- نموذج التواصل السريع -->
+                <div class="footer-form-container">
+                    <h4>أرسل لنا رسالة سريعة</h4>
+                    <form>
+                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
+                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
+                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
+                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
+                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
         <!-- شريط سفلي لحقوق الملكية -->
-        <div class="border-t border-gray-700 pt-4 mt-8 text-center text-gray-500 text-xs">
+        <div class="footer-copyright">
             جميع الحقوق محفوظة © الفارس للأعمال 2025
         </div>
     </footer>
 
-    <script>
-        // Set up font classes for easy use
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        notoKufi: ['Noto Kufi Arabic', 'sans-serif'],
-                        'arabic-text': ['Noto Kufi Arabic', 'sans-serif'],
-                    },
-                },
-            },
-        };
-
-        // Accordion functionality for FAQ items
-        function toggleAccordion(header) {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.accordion-icon');
-
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                icon.classList.remove('rotate');
-            } else {
-                // Close other open accordions
-                document.querySelectorAll('.accordion-content.active').forEach(item => {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('.accordion-icon').classList.remove('rotate');
-                });
-                content.classList.add('active');
-                icon.classList.add('rotate');
-            }
-        }
-    </script>
+    <!-- Common JavaScript -->
+    <script src="js/common.js"></script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الباقات والاشتراكات" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
