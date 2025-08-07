@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفارس للأعمال - رؤيتنا</title>
+    <title>الفارس للأعمال - تراخيصنا</title>
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Noto Kufi Arabic -->
@@ -18,113 +18,107 @@
     <!-- Header (similar to homepage for consistency) -->
     
     <!-- Navigation Bar -->
-    <!-- Navigation Bar - Simplified -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-balance-scale-right ml-2"></i>
-                الفارس للأعمال
-            </a>
+            <a href="index.html" class="nav-logo">الفارس للأعمال</a>
             <ul class="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="our-services-page.html">خدماتنا</a></li>
                 <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
+                <li><a href="government-transactions-page.html">تعقيب المعاملات</a></li>
                 <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
+                <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
+                <li><a href="vision-page.html">رؤيتنا</a></li>
+                <li><a href="licenses-page.html">التراخيص</a></li>
+                <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                <li><a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" target="_blank" rel="noopener">تواصل معنا</a></li>
             </ul>
-            <div class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </nav>
 
 <main class="section-padding-y section-padding-x">
-        <!-- Hero Section - رؤيتنا -->
+        <!-- Hero Section - تراخيصنا -->
         <section class="bg-[var(--color-primary-text)] text-white py-16 px-4 md:px-8 lg:px-16 rounded-xl shadow-md text-center section-margin-y section-padding-y relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x600/1B2A41/D4C29A?text=رؤيتنا'); opacity: 0.2;"></div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x600/1B2A41/D4C29A?text=تراخيصنا'); opacity: 0.2;"></div>
             <div class="relative z-10">
-                <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-4 hero-section-h2">رؤيتنا</h2>
+                <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-4 hero-section-h2">تراخيصنا</h2>
                 <p class="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto opacity-90 font-arabic-text">
-                    نسعى لأن نكون الرواد والمثال في تقديم الحلول القانونية والإدارية، لنصنع فارقاً حقيقياً في نجاح عملائنا.
+                    نفخر بامتلاكنا جميع التراخيص والاعتمادات الرسمية التي تضمن أعلى مستويات الموثوقية والالتزام بالمعايير القانونية في المملكة.
                 </p>
-                <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم ورؤيتكم" class="btn-primary text-xl font-arabic-text" target="_blank" rel="noopener">
+                <a href="https://wa.me/966555490800?text=مرحباً، أود استشارة قانونية من شركة مرخصة رسمياً" class="btn-primary text-xl font-arabic-text" target="_blank" rel="noopener">
                     اطلب استشارتك الآن <i class="fas fa-arrow-left mr-2"></i>
                 </a>
             </div>
         </section>
 
-        <!-- قيمنا الأساسية (Core Values) -->
+        <!-- التراخيص الرئيسية (Main Licenses) -->
         <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
             <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">قيمنا الأساسية</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- قيمة 1: الاحترافية -->
-                    <div class="vision-point">
-                        <i class="fas fa-gavel icon"></i>
-                        <h4>الاحترافية</h4>
-                        <p class="font-arabic-text">
-                            نلتزم بأعلى معايير الجودة والدقة في كل خدمة نقدمها، معتمدين على خبرة وكفاءة فريقنا المتخصص.
+                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">التراخيص والاعتمادات الرئيسية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- ترخيص 1: سجل المحامين والمستشارين -->
+                    <div class="license-card">
+                        <i class="fas fa-certificate icon"></i>
+                        <h4 class="text-right">شركة المحامي محمد الفارس محامون ومستشارون</h4>
+                        <p class="font-arabic-text text-right">
+                            المقر الرئيسي: <strong>الرياض</strong>
                         </p>
+                        <p class="font-arabic-text text-right">
+                            سجل رقم: <strong>1009052802</strong>
+                        </p>
+                        <ul class="font-arabic-text">
+                            <li><i class="fas fa-check-circle"></i><span>مرخصة رسمياً لمزاولة مهنة المحاماة والاستشارات القانونية.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>تخضع لإشراف مجلس الإدارة.</span></li>
+                        </ul>
                     </div>
-                    <!-- قيمة 2: الابتكار -->
-                    <div class="vision-point">
-                        <i class="fas fa-lightbulb icon"></i>
-                        <h4>الابتكار</h4>
-                        <p class="font-arabic-text">
-                            نتبنى أساليب عمل مبتكرة وحلولاً إبداعية تتجاوز التوقعات، لتقديم قيمة حقيقية ومستدامة لعملائنا.
+                    <!-- ترخيص 2: عضوية الهيئة السعودية للمحامين -->
+                    <div class="license-card">
+                        <i class="fas fa-id-card-alt icon"></i>
+                        <h4 class="text-right">عضوية الهيئة السعودية للمحامين</h4>
+                        <p class="font-arabic-text text-right">
+                            عضوية رقم: <strong>546192</strong>
                         </p>
+                        <ul class="font-arabic-text">
+                            <li><i class="fas fa-check-circle"></i><span>تأكيد لالتزامنا بالمعايير المهنية والأخلاقية للمحاماة.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>يضمن حصولك على خدمات قانونية موثوقة ومعتمدة.</span></li>
+                        </ul>
                     </div>
-                    <!-- قيمة 3: رضا العميل -->
-                    <div class="vision-point">
-                        <i class="fas fa-handshake icon"></i>
-                        <h4>رضا العميل</h4>
-                        <p class="font-arabic-text">
-                            العميل هو محور اهتمامنا، ونسعى لتحقيق رضاه التام من خلال فهم احتياجاته وتقديم أفضل الحلول.
+                     <!-- ترخيص 3: الرقم الضريبي (القيمة المضافة) -->
+                     <div class="license-card">
+                        <i class="fas fa-percentage icon"></i>
+                        <h4 class="text-right">الرقم الضريبي</h4>
+                        <p class="font-arabic-text text-right">
+                            الرقم الضريبي للفرعين: <strong>310198610700003</strong>
                         </p>
+                        <ul class="font-arabic-text">
+                            <li><i class="fas fa-check-circle"></i><span>يعكس التزامنا بالأنظمة الضريبية في المملكة.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>يضمن الشفافية في جميع المعاملات المالية.</span></li>
+                        </ul>
                     </div>
-                     <!-- قيمة 4: الشفافية -->
-                     <div class="vision-point">
-                        <i class="fas fa-eye icon"></i>
-                        <h4>الشفافية</h4>
-                        <p class="font-arabic-text">
-                            نؤمن بالوضوح والصراحة التامة في جميع تعاملاتنا، لبناء علاقات مبنية على الثقة المتبادلة.
+                    <!-- ترخيص 4: السجل التجاري لـ "الفارس للأعمال" -->
+                    <div class="license-card">
+                        <i class="fas fa-file-invoice icon"></i>
+                        <h4 class="text-right">السجل التجاري لـ "الفارس للأعمال"</h4>
+                        <p class="font-arabic-text text-right">
+                            تأسست في: <strong>جدة، 2018</strong>
                         </p>
-                    </div>
-                    <!-- قيمة 5: المسؤولية الاجتماعية -->
-                    <div class="vision-point">
-                        <i class="fas fa-hands-helping icon"></i>
-                        <h4>المسؤولية الاجتماعية</h4>
-                        <p class="font-arabic-text">
-                            نلتزم بدورنا تجاه المجتمع من خلال تقديم خدمات قانونية تسهم في تحقيق العدالة والتنمية.
-                        </p>
+                        <ul class="font-arabic-text">
+                            <li><i class="fas fa-check-circle"></i><span>مرخصة رسمياً لتقديم خدمات التعقيب الإداري وإدارة المشاريع.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>ضمان لشرعية أعمالنا الإدارية وامتثالها للأنظمة.</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- أهدافنا (Our Goals) -->
+        <!-- نص إضافي حول الالتزام (Optional) -->
         <section class="bg-[var(--color-primary-text)] text-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
             <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12" style="color: var(--color-headings-cta);">أهدافنا</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
-                    <p class="flex items-start text-lg font-arabic-text mb-4">
-                        <span class="w-4 h-4 bg-[var(--color-headings-cta)] rounded-full ml-3 mt-2 flex-shrink-0"></span>
-                        توسيع نطاق خدماتنا لتغطية كافة المدن الرئيسية في المملكة، وتوفير حلول قانونية وإدارية شاملة.
-                    </p>
-                    <p class="flex items-start text-lg font-arabic-text mb-4">
-                        <span class="w-4 h-4 bg-[var(--color-headings-cta)] rounded-full ml-3 mt-2 flex-shrink-0"></span>
-                        أن نكون الخيار الأول للعملاء في مجال الخدمات القانونية والتعقيب الإداري، بفضل جودة خدماتنا وثقة عملائنا.
-                    </p>
-                    <p class="flex items-start text-lg font-arabic-text mb-4">
-                        <span class="w-4 h-4 bg-[var(--color-headings-cta)] rounded-full ml-3 mt-2 flex-shrink-0"></span>
-                        تطوير منصاتنا وخدماتنا الرقمية لتواكب أحدث التقنيات، وتوفر تجربة مستخدم عصرية وسهلة.
-                    </p>
-                    <p class="flex items-start text-lg font-arabic-text mb-4">
-                        <span class="w-4 h-4 bg-[var(--color-headings-cta)] rounded-full ml-3 mt-2 flex-shrink-0"></span>
-                        بناء فريق عمل مؤهل ومحترف، يمتلك أحدث المعارف والمهارات، ويسعى باستمرار للتطور.
-                    </p>
-                </div>
+                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-8" style="color: var(--color-headings-cta);">التزامنا بالجودة والموثوقية</h3>
+                <p class="text-lg text-white leading-relaxed max-w-3xl mx-auto font-arabic-text">
+                    نحرص في "الفارس للأعمال" على تحديث وتجديد جميع تراخيصنا واعتماداتنا بشكل دوري لضمان استمرارية عملنا وفق أعلى المعايير النظامية والمهنية. ثقتكم هي أساس عملنا.
+                </p>
             </div>
         </section>
     </main>

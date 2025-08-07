@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle active navigation highlighting
     highlightActiveNavigation();
     
+    // Initialize mobile navigation toggle
+    initializeMobileNavigation();
+    
     // Handle form submissions
     initializeFormHandlers();
 });
@@ -76,11 +79,53 @@ function highlightActiveNavigation() {
         if (href === currentPage || 
             (currentPage === 'index.html' && href === 'index.html') ||
             (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
+            link.classList.add('nav-active');
         } else {
-            link.classList.remove('active');
+            link.classList.remove('nav-active');
         }
     });
+}
+
+// Function to initialize mobile navigation
+function initializeMobileNavigation() {
+    const mobileToggle = document.querySelector('.nav-mobile-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('nav-menu-open');
+            
+            // Toggle hamburger icon
+            const icon = mobileToggle.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('nav-menu-open');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close menu when clicking on a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('nav-menu-open');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
 }
 
 // Function to initialize form handlers
