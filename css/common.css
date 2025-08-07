@@ -488,17 +488,32 @@ textarea.form-input {
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    padding: 8px 16px;
+    border-radius: var(--radius-lg);
+    background: rgba(212, 194, 154, 0.1);
+    border: 1px solid rgba(212, 194, 154, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .nav-logo:hover {
     color: var(--color-headings-cta);
-    transform: scale(1.05);
+    transform: scale(1.02);
+    background: rgba(212, 194, 154, 0.2);
+    border-color: var(--color-headings-cta);
+    box-shadow: 0 4px 15px rgba(212, 194, 154, 0.3);
 }
 
 .nav-logo i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--color-headings-cta);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover i {
+    transform: rotate(-5deg) scale(1.1);
+    text-shadow: 0 4px 8px rgba(212, 194, 154, 0.5);
 }
 
 .nav-menu {
@@ -803,26 +818,62 @@ textarea.form-input {
 }
 
 .hero-logo {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, var(--color-headings-cta) 0%, #E6D4A8 100%);
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--color-headings-cta) 0%, #E6D4A8 50%, var(--color-headings-cta-dark) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 5px 15px rgba(212, 194, 154, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
     animation: logoFloat 3s ease-in-out infinite;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-logo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: logoShine 4s ease-in-out infinite;
+    pointer-events: none;
 }
 
 @keyframes logoFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(2deg); }
+    50% { transform: translateY(-15px) rotate(0deg); }
+    75% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes logoShine {
+    0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .hero-logo i {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: var(--color-primary-text);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(27, 42, 65, 0.5);
+    transition: all 0.3s ease;
+}
+
+.hero-logo:hover i {
+    transform: scale(1.1) rotate(-10deg);
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(27, 42, 65, 0.7);
 }
 
 .hero-title {
