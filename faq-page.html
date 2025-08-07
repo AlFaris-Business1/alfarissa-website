@@ -10,13 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/common.css">
+</head>
 <body class="text-[var(--color-primary-text)]">
 
-    <!-- Header -->
-    
     <!-- Navigation Bar -->
-    <!-- Navigation Bar - Simplified -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
@@ -27,9 +26,9 @@
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="our-services-page.html">خدماتنا</a></li>
                 <li><a href="legal-services-page.html">قانونية</a></li>
-                <li><a href="government-transactions-page.html">قانونية</a></li>
+                <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
                 <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="index.html#contact" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
+                <li><a href="index.html#contact" class="nav-contact-btn">تواصل معنا</a></li>
             </ul>
             <div class="nav-mobile-toggle">
                 <i class="fas fa-bars"></i>
@@ -37,158 +36,432 @@
         </div>
     </nav>
 
-<main class="section-padding-y section-padding-x">
-        <!-- Hero Section -->
-        <section class="bg-[var(--color-primary-text)] text-white py-12 px-4 md:px-8 rounded-xl shadow-md text-center section-margin-y section-padding-y relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x600/1B2A41/D4C29A?text=الأسئلة+الشائعة'); opacity: 0.15;"></div>
+    <main class="section-padding-y section-padding-x">
+        <!-- Enhanced Hero Section -->
+        <section class="bg-gradient-to-r from-[var(--color-primary-text)] to-[var(--color-primary-light)] text-white py-16 px-4 md:px-8 rounded-xl shadow-2xl text-center section-margin-y relative overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://placehold.co/1200x600/1B2A41/D4C29A?text=FAQ'); background-size: cover;"></div>
             <div class="relative z-10">
-                <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-4 hero-section-h2">الأسئلة الشائعة</h2>
-                <p class="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto opacity-90 font-arabic-text">
-                    نقدم لك هنا إجابات لأكثر الأسئلة شيوعاً حول خدماتنا وإجراءات العمل، لنجيب على استفساراتك بكل وضوح وشفافية.
+                <div class="mb-6">
+                    <i class="fas fa-question-circle text-6xl text-[var(--color-headings-cta)] mb-4"></i>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">الأسئلة الشائعة</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-4xl mx-auto opacity-90 leading-relaxed">
+                    نقدم لك إجابات شاملة ووافية لأكثر الأسئلة شيوعاً حول خدماتنا القانونية والإدارية
                 </p>
-                <a href="index.html#quick-request" class="btn-primary text-xl font-arabic-text">
-                    لم تجد إجابتك؟ تواصل معنا <i class="fas fa-arrow-left mr-2"></i>
-                </a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#faq-section" class="bg-[var(--color-headings-cta)] text-[var(--color-primary-text)] px-8 py-3 rounded-lg font-semibold hover:bg-[var(--color-headings-cta-dark)] transition-colors duration-300">
+                        تصفح الأسئلة <i class="fas fa-arrow-down mr-2"></i>
+                    </a>
+                    <a href="index.html#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[var(--color-primary-text)] transition-all duration-300">
+                        تواصل معنا <i class="fas fa-comments mr-2"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">أكثر الأسئلة شيوعاً</h3>
-                <div class="max-w-4xl mx-auto text-right">
-                    <!-- FAQ Items: (نفس الموجود عندك) -->
-                    <!-- ... (انسخ FAQ من الكود السابق) ... -->
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> ما هي أنواع قانونية التي تقدمونها؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
+        <!-- Enhanced FAQ Section -->
+        <section id="faq-section" class="bg-white rounded-xl shadow-lg mx-4 md:mx-auto max-w-6xl section-margin-y section-padding-y section-padding-x">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--color-primary-text)]">أكثر الأسئلة شيوعاً</h2>
+                    <p class="text-lg text-[var(--color-secondary-text)] max-w-3xl mx-auto">
+                        جمعنا لك أهم الاستفسارات التي يطرحها عملاؤنا مع إجابات مفصلة وواضحة لمساعدتك على فهم خدماتنا بشكل أفضل
+                    </p>
+                </div>
+                
+                <!-- FAQ Search Box -->
+                <div class="mb-12">
+                    <div class="relative max-w-2xl mx-auto">
+                        <input type="text" id="faqSearch" placeholder="ابحث في الأسئلة الشائعة..." 
+                               class="w-full px-6 py-4 text-lg border-2 border-[var(--color-border)] rounded-lg focus:border-[var(--color-headings-cta)] focus:outline-none transition-colors duration-300"
+                               style="direction: rtl;">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-[var(--color-secondary-text)]"></i>
+                    </div>
+                </div>
+
+                <!-- FAQ Categories -->
+                <div class="mb-12">
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="faq-category-btn active" data-category="all">
+                            <i class="fas fa-th-large ml-2"></i>جميع الأسئلة
+                        </button>
+                        <button class="faq-category-btn" data-category="legal">
+                            <i class="fas fa-gavel ml-2"></i>الخدمات القانونية
+                        </button>
+                        <button class="faq-category-btn" data-category="government">
+                            <i class="fas fa-university ml-2"></i>المعاملات الحكومية
+                        </button>
+                        <button class="faq-category-btn" data-category="packages">
+                            <i class="fas fa-box ml-2"></i>الباقات
+                        </button>
+                        <button class="faq-category-btn" data-category="pricing">
+                            <i class="fas fa-dollar-sign ml-2"></i>الأسعار والدفع
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Enhanced FAQ Items -->
+                <div class="max-w-5xl mx-auto">
+                    <!-- Legal Services Questions -->
+                    <div class="faq-accordion-item enhanced" data-category="legal">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-balance-scale question-icon-enhanced"></i>
+                                <h3>ما هي أنواع الخدمات القانونية التي تقدمونها؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
                         </div>
-                        <div class="faq-accordion-content">
-                            <p>نقدم مجموعة واسعة من قانونية تشمل: الاستشارات القانونية في مختلف الفروع (أحوال شخصية، تجاري، عقاري، عمالي)، صياغة ومراجعة العقود، إعداد المذكرات القانونية، وتمثيل العملاء أمام المحاكم بجميع درجاتها ومتابعة تنفيذ الأحكام.</p>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>نقدم مجموعة شاملة من الخدمات القانونية المتخصصة تشمل:</p>
+                                <ul class="service-list">
+                                    <li><i class="fas fa-check-circle"></i>الاستشارات القانونية في جميع فروع القانون</li>
+                                    <li><i class="fas fa-check-circle"></i>صياغة ومراجعة العقود والاتفاقيات</li>
+                                    <li><i class="fas fa-check-circle"></i>إعداد المذكرات والدفوع القانونية</li>
+                                    <li><i class="fas fa-check-circle"></i>تمثيل العملاء أمام المحاكم والهيئات القضائية</li>
+                                    <li><i class="fas fa-check-circle"></i>خدمات التحكيم والوساطة</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <!-- (أضف باقي الأسئلة هنا كما بالكود السابق) -->
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> كيف يمكنني طلب استشارة قانونية؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
+
+                    <div class="faq-accordion-item enhanced" data-category="legal">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-user-tie question-icon-enhanced"></i>
+                                <h3>كيف يمكنني طلب استشارة قانونية؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
                         </div>
-                        <div class="faq-accordion-content">
-                            <p>يمكنك طلب استشارة قانونية من خلال زيارة صفحة "اطلب خدمة سريعة" في موقعنا، أو التواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني. سنقوم بالرد عليك في أقرب وقت لتحديد موعد الاستشارة.</p>
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> ما هي المدة المتوقعة لإنجاز قانونية؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
-                        </div>
-                        <div class="faq-accordion-content">
-                            <p>تختلف المدة الزمنية لإنجاز قانونية بناءً على نوع المعاملة والجهة الحكومية المختصة. ومع ذلك، نلتزم في الفارس للأعمال بإنهاء معاملاتك بأسرع وقت ممكن وتقديم تحديثات مستمرة على سير العمل.</p>
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> هل خدماتكم تشمل تأسيس الشركات للمستثمرين الأجانب؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
-                        </div>
-                        <div class="faq-accordion-content">
-                            <p>نعم، نقدم خدمات متكاملة لتأسيس الشركات للمستثمرين الأجانب، بما في ذلك استخراج تراخيص الاستثمار من وزارة الاستثمار (MISA)، وفتح فروع للشركات الأجنبية، وتسهيل إجراءات الإقامة والتأشيرات.</p>
-                        </div>
-                    </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> ما الفرق بين الباقة القانونية الأساسية والشاملة؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
-                        </div>
-                        <div class="faq-accordion-content">
-                            <p>الباقة القانونية الأساسية توفر دعماً مبدئياً، بينما الباقة الشاملة تقدم دعماً قانونياً وإدارياً شهرياً مستمراً، مع مدير حساب مخصص، وتقارير تفصيلية، وزيارات ميدانية، وقد تشمل خدمات الإقرارات الزكوية والضريبية.</p>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>يمكنك طلب استشارة قانونية بعدة طرق سهلة ومريحة:</p>
+                                <div class="contact-methods-grid">
+                                    <div class="contact-method-item">
+                                        <i class="fas fa-phone"></i>
+                                        <h4>الاتصال المباشر</h4>
+                                        <p>0555490800</p>
+                                    </div>
+                                    <div class="contact-method-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <h4>البريد الإلكتروني</h4>
+                                        <p>info@alfarissa.org</p>
+                                    </div>
+                                    <div class="contact-method-item">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <h4>واتساب</h4>
+                                        <p>تواصل فوري</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="faq-accordion-item">
-                        <div class="faq-accordion-header" onclick="toggleFaqAccordion(this)">
-                            <h4><i class="fas fa-question-circle question-icon"></i> هل تقدمون خدمات في الإقرارات الزكوية والضريبية؟</h4>
-                            <i class="fas fa-chevron-down faq-accordion-icon"></i>
+
+                    <!-- Government Services Questions -->
+                    <div class="faq-accordion-item enhanced" data-category="government">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-university question-icon-enhanced"></i>
+                                <h3>ما هي المدة المتوقعة لإنجاز المعاملات الحكومية؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
                         </div>
-                        <div class="faq-accordion-content">
-                            <p>نعم، لدينا فريق من المحاسبين القانونيين المعتمدين والمتخصصين في إعداد وتقديم الإقرارات الزكوية والضريبية بدقة واحترافية، لضمان امتثالك التام للأنظمة وتجنب أي غرامات.</p>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>تختلف المدة الزمنية بحسب نوع المعاملة والجهة المختصة، ولكننا نلتزم بأقصر وقت ممكن:</p>
+                                <div class="timeline-list">
+                                    <div class="timeline-item">
+                                        <span class="duration">1-3 أيام</span>
+                                        <span class="service">استخراج السجل التجاري</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="duration">3-7 أيام</span>
+                                        <span class="service">تراخيص البلدية</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="duration">5-10 أيام</span>
+                                        <span class="service">تأسيس الشركات</span>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <span class="duration">10-15 يوم</span>
+                                        <span class="service">تراخيص الاستثمار</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-accordion-item enhanced" data-category="government">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-globe question-icon-enhanced"></i>
+                                <h3>هل تقدمون خدمات للمستثمرين الأجانب؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
+                        </div>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>نعم، نوفر خدمات متكاملة للمستثمرين الأجانب تشمل:</p>
+                                <div class="service-grid">
+                                    <div class="service-card">
+                                        <i class="fas fa-building"></i>
+                                        <h4>تأسيس الشركات</h4>
+                                        <p>لجميع أنواع الشركات وفقاً لقانون الشركات السعودي</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <i class="fas fa-passport"></i>
+                                        <h4>تراخيص الاستثمار</h4>
+                                        <p>من وزارة الاستثمار (MISA)</p>
+                                    </div>
+                                    <div class="service-card">
+                                        <i class="fas fa-handshake"></i>
+                                        <h4>فتح الفروع</h4>
+                                        <p>للشركات الأجنبية في السعودية</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Packages Questions -->
+                    <div class="faq-accordion-item enhanced" data-category="packages">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-box-open question-icon-enhanced"></i>
+                                <h3>ما الفرق بين الباقة الأساسية والشاملة؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
+                        </div>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <div class="comparison-table">
+                                    <div class="comparison-header">
+                                        <h4>مقارنة الباقات</h4>
+                                    </div>
+                                    <div class="comparison-content">
+                                        <div class="package-comparison">
+                                            <div class="package basic">
+                                                <h5>الباقة الأساسية</h5>
+                                                <ul>
+                                                    <li><i class="fas fa-check"></i>استشارات قانونية محدودة</li>
+                                                    <li><i class="fas fa-check"></i>متابعة المعاملات الأساسية</li>
+                                                    <li><i class="fas fa-check"></i>دعم عبر الهاتف</li>
+                                                </ul>
+                                            </div>
+                                            <div class="package comprehensive">
+                                                <h5>الباقة الشاملة</h5>
+                                                <ul>
+                                                    <li><i class="fas fa-check"></i>استشارات قانونية غير محدودة</li>
+                                                    <li><i class="fas fa-check"></i>مدير حساب مخصص</li>
+                                                    <li><i class="fas fa-check"></i>تقارير شهرية تفصيلية</li>
+                                                    <li><i class="fas fa-check"></i>زيارات ميدانية</li>
+                                                    <li><i class="fas fa-check"></i>خدمات الإقرارات الضريبية</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Questions -->
+                    <div class="faq-accordion-item enhanced" data-category="pricing">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-money-bill-wave question-icon-enhanced"></i>
+                                <h3>كيف يتم تحديد أسعار الخدمات؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
+                        </div>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>نتبع نظاماً شفافاً وعادلاً في تسعير خدماتنا:</p>
+                                <div class="pricing-factors">
+                                    <div class="factor">
+                                        <i class="fas fa-tasks"></i>
+                                        <h4>تعقد القضية</h4>
+                                        <p>حسب مستوى التعقيد والوقت المطلوب</p>
+                                    </div>
+                                    <div class="factor">
+                                        <i class="fas fa-clock"></i>
+                                        <h4>المدة الزمنية</h4>
+                                        <p>بناءً على الوقت المتوقع للإنجاز</p>
+                                    </div>
+                                    <div class="factor">
+                                        <i class="fas fa-users"></i>
+                                        <h4>حجم الفريق</h4>
+                                        <p>عدد المختصين المطلوبين للقضية</p>
+                                    </div>
+                                </div>
+                                <div class="pricing-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    <p>نقدم عروض أسعار مجانية ومفصلة قبل البدء في أي عمل</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-accordion-item enhanced" data-category="pricing">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-credit-card question-icon-enhanced"></i>
+                                <h3>ما هي طرق الدفع المتاحة؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
+                        </div>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>نوفر طرق دفع متنوعة لراحتكم:</p>
+                                <div class="payment-methods">
+                                    <div class="payment-method">
+                                        <i class="fas fa-money-bill-alt"></i>
+                                        <h4>الدفع النقدي</h4>
+                                        <p>في المكتب مباشرة</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <i class="fas fa-university"></i>
+                                        <h4>التحويل البنكي</h4>
+                                        <p>لجميع البنوك السعودية</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <h4>المحافظ الرقمية</h4>
+                                        <p>STC Pay, Apple Pay</p>
+                                    </div>
+                                    <div class="payment-method">
+                                        <i class="fas fa-credit-card"></i>
+                                        <h4>البطاقات الائتمانية</h4>
+                                        <p>فيزا وماستركارد</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- General Questions -->
+                    <div class="faq-accordion-item enhanced" data-category="all">
+                        <div class="faq-accordion-header enhanced" onclick="toggleFaqAccordion(this)">
+                            <div class="flex items-center">
+                                <i class="fas fa-calculator question-icon-enhanced"></i>
+                                <h3>هل تقدمون خدمات الإقرارات الزكوية والضريبية؟</h3>
+                            </div>
+                            <i class="fas fa-chevron-down faq-accordion-icon-enhanced"></i>
+                        </div>
+                        <div class="faq-accordion-content enhanced">
+                            <div class="content-wrapper">
+                                <p>نعم، لدينا فريق متخصص من المحاسبين القانونيين المعتمدين:</p>
+                                <div class="tax-services">
+                                    <div class="tax-service">
+                                        <i class="fas fa-file-invoice"></i>
+                                        <h4>إعداد الإقرارات</h4>
+                                        <p>الزكوية والضريبية لجميع أنواع الأنشطة</p>
+                                    </div>
+                                    <div class="tax-service">
+                                        <i class="fas fa-chart-line"></i>
+                                        <h4>التخطيط الضريبي</h4>
+                                        <p>لتحسين الوضع الضريبي للشركات</p>
+                                    </div>
+                                    <div class="tax-service">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <h4>الامتثال الضريبي</h4>
+                                        <p>لضمان التوافق التام مع الأنظمة</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="bg-[var(--color-primary-text)] text-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x text-center">
-            <div class="container mx-auto">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-8" style="color: var(--color-headings-cta);">لديك سؤال آخر؟</h3>
-                <p class="text-lg text-white mb-8 max-w-2xl mx-auto font-arabic-text">
-                    إذا لم تجد إجابتك هنا، فلا تتردد في التواصل معنا مباشرة. فريقنا جاهز لتقديم الدعم والمساعدة.
+        <!-- Enhanced CTA Section -->
+        <section class="bg-gradient-to-l from-[var(--color-primary-text)] to-[var(--color-primary-light)] text-white rounded-xl shadow-2xl mx-4 md:mx-auto max-w-6xl section-margin-y section-padding-y section-padding-x text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-5"></div>
+            <div class="relative z-10">
+                <div class="mb-6">
+                    <i class="fas fa-comments text-5xl text-[var(--color-headings-cta)]"></i>
+                </div>
+                <h3 class="text-4xl md:text-5xl font-bold mb-6 text-[var(--color-headings-cta)]">لم تجد إجابتك؟</h3>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+                    فريقنا من الخبراء القانونيين جاهز للإجابة على جميع استفساراتكم وتقديم الاستشارات المتخصصة
                 </p>
-                <a href="index.html#quick-request" class="btn-primary text-xl font-arabic-text">
-                    تواصل معنا الآن <i class="fas fa-arrow-left mr-2"></i>
-                </a>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html#contact" class="bg-[var(--color-headings-cta)] text-[var(--color-primary-text)] px-8 py-4 rounded-lg text-xl font-semibold hover:bg-[var(--color-headings-cta-dark)] transition-all duration-300 shadow-lg">
+                        تواصل معنا الآن <i class="fas fa-arrow-left mr-3"></i>
+                    </a>
+                    <a href="tel:+966555490800" class="border-2 border-white text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-white hover:text-[var(--color-primary-text)] transition-all duration-300">
+                        اتصل مباشرة <i class="fas fa-phone mr-3"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="bg-[var(--color-primary-text)] text-white py-10 px-4 md:px-8 shadow-xl rounded-t-3xl mt-auto">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 font-arabic-text">
+    <!-- Enhanced Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
             <!-- عن الفارس للأعمال -->
             <div>
-                <h3 class="text-xl font-amiri font-bold mb-4" style="color: var(--color-headings-cta);">عن الفارس للأعمال</h3>
-                <ul class="space-y-3 text-gray-300">
-                    <li><a href="our-services-page.html" class="hover:text-[var(--color-headings-cta)]">خدماتنا</a></li>
-                    <li><a href="vision-page.html" class="hover:text-[var(--color-headings-cta)]">رؤيتنا</a></li>
-                    <li><a href="licenses-page.html" class="hover:text-[var(--color-headings-cta)]">التراخيص</a></li>
-                    <li><a href="#" class="hover:text-[var(--color-headings-cta)]">الفريق</a></li>
-                </ul>
+                <div class="footer-col-header">
+                    <h3>عن الفارس للأعمال</h3>
+                </div>
+                <div class="footer-col-content">
+                    <ul>
+                        <li><a href="our-services-page.html">خدماتنا</a></li>
+                        <li><a href="vision-page.html">رؤيتنا</a></li>
+                        <li><a href="licenses-page.html">التراخيص</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- روابط سريعة -->
+            <!-- خريطة الموقع -->
             <div>
                 <div class="footer-col-header">
-                    <h3>روابط سريعة</h3>
+                    <h3>خريطة الموقع</h3>
                 </div>
                 <div class="footer-col-content">
                     <ul>
                         <li><a href="index.html">الصفحة الرئيسية</a></li>
-                        <li><a href="legal-services-page.html">قانونية</a></li>
-                        <li><a href="government-transactions-page.html">قانونية</a></li>
+                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                        <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
                         <li><a href="packages-page.html">الباقات</a></li>
                         <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
-                        <li><a href="vision-page.html">رؤيتنا</a></li>
-                        <li><a href="licenses-page.html">التراخيص</a></li>
                         <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
                     </ul>
                 </div>
             </div>
-            <!-- معلومات التواصل ونموذج الاتصال -->
-            <div style="grid-column: span 2;">
+            <!-- المعلومات القانونية -->
+            <div>
+                <div class="footer-col-header">
+                    <h3>المعلومات القانونية</h3>
+                </div>
+                <div class="footer-col-content">
+                    <ul>
+                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms-of-service-page.html">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- معلومات التواصل -->
+            <div id="contact" style="grid-column: span 2;">
                 <div class="footer-col-header">
                     <h3>تواصل معنا</h3>
                 </div>
                 <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
-                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
-                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
-                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
-                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
-                </div>
-
-                <!-- نموذج التواصل السريع -->
-                <div class="footer-form-container">
-                    <h4>أرسل لنا رسالة سريعة</h4>
-                    <form>
-                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
-                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
-                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
-                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-                        </button>
-                    </form>
+                    <div class="contact-methods">
+                        <a href="tel:+966555490800" class="contact-method">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>0555490800</span>
+                        </a>
+                        <a href="tel:+966555648602" class="contact-method">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>0555648602</span>
+                        </a>
+                        <a href="mailto:info@alfarissa.org" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@alfarissa.org</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,8 +474,75 @@
     <!-- Common JavaScript -->
     <script src="js/common.js"></script>
 
+    <!-- Enhanced FAQ JavaScript -->
+    <script>
+        // Enhanced FAQ functionality
+        function toggleFaqAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.faq-accordion-icon-enhanced');
+            const isOpen = content.style.maxHeight;
+
+            // Close all other open accordions
+            document.querySelectorAll('.faq-accordion-content.enhanced').forEach(item => {
+                if (item !== content) {
+                    item.style.maxHeight = null;
+                    item.previousElementSibling.querySelector('.faq-accordion-icon-enhanced').style.transform = 'rotate(0deg)';
+                    item.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            // Toggle current accordion
+            if (isOpen) {
+                content.style.maxHeight = null;
+                icon.style.transform = 'rotate(0deg)';
+                element.classList.remove('active');
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+                element.classList.add('active');
+            }
+        }
+
+        // FAQ Search functionality
+        document.getElementById('faqSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-accordion-item.enhanced');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('h3').textContent.toLowerCase();
+                const answer = item.querySelector('.content-wrapper').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filter functionality
+        document.querySelectorAll('.faq-category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.faq-category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+                const faqItems = document.querySelectorAll('.faq-accordion-item.enhanced');
+
+                faqItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
     <!-- Floating WhatsApp Button -->
-    <a href="index.html#contact" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <a href="https://wa.me/966555490800?text=مرحباً، لدي سؤال حول خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
