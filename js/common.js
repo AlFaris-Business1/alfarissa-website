@@ -16,6 +16,9 @@ if (typeof tailwind !== 'undefined') {
 
 // Common JavaScript functionality for Al Faris Business website
 
+// Critical performance optimization: Defer non-essential operations
+const deferredOperations = [];
+
 // Register Service Worker for professional caching
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
@@ -29,10 +32,42 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Critical path: Essential DOM operations
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to handle automatic population of service type in forms
-    const serviceTypeSelect = document.getElementById('serviceType');
-    const selectedService = localStorage.getItem('selectedServiceType');
+    // Essential functions that must run immediately
+    highlightActiveNavigation();
+    initializeMobileNavigation();
+    
+    // Defer less critical operations
+    deferredOperations.push(
+        () => initializeFormHandlers(),
+        () => initializeSmoothScrolling(),
+        () => initializeServicePopulation()
+    );
+    
+    // Process deferred operations with minimal impact
+    requestIdleCallback ? 
+        requestIdleCallback(processDeferredOperations) : 
+        setTimeout(processDeferredOperations, 100);
+});
+
+// Process deferred operations during idle time
+function processDeferredOperations() {
+    deferredOperations.forEach(operation => {
+        try {
+            operation();
+        } catch (error) {
+            console.warn('Deferred operation failed:', error);
+        }
+    });
+}
+
+// Service population with improved error handling
+function initializeServicePopulation() {
+    try {
+        // Function to handle automatic population of service type in forms
+        const serviceTypeSelect = document.getElementById('serviceType');
+        const selectedService = localStorage.getItem('selectedServiceType');
 
     if (selectedService && serviceTypeSelect) {
         let optionExists = false;
@@ -85,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize smooth scrolling
     initializeSmoothScrolling();
 });
+    } catch (error) {
+        console.warn('Service population failed:', error);
+    }
+}
 
 // Function to highlight active navigation item
 function highlightActiveNavigation() {

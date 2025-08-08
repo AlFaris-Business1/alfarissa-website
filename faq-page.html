@@ -3,7 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفارس للأعمال - الأسئلة الشائعة</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>الأسئلة الشائعة - الفارس للأعمال للاستشارات القانونية والإدارية</title>
+    <meta name="description" content="إجابات شاملة على الأسئلة الشائعة حول خدماتنا القانونية والإدارية، الأسعار، التوقيتات، وطرق التواصل في المملكة العربية السعودية">
+    <meta name="keywords" content="أسئلة شائعة، خدمات قانونية، خدمات إدارية، إجابات، استفسارات، الفارس للأعمال">
+    <meta name="author" content="الفارس للأعمال">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alfarissa-website.netlify.app/faq-page.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="الأسئلة الشائعة - الفارس للأعمال">
+    <meta property="og:description" content="إجابات شاملة على الأسئلة الشائعة حول خدماتنا القانونية والإدارية">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfarissa-website.netlify.app/faq-page.html">
+    <meta property="og:site_name" content="الفارس للأعمال">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="الأسئلة الشائعة - الفارس للأعمال">
+    <meta name="twitter:description" content="إجابات شاملة على الأسئلة الشائعة حول خدماتنا القانونية والإدارية">
+    
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Noto Kufi Arabic -->
@@ -12,6 +33,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Common CSS -->
     <link rel="stylesheet" href="css/common.css">
+    
+    <!-- Structured Data (JSON-LD) for FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "الأسئلة الشائعة - الفارس للأعمال",
+        "description": "إجابات شاملة على الأسئلة الشائعة حول خدماتنا القانونية والإدارية",
+        "url": "https://alfarissa-website.netlify.app/faq-page.html",
+        "mainEntity": [
+            {
+                "@type": "Question", 
+                "name": "ما هي الخدمات التي تقدمونها؟",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "نقدم خدمات قانونية شاملة تشمل الاستشارات، التقاضي، صياغة العقود، وخدمات التعقيب الإداري للمعاملات الحكومية"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "كم تستغرق معالجة الطلبات؟", 
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "تختلف المدة حسب نوع الخدمة وتعقيدها، ولكننا نلتزم بأسرع الأوقات الممكنة مع ضمان الجودة"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body class="text-[var(--color-primary-text)]">
 
