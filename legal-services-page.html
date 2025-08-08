@@ -128,9 +128,9 @@
             <p class="text-lg md:text-xl text-[var(--color-headings-cta)] mb-8 max-w-3xl mx-auto font-arabic-text">
                 نقدم لك الحلول القانونية المتكاملة لضمان حقوقك وحماية مصالحك في جميع المحاكم والجهات القضائية.
             </p>
-            <a href="https://wa.me/966555490800?text=مرحباً، أود استشارة قانونية عامة" class="btn-primary text-xl font-arabic-text" target="_blank" rel="noopener">
+            <button onclick="handleServiceRequest('استشارة قانونية عامة', this)" class="btn-primary text-xl font-arabic-text">
                 اطلب استشارتك الآن <i class="fas fa-arrow-left mr-2"></i>
-            </a>
+            </button>
         </section>
 
         <!-- لماذا تختارنا؟ -->
@@ -160,39 +160,76 @@
             </div>
         </section>
 
-        <!-- مجالات عملنا في المحاكم - Accordion (triggered by cards) with direct lists inside -->
+        <!-- مجالات عملنا في المحاكم - Enhanced Hierarchical Structure -->
         <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
             <div class="container mx-auto text-center">
                 <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">مجالات عملنا في المحاكم</h3>
                 <p class="text-lg text-[var(--color-primary-text)] leading-relaxed max-w-4xl mx-auto mb-12 font-arabic-text">
-                    نوفر لك الدعم والتمثيل القانوني المتكامل أمام مختلف المحاكم واللجان القضائية في المملكة، لنضمن حماية مصالحك وتحقيق أفضل النتائج. اضغط على كل محكمة لعرض خدماتها بالتفصيل:
+                    نوفر لك الدعم والتمثيل القانوني المتكامل أمام مختلف المحاكم واللجان القضائية في المملكة. اختر المحكمة المناسبة لاستعراض خدماتها المتخصصة:
                 </p>
 
-                <!-- Service Category Cards for Legal Courts -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Enhanced Court Selection Grid -->
+                <div class="court-selection-grid">
                     <!-- محكمة الأحوال الشخصية Card -->
-                    <div class="service-category-card" data-accordion-target="personalStatusContent">
-                        <i class="fas fa-users-cog icon"></i>
-                        <h4>محكمة الأحوال الشخصية</h4>
+                    <div class="court-card" onclick="showCourtServices('personalStatus')">
+                        <i class="fas fa-users-cog court-icon"></i>
+                        <h4 class="court-title">محكمة الأحوال الشخصية</h4>
+                        <p class="court-description">قضايا الزواج والطلاق، الحضانة والنفقة، التركات والولاية</p>
                     </div>
+                    
                     <!-- المحاكم العامة Card -->
-                    <div class="service-category-card" data-accordion-target="generalCourtContent">
-                        <i class="fas fa-balance-scale icon"></i>
-                        <h4>المحاكم العامة</h4>
+                    <div class="court-card" onclick="showCourtServices('general')">
+                        <i class="fas fa-balance-scale court-icon"></i>
+                        <h4 class="court-title">المحاكم العامة</h4>
+                        <p class="court-description">القضايا العقارية، المطالبات المدنية، الملكية الفكرية</p>
                     </div>
+                    
                     <!-- المحاكم التجارية Card -->
-                    <div class="service-category-card" data-accordion-target="commercialCourtContent">
-                        <i class="fas fa-handshake icon"></i>
-                        <h4>المحاكم التجارية</h4>
+                    <div class="court-card" onclick="showCourtServices('commercial')">
+                        <i class="fas fa-handshake court-icon"></i>
+                        <h4 class="court-title">المحاكم التجارية</h4>
+                        <p class="court-description">النزاعات التجارية، إفلاس الشركات، العقود التجارية</p>
                     </div>
+                    
                     <!-- المحاكم العمالية Card -->
-                    <div class="service-category-card" data-accordion-target="laborCourtContent">
-                        <i class="fas fa-users icon"></i>
-                        <h4>المحاكم العمالية</h4>
+                    <div class="court-card" onclick="showCourtServices('labor')">
+                        <i class="fas fa-users court-icon"></i>
+                        <h4 class="court-title">المحاكم العمالية</h4>
+                        <p class="court-description">منازعات العمل، المطالبات العمالية، عقود الاستقدام</p>
                     </div>
                 </div>
 
-                <!-- Accordion Contents (initially hidden) -->
+                <!-- Service Details Container -->
+                <div id="courtServicesContainer" class="service-details-container" style="display: none;">
+                    <div class="service-details-header" onclick="toggleServiceDetails()">
+                        <h4 id="selectedCourtTitle" class="text-xl font-bold text-right flex items-center justify-between">
+                            <span>تفاصيل الخدمات</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="toggleIcon"></i>
+                        </h4>
+                    </div>
+                    <div class="service-details-content" id="serviceDetailsContent">
+                        <div id="serviceDetailsGrid" class="service-details-grid">
+                            <!-- Service cards will be dynamically populated here -->
+                        </div>
+                        
+                        <!-- Contact Section -->
+                        <div class="text-center mt-8 p-6 bg-white rounded-lg border border-gray-200">
+                            <h5 class="text-lg font-bold mb-4" style="color: var(--color-primary-text);">
+                                جاهز لطلب الخدمة؟
+                            </h5>
+                            <p class="text-sm mb-4" style="color: var(--color-secondary-text);">
+                                اختر طريقة التواصل المناسبة لك
+                            </p>
+                            <button onclick="handleServiceRequest('الخدمات القانونية', this)" 
+                                    class="service-request-btn text-lg px-8 py-3">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                اطلب استشارتك الآن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
                 <!-- محكمة الأحوال الشخصية Content -->
                 <div id="personalStatusContent" class="service-accordion-content-container">
                     <div class="text-right border-b pb-8 border-gray-200">
@@ -379,9 +416,9 @@
 
     <!-- خاتمة الصفحة (Sticky CTA for mobile) -->
     <div class="sticky-cta md:hidden">
-        <a href="https://wa.me/966555490800?text=مرحباً، أود استشارة قانونية عامة" class="btn-primary w-full text-lg" target="_blank" rel="noopener">
+        <button onclick="handleServiceRequest('الخدمات القانونية', this)" class="btn-primary w-full text-lg">
             ابدأ المحادثة <i class="fas fa-comments mr-2"></i>
-        </a>
+        </button>
         <p class="text-[var(--color-secondary-text)] text-xs mt-2 font-arabic-text">
             جميع استفساراتك تعامل بسرية تامة.
         </p>
@@ -457,6 +494,20 @@
 
     <!-- Common JavaScript -->
     <script src="js/common.js"></script>
+    
+    <!-- Initialize Contact System for This Page -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Replace existing WhatsApp links with contact modal system
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const serviceName = extractServiceNameFromUrl(this.href) || 'الخدمات القانونية';
+                showContactModal(serviceName);
+            });
+        });
+    });
+    </script>
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">

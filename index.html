@@ -40,6 +40,61 @@
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
     
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "الفارس للأعمال",
+        "alternateName": "AlFaris Business",
+        "description": "مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية في المملكة العربية السعودية",
+        "url": "https://alfarissa-website.netlify.app/",
+        "telephone": ["+966555490800", "+966555648602", "+966539000805", "+966530222726"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "المملكة العربية السعودية"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "المملكة العربية السعودية"
+        },
+        "serviceType": [
+            "استشارات قانونية",
+            "تأسيس شركات", 
+            "التقاضي والمرافعات",
+            "تعقيب المعاملات الحكومية",
+            "التراخيص التجارية",
+            "قضايا الأحوال الشخصية",
+            "المحاكم التجارية",
+            "المحاكم العمالية"
+        ],
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات الفارس للأعمال",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "الخدمات القانونية",
+                        "description": "استشارات قانونية وتقاضي في جميع المحاكم"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "المعاملات الحكومية",
+                        "description": "تعقيب وإنجاز المعاملات الحكومية والتراخيص"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
     <!-- Enhanced Resource Loading with Fallbacks -->
     <!-- Google Fonts for Noto Kufi Arabic with fallback -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -398,16 +453,16 @@
                     </div>
                     
                     <div class="contact-quick-actions">
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات القانونية" 
-                           class="btn-contact-whatsapp" target="_blank" rel="noopener">
+                        <button onclick="handleServiceRequest('الاستشارات القانونية', this)" 
+                           class="btn-contact-whatsapp">
                             <i class="fab fa-whatsapp"></i>
                             استشارة قانونية فورية
-                        </a>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" 
-                           class="btn-contact-general" target="_blank" rel="noopener">
+                        </button>
+                        <button onclick="handleServiceRequest('استفسار عام', this)" 
+                           class="btn-contact-general">
                             <i class="fas fa-comments"></i>
                             استفسار عام
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -432,11 +487,12 @@
     </footer>
 
     <!-- Common JavaScript -->
+    <!-- Common JavaScript -->
     <script src="js/common.js"></script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <button onclick="showContactModal('خدماتنا')" class="whatsapp-float" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
-    </a>
+    </button>
 </body>
 </html>
