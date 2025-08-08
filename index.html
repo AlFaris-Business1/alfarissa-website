@@ -453,16 +453,16 @@
                     </div>
                     
                     <div class="contact-quick-actions">
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات القانونية" 
-                           class="btn-contact-whatsapp" target="_blank" rel="noopener">
+                        <button onclick="handleServiceRequest('الاستشارات القانونية', this)" 
+                           class="btn-contact-whatsapp">
                             <i class="fab fa-whatsapp"></i>
                             استشارة قانونية فورية
-                        </a>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" 
-                           class="btn-contact-general" target="_blank" rel="noopener">
+                        </button>
+                        <button onclick="handleServiceRequest('استفسار عام', this)" 
+                           class="btn-contact-general">
                             <i class="fas fa-comments"></i>
                             استفسار عام
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -487,11 +487,12 @@
     </footer>
 
     <!-- Common JavaScript -->
+    <!-- Common JavaScript -->
     <script src="js/common.js"></script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="whatsapp-float" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+    <button onclick="showContactModal('خدماتنا')" class="whatsapp-float" aria-label="تواصل عبر واتساب">
         <i class="fab fa-whatsapp"></i>
-    </a>
+    </button>
 </body>
 </html>
