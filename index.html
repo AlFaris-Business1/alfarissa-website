@@ -40,6 +40,61 @@
     <meta name="distribution" content="Global">
     <meta name="rating" content="General">
     
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "الفارس للأعمال",
+        "alternateName": "AlFaris Business",
+        "description": "مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية في المملكة العربية السعودية",
+        "url": "https://alfarissa-website.netlify.app/",
+        "telephone": ["+966555490800", "+966555648602", "+966539000805", "+966530222726"],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "المملكة العربية السعودية"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "المملكة العربية السعودية"
+        },
+        "serviceType": [
+            "استشارات قانونية",
+            "تأسيس شركات", 
+            "التقاضي والمرافعات",
+            "تعقيب المعاملات الحكومية",
+            "التراخيص التجارية",
+            "قضايا الأحوال الشخصية",
+            "المحاكم التجارية",
+            "المحاكم العمالية"
+        ],
+        "priceRange": "$$",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات الفارس للأعمال",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "الخدمات القانونية",
+                        "description": "استشارات قانونية وتقاضي في جميع المحاكم"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "المعاملات الحكومية",
+                        "description": "تعقيب وإنجاز المعاملات الحكومية والتراخيص"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
     <!-- Enhanced Resource Loading with Fallbacks -->
     <!-- Google Fonts for Noto Kufi Arabic with fallback -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">

@@ -526,3 +526,187 @@ function initializeSmoothScrolling() {
         }, 100);
     }
 }
+
+// Enhanced Contact Selection System
+function createContactModal() {
+    // Contact options with updated numbers from requirements
+    const contactOptions = [
+        {
+            id: 'customer-service',
+            name: 'خدمة العملاء',
+            phone: '966555648602',
+            description: 'للاستفسارات العامة والدعم',
+            icon: 'fas fa-headset',
+            type: 'اتصال أو واتساب'
+        },
+        {
+            id: 'service-center', 
+            name: 'سنترال الخدمات',
+            phone: '966539000805',
+            description: 'لمتابعة الطلبات والخدمات',
+            icon: 'fas fa-cogs',
+            type: 'مركز الخدمات'
+        },
+        {
+            id: 'management',
+            name: 'الإدارة',
+            phone: '966555490800',
+            description: 'للاستشارات المتخصصة',
+            icon: 'fas fa-user-tie',
+            type: 'إدارة'
+        },
+        {
+            id: 'management-whatsapp',
+            name: 'الإدارة - واتساب',
+            phone: '966530222726',
+            description: 'تواصل مباشر مع الإدارة',
+            icon: 'fab fa-whatsapp',
+            type: 'واتساب'
+        }
+    ];
+
+    // Create modal HTML
+    const modalHTML = `
+        <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto" style="background: var(--color-background-light);">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-right" style="color: var(--color-primary-text);">
+                                اختر طريقة التواصل
+                            </h3>
+                            <button id="closeContactModal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            ${contactOptions.map(option => `
+                                <div class="contact-option-card p-4 border rounded-lg cursor-pointer hover:shadow-md transition-all duration-300" 
+                                     style="border-color: var(--color-border); background: white;"
+                                     data-phone="${option.phone}" 
+                                     data-name="${option.name}">
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-right flex-1">
+                                            <h4 class="font-semibold text-lg mb-1" style="color: var(--color-primary-text);">
+                                                ${option.name}
+                                            </h4>
+                                            <p class="text-sm mb-2" style="color: var(--color-secondary-text);">
+                                                ${option.description}
+                                            </p>
+                                            <div class="flex items-center justify-end space-x-2 text-sm">
+                                                <span style="color: var(--color-headings-cta);">${option.type}</span>
+                                                <span style="color: var(--color-secondary-text);">•</span>
+                                                <span style="color: var(--color-secondary-text);">+${option.phone}</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-4">
+                                            <i class="${option.icon} text-2xl" style="color: var(--color-headings-cta);"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="mt-6 text-center">
+                            <p class="text-sm" style="color: var(--color-secondary-text);">
+                                سيتم توجيهك إلى واتساب لإكمال طلبك
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Add modal to body if it doesn't exist
+    if (!document.getElementById('contactModal')) {
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        
+        // Add event listeners
+        document.getElementById('closeContactModal').addEventListener('click', hideContactModal);
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) hideContactModal();
+        });
+        
+        // Add click handlers for contact options
+        document.querySelectorAll('.contact-option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const phone = this.dataset.phone;
+                const name = this.dataset.name;
+                const serviceText = this.dataset.serviceText || 'خدماتكم';
+                
+                const whatsappUrl = `https://wa.me/${phone}?text=مرحباً، أود الاستفسار عن ${serviceText} من خلال ${name}`;
+                window.open(whatsappUrl, '_blank');
+                hideContactModal();
+            });
+            
+            // Add hover effects
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.borderColor = 'var(--color-headings-cta)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'var(--color-border)';
+            });
+        });
+    }
+}
+
+function showContactModal(serviceText = 'خدماتكم') {
+    createContactModal();
+    
+    // Update service text in all contact options
+    document.querySelectorAll('.contact-option-card').forEach(card => {
+        card.dataset.serviceText = serviceText;
+    });
+    
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function hideContactModal() {
+    const modal = document.getElementById('contactModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Enhanced service card click handler
+function handleServiceRequest(serviceName, element = null) {
+    // Add loading state if element provided
+    if (element) {
+        const originalText = element.textContent;
+        element.textContent = 'جاري التحضير...';
+        element.disabled = true;
+        
+        setTimeout(() => {
+            element.textContent = originalText;
+            element.disabled = false;
+            showContactModal(serviceName);
+        }, 800);
+    } else {
+        showContactModal(serviceName);
+    }
+}
+
+// Helper function to extract service name from WhatsApp URL
+function extractServiceNameFromUrl(url) {
+    try {
+        const urlObj = new URL(url);
+        const textParam = urlObj.searchParams.get('text');
+        if (textParam) {
+            const match = textParam.match(/عن (.+?)(?:\s|$)/);
+            return match ? match[1] : 'خدماتكم';
+        }
+    } catch (e) {
+        console.warn('Could not parse WhatsApp URL:', e);
+    }
+    return 'خدماتكم';
+}
