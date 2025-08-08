@@ -1,0 +1,1 @@
+### تتبع وتحليل الأداء والأخطاء (Analytics & Monitoring)\n\n**وصف:**\n- إضافة Google Analytics / Tag Manager لكل الصفحات.\n- مراقبة الأداء باستخدام Google Lighthouse و WebPageTest.\n- تفعيل Sentry أو LogRocket لمراقبة أخطاء JavaScript.\n\n**خطوات التنفيذ:**\n1. تثبيت أكواد التتبع في كل صفحات الموقع.\n2. إعداد تقارير الأداء والفحص الدوري.\n3. تفعيل حلول مراقبة الأخطاء البرمجية.
