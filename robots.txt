@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://alfarissa-website.netlify.app/sitemap.xml
+
+# Disallow search engine crawling of certain files
+Disallow: /google0cd875a98eac9549.html
+
+# Allow crawling of main content
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /css/
+Allow: /js/

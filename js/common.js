@@ -15,6 +15,20 @@ if (typeof tailwind !== 'undefined') {
 }
 
 // Common JavaScript functionality for Al Faris Business website
+
+// Register Service Worker for professional caching
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Function to handle automatic population of service type in forms
     const serviceTypeSelect = document.getElementById('serviceType');
