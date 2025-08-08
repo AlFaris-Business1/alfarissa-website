@@ -1,127 +1,177 @@
-// الفارس للأعمال - ملف JavaScript مشترك
+// الفارس للأعمال - ملف JavaScript مشترك محدث ومحسن
 
-// Configure Tailwind CSS
+// Configure Tailwind CSS with error handling
 if (typeof tailwind !== 'undefined') {
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: {
-                    notoKufi: ['Noto Kufi Arabic', 'sans-serif'],
-                    'arabic-text': ['Noto Kufi Arabic', 'sans-serif'],
+    try {
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        notoKufi: ['Noto Kufi Arabic', 'Segoe UI', 'Tahoma', 'sans-serif'],
+                        'arabic-text': ['Noto Kufi Arabic', 'Segoe UI', 'Tahoma', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-text': '#1B2A41',
+                        'primary-light': '#2A3F5B',
+                        'headings-cta': '#D4C29A',
+                        'headings-cta-dark': '#C0B08E',
+                        'secondary-text': '#2D3748',
+                        'background-light': '#FBF7F1',
+                    },
                 },
             },
-        },
-    };
+        };
+    } catch (error) {
+        console.warn('Tailwind configuration failed:', error);
+    }
+} else {
+    console.info('Tailwind CSS not loaded, using fallback styling');
 }
 
-// Common JavaScript functionality for Al Faris Business website
-
-// Critical performance optimization: Defer non-essential operations
+// Performance optimization: Defer non-essential operations
 const deferredOperations = [];
 
-// Register Service Worker for professional caching
+// Enhanced Service Worker registration with better error handling
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js')
             .then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                console.log('✅ ServiceWorker registered successfully:', registration.scope);
             })
             .catch(function(err) {
-                console.log('ServiceWorker registration failed: ', err);
+                console.warn('⚠️ ServiceWorker registration failed (non-critical):', err);
             });
     });
 }
 
-// Critical path: Essential DOM operations
+// Enhanced DOM Ready handler with better error handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Essential functions that must run immediately
-    highlightActiveNavigation();
-    initializeMobileNavigation();
-    
-    // Defer less critical operations
-    deferredOperations.push(
-        () => initializeFormHandlers(),
-        () => initializeSmoothScrolling(),
-        () => initializeServicePopulation()
-    );
-    
-    // Process deferred operations with minimal impact
-    requestIdleCallback ? 
-        requestIdleCallback(processDeferredOperations) : 
-        setTimeout(processDeferredOperations, 100);
+    try {
+        // Essential functions that must run immediately
+        highlightActiveNavigation();
+        initializeMobileNavigation();
+        
+        // Defer less critical operations
+        deferredOperations.push(
+            () => initializeFormHandlers(),
+            () => initializeSmoothScrolling(),
+            () => initializeServicePopulation(),
+            () => initializeAccessibilityFeatures()
+        );
+        
+        // Process deferred operations with minimal impact
+        if (window.requestIdleCallback) {
+            requestIdleCallback(processDeferredOperations);
+        } else {
+            setTimeout(processDeferredOperations, 100);
+        }
+    } catch (error) {
+        console.error('❌ Critical DOM initialization failed:', error);
+        // Try to run essential functions individually
+        try { highlightActiveNavigation(); } catch (e) { console.warn('Navigation highlighting failed:', e); }
+        try { initializeMobileNavigation(); } catch (e) { console.warn('Mobile navigation failed:', e); }
+    }
 });
 
-// Process deferred operations during idle time
+// Process deferred operations during idle time with better error handling
 function processDeferredOperations() {
-    deferredOperations.forEach(operation => {
+    let successCount = 0;
+    deferredOperations.forEach((operation, index) => {
         try {
             operation();
+            successCount++;
         } catch (error) {
-            console.warn('Deferred operation failed:', error);
+            console.warn(`⚠️ Deferred operation ${index + 1} failed (non-critical):`, error);
         }
     });
+    console.log(`✅ Processed ${successCount}/${deferredOperations.length} deferred operations successfully`);
 }
 
-// Service population with improved error handling
+// Enhanced service population with improved error handling
 function initializeServicePopulation() {
     try {
-        // Function to handle automatic population of service type in forms
         const serviceTypeSelect = document.getElementById('serviceType');
         const selectedService = localStorage.getItem('selectedServiceType');
 
-    if (selectedService && serviceTypeSelect) {
-        let optionExists = false;
-        for (let i = 0; i < serviceTypeSelect.options.length; i++) {
-            if (serviceTypeSelect.options[i].value === selectedService) {
-                serviceTypeSelect.value = selectedService;
-                optionExists = true;
-                break;
+        if (selectedService && serviceTypeSelect) {
+            let optionExists = false;
+            
+            // Try to find exact match first
+            for (let i = 0; i < serviceTypeSelect.options.length; i++) {
+                if (serviceTypeSelect.options[i].value === selectedService) {
+                    serviceTypeSelect.value = selectedService;
+                    optionExists = true;
+                    break;
+                }
             }
-        }
-        
-        // If specific option doesn't exist, try to find a broader category
-        if (!optionExists) {
-            if (selectedService.startsWith('قضايا_احوال_شخصية')) {
-                serviceTypeSelect.value = 'قضايا_احوال_شخصية';
-            } else if (selectedService.includes('قضايا_المحاكم_العامة') || selectedService.includes('قضايا_عقارية') || selectedService.includes('مطالبات_مدنية') || selectedService.includes('تصحي_اوضاع') || selectedService.includes('قضايا_ملكية_فكرية')) {
-                serviceTypeSelect.value = 'قضايا_المحاكم_العامة';
-            } else if (selectedService.startsWith('قضايا_المحاكم_التجارية') || selectedService.includes('منازعات_الشركات') || selectedService.includes('عقود_مطالبات_تجارية') || selectedService.includes('منافسة_ممارسات_تجارية') || selectedService.includes('تحكيم_تجاري')) {
-                serviceTypeSelect.value = 'قضايا_المحاكم_التجارية';
-            } else if (selectedService.startsWith('قضايا_المحاكم_العمالية') || selectedService.includes('حقوق_العمال') || selectedService.includes('تمثيل_اصحاب_العمل') || selectedService.includes('استشارات_عمالية')) {
-                serviceTypeSelect.value = 'قضايا_المحاكم_العمالية';
-            } else if (selectedService.includes('تأسيس_الشركات') || selectedService.includes('تعديل_الشركات') || selectedService.includes('مستثمرين_اجانب')) {
-                serviceTypeSelect.value = 'تأسيس_شركات_واستثمار';
-            } else if (selectedService.includes('وزارة_العدل_ناجز') || selectedService.includes('وزارة_التجارة') || selectedService.includes('البلديات') || selectedService.includes('موارد_بشرية_تنمية_اجتماعية')) {
-                serviceTypeSelect.value = 'تعقيب_معاملات_حكومية';
-            } else if (selectedService.includes('تراخيص_انشطة_تجارية') || selectedService.includes('تراخيص_دفاع_مدني_صحة') || selectedService.includes('تراخيص_بيئية_سياحية_زراعية')) {
-                serviceTypeSelect.value = 'استخراج_وتجديد_التراخيص';
-            } else if (selectedService.includes('منصة_قوى') || selectedService.includes('منصة_ab_jsher') || selectedService.includes('منصة_بلدي') || selectedService.includes('منصات_حكومية_اخرى')) {
-                serviceTypeSelect.value = 'خدمات_التعقيب_الإلكتروني';
-            } else if (selectedService.includes('الضمان_الاجتماعي') || selectedService.includes('حساب_المواطن') || selectedService.includes('بنك_التنمية_الاجتماعية') || selectedService.includes('دعم_ريف_للاسر_المنتجة') || selectedService.includes('رخص_العمل_الحر')) {
-                serviceTypeSelect.value = 'خدمات_Ddm_Ajtm_Wal_Amal_Hr';
-            } else {
-                serviceTypeSelect.value = '';
+            
+            // Enhanced category mapping with better logic
+            if (!optionExists) {
+                const categoryMap = {
+                    'قضايا_احوال_شخصية': ['احوال_شخصية', 'احوال', 'شخصية'],
+                    'قضايا_المحاكم_العامة': ['محاكم_عامة', 'قضايا_عقارية', 'مطالبات_مدنية', 'تصحي_اوضاع', 'ملكية_فكرية'],
+                    'قضايا_المحاكم_التجارية': ['محاكم_تجارية', 'منازعات_الشركات', 'عقود_مطالبات_تجارية', 'منافسة_ممارسات', 'تحكيم_تجاري'],
+                    'قضايا_المحاكم_العمالية': ['محاكم_عمالية', 'حقوق_العمال', 'تمثيل_اصحاب_العمل', 'استشارات_عمالية'],
+                    'تأسيس_شركات_واستثمار': ['تأسيس_الشركات', 'تعديل_الشركات', 'مستثمرين_اجانب'],
+                    'تعقيب_معاملات_حكومية': ['وزارة_العدل_ناجز', 'وزارة_التجارة', 'البلديات', 'موارد_بشرية'],
+                    'استخراج_وتجديد_التراخيص': ['تراخيص_انشطة_تجارية', 'تراخيص_دفاع_مدني', 'تراخيص_بيئية'],
+                    'خدمات_التعقيب_الإلكتروني': ['منصة_قوى', 'منصة_ab_jsher', 'منصة_بلدي', 'منصات_حكومية'],
+                    'خدمات_Ddm_Ajtm_Wal_Amal_Hr': ['الضمان_الاجتماعي', 'حساب_المواطن', 'بنك_التنمية', 'دعم_ريف', 'رخص_العمل_الحر']
+                };
+
+                for (const [category, keywords] of Object.entries(categoryMap)) {
+                    if (keywords.some(keyword => selectedService.includes(keyword))) {
+                        serviceTypeSelect.value = category;
+                        break;
+                    }
+                }
             }
+
+            // Clear the item from local storage after using it
+            localStorage.removeItem('selectedServiceType');
+            console.log('✅ Service type populated successfully');
         }
-
-        // Clear the item from local storage after using it
-        localStorage.removeItem('selectedServiceType');
-    }
-
-    // Handle active navigation highlighting
-    highlightActiveNavigation();
-    
-    // Initialize mobile navigation toggle
-    initializeMobileNavigation();
-    
-    // Handle form submissions
-    initializeFormHandlers();
-    
-    // Initialize smooth scrolling
-    initializeSmoothScrolling();
-});
     } catch (error) {
-        console.warn('Service population failed:', error);
+        console.warn('⚠️ Service population failed (non-critical):', error);
+    }
+}
+
+// New accessibility features function
+function initializeAccessibilityFeatures() {
+    try {
+        // Add keyboard navigation support
+        const focusableElements = document.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        
+        // Add focus indicators for keyboard navigation
+        focusableElements.forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.outline = '3px solid #D4C29A';
+                this.style.outlineOffset = '2px';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.style.outline = '';
+                this.style.outlineOffset = '';
+            });
+        });
+
+        // Add click feedback for touch devices
+        const clickableElements = document.querySelectorAll('button, .btn-primary, .btn-secondary, .service-btn');
+        clickableElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        console.log('✅ Accessibility features initialized');
+    } catch (error) {
+        console.warn('⚠️ Accessibility features initialization failed (non-critical):', error);
     }
 }
 
@@ -184,95 +234,261 @@ function initializeMobileNavigation() {
     }
 }
 
-// Function to initialize form handlers
+// Enhanced form handlers with better validation and error handling
 function initializeFormHandlers() {
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(form);
-            const name = formData.get('fullName') || formData.get('name');
-            const phone = formData.get('phoneNumber') || formData.get('phone');
-            const message = formData.get('description') || formData.get('message');
-            const service = formData.get('serviceType') || '';
-            
-            // Create WhatsApp message
-            let whatsappMessage = `مرحباً، أود التواصل معكم:\n\n`;
-            if (name) whatsappMessage += `الاسم: ${name}\n`;
-            if (phone) whatsappMessage += `رقم الجوال: ${phone}\n`;
-            if (service) whatsappMessage += `نوع الخدمة: ${service}\n`;
-            if (message) whatsappMessage += `التفاصيل: ${message}\n`;
-            
-            // Encode message for WhatsApp URL
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappURL = `https://wa.me/966555490800?text=${encodedMessage}`;
-            
-            // Open WhatsApp in new tab
-            window.open(whatsappURL, '_blank');
-            
-            // Reset form
-            form.reset();
-            
-            // Show success message
-            showNotification('تم إرسال طلبك بنجاح! سيتم تحويلك إلى واتساب.', 'success');
+    try {
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach((form, index) => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                try {
+                    // Get form data with validation
+                    const formData = new FormData(form);
+                    const name = (formData.get('fullName') || formData.get('name') || '').trim();
+                    const phone = (formData.get('phoneNumber') || formData.get('phone') || '').trim();
+                    const message = (formData.get('description') || formData.get('message') || '').trim();
+                    const service = (formData.get('serviceType') || '').trim();
+                    
+                    // Basic validation
+                    if (!name) {
+                        showNotification('يرجى إدخال الاسم', 'error');
+                        return;
+                    }
+                    
+                    if (!phone) {
+                        showNotification('يرجى إدخال رقم الجوال', 'error');
+                        return;
+                    }
+                    
+                    // Phone number validation (Saudi format)
+                    const phonePattern = /^(05|5|\+9665)\d{8}$/;
+                    if (!phonePattern.test(phone.replace(/\s+/g, ''))) {
+                        showNotification('يرجى إدخال رقم جوال صحيح (مثال: 0555123456)', 'error');
+                        return;
+                    }
+                    
+                    // Create enhanced WhatsApp message
+                    let whatsappMessage = `مرحباً، أود التواصل معكم:\n\n`;
+                    whatsappMessage += `👤 الاسم: ${name}\n`;
+                    whatsappMessage += `📱 رقم الجوال: ${phone}\n`;
+                    if (service) whatsappMessage += `🏢 نوع الخدمة: ${service}\n`;
+                    if (message) whatsappMessage += `📝 التفاصيل: ${message}\n`;
+                    whatsappMessage += `\n⏰ تم الإرسال: ${new Date().toLocaleString('ar-SA')}`;
+                    
+                    // Encode message for WhatsApp URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+                    const whatsappURL = `https://wa.me/966555490800?text=${encodedMessage}`;
+                    
+                    // Show loading state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn ? submitBtn.textContent : '';
+                    if (submitBtn) {
+                        submitBtn.textContent = 'جاري الإرسال...';
+                        submitBtn.disabled = true;
+                    }
+                    
+                    // Simulate processing delay for better UX
+                    setTimeout(() => {
+                        // Open WhatsApp in new tab
+                        window.open(whatsappURL, '_blank');
+                        
+                        // Reset form
+                        form.reset();
+                        
+                        // Restore button state
+                        if (submitBtn) {
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        }
+                        
+                        // Show success message
+                        showNotification('✅ تم إرسال طلبك بنجاح! سيتم تحويلك إلى واتساب', 'success');
+                        
+                        // Store successful submission for analytics (optional)
+                        try {
+                            const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+                            submissions.push({
+                                timestamp: Date.now(),
+                                service: service,
+                                formIndex: index
+                            });
+                            localStorage.setItem('formSubmissions', JSON.stringify(submissions.slice(-10))); // Keep last 10
+                        } catch (storageError) {
+                            console.warn('Could not store submission data:', storageError);
+                        }
+                        
+                    }, 800);
+                    
+                } catch (formError) {
+                    console.error('Form submission error:', formError);
+                    showNotification('❌ حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى', 'error');
+                    
+                    // Reset button state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                    }
+                }
+            });
         });
-    });
+        
+        console.log(`✅ Form handlers initialized for ${forms.length} forms`);
+    } catch (error) {
+        console.warn('⚠️ Form handlers initialization failed (non-critical):', error);
+    }
 }
 
-// Function to show notifications
-function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: ${type === 'success' ? '#10b981' : '#3b82f6'};
-        color: white;
-        padding: 16px 24px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 1001;
-        font-family: 'Noto Kufi Arabic', sans-serif;
-        max-width: 300px;
-        word-wrap: break-word;
-        animation: slideIn 0.3s ease-out;
-    `;
-    
-    notification.textContent = message;
-    
-    // Add animation styles
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+// Enhanced notification system with multiple types and better styling
+function showNotification(message, type = 'info', duration = 4000) {
+    try {
+        // Remove any existing notifications first
+        const existingNotifications = document.querySelectorAll('.custom-notification');
+        existingNotifications.forEach(notification => {
+            notification.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        });
+
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = 'custom-notification';
+        
+        // Set colors based on type
+        let bgColor, textColor, icon;
+        switch (type) {
+            case 'success':
+                bgColor = '#10b981';
+                textColor = 'white';
+                icon = '✅';
+                break;
+            case 'error':
+                bgColor = '#ef4444';
+                textColor = 'white';
+                icon = '❌';
+                break;
+            case 'warning':
+                bgColor = '#f59e0b';
+                textColor = 'white';
+                icon = '⚠️';
+                break;
+            default:
+                bgColor = '#3b82f6';
+                textColor = 'white';
+                icon = 'ℹ️';
         }
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
+        
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: ${bgColor};
+            color: ${textColor};
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 1001;
+            font-family: 'Noto Kufi Arabic', 'Segoe UI', sans-serif;
+            max-width: 350px;
+            min-width: 280px;
+            word-wrap: break-word;
+            animation: slideIn 0.4s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            font-size: 14px;
+            line-height: 1.4;
+            direction: rtl;
+            text-align: right;
+        `;
+        
+        // Create content with icon
+        const iconSpan = document.createElement('span');
+        iconSpan.textContent = icon;
+        iconSpan.style.fontSize = '18px';
+        
+        const messageSpan = document.createElement('span');
+        messageSpan.textContent = message;
+        messageSpan.style.flex = '1';
+        
+        notification.appendChild(iconSpan);
+        notification.appendChild(messageSpan);
+        
+        // Add animation styles if not already present
+        if (!document.head.querySelector('style[data-notifications]')) {
+            const style = document.createElement('style');
+            style.setAttribute('data-notifications', 'true');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { 
+                        transform: translateX(100%) translateY(-20px); 
+                        opacity: 0; 
+                        scale: 0.8;
+                    }
+                    to { 
+                        transform: translateX(0) translateY(0); 
+                        opacity: 1; 
+                        scale: 1;
+                    }
+                }
+                @keyframes slideOut {
+                    from { 
+                        transform: translateX(0) translateY(0); 
+                        opacity: 1; 
+                        scale: 1;
+                    }
+                    to { 
+                        transform: translateX(100%) translateY(-20px); 
+                        opacity: 0; 
+                        scale: 0.8;
+                    }
+                }
+                .custom-notification:hover {
+                    transform: scale(1.02);
+                    transition: transform 0.2s ease;
+                }
+            `;
+            document.head.appendChild(style);
         }
-    `;
-    if (!document.head.querySelector('style[data-notifications]')) {
-        style.setAttribute('data-notifications', 'true');
-        document.head.appendChild(style);
-    }
-    
-    // Add to document
-    document.body.appendChild(notification);
-    
-    // Remove after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease-out';
+        
+        // Add to document
+        document.body.appendChild(notification);
+        
+        // Auto-remove after specified duration
         setTimeout(() => {
             if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
+                notification.style.animation = 'slideOut 0.4s ease-out';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 400);
             }
-        }, 300);
-    }, 3000);
+        }, duration);
+        
+        // Add click to dismiss
+        notification.addEventListener('click', function() {
+            this.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => {
+                if (this.parentNode) {
+                    this.parentNode.removeChild(this);
+                }
+            }, 300);
+        });
+        
+        console.log(`✅ Notification shown: ${type} - ${message}`);
+        
+    } catch (error) {
+        console.error('❌ Notification system failed:', error);
+        // Fallback to browser alert
+        alert(message);
+    }
 }
 
 // Function to store selected service and navigate to contact
