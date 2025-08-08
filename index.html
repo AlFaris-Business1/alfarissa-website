@@ -3,7 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفارس للأعمال - الحل القانوني والإداري</title>
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://wa.me">
+    
+    <!-- SEO Meta Tags -->
+    <title>الفارس للأعمال - الحل القانوني والإداري المتخصص في المملكة العربية السعودية</title>
+    <meta name="description" content="الفارس للأعمال - مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية. نقدم خدمات تأسيس الشركات، التقاضي، التعقيب، والتراخيص في المملكة العربية السعودية">
+    <meta name="keywords" content="محامي، استشارات قانونية، تأسيس شركات، تعقيب معاملات، تراخيص، المملكة العربية السعودية، قانوني، إداري">
+    <meta name="author" content="الفارس للأعمال">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alfarissa-website.netlify.app/">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="الفارس للأعمال - الحل القانوني والإداري">
+    <meta property="og:description" content="مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية في المملكة العربية السعودية">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfarissa-website.netlify.app/">
+    <meta property="og:site_name" content="الفارس للأعمال">
+    <meta property="og:locale" content="ar_SA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="الفارس للأعمال - الحل القانوني والإداري">
+    <meta name="twitter:description" content="مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية في المملكة العربية السعودية">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="geo.region" content="SA">
+    <meta name="geo.placename" content="المملكة العربية السعودية">
+    <meta name="language" content="Arabic">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="rating" content="General">
+    
     <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Noto Kufi Arabic -->
@@ -12,39 +48,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Common CSS -->
     <link rel="stylesheet" href="css/common.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "الفارس للأعمال",
+        "description": "مكتب قانوني متخصص في الاستشارات القانونية والخدمات الإدارية",
+        "url": "https://alfarissa-website.netlify.app/",
+        "telephone": "+966555490800",
+        "areaServed": {
+            "@type": "Country",
+            "name": "المملكة العربية السعودية"
+        },
+        "serviceType": ["استشارات قانونية", "تأسيس شركات", "تعقيب معاملات", "تراخيص"],
+        "priceRange": "متغير حسب الخدمة",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "SA",
+            "addressRegion": "المملكة العربية السعودية"
+        }
+    }
+    </script>
 </head>
 <body class="text-[var(--color-primary-text)]">
 
-    <!-- Navigation Bar - Simplified -->
-    <nav class="main-nav">
+    <!-- Navigation Bar - Enhanced with Accessibility -->
+    <nav class="main-nav" role="navigation" aria-label="التنقل الرئيسي">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-balance-scale-right ml-2"></i>
+            <a href="index.html" class="nav-logo" aria-label="الفارس للأعمال - الصفحة الرئيسية">
+                <i class="fas fa-balance-scale-right ml-2" aria-hidden="true"></i>
                 الفارس للأعمال
             </a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-active">الرئيسية</a></li>
-                <li><a href="our-services-page.html">خدماتنا</a></li>
-                <li><a href="legal-services-page.html">قانونية</a></li>
-                <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="#contact" class="nav-contact-btn">تواصل معنا</a></li>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-active" role="menuitem" aria-current="page">الرئيسية</a></li>
+                <li role="none"><a href="our-services-page.html" role="menuitem">خدماتنا</a></li>
+                <li role="none"><a href="legal-services-page.html" role="menuitem">قانونية</a></li>
+                <li role="none"><a href="packages-page.html" role="menuitem">الباقات</a></li>
+                <li role="none"><a href="#contact" class="nav-contact-btn" role="menuitem">تواصل معنا</a></li>
             </ul>
-            <div class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="nav-mobile-toggle" aria-label="فتح قائمة التنقل" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Enhanced Professional Hero Section -->
-    <header class="hero-banner">
-        <div class="hero-background">
+    <!-- Enhanced Professional Hero Section with Accessibility -->
+    <header class="hero-banner" role="banner">
+        <div class="hero-background" aria-hidden="true">
             <div class="hero-overlay"></div>
             <div class="hero-pattern"></div>
         </div>
         <div class="hero-content">
             <div class="hero-logo-section">
-                <div class="hero-logo">
-                    <i class="fas fa-balance-scale-right"></i>
+                <div class="hero-logo" role="img" aria-label="شعار الفارس للأعمال">
+                    <i class="fas fa-balance-scale-right" aria-hidden="true"></i>
                 </div>
                 <h1 class="hero-title">الفارس للأعمال</h1>
                 <div class="hero-subtitle">شريكك الموثوق في النجاح القانوني والإداري</div>
@@ -91,35 +150,35 @@
         </div>
     </header>
 
-    <!-- Services Section - Reorganized by Priority -->
-    <section id="services" class="services-section">
+    <!-- Services Section - Enhanced with Accessibility -->
+    <section id="services" class="services-section" role="main" aria-labelledby="services-title">
         <div class="container mx-auto">
             <div class="services-header">
-                <h2 class="section-title">مجالات خدماتنا المتخصصة</h2>
+                <h2 id="services-title" class="section-title">مجالات خدماتنا المتخصصة</h2>
                 <p class="section-subtitle">نقدم لك حلولاً شاملة ومتكاملة في المجال القانوني والإداري مرتبة بحسب الأولوية</p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid" role="list">
                 <!-- خدمة 1: الخدمات القانونية - أعلى أولوية -->
-                <div class="service-card priority-high">
-                    <div class="service-priority-badge">الأكثر طلباً</div>
-                    <div class="service-icon">
-                        <i class="fas fa-gavel"></i>
+                <article class="service-card priority-high" role="listitem">
+                    <div class="service-priority-badge" aria-label="خدمة ذات أولوية عالية">الأكثر طلباً</div>
+                    <div class="service-icon" role="img" aria-label="أيقونة الخدمات القانونية">
+                        <i class="fas fa-gavel" aria-hidden="true"></i>
                     </div>
                     <div class="service-content">
                         <h3>الخدمات القانونية</h3>
                         <p>استشارات قانونية متخصصة، صياغة عقود ومذكرات، تنفيذ أحكام قضائية</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> استشارات متخصصة</li>
-                            <li><i class="fas fa-check"></i> صياغة العقود</li>
-                            <li><i class="fas fa-check"></i> تنفيذ الأحكام</li>
+                        <ul class="service-features" role="list">
+                            <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> استشارات متخصصة</li>
+                            <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> صياغة العقود</li>
+                            <li role="listitem"><i class="fas fa-check" aria-hidden="true"></i> تنفيذ الأحكام</li>
                         </ul>
                     </div>
-                    <a href="legal-services-page.html" class="service-btn">
+                    <a href="legal-services-page.html" class="service-btn" aria-label="اعرف المزيد عن الخدمات القانونية">
                         <span>اعرف المزيد</span>
-                        <i class="fas fa-arrow-left"></i>
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
                     </a>
-                </div>
+                </article>
 
                 <!-- خدمة 2: الإقرارات الزكوية - أولوية عالية -->
                 <div class="service-card priority-high">
