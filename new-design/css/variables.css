@@ -1,0 +1,32 @@
+:root {
+  --bg: #1A1A2E;
+  --card: #1F1F3A;
+  --primary: #6259AE;
+  --text: #FFFFFF;
+  --text-muted: #BDBDBD;
+  --accent: #00BFFF;
+  --danger: #FF4D4D;
+
+  --font-ar: "Tajawal", system-ui, -apple-system, "Segoe UI", "Arial", sans-serif;
+  --font-en: "Poppins", system-ui, -apple-system, "Segoe UI", "Arial", sans-serif;
+
+  --fz-h1: 36px;
+  --fz-h2: 28px;
+  --fz-h3: 18px;
+  --fz-body: 16px;
+  --fz-small: 14px;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --pad-lg: 32px;
+  --pad-md: 24px;
+  --pad-sm: 16px;
+  --gap-lg: 32px;
+  --gap-md: 24px;
+  --gap-sm: 12px;
+
+  --shadow-1: 0 6px 24px rgba(0,0,0,0.25);
+  --shadow-2: 0 2px 10px rgba(0,0,0,0.2);
+
+  --header-h: 72px;
+}
