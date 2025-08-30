@@ -263,22 +263,9 @@ function initializeMobileNavigation() {
 }
 
 // Insert a mobile back button on non-home pages
-function insertBackButton() {
-    const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
-    if (isHome) return;
 
-    const container = document.querySelector('.header .row, .nav-container');
-    if (!container) return;
-
-    const backBtn = document.createElement('button');
-    backBtn.className = 'back-button';
-    backBtn.setAttribute('aria-label', 'رجوع');
-    backBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
-    backBtn.addEventListener('click', () => window.history.back());
-
-    container.insertBefore(backBtn, container.firstChild);
-}
-
+// Make insertBackButton globally available
+window.insertBackButton = insertBackButton;
 // Enhanced form handlers with better validation and error handling
 function initializeFormHandlers() {
     try {
