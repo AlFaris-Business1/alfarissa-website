@@ -844,6 +844,23 @@ textarea.form-input {
     padding: 8px;
 }
 
+.back-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .back-button {
+        display: none;
+    }
+}
+
 @media (max-width: 1024px) {
     .nav-menu {
         gap: 20px;

@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Essential functions that must run immediately
         highlightActiveNavigation();
         initializeMobileNavigation();
+        insertBackButton();
         
         // Defer less critical operations
         deferredOperations.push(
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Try to run essential functions individually
         try { highlightActiveNavigation(); } catch (e) { console.warn('Navigation highlighting failed:', e); }
         try { initializeMobileNavigation(); } catch (e) { console.warn('Mobile navigation failed:', e); }
+        try { insertBackButton(); } catch (e) { console.warn('Back button insertion failed:', e); }
     }
 });
 
@@ -194,44 +196,87 @@ function highlightActiveNavigation() {
 
 // Function to initialize mobile navigation
 function initializeMobileNavigation() {
-    const mobileToggle = document.querySelector('.nav-mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
+    const mobileToggle = document.querySelector('.nav-mobile-toggle, .menu-toggle');
+    const navMenu = document.querySelector('.nav-menu, .nav');
+
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', function() {
             navMenu.classList.toggle('nav-menu-open');
-            
-            // Toggle hamburger icon
+            navMenu.classList.toggle('open');
+
+            // Toggle hamburger icon or Lucide icon
             const icon = mobileToggle.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                if (icon.classList.contains('fa-bars') || icon.classList.contains('fa-times')) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                } else if (icon.getAttribute('data-lucide')) {
+                    const isOpen = navMenu.classList.contains('nav-menu-open') || navMenu.classList.contains('open');
+                    icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
             }
         });
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('nav-menu-open');
+                navMenu.classList.remove('open');
                 const icon = mobileToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else if (icon.getAttribute('data-lucide')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    }
+                }
             }
         });
-        
+
         // Close menu when clicking on a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('nav-menu-open');
+                navMenu.classList.remove('open');
                 const icon = mobileToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else if (icon.getAttribute('data-lucide')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    }
+                }
             });
         });
     }
+}
+
+// Insert a mobile back button on non-home pages
+function insertBackButton() {
+    const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') || window.location.pathname === '';
+    if (isHome) return;
+
+    const container = document.querySelector('.header .row, .nav-container');
+    if (!container) return;
+
+    const backBtn = document.createElement('button');
+    backBtn.className = 'back-button';
+    backBtn.setAttribute('aria-label', 'رجوع');
+    backBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+    backBtn.addEventListener('click', () => window.history.back());
+
+    container.insertBefore(backBtn, container.firstChild);
 }
 
 // Enhanced form handlers with better validation and error handling
