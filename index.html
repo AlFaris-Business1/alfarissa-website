@@ -562,20 +562,20 @@ function setupMobileMenu(){
     const icon=toggle.querySelector('i');
     const isOpen=nav.classList.contains('open');
     icon.setAttribute('data-lucide',isOpen?'x':'menu');
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') lucide.createIcons();
   });
   nav.querySelectorAll('a').forEach(link=>{
     link.addEventListener('click',()=>{
       nav.classList.remove('open');
       const icon=toggle.querySelector('i');
       icon.setAttribute('data-lucide','menu');
-      lucide.createIcons();
+      if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') lucide.createIcons();
     });
   });
 }
 
 ready(()=>{
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') lucide.createIcons();
   setupSliders();
   setupBackToTop();
   setupScrollAnimations();
