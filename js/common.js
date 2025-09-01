@@ -303,8 +303,9 @@ function insertBackButton() {
     // Insert at the top of the body
     document.body.appendChild(backButton);
 }
-// Make insertBackButton globally available
-window.insertBackButton = insertBackButton;
+// Make insertBackButton available under a namespace to avoid polluting the global scope
+window.AlFarisCommon = window.AlFarisCommon || {};
+window.AlFarisCommon.insertBackButton = insertBackButton;
 // Enhanced form handlers with better validation and error handling
 function initializeFormHandlers() {
     try {
