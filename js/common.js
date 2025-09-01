@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Essential functions that must run immediately
         highlightActiveNavigation();
         initializeMobileNavigation();
+        insertBackButton();
         
         // Defer less critical operations
         deferredOperations.push(
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Try to run essential functions individually
         try { highlightActiveNavigation(); } catch (e) { console.warn('Navigation highlighting failed:', e); }
         try { initializeMobileNavigation(); } catch (e) { console.warn('Mobile navigation failed:', e); }
+        try { insertBackButton(); } catch (e) { console.warn('Back button insertion failed:', e); }
     }
 });
 
@@ -194,46 +196,116 @@ function highlightActiveNavigation() {
 
 // Function to initialize mobile navigation
 function initializeMobileNavigation() {
-    const mobileToggle = document.querySelector('.nav-mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
+    دعم كل من قائمة .nav و .nav لتخطيطات الصفحات المختلفة
+    دع navMenu = مستند.querySelector('.nav-menu');
+    إذا (!قائمة التنقل) {
+        قائمة navMenu = مستند.querySelector('.nav');
+    }
+
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', function() {
             navMenu.classList.toggle('nav-menu-open');
-            
-            // Toggle hamburger icon
+            navMenu.classList.toggle('open');
+
+            // Toggle hamburger icon or Lucide icon
             const icon = mobileToggle.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                if (icon.classList.contains('fa-bars') || icon.classList.contains('fa-times')) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                } else if (icon.getAttribute('data-lucide')) {
+                    const isOpen = navMenu.classList.contains('nav-menu-open') || navMenu.classList.contains('open');
+                    icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }
             }
         });
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('nav-menu-open');
+                navMenu.classList.remove('open');
                 const icon = mobileToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else if (icon.getAttribute('data-lucide')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    }
+                }
             }
         });
-        
+
         // Close menu when clicking on a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('nav-menu-open');
+                navMenu.classList.remove('open');
                 const icon = mobileToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    if (icon.classList.contains('fa-times')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else if (icon.getAttribute('data-lucide')) {
+                        icon.setAttribute('data-lucide', 'menu');
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                    }
+                }
             });
         });
     }
 }
 
+
+/**
+ * Inserts a mobile back button at the top of the page on non-home pages.
+ * The button navigates back in browser history.
+ */
+function insertBackButton() {
+    // Determine if we're on the home page (index.html or /)
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    if (currentPage === 'index.html' || currentPage === '') {
+        return; // Don't insert on home page
+    }
+    // Check if the back button already exists
+    if (document.getElementById('mobile-back-button')) {
+        return;
+    }
+    // Create the button element
+    const backButton = document.createElement('button');
+    backButton.id = 'mobile-back-button';
+    backButton.type = 'button';
+    backButton.innerText = 'رجوع'; // "Back" in Arabic
+    backButton.className = 'mobile-back-button px-4 py-2 rounded bg-primary-light text-white fixed top-4 right-4 z-50 shadow-lg';
+    backButton.onclick = function() {
+        window.history.back();
+    };
+    // Optionally, only show on small screens
+    backButton.style.display = 'none';
+    function updateVisibility() {
+        if (window.innerWidth <= 768) {
+            backButton.style.display = 'block';
+        } else {
+            backButton.style.display = 'none';
+        }
+    }
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+    // Insert at the top of the body
+    document.body.appendChild(backButton);
+}
+// Make insertBackButton available under a namespace to avoid polluting the global scope
+window.AlFarisCommon = window.AlFarisCommon || {};
+window.AlFarisCommon.insertBackButton = insertBackButton;
 // Enhanced form handlers with better validation and error handling
 function initializeFormHandlers() {
     try {
