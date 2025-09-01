@@ -196,8 +196,11 @@ function highlightActiveNavigation() {
 
 // Function to initialize mobile navigation
 function initializeMobileNavigation() {
-    const mobileToggle = document.querySelector('.nav-mobile-toggle, .menu-toggle');
-    const navMenu = document.querySelector('.nav-menu, .nav');
+    دعم كل من قائمة .nav و .nav لتخطيطات الصفحات المختلفة
+    دع navMenu = مستند.querySelector('.nav-menu');
+    إذا (!قائمة التنقل) {
+        قائمة navMenu = مستند.querySelector('.nav');
+    }
 
     if (mobileToggle && navMenu) {
         mobileToggle.addEventListener('click', function() {
