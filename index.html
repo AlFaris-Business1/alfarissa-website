@@ -7,7 +7,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="canonical" href="https://alfarissa.org/"/>
-<link rel="icon" href="https://i.postimg.cc/jj9rwth9/image.png" type="image/png">
+<link rel="icon" href="images/horse-logo.png" type="image/png">
 
 <!-- SEO/Social Media Meta Tags -->
 <meta property="og:title" content="الفارس للأعمال — الرئيسية"/>
@@ -30,6 +30,9 @@
 
 <!-- Lucide Icons -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
 <style>
@@ -260,6 +263,31 @@ footer a:hover{color:var(--brand);}
   .section{padding:60px 0;}
   .section-tight{padding:40px 0;}
 }
+
+/* Preloader */
+#preloader {
+  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: #fff; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.5s;
+}
+#preloader-logo {
+  width: 100px; animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Floating Icons */
+.floating-icon {
+  position: fixed; bottom: 20px;
+  width: 60px; height: 60px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 32px; transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 999;
+  text-decoration: none;
+}
+.whatsapp { right: 90px; background: #25d366; }
+.call { right: 20px; background: #2196f3; }
+.floating-icon:hover { box-shadow: 0 0 20px #aaa; transform: scale(1.1); }
 </style>
 </head>
 <body>
@@ -282,7 +310,7 @@ footer a:hover{color:var(--brand);}
   <div class="container row">
     <a href="index.html" class="brand">
       <div class="logo">
-        <img src="https://i.postimg.cc/jj9rwth9/image.png" alt="شعار الفارس للأعمال">
+        <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
       </div>
       <div>
         <div style="font-weight:800;line-height:1; font-size:18px;">الفارس للأعمال</div>
@@ -416,7 +444,7 @@ footer a:hover{color:var(--brand);}
       <div>
         <a href="index.html" class="brand" style="margin-bottom:12px;">
             <div class="logo">
-                <img src="https://i.postimg.cc/jj9rwth9/image.png" alt="شعار الفارس للأعمال">
+                <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
             </div>
             <div style="font-weight:800; font-size:18px;">الفارس للأعمال</div>
         </a>
@@ -458,8 +486,14 @@ footer a:hover{color:var(--brand);}
 </footer>
 
 <div class="fab">
-  <a href="tel:0555490800" title="اتصال"><i data-lucide="phone"></i></a>
-  <a href="https://wa.me/966555648602" target="_blank" title="واتساب"><i data-lucide="message-circle"></i></a>
+  <!-- اتصال -->
+  <a href="tel:0555490800" class="floating-icon call">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+  <!-- واتساب -->
+  <a href="https://wa.me/966555490800" class="floating-icon whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </div>
 <a href="#" class="backtotop" title="العودة للأعلى"><i data-lucide="arrow-up"></i></a>
 
@@ -558,6 +592,19 @@ ready(()=>{
   setupScrollAnimations();
   setupMobileMenu();
 });
+
+// Preloader hide functionality
+window.onload = function() {
+  document.getElementById('preloader').style.opacity = 0;
+  setTimeout(function() {
+    document.getElementById('preloader').style.display = 'none';
+  }, 500);
+};
 </script>
+
+<!-- Preloader -->
+<div id="preloader">
+  <img src="images/horse-logo.png" id="preloader-logo" alt="loading">
+</div>
 
 </body></html>
