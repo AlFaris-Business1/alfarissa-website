@@ -51,6 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightActiveNavigation();
         initializeMobileNavigation();
         
+        // Run hamburger icon fallback with a small delay to ensure DOM is ready
+        setTimeout(initializeHamburgerIconFallback, 100);
+        
         // Defer less critical operations
         deferredOperations.push(
             () => initializeFormHandlers(),
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Try to run essential functions individually
         try { highlightActiveNavigation(); } catch (e) { console.warn('Navigation highlighting failed:', e); }
         try { initializeMobileNavigation(); } catch (e) { console.warn('Mobile navigation failed:', e); }
+        try { initializeHamburgerIconFallback(); } catch (e) { console.warn('Hamburger icon fallback failed:', e); }
     }
 });
 
@@ -190,6 +194,41 @@ function highlightActiveNavigation() {
             link.classList.remove('nav-active');
         }
     });
+}
+
+// Function to ensure hamburger icons are visible when external icons fail to load
+function initializeHamburgerIconFallback() {
+    try {
+        // Fix Font Awesome hamburger icons
+        const faIcons = document.querySelectorAll('.nav-mobile-toggle i.fas.fa-bars');
+        faIcons.forEach(icon => {
+            // Check if Font Awesome loaded by testing if the icon has content
+            const computedStyle = window.getComputedStyle(icon, ':before');
+            const hasContent = computedStyle.content && computedStyle.content !== 'none' && computedStyle.content !== '""';
+            
+            if (!hasContent) {
+                // Font Awesome didn't load, use fallback
+                icon.textContent = '☰';
+                icon.style.fontFamily = 'inherit';
+                icon.style.fontSize = '20px';
+                icon.style.fontStyle = 'normal';
+            }
+        });
+
+        // Fix Lucide hamburger icons (for index.html)
+        const lucideIcons = document.querySelectorAll('.menu-toggle i[data-lucide="menu"]');
+        lucideIcons.forEach(icon => {
+            // Check if the icon is empty (Lucide didn't load)
+            if (!icon.innerHTML.trim() && !icon.textContent.trim()) {
+                icon.textContent = '☰';
+                icon.style.fontFamily = 'inherit';
+                icon.style.fontSize = '20px';
+                icon.style.fontStyle = 'normal';
+            }
+        });
+    } catch (error) {
+        console.warn('Hamburger icon fallback failed:', error);
+    }
 }
 
 // Function to initialize mobile navigation

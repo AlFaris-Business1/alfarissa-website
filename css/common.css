@@ -837,11 +837,42 @@ textarea.form-input {
 }
 
 .nav-mobile-toggle {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     font-size: 1.5rem;
     cursor: pointer;
     padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.nav-mobile-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Fallback hamburger icon when Font Awesome fails to load */
+.nav-mobile-toggle i.fas.fa-bars {
+    font-family: inherit !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+
+.nav-mobile-toggle i.fas.fa-bars:before {
+    content: "☰" !important;
+    display: inline-block !important;
+    font-size: 20px !important;
+    line-height: 1 !important;
+    font-family: inherit !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+
+/* Hide mobile toggle on desktop */
+@media (min-width: 769px) {
+    .nav-mobile-toggle {
+        display: none;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -892,16 +923,7 @@ textarea.form-input {
         border-radius: 8px;
     }
     
-    .nav-mobile-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-    
-    .nav-mobile-toggle:hover {
-        transform: scale(1.1);
-    }
+
 }
 
 /* Footer Styles */
