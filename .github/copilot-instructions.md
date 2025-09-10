@@ -9,17 +9,17 @@ Always reference these instructions first and fallback to search or bash command
   - `cd /home/runner/work/alfarissa-website/alfarissa-website`
   - `python3 -m http.server 8080` - starts in <1 second, NEVER CANCEL
   - Access at: `http://localhost:8080`
-  - Alternative: `npx serve -p 8080` (requires npm install, takes ~1.5 seconds)
+  - Alternative: `npx serve -p 8080` (requires npm install, takes ~5 seconds with package download)
 - HTML validation (optional):
-  - `npx htmlhint *.html` - validates all pages, takes ~1.5 seconds, NEVER CANCEL
-  - Expect 2-3 minor warnings (Google verification file and CSS escaping)
-- **NEVER CANCEL**: All operations complete in <2 seconds. No long-running builds exist.
+  - `npx htmlhint *.html` - validates all pages, takes ~2.5 seconds, NEVER CANCEL
+  - Expect 1 error: Google verification file (google0cd875a98eac9549.html) lacks DOCTYPE - this is normal for Google verification files
+- **NEVER CANCEL**: All operations complete in under 5 seconds. No long-running builds exist.
 
 ## Deployment Process
 - Deployment to GitHub Pages is fully automated via GitHub Actions
 - **NO MANUAL BUILD STEPS REQUIRED** - files deploy directly as-is
 - GitHub Actions workflow: `.github/workflows/deploy.yml`
-- Deployment triggers on push to `main` branch
+- Deployment triggers on push to `store-layout` branch (not `main` branch)
 - Deployment time: ~2-3 minutes via GitHub Actions, NEVER CANCEL
 - Validation commands used in CI:
   - `echo "🚀 Preparing deployment at $(date -u)"`
@@ -33,9 +33,10 @@ After making any changes to HTML files, ALWAYS:
    - `curl -s http://localhost:8080/our-services-page.html | grep -o '<title>[^<]*</title>'`
    - `curl -s http://localhost:8080/legal-services-page.html | grep -o '<title>[^<]*</title>'`
    - `curl -s http://localhost:8080/faq-page.html | grep -o '<title>[^<]*</title>'`
-4. **Validate HTML**: `npx htmlhint *.html` - should complete in ~1.5 seconds
+4. **Validate HTML**: `npx htmlhint *.html` - should complete in ~2.5 seconds
 5. **Test complete user flow**: Manually verify page loads and navigation between at least 3 different pages
-6. **Clean up**: `killall python3` to stop local server
+6. **Browser testing**: Use browser tools to test actual functionality and Arabic text rendering
+7. **Clean up**: `killall python3` to stop local server
 
 ## Technology Stack & Dependencies
 - **Frontend**: Static HTML5, CSS3, JavaScript
@@ -44,7 +45,7 @@ After making any changes to HTML files, ALWAYS:
 - **Icons**: Font Awesome 6.0+ (via CDN)
 - **Language**: Arabic (RTL layout)
 - **External Dependencies**: All via CDN - NO local installation required
-- **Node.js**: Available at `/usr/local/bin/node` (v20.19.4, npm 10.8.2) for tooling
+- **Node.js**: Available at `/usr/local/bin/node` (v20.19.5, npm 10.8.2) for tooling
 - **Python**: Available at `/usr/bin/python3` (v3.12.3) for local development server
 
 ## Repository Structure
@@ -56,7 +57,7 @@ After making any changes to HTML files, ALWAYS:
 ├── index.html                         # Main homepage (26KB)
 ├── our-services-page.html            # Services overview
 ├── legal-services-page.html          # Legal services details  
-├── government-transactions-page.html # Government services (largest file: 69KB)
+├── government-transactions-page.html # Government services (largest file: 52KB)
 ├── packages-page.html                # Service packages
 ├── faq-page.html                     # FAQ page
 ├── vision-page.html                  # Company vision
@@ -69,10 +70,24 @@ After making any changes to HTML files, ALWAYS:
 ## Common Tasks & Timing Expectations
 - **Local server startup**: <1 second, NEVER CANCEL
 - **Page load testing**: <10ms per page
-- **HTML validation**: ~1.6 seconds for all files, NEVER CANCEL  
+- **HTML validation**: ~2.5 seconds for all files, NEVER CANCEL  
 - **File listing**: Instant with `ls -la *.html`
 - **Navigation testing**: <1 second per page test
-- **Complete validation cycle**: ~2.5 seconds total (tested and validated)
+- **Complete validation cycle**: ~3 seconds total (tested and validated)
+- **NPX serve alternative**: ~5 seconds with npm package download
+
+## Browser Testing & Manual Validation
+After making changes, ALWAYS validate using browser testing:
+1. **Start local server**: `python3 -m http.server 8080`
+2. **Test main navigation flow**: 
+   - Visit `http://localhost:8080/index.html`
+   - Click navigation links to test all major pages
+   - Verify Arabic text renders correctly and RTL layout works
+   - Test FAQ page (`faq-page.html`) functionality
+   - Test Legal Services page (`legal-services-page.html`) interactive elements
+3. **Test responsive design**: Resize browser to mobile viewport
+4. **Verify external resources**: Check that CDN resources load (may fail in sandboxed environments)
+5. **Test forms and contact elements**: Ensure WhatsApp and contact links work
 
 ## Working with Arabic Content
 - **Direction**: All content is RTL (right-to-left)
@@ -94,15 +109,24 @@ After making any changes to HTML files, ALWAYS:
 ## Validation Requirements
 - Always test Arabic text rendering properly
 - Verify RTL layout maintains correct alignment
-- Ensure all inter-page links function correctly
-- Validate external CDN resources load properly
+- Ensure all inter-page links function correctly (note: some navigation links may point to different file names than expected)
+- Validate external CDN resources load properly (may show errors in sandboxed environments)
 - Test responsive design on mobile viewports
 - Confirm page titles are in Arabic and descriptive
+- **Browser testing required**: Use browser tools to validate actual user experience
+- **Form functionality**: Test contact forms and WhatsApp integration
 
 ## DO NOT
 - Add build processes or package.json - this is intentionally a simple static site
 - Install local dependencies - all styling/scripts are via CDN
 - Modify the GitHub Actions workflow unless specifically required
-- Cancel any validation commands - they complete in <2 seconds
+- Cancel any validation commands - they complete in under 5 seconds
 - Remove Arabic language attributes or RTL directives
 - Change the color scheme without testing across all pages
+- Modify HTML structure without validating with `npx htmlhint *.html`
+
+## KNOWN ISSUES & NOTES
+- HTML validation shows 1 expected error for Google verification file (google0cd875a98eac9549.html) - this is normal
+- CDN resources may fail to load in sandboxed environments - this doesn't affect functionality
+- Navigation links use `-page.html` suffix (e.g., `faq-page.html`, not `faq.html`)
+- Deployment workflow configured for `store-layout` branch, not `main` branch
