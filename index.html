@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="canonical" href="https://alfarissa.org/"/>
 <link rel="icon" href="images/horse-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="images/horse-logo.png">
+<link rel="shortcut icon" href="images/horse-logo.png" type="image/png">
 
 <!-- SEO/Social Media Meta Tags -->
 <meta property="og:title" content="الفارس للأعمال — الرئيسية"/>
@@ -259,7 +261,79 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 .iconbtn:hover{background:var(--brand); color:var(--dark); border-color:var(--brand);}
 .iconbtn.swiper-button-disabled{opacity:0.5; cursor:not-allowed;}
 
-/* --- Footer & FAB --- */
+/* --- Enhanced Sections with Background Patterns --- */
+.section-with-pattern {
+  position: relative;
+  overflow: hidden;
+}
+.section-with-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(212, 194, 154, 0.08) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(27, 42, 65, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px, 40px 40px;
+  pointer-events: none;
+}
+
+/* Enhanced Cards with Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 194, 154, 0.3);
+  border-radius: var(--r-lg);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Elements Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Enhanced Testimonials Section */
+.testimonials-section {
+  background: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 50%, #FBF7F1 100%);
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(212, 194, 154, 0.1) 2px, transparent 2px),
+    radial-gradient(circle at 80% 20%, rgba(27, 42, 65, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 40% 40%, rgba(212, 194, 154, 0.08) 1px, transparent 1px);
+  background-size: 80px 80px, 60px 60px, 100px 100px;
+  animation: patternShift 20s linear infinite;
+  pointer-events: none;
+}
+@keyframes patternShift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
 footer{
     background: var(--dark) url('https://i.postimg.cc/528wJJZd/Chat-GPT-Image-27-2025-07-04-32.png') center/cover no-repeat;
     color:#fff; margin-top:48px; padding:60px 0 20px;
@@ -446,8 +520,8 @@ footer a:hover{color:var(--brand);}
   </div>
 </section>
 
-<section id="services-highlights" class="section container">
-    <div class="fade-in" style="position:relative;">
+<section id="services-highlights" class="section container section-with-pattern">
+    <div class="fade-in" style="position:relative; z-index:2;">
       <h2 style="font-size:28px;text-align:center;">خدماتنا الرئيسية</h2>
       <p class="lead" style="margin:6px auto 20px; text-align:center; max-width:580px; font-size:15px;">نقدم باقة متكاملة من الخدمات لتلبية كافة احتياجاتك القانونية والإدارية.</p>
       <div class="swiper-container swiper-offer" style="margin-top:24px;">
@@ -465,7 +539,7 @@ footer a:hover{color:var(--brand);}
 </section>
 
 <section class="section-tight container">
-    <div class="card fade-in" style="background: var(--dark); color: #fff;">
+    <div class="glass-card fade-in floating-element" style="background: var(--dark); color: #fff; backdrop-filter: blur(15px);">>
         <div class="grid grid-2" style="align-items: center;">
             <div>
                 <h2 style="color: #fff; font-size:26px;">من نحن؟</h2>
@@ -479,50 +553,50 @@ footer a:hover{color:var(--brand);}
     </div>
 </section>
 
-<section id="testimonials" class="section container">
-    <div class="fade-in" style="position:relative;">
-        <h2 style="font-size:32px;text-align:center;">شهادات نعتز بها</h2>
-        <p class="lead" style="margin:8px auto 24px; text-align:center; max-width:600px;">آراء عملائنا هي الدافع الأكبر لنا لتقديم الأفضل دائمًا.</p>
+<section id="testimonials" class="section container testimonials-section">
+    <div class="fade-in" style="position:relative; z-index:2;">
+        <h2 style="font-size:28px;text-align:center;">شهادات نعتز بها</h2>
+        <p class="lead" style="margin:6px auto 20px; text-align:center; max-width:580px; font-size:15px;">آراء عملائنا هي الدافع الأكبر لنا لتقديم الأفضل دائمًا.</p>
         <div class="swiper-container swiper-testimonials">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <div class="card">
-                        <p class="lead">"من أفضل المكاتب اللي تعاملت معهم.. دقة وسرعة، خصوصًا في تنفيذ الحكم اللي كان لي أكثر من سنة أركض وراه."
+                    <div class="glass-card floating-element">
+                        <p class="lead" style="font-size:14px;">"من أفضل المكاتب اللي تعاملت معهم.. دقة وسرعة، خصوصًا في تنفيذ الحكم اللي كان لي أكثر من سنة أركض وراه."
                         </p>
                         <hr>
-                        <div class="small" style="color:#64748b; font-weight:600;">— خالد الحربي</div>
+                        <div class="small" style="color:var(--dark); font-weight:600;">— خالد الحربي</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="card">
-                        <p class="lead">"سجّلت الشركة وعقود الشراكة وكل شي من خلالهم. وفّروا علي وقت وجهد كثير."
+                    <div class="glass-card floating-element">
+                        <p class="lead" style="font-size:14px;">"سجّلت الشركة وعقود الشراكة وكل شي من خلالهم. وفّروا علي وقت وجهد كثير."
                         </p>
                         <hr>
-                        <div class="small" style="color:#64748b; font-weight:600;">— سارة الغامدي</div>
+                        <div class="small" style="color:var(--dark); font-weight:600;">— سارة الغامدي</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="card">
-                        <p class="lead">"اللي يميّزهم صدق المتابعة، ما تتصل إلا وهم قد خلّصوا الإجراء، حتى لو من منصات معقدة مثل ناجز أو بلدي."
+                    <div class="glass-card floating-element">
+                        <p class="lead" style="font-size:14px;">"اللي يميّزهم صدق المتابعة، ما تتصل إلا وهم قد خلّصوا الإجراء، حتى لو من منصات معقدة مثل ناجز أو بلدي."
                         </p>
                         <hr>
-                        <div class="small" style="color:#64748b; font-weight:600;">— شركة البناء العصري</div>
+                        <div class="small" style="color:var(--dark); font-weight:600;">— شركة البناء العصري</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="card">
-                        <p class="lead">"استشارة قانونية في وقتها! تحليلهم للقضية كان دقيق وساعدني أتخذ القرار الصحيح. شكرًا لكم."
+                    <div class="glass-card floating-element">
+                        <p class="lead" style="font-size:14px;">"استشارة قانونية في وقتها! تحليلهم للقضية كان دقيق وساعدني أتخذ القرار الصحيح. شكرًا لكم."
                         </p>
                         <hr>
-                        <div class="small" style="color:#64748b; font-weight:600;">— عبدالمجيد المطيري</div>
+                        <div class="small" style="color:var(--dark); font-weight:600;">— عبدالمجيد المطيري</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="card">
-                        <p class="lead">"فريق محترف ومتعاون، أنهوا لنا إجراءات تسجيل العلامة التجارية بسرعة وبدون أي تعقيدات. أنصح بهم بشدة."
+                    <div class="glass-card floating-element">
+                        <p class="lead" style="font-size:14px;">"فريق محترف ومتعاون، أنهوا لنا إجراءات تسجيل العلامة التجارية بسرعة وبدون أي تعقيدات. أنصح بهم بشدة."
                         </p>
                         <hr>
-                        <div class="small" style="color:#64748b; font-weight:600;">— متجر ركن الهدايا</div>
+                        <div class="small" style="color:var(--dark); font-weight:600;">— متجر ركن الهدايا</div>
                     </div>
                 </div>
             </div>
