@@ -1,264 +1,1002 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <!-- SEO Meta Tags -->
-    <title>خدماتنا المتخصصة - الفارس للأعمال للاستشارات القانونية والإدارية</title>
-    <meta name="description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة: الاستشارات القانونية، تأسيس الشركات، التعقيب، التراخيص، والإقرارات الزكوية في المملكة العربية السعودية">
-    <meta name="keywords" content="خدمات قانونية، استشارات، تأسيس شركات، تراخيص، تعقيب، إقرارات زكوية، المملكة العربية السعودية">
-    <meta name="author" content="الفارس للأعمال">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://alfarissa.org/our-services-page.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="خدماتنا المتخصصة - الفارس للأعمال">
-    <meta property="og:description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة في المملكة العربية السعودية">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfarissa.org/our-services-page.html">
-    <meta property="og:site_name" content="الفارس للأعمال">
-    <meta property="og:locale" content="ar_SA">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="خدماتنا المتخصصة - الفارس للأعمال">
-    <meta name="twitter:description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة في المملكة العربية السعودية">
-    
-    <!-- Enhanced Scripts and Styles -->
-    <!-- Google Fonts for Noto Kufi Arabic with fallback -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Font Awesome with multiple CDN fallbacks -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';">
-    
-    <!-- Tailwind CSS with fallback -->
-    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/tailwind.min.js" onerror="loadTailwindFallback()"></script>
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="css/common.css">
-    
-    <!-- Resource Loading Fallbacks -->
-    <script>
-        function loadTailwindFallback() {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.tailwindcss.com';
-            script.onerror = function() {
-                console.warn('Tailwind CSS failed to load, using fallback styling');
-            };
-            document.head.appendChild(script);
-        }
-        
-        function checkFontLoading() {
-            if (!document.fonts || !document.fonts.check) return;
-            
-            setTimeout(() => {
-                if (!document.fonts.check('1em "Noto Kufi Arabic"')) {
-                    document.body.style.fontFamily = '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
-                    console.warn('Arabic font failed to load, using fallback');
-                }
-            }, 3000);
-        }
-        
-        document.addEventListener('DOMContentLoaded', checkFontLoading);
-    </script>
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ServicePage",
-        "name": "خدماتنا المتخصصة",
-        "description": "صفحة الخدمات المتخصصة للفارس للأعمال",
-        "url": "https://alfarissa.org/our-services-page.html",
-        "mainEntity": {
-            "@type": "LegalService",
-            "name": "الفارس للأعمال",
-            "serviceType": ["استشارات قانونية", "تأسيس شركات", "تعقيب معاملات", "تراخيص", "إقرارات زكوية"],
-            "areaServed": {
-                "@type": "Country",
-                "name": "المملكة العربية السعودية"
-            }
-        }
+<title>خدماتنا المتخصصة - الفارس للأعمال</title>
+<meta name="description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة: الاستشارات القانونية، تأسيس الشركات، التعقيب، التراخيص، والإقرارات الزكوية في المملكة العربية السعودية"/>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://alfarissa.org/our-services-page.html"/>
+<link rel="icon" href="images/horse-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="images/horse-logo.png">
+<link rel="shortcut icon" href="images/horse-logo.png" type="image/png">
+
+<!-- SEO/Social Media Meta Tags -->
+<meta property="og:title" content="خدماتنا المتخصصة - الفارس للأعمال"/>
+<meta property="og:description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة في المملكة العربية السعودية"/>
+<meta property="og:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+<meta property="og:url" content="https://alfarissa.org/our-services-page.html"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="خدماتنا المتخصصة - الفارس للأعمال"/>
+<meta name="twitter:description" content="تعرف على جميع خدماتنا القانونية والإدارية المتخصصة في المملكة العربية السعودية"/>
+<meta name="twitter:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
+
+<!-- SwiperJS for Sliders -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+:root{
+  --brand:#D4C29A; --brand-dark:#C0B08E;
+  --dark:#1B2A41; --sub:#2D3748; --bg:#FBF7F1; --border: rgba(212, 194, 154, 0.4);
+  --r-sm:8px; --r:12px; --r-lg:16px; --r-xl:24px;
+  --shadow-card:0 2px 4px rgba(27,42,65,.05),0 8px 20px rgba(27,42,65,.07);
+  --shadow-elev:0 4px 8px rgba(27,42,65,.06),0 16px 40px rgba(27,42,65,.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+*{box-sizing:border-box}
+html{direction:rtl;scroll-behavior:smooth}
+body{
+  margin:0; font-family:"Cairo", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 100%); color:var(--dark);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  line-height:1.6;
+}
+h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
+p{margin:.6em 0}
+a{color:inherit;text-decoration:none; transition: var(--transition);}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.section{padding:80px 0} .section-tight{padding:60px 0}
+
+/* --- Components --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border-radius:var(--r); padding:10px 20px; font-size:15px; font-weight:600;
+  border:1px solid transparent; transition:var(--transition); white-space:nowrap;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow: inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-primary:hover{background:var(--brand-dark); transform:translateY(-2px); box-shadow: var(--shadow-card);}
+.btn-ghost{background:#fff; color:var(--dark); border-color:var(--border);}
+.btn-ghost:hover{background:var(--dark); color:#fff; border-color:var(--dark); transform:translateY(-2px); box-shadow: var(--shadow-card);}
+.card{
+  background:#fff; border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:24px; box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+.card:hover{transform:translateY(-4px); box-shadow: var(--shadow-elev);}
+.badge{
+  display:inline-flex; align-items:center; justify-content:center; gap:4px;
+  border-radius:999px; border:1px solid var(--border); background:#F8FAFC;
+  font-size:12px; padding:4px 12px; color:#64748b; font-weight:600;
+}
+.small{font-size:14px;color:#94A3B8}
+hr{border:none;border-top:1px solid var(--border);margin:16px 0}
+.lead{color:var(--sub); font-size:18px;}
+.grid{display:grid;gap:24px}
+@media(min-width:768px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)} .grid-4{grid-template-columns:repeat(4,1fr)}}
+
+/* --- Header & Navigation --- */
+.topbar{background:var(--dark);color:#94A3B8; font-size:12px;}
+.topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+.topbar-socials{display:flex; gap:12px;}
+.topbar-socials a:hover{color:var(--brand);}
+.header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(27,42,65,.85); backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(212,194,154,.3); color:#fff;
+}
+.header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{
+  width:54px; height:54px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background: linear-gradient(135deg, #D4C29A 0%, #E6D4A8 50%, #C0B08E 100%);
+  animation: logoFloat 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212,194,154,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.brand .logo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  animation: logoShine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(2deg); }
+  50% { transform: translateY(-6px) rotate(0deg); }
+  75% { transform: translateY(-3px) rotate(-2deg); }
+}
+@keyframes logoShine {
+  0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+.brand .logo img {
+    max-width: 70%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+.nav{
+    display:none;
+    flex-direction:column;
+    gap:16px;
+    font-size:14px;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    background:rgba(27,42,65,0.95);
+    padding:16px;
+    border-top:1px solid rgba(212,194,154,.3);
+    align-items:center;
+}
+.nav.open{display:flex}
+.nav a{color:#E2E8F0; position:relative; padding:8px 0; width:100%; text-align:center; font-size:13px;}
+.nav a:after{
+    content:''; position:absolute; bottom:0; right:0;
+    width:0; height:2px; background:var(--brand); transition:var(--transition);
+}
+.nav a:hover{color:#fff}
+.nav a.active:after, .nav a:hover:after{width:100%;}
+@media(min-width:992px){
+    .nav{
+        display:flex;
+        position:static;
+        flex-direction:row;
+        background:transparent;
+        padding:0;
+        border-top:none;
+        gap:24px;
     }
-    </script>
+    .nav a{
+        width:auto;
+        padding:4px 0;
+        text-align:initial;
+        font-size:14px;
+    }
+}
+
+.menu-toggle{
+    background:none;
+    border:none;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.menu-toggle i{width:20px;height:20px}
+@media(min-width:992px){.menu-toggle{display:none}}
+.header-cta{display:none}
+@media(min-width:992px){.header-cta{display:block}}
+
+.brand-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.brand-tagline {
+    color: var(--brand);
+    font-size: 0.75rem;
+    margin-top: 2px;
+    opacity: 0.9;
+}
+
+/* Subnav */
+.subnav{background:var(--bg); padding:12px 0; border-bottom:1px solid var(--border);}
+.subnav .row{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;font-size:14px}
+.subnav a{color:var(--sub); position:relative}
+.subnav a:hover{color:var(--dark)}
+
+/* Footer */
+footer{
+  background:var(--dark); color:#fff; padding:48px 0 24px;
+  margin-top:auto; position:relative;
+}
+footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+}
+footer .container {
+    max-width: 1200px;
+}
+footer a:hover{color:var(--brand);}
+.footer-grid{display:grid;gap:32px}
+@media(min-width:992px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
+
+.footer-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer-partners .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    align-items: center;
+}
+.footer-partners .logo-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+.footer-partners .logo-item:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+.footer-partners .logo-item img {
+    max-width: 100%;
+    height: 32px;
+    object-fit: contain;
+}
+.footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between; gap:12px;}
+
+/* Floating Icons */
+.floating-icon {
+    position: fixed;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 40;
+    transition: var(--transition);
+}
+.floating-icon:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.floating-icon.whatsapp {
+    bottom: 90px;
+    background: #25D366;
+}
+.floating-icon.call {
+    bottom: 160px;
+    background: var(--brand);
+}
+.backtotop {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    background: var(--dark);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 40;
+}
+.backtotop.show {
+    opacity: 1;
+    visibility: visible;
+}
+.backtotop:hover {
+    background: var(--brand);
+    transform: translateY(-4px);
+}
+
+/* Services specific styles */
+.service-card {
+  background: #fff;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elev);
+}
+.service-card-header {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--sub) 100%);
+  color: #fff;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.service-card-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212,194,154,0.1) 0%, transparent 50%);
+  animation: cardShine 6s ease-in-out infinite;
+}
+@keyframes cardShine {
+  0%, 100% { transform: translateX(-100%) translateY(-100%); }
+  50% { transform: translateX(10%) translateY(10%); }
+}
+.service-icon {
+  font-size: 3rem;
+  color: var(--brand);
+  margin-bottom: 16px;
+  display: block;
+}
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.service-subtitle {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+.sub-services {
+  display: none;
+  padding: 24px;
+}
+.sub-services.active {
+  display: block;
+  animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.sub-service-item {
+  background: #f8fafc;
+  border-radius: var(--r);
+  padding: 20px;
+  margin-bottom: 16px;
+  border-right: 4px solid var(--brand);
+  transition: var(--transition);
+}
+.sub-service-item:hover {
+  background: var(--bg);
+  transform: translateX(-4px);
+}
+.sub-service-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+.sub-service-desc {
+  color: var(--sub);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.sub-service-btn {
+  background: var(--brand);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.sub-service-btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+}
+
+/* Page loading animation */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderSpin 2s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(212,194,154,0.3);
+}
+.loader-logo img {
+  max-width: 60%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+@keyframes loaderSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Responsive adjustments */
+@media(max-width:768px) {
+  .floating-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    right: 16px;
+  }
+  .floating-icon.whatsapp { bottom: 80px; }
+  .floating-icon.call { bottom: 140px; }
+  .service-card-header { padding: 24px; }
+  .service-icon { font-size: 2.5rem; }
+  .service-title { font-size: 1.25rem; }
+}
+</style>
 </head>
-<body class="text-[var(--color-primary-text)]">
+<body>
 
-    <!-- Navigation Bar - Simplified -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-balance-scale-right ml-2"></i>
-                الفارس للأعمال
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="our-services-page.html" class="nav-active">خدماتنا</a></li>
-                <li><a href="legal-services-page.html">قانونية</a></li>
-                <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="index.html#contact" class="nav-contact-btn">تواصل معنا</a></li>
-            </ul>
-            <div class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+<!-- Page Loading Animation -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo">
+    <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="container row">
+    <div class="small" style="display:flex; align-items:center; gap:16px;">
+        <span><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</span>
+        <span><i data-lucide="phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800</span>
+    </div>
+    <div class="topbar-socials">
+      <a href="#" title="Twitter"><i data-lucide="twitter" style="width:16px;"></i></a>
+      <a href="#" title="Instagram"><i data-lucide="instagram" style="width:16px;"></i></a>
+      <a href="#" title="LinkedIn"><i data-lucide="linkedin" style="width:16px;"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container row">
+    <a href="index.html" class="brand">
+      <div class="logo">
+        <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
+      </div>
+      <div>
+        <div class="brand-text">الفارس للأعمال</div>
+        <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-label="القائمة"><i data-lucide="menu"></i></button>
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="vision-page.html">من نحن</a>
+      <a href="our-services-page.html" class="active">الخدمات</a>
+      <a href="packages-page.html">الباقات</a>
+      <a href="legal-services-page.html">الخدمات القانونية</a>
+      <a href="index.html#contact">اتصل بنا</a>
+      <a href="faq-page.html">الأسئلة الشائعة</a>
     </nav>
+    <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
+  </div>
+</header>
+<div class="subnav">
+  <div class="container row">
+    <a href="legal-services-page.html">الخدمات القانونية</a>
+    <a href="government-transactions-page.html">الخدمات الحكومية للأعمال</a>
+    <a href="zakat-tax-page.html">الزكاة والضرائب</a>
+  </div>
+</div>
 
-    <main class="section-padding-y section-padding-x">
-        <section class="bg-[var(--color-primary-text)] text-white py-16 px-4 md:px-8 lg:px-16 rounded-xl shadow-md text-center section-margin-y section-padding-y relative overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1200x600/1B2A41/D4C29A?text=خدماتنا'); opacity: 0.2;"></div>
-            <div class="relative z-10">
-                <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-4 hero-section-h2" style="color: var(--color-headings-cta);">خدماتنا</h2>
-                <p class="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto opacity-90 font-arabic-text">
-                    نقدم في الفارس للأعمال مجموعة متكاملة من الخدمات القانونية والإدارية، مصممة لتلبية احتياجات الأفراد والمنشآت على حد سواء.
-                </p>
-                <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="btn-primary text-xl font-arabic-text" target="_blank" rel="noopener">
-                    اطلب خدمتك الآن <i class="fas fa-arrow-left mr-2"></i>
-                </a>
-            </div>
-        </section>
+<!-- Hero Section -->
+<section class="section" style="padding: 60px 0;">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <h1 style="font-size: 3rem; font-weight: 800; color: var(--dark); margin-bottom: 24px;">
+        خدماتنا المتخصصة
+      </h1>
+      <p class="lead" style="max-width: 800px; margin: 0 auto 48px;">
+        نقدم في الفارس للأعمال مجموعة متكاملة من الخدمات القانونية والإدارية، مصممة لتلبية احتياجات الأفراد والمنشآت على حد سواء بأعلى معايير الجودة والاحترافية.
+      </p>
+      <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن خدماتكم" class="btn btn-primary" target="_blank" rel="noopener">
+        <i data-lucide="phone-call"></i> اطلب خدمتك الآن
+      </a>
+    </div>
+  </div>
+</section>
 
-        <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">مجالات خبراتنا الرئيسية</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="service-overview-card">
-                        <i class="fas fa-gavel icon"></i>
-                        <h3>الخدمات القانونية</h3>
-                        <p class="font-arabic-text">
-                            نقدم استشارات قانونية متخصصة وصياغة للعقود والمذكرات، بالإضافة إلى متابعة تنفيذ الأحكام القضائية في جميع المحاكم.
-                        </p>
-                        <a href="legal-services-page.html" class="btn-more-details font-arabic-text">
-                            اكتشف المزيد <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                    <div class="service-overview-card">
-                        <i class="fas fa-building icon"></i>
-                        <h3>تعقيب المعاملات الحكومية والإدارية</h3>
-                        <p class="font-arabic-text">
-                            نساعدك في تأسيس الشركات واستخراج وتجديد التراخيص، ومتابعة جميع معاملاتك مع الجهات الحكومية إلكترونياً وحضورياً.
-                        </p>
-                        <a href="government-transactions-page.html" class="btn-more-details font-arabic-text">
-                            اكتشف المزيد <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                    <div class="service-overview-card">
-                        <i class="fas fa-handshake icon"></i>
-                        <h3>الاشتراك بالباقات</h3>
-                        <p class="font-arabic-text">
-                            نوفر باقات قانونية وخدمية شاملة للمنشآت والأفراد، لضمان دعم مستمر بأسعار مخصصة وقيمة مضافة.
-                        </p>
-                        <a href="packages-page.html" class="btn-more-details font-arabic-text">
-                            اكتشف المزيد <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                    <div class="service-overview-card">
-                        <i class="fas fa-calculator icon"></i>
-                        <h3>الإقرارات الزكوية والضريبية</h3>
-                        <p class="font-arabic-text">
-                            خدمة متخصصة لإعداد وتقديم إقراراتك الزكوية والضريبية بدقة واحترافية، على يد محاسبين قانونيين معتمدين.
-                        </p>
-                        <a href="zakat-tax-page.html" class="btn-more-details font-arabic-text">
-                            اكتشف المزيد <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                    <div class="service-overview-card">
-                        <i class="fas fa-hand-holding-usd icon"></i>
-                        <h3>خدمات الدعم الاجتماعي والعمل الحر</h3>
-                        <p class="font-arabic-text">
-                            متابعة شاملة لخدمات الضمان الاجتماعي، حساب المواطن، بنك التنمية، دعم ريف، وتراخيص العمل الحر.
-                        </p>
-                        <a href="government-transactions-page.html#socialSupportContent" class="btn-more-details font-arabic-text">
-                            اكتشف المزيد <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Interactive Services Cards -->
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2" style="gap: 32px;">
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <!-- عن الفارس للأعمال -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>عن الفارس للأعمال</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="our-services-page.html">خدماتنا</a></li>
-                        <li><a href="vision-page.html">رؤيتنا</a></li>
-                        <li><a href="licenses-page.html">التراخيص</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- روابط سريعة -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>روابط سريعة</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="index.html">الصفحة الرئيسية</a></li>
-                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                        <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
-                        <li><a href="packages-page.html">الباقات</a></li>
-                        <li><a href="zakat-tax-page.html">الإقرارات الزكوية</a></li>
-                        <li><a href="vision-page.html">رؤيتنا</a></li>
-                        <li><a href="licenses-page.html">التراخيص</a></li>
-                        <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- معلومات التواصل ونموذج الاتصال -->
-            <div style="grid-column: span 2;">
-                <div class="footer-col-header">
-                    <h3>تواصل معنا</h3>
-                </div>
-                <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
-                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
-                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
-                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
-                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
-                </div>
-
-                <!-- نموذج التواصل السريع -->
-                <div class="footer-form-container">
-                    <h4>أرسل لنا رسالة سريعة</h4>
-                    <form>
-                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
-                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
-                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
-                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+      <!-- Legal Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleService('legal')">
+        <div class="service-card-header">
+          <i class="fas fa-balance-scale service-icon"></i>
+          <h3 class="service-title">الخدمات القانونية</h3>
+          <p class="service-subtitle">استشارات وحلول قانونية متكاملة</p>
         </div>
-        <!-- شريط سفلي لحقوق الملكية -->
-        <div class="footer-copyright">
-            جميع الحقوق محفوظة © الفارس للأعمال 2025
+        <div class="sub-services" id="legal">
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="200">
+            <h4 class="sub-service-title">الاستشارات القانونية</h4>
+            <p class="sub-service-desc">استشارات متخصصة في القانون التجاري والمدني والجزائي والعمالي</p>
+            <button class="sub-service-btn" onclick="requestService('استشارة قانونية')">اطلب الاستشارة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="300">
+            <h4 class="sub-service-title">صياغة العقود والمذكرات</h4>
+            <p class="sub-service-desc">إعداد وصياغة جميع أنواع العقود القانونية والمذكرات الرسمية</p>
+            <button class="sub-service-btn" onclick="requestService('صياغة عقد')">ابدأ الآن</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="400">
+            <h4 class="sub-service-title">تسجيل العلامات التجارية</h4>
+            <p class="sub-service-desc">حماية علامتك التجارية وتسجيلها رسمياً لدى الهيئة السعودية للملكية الفكرية</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل علامة تجارية')">سجل علامتك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="500">
+            <h4 class="sub-service-title">المتابعة القضائية</h4>
+            <p class="sub-service-desc">تمثيل قانوني أمام المحاكم ومتابعة تنفيذ الأحكام القضائية</p>
+            <button class="sub-service-btn" onclick="requestService('متابعة قضائية')">احجز موعد</button>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
+      <!-- Government Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleService('government')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
+          <i class="fas fa-building service-icon"></i>
+          <h3 class="service-title">الخدمات الحكومية</h3>
+          <p class="service-subtitle">تعقيب إلكتروني وحضوري احترافي</p>
+        </div>
+        <div class="sub-services" id="government">
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="200">
+            <h4 class="sub-service-title">تأسيس الشركات</h4>
+            <p class="sub-service-desc">تأسيس جميع أنواع الشركات وإجراءات التسجيل الرسمية</p>
+            <button class="sub-service-btn" onclick="requestService('تأسيس شركة')">أسس شركتك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="300">
+            <h4 class="sub-service-title">التراخيص التجارية</h4>
+            <p class="sub-service-desc">استخراج وتجديد جميع أنواع التراخيص التجارية والمهنية</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص تجاري')">احصل على ترخيصك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="400">
+            <h4 class="sub-service-title">معاملات وزارة التجارة</h4>
+            <p class="sub-service-desc">إنجاز جميع معاملات وزارة التجارة إلكترونياً وحضورياً</p>
+            <button class="sub-service-btn" onclick="requestService('معاملة وزارة التجارة')">ابدأ المعاملة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="500">
+            <h4 class="sub-service-title">التعقيب الإلكتروني</h4>
+            <p class="sub-service-desc">متابعة المعاملات الحكومية عبر المنصات الرقمية الرسمية</p>
+            <button class="sub-service-btn" onclick="requestService('تعقيب إلكتروني')">تابع معاملتك</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- New Floating Icons -->
-    <a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:0555490800" class="floating-icon call" title="اتصال">
-      <i class="fas fa-phone-alt"></i>
-    </a>
+      <!-- Tax & Zakat Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleService('zakat')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+          <i class="fas fa-calculator service-icon"></i>
+          <h3 class="service-title">الزكاة والضرائب</h3>
+          <p class="service-subtitle">إقرارات محاسبية معتمدة</p>
+        </div>
+        <div class="sub-services" id="zakat">
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="200">
+            <h4 class="sub-service-title">الإقرارات الزكوية</h4>
+            <p class="sub-service-desc">إعداد وتقديم الإقرارات الزكوية بدقة ووفقاً للأنظمة السعودية</p>
+            <button class="sub-service-btn" onclick="requestService('إقرار زكوي')">قدم إقرارك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="300">
+            <h4 class="sub-service-title">الإقرارات الضريبية</h4>
+            <p class="sub-service-desc">ضريبة القيمة المضافة والدخل وجميع الضرائب الأخرى</p>
+            <button class="sub-service-btn" onclick="requestService('إقرار ضريبي')">احسب ضريبتك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="400">
+            <h4 class="sub-service-title">الاستشارات المحاسبية</h4>
+            <p class="sub-service-desc">استشارات متخصصة في المحاسبة والتدقيق المالي</p>
+            <button class="sub-service-btn" onclick="requestService('استشارة محاسبية')">احجز استشارة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="500">
+            <h4 class="sub-service-title">التسجيل في الزكاة والضريبة</h4>
+            <p class="sub-service-desc">التسجيل في هيئة الزكاة والضريبة والدخل للمنشآت الجديدة</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل في الزكاة والضريبة')">سجل الآن</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Package Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400" onclick="toggleService('packages')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);">
+          <i class="fas fa-handshake service-icon"></i>
+          <h3 class="service-title">الباقات المتكاملة</h3>
+          <p class="service-subtitle">حلول شاملة بأسعار مخصصة</p>
+        </div>
+        <div class="sub-services" id="packages">
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="200">
+            <h4 class="sub-service-title">باقة رجل الأعمال</h4>
+            <p class="sub-service-desc">باقة شاملة للمؤسسات والشركات تتضمن جميع الخدمات القانونية والإدارية</p>
+            <button class="sub-service-btn" onclick="requestService('باقة رجل الأعمال')">اشترك الآن</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="300">
+            <h4 class="sub-service-title">باقة المؤسسات الناشئة</h4>
+            <p class="sub-service-desc">خدمات مخصصة للمشاريع الناشئة والمؤسسات الصغيرة والمتوسطة</p>
+            <button class="sub-service-btn" onclick="requestService('باقة المؤسسات الناشئة')">ابدأ مشروعك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="400">
+            <h4 class="sub-service-title">باقة الأفراد</h4>
+            <p class="sub-service-desc">خدمات قانونية وإدارية للأفراد والعائلات</p>
+            <button class="sub-service-btn" onclick="requestService('باقة الأفراد')">اختر باقتك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="500">
+            <h4 class="sub-service-title">الباقة الذهبية</h4>
+            <p class="sub-service-desc">أشمل باقة تتضمن جميع الخدمات مع الدعم على مدار الساعة</p>
+            <button class="sub-service-btn" onclick="requestService('الباقة الذهبية')">الحصول على تفاصيل</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Additional Services Section -->
+<section class="section" style="background: #f8fafc;">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 48px;" data-aos="fade-up">
+      <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--dark); margin-bottom: 16px;">
+        خدمات إضافية متخصصة
+      </h2>
+      <p class="lead">نقدم أيضاً مجموعة من الخدمات المتخصصة لتلبية احتياجاتك الخاصة</p>
+    </div>
+
+    <div class="grid grid-3" style="gap: 24px;">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-center" style="padding: 16px 0;">
+          <i class="fas fa-users" style="font-size: 2.5rem; color: var(--brand); margin-bottom: 16px;"></i>
+          <h4 style="font-weight: 600; margin-bottom: 12px; color: var(--dark);">الدعم الاجتماعي</h4>
+          <p class="small" style="margin-bottom: 16px;">متابعة برامج الضمان الاجتماعي وحساب المواطن</p>
+          <button class="btn btn-ghost btn-sm" onclick="requestService('الدعم الاجتماعي')">
+            <i data-lucide="arrow-left"></i> المزيد
+          </button>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-center" style="padding: 16px 0;">
+          <i class="fas fa-briefcase" style="font-size: 2.5rem; color: var(--brand); margin-bottom: 16px;"></i>
+          <h4 style="font-weight: 600; margin-bottom: 12px; color: var(--dark);">العمل الحر</h4>
+          <p class="small" style="margin-bottom: 16px;">تراخيص وخدمات العمل الحر والمهن الحرة</p>
+          <button class="btn btn-ghost btn-sm" onclick="requestService('ترخيص عمل حر')">
+            <i data-lucide="arrow-left"></i> المزيد
+          </button>
+        </div>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="text-center" style="padding: 16px 0;">
+          <i class="fas fa-file-contract" style="font-size: 2.5rem; color: var(--brand); margin-bottom: 16px;"></i>
+          <h4 style="font-weight: 600; margin-bottom: 12px; color: var(--dark);">التوثيق والترجمة</h4>
+          <p class="small" style="margin-bottom: 16px;">توثيق المستندات والترجمة القانونية المعتمدة</p>
+          <button class="btn btn-ghost btn-sm" onclick="requestService('توثيق وترجمة')">
+            <i data-lucide="arrow-left"></i> المزيد
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:12px;">
+            <div class="logo">
+                <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
+            </div>
+            <div class="brand-text">الفارس للأعمال</div>
+        </a>
+        <p class="small" style="color:#cbd5e1;max-width:300px;">ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
+      </div>
+      <div>
+        <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">روابط سريعة</h4>
+        <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
+          <a href="index.html">الرئيسية</a>
+          <a href="our-services-page.html">الخدمات</a>
+          <a href="packages-page.html">الباقات</a>
+          <a href="faq-page.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">معلومات التواصل</h4>
+        <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
+          <div><i data-lucide="phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800 | 0555648602</div>
+          <div><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</div>
+          <div style="display:flex;"><i data-lucide="map-pin" style="width:14px; vertical-align:top; margin-left:4px; flex-shrink:0;"></i><span>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>جميع الحقوق محفوظة © الفارس للأعمال 2025</div>
+      <div style="display:flex; gap:16px;"><a href="privacy-policy-page.html">سياسة الخصوصية</a> • <a href="terms-of-service-page.html">شروط الاستخدام</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Icons -->
+<a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="tel:0555490800" class="floating-icon call" title="اتصال">
+  <i class="fas fa-phone-alt"></i>
+</a>
+<a href="#" class="backtotop" title="العودة للأعلى"><i data-lucide="arrow-up"></i></a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+function ready(fn){document.readyState!='loading'?fn():document.addEventListener('DOMContentLoaded',fn)}
+
+// Page loading animation
+function hidePageLoader() {
+  const loader = document.getElementById('pageLoader');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.style.display = 'none', 500);
+    }, 1500);
+  }
+}
+
+// Toggle service sections
+function toggleService(serviceId) {
+  const service = document.getElementById(serviceId);
+  const allServices = document.querySelectorAll('.sub-services');
+  
+  // Hide all other services
+  allServices.forEach(s => {
+    if (s.id !== serviceId) {
+      s.classList.remove('active');
+    }
+  });
+  
+  // Toggle current service
+  if (service) {
+    service.classList.toggle('active');
+    
+    // Trigger AOS refresh for animations
+    if (typeof AOS !== 'undefined') {
+      AOS.refresh();
+    }
+  }
+}
+
+// Request service via WhatsApp
+function requestService(serviceName) {
+  event.stopPropagation(); // Prevent card toggle
+  const message = `مرحباً، أود الاستفسار عن خدمة: ${serviceName}`;
+  const whatsappUrl = `https://wa.me/966555490800?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+}
+
+function setupBackToTop(){
+  const btt = document.querySelector('.backtotop');
+  if(!btt) return;
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY > 600){btt.classList.add('show')}else{btt.classList.remove('show')}
+  });
+  btt.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function setupMobileMenu(){
+  const toggle=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('.nav');
+  if(!toggle||!nav)return;
+  toggle.addEventListener('click',()=>{
+    nav.classList.toggle('open');
+    const icon=toggle.querySelector('i');
+    const isOpen=nav.classList.contains('open');
+    icon.setAttribute('data-lucide',isOpen?'x':'menu');
+    lucide.createIcons();
+  });
+  nav.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      const icon=toggle.querySelector('i');
+      icon.setAttribute('data-lucide','menu');
+      lucide.createIcons();
+    });
+  });
+}
+
+// Smooth scrolling for anchor links
+function setupSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
+
+// Intersection Observer for scroll animations
+function setupScrollAnimations() {
+  const animatedElements = document.querySelectorAll('[data-aos]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('aos-animate');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  animatedElements.forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Enhanced performance optimizations
+function optimizePerformance() {
+  // Lazy load images
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+
+  // Preload critical resources
+  const criticalResources = [
+    'images/horse-logo.png'
+  ];
+  
+  criticalResources.forEach(resource => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.href = resource;
+    link.as = 'image';
+    document.head.appendChild(link);
+  });
+}
+
+// Initialize everything
+ready(() => {
+  // Initialize AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 600,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+  }
+
+  // Initialize Lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
+  // Setup functionality
+  hidePageLoader();
+  setupBackToTop();
+  setupMobileMenu();
+  setupSmoothScrolling();
+  setupScrollAnimations();
+  optimizePerformance();
+
+  // Add keyboard navigation for accessibility
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      // Close any open service panels
+      document.querySelectorAll('.sub-services.active').forEach(service => {
+        service.classList.remove('active');
+      });
+      
+      // Close mobile menu
+      const nav = document.querySelector('.nav');
+      if (nav && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        const toggle = document.querySelector('.menu-toggle');
+        const icon = toggle.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      }
+    }
+  });
+
+  // Add touch support for mobile
+  let startY = 0;
+  document.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    const currentY = e.touches[0].clientY;
+    const diff = startY - currentY;
+    
+    // Simple pull-to-refresh prevention for this page
+    if (diff < 0 && window.scrollY === 0) {
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  console.log('🎉 AlFaris Services page loaded successfully!');
+});
+
+// Handle page visibility for performance
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    // Pause animations when page is hidden
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.style.animationPlayState = 'paused';
+    });
+  } else {
+    // Resume animations when page is visible
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.style.animationPlayState = 'running';
+    });
+  }
+});
+</script>
 </body>
 </html>
