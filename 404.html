@@ -12,6 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            /* Professional Navy/White Identity Colors */
+            --color-primary: #0B2447; 
+            --color-primary-ink: #081A33; 
+            --color-primary-soft: #112D60;
+            --color-accent: #FFFFFF;
+            --color-text: #0F172A; 
+            --color-text-subtle: #475569;
+            --color-bg: #F6F7FB; 
+            --color-surface: #FFFFFF; 
+            --color-border: #E2E8F0;
+            --radius-button: 0.75rem;
+            --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+            --shadow-md: 0 6px 16px rgba(15,23,42,.08);
+            --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -20,8 +37,8 @@
         
         body {
             font-family: 'Cairo', sans-serif;
-            background: #FBF7F1;
-            color: #1B2A41;
+            background: var(--color-bg);
+            color: var(--color-text);
             text-align: center;
             padding: 2rem;
             min-height: 100vh;
@@ -39,7 +56,7 @@
         .error-code {
             font-size: 6rem;
             font-weight: 800;
-            color: #D4C29A;
+            color: var(--color-primary);
             margin-bottom: 1rem;
         }
         
@@ -47,43 +64,45 @@
             font-size: 2rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: #1B2A41;
+            color: var(--color-text);
         }
         
         .error-message {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            color: #6E6E6E;
+            color: var(--color-text-subtle);
             line-height: 1.6;
         }
         
         .btn {
             display: inline-block;
-            background: #D4C29A;
-            color: #1B2A41;
+            background: var(--color-primary);
+            color: var(--color-accent);
             padding: 12px 32px;
-            border-radius: 8px;
+            border-radius: var(--radius-button);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin: 0 8px;
+            box-shadow: var(--shadow-sm);
         }
         
         .btn:hover {
-            background: #c4b08a;
+            background: var(--color-primary-ink);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
         
         .btn-secondary {
-            background: transparent;
-            border: 2px solid #D4C29A;
-            color: #D4C29A;
+            background: var(--color-surface);
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
         }
         
         .btn-secondary:hover {
-            background: #D4C29A;
-            color: #1B2A41;
+            background: var(--color-primary);
+            color: var(--color-accent);
         }
         
         @media (max-width: 768px) {
