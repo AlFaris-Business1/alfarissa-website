@@ -38,20 +38,45 @@
 
 
 <style>
-:root{
-  --brand:#D4C29A; --brand-dark:#C0B08E;
-  --dark:#1B2A41; --sub:#2D3748; --bg:#FBF7F1; --border: rgba(212, 194, 154, 0.4);
-  --r-sm:8px; --r:12px; --r-lg:16px; --r-xl:24px;
-  --shadow-card:0 2px 4px rgba(27,42,65,.05),0 8px 20px rgba(27,42,65,.07);
-  --shadow-elev:0 4px 8px rgba(27,42,65,.06),0 16px 40px rgba(27,42,65,.1);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+:root {
+  /* Professional Navy/Gold Identity Colors */
+  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
+  --color-accent: #D4AF37;
+  --color-text: #0F172A; --color-text-subtle: #475569;
+  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
+  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
+  --radius-card: 1.25rem; --radius-button: 0.75rem;
+  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
+  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
+  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Legacy compatibility */
+  --brand: var(--color-accent); --brand-dark: #B8941F;
+  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
+  --bg: var(--color-bg); --border: var(--color-border);
+  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
+  --shadow-card: var(--shadow-md);
+  --shadow-elev: var(--shadow-lg);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0F1220; --color-surface: #111827;
+    --color-text: #F8FAFC; --color-text-subtle: #CBD5E1;
+    --color-border: #1F2937;
+  }
 }
 *{box-sizing:border-box}
 html{direction:rtl;scroll-behavior:smooth}
 body{
-  margin:0; font-family:"Cairo", system-ui, -apple-system, sans-serif;
-  background: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 100%); color:var(--dark);
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  margin:0; 
+  font-family:"Cairo", system-ui, -apple-system, sans-serif;
+  background:var(--color-bg); 
+  color:var(--color-text);
+  -webkit-font-smoothing:antialiased; 
+  text-rendering:optimizeLegibility;
   line-height:1.6;
 }
 h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
@@ -63,19 +88,75 @@ a{color:inherit;text-decoration:none; transition: var(--transition);}
 /* --- Components --- */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  border-radius:var(--r); padding:10px 20px; font-size:15px; font-weight:600;
+  border-radius:var(--radius-button); padding:12px 24px; font-size:15px; font-weight:600;
   border:1px solid transparent; transition:var(--transition); white-space:nowrap;
+  text-decoration: none;
 }
-.btn-primary{background:var(--brand);color:#fff;box-shadow: inset 0 1px 0 rgba(255,255,255,.2)}
-.btn-primary:hover{background:var(--brand-dark); transform:translateY(-2px); box-shadow: var(--shadow-card;)}
-.btn-ghost{background:#fff; color:var(--dark); border-color:var(--border);}
-.btn-ghost:hover{background:var(--dark); color:#fff; border-color:var(--dark); transform:translateY(-2px); box-shadow: var(--shadow-card;)}
+.btn-primary{
+  background:var(--color-primary);
+  color:#fff;
+  border: 1px solid rgba(212,175,55,0.5);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{
+  background:var(--color-primary-ink); 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(212,175,55,0.2);
+}
+.btn-secondary{
+  background:transparent; 
+  color:var(--color-primary); 
+  border: 1px solid var(--color-accent);
+}
+.btn-secondary:hover{
+  background:var(--color-accent); 
+  color:#fff; 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-sm);
+}
+.btn-ghost{
+  background:var(--color-surface); 
+  color:var(--color-text); 
+  border-color:var(--color-border);
+}
+.btn-ghost:hover{
+  background:var(--color-primary); 
+  color:#fff; 
+  border-color:var(--color-primary); 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-sm);
+}
 .card{
-  background:#fff; border:1px solid var(--border);
-  border-radius:var(--r-lg); padding:24px; box-shadow: var(--shadow-card);
+  background:var(--color-surface); 
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-card); 
+  padding:24px; 
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
 }
-.card:hover{transform:translateY(-4px); box-shadow: var(--shadow-elev;)}
+.card:hover{
+  transform:translateY(-4px); 
+  box-shadow: var(--shadow-lg);
+}
+.card-service {
+  border-top: 3px solid var(--color-accent);
+  position: relative;
+}
+.card-service::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: 12px;
+  width: 30px;
+  height: 3px;
+  background: var(--color-accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+.card-service:hover::before {
+  opacity: 1;
+  width: 60px;
+}
 .badge{
   display:inline-flex; align-items:center; justify-content:center; gap:4px;
   border-radius:999px; border:1px solid var(--border); background:#F8FAFC;
@@ -89,14 +170,16 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 @media(min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)} .grid-4{grid-template-columns:repeat(4,1fr)}}
 
 /* --- Header & Navigation --- */
-.topbar{background:var(--dark);color:#94A3B8; font-size:12px;}
+.topbar{background:var(--color-primary-ink);color:var(--color-text-subtle); font-size:12px;}
 .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
 .topbar-socials{display:flex; gap:12px;}
-.topbar-socials a:hover{color:var(--brand);}
+.topbar-socials a:hover{color:var(--color-accent);}
 .header{
   position:sticky; top:0; z-index:50;
-  background:rgba(27,42,65,.85); backdrop-filter:saturate(180%) blur(8px);
-  border-bottom:1px solid rgba(212,194,154,.3); color:#fff;
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(212,175,55,.3); 
+  color:#fff;
 }
 .header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
 .brand{display:flex;align-items:center;gap:12px}
@@ -104,11 +187,11 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   width:54px; height:54px;
   display:grid; place-items:center;
   border-radius:50%;
-  background: linear-gradient(135deg, #D4C29A 0%, #E6D4A8 50%, #C0B08E 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #E6D4A8 50%, #B8941F 100%);
   animation: logoFloat 3s ease-in-out infinite;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(212,194,154,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 .brand .logo::before {
   content: '';
@@ -120,6 +203,60 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   animation: logoShine 4s ease-in-out infinite;
   pointer-events: none;
+}
+
+/* Page Loader */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.page-loader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #E6D4A8 50%, #B8941F 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: loaderSpin 1.2s ease-in-out;
+  box-shadow: 0 8px 32px rgba(212,175,55,0.3);
+}
+.loader-logo img {
+  width: 60%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes loaderSpin {
+  0% { 
+    transform: rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
 }
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -211,11 +348,50 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 /* --- Hero Section --- */
 .hero{position:relative;color:#fff}
 .hero .bg{position:absolute;inset:0;background:url('https://i.postimg.cc/Nf6QqL14/1.png') center/cover no-repeat}
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(27,42,65,.92) 0%, rgba(43,63,91,.85) 50%, rgba(27,42,65,.88) 100%)}
-.hero .inner{position:relative;padding:100px 0; text-align:center;}
-.hero h1 {font-size:clamp(2.2rem, 4.5vw, 3.2rem); max-width:750px; margin:0 auto; font-weight:800; text-shadow: 0 4px 8px rgba(0,0,0,0.4);}
-.hero p {max-width:680px;margin:16px auto 0;color:#E2E8F0; font-size: 1.05rem; line-height:1.6;}
-.hero .actions {margin-top:28px;display:flex;gap:14px; justify-content:center; flex-wrap:wrap;}
+.hero .overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, #1B3E7A 100%);
+  opacity: 0.92;
+}
+.hero .overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(212,175,55,0.08) 0%, transparent 70%);
+}
+.hero .inner{position:relative;padding:100px 0; text-align:center; z-index: 2;}
+.hero h1 {
+  font-size:clamp(2.2rem, 4.5vw, 3.2rem); 
+  max-width:750px; 
+  margin:0 auto; 
+  font-weight:800; 
+  text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  position: relative;
+}
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--color-accent);
+}
+.hero p {
+  max-width:680px;
+  margin:20px auto 0;
+  color:#E2E8F0; 
+  font-size: 1.05rem; 
+  line-height:1.6;
+}
+.hero .actions {
+  margin-top:32px;
+  display:flex;
+  gap:16px; 
+  justify-content:center; 
+  flex-wrap:wrap;
+}
 .hero .btn-primary {
   background: linear-gradient(135deg, var(--brand) 0%, #E6D4A8 100%);
   color: var(--dark);
@@ -307,6 +483,78 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 }
 .floating-element {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* RTL: left side for Arabic */
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366 0%, #1ebe57 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: var(--transition);
+  animation: whatsappPulse 2s infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float i {
+  color: white;
+  font-size: 28px;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Call Button */
+.call-float {
+  position: fixed;
+  bottom: 20px;
+  left: 90px; /* Next to WhatsApp button */
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #B8941F 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  z-index: 999;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.call-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+.call-float i {
+  color: var(--color-primary);
+  font-size: 20px;
 }
 
 /* Enhanced Testimonials Section */
@@ -462,6 +710,13 @@ footer a:hover{color:var(--brand);}
 </head>
 <body>
 
+<!-- Page Loader -->
+<div class="page-loader">
+  <div class="loader-logo">
+    <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+  </div>
+</div>
+
 <div class="topbar">
   <div class="container row">
     <div class="small" style="display:flex; align-items:center; gap:16px;">
@@ -480,7 +735,7 @@ footer a:hover{color:var(--brand);}
   <div class="container row">
     <a href="index.html" class="brand">
       <div class="logo">
-        <img src="images/horse-logo.png" alt="شعار الفارس للأعمال">
+        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
       </div>
       <div>
         <div class="brand-text">الفارس للأعمال</div>
@@ -511,35 +766,581 @@ footer a:hover{color:var(--brand);}
 <section class="hero">
   <div class="bg"></div><div class="overlay"></div>
   <div class="container inner">
-    <h1 class="fade-in">نُقدّم لك الحل القانوني والإداري بثقة واحتراف</h1>
-    <p class="fade-in">"الفارس للأعمال" مكتب معتمد يقدّم خدمات قانونية وتعقيب إلكتروني باحترافية عالية. نُمكّن الأفراد والمنشآت من إنجاز معاملاتهم وحماية مصالحهم بكفاءة والتزام.</p>
+    <h1 class="fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
+    <p class="fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
     <div class="actions fade-in">
-      <a class="btn btn-primary" href="index.html#contact"><i data-lucide="file-text"></i> طلب استشارة قانونية</a>
-      <a class="btn btn-ghost" href="index.html#contact"><i data-lucide="phone"></i> تواصل معنا الآن</a>
+      <a class="btn btn-primary" href="index.html#contact"><i data-lucide="file-text"></i> اطلب استشارة الآن</a>
+      <a class="btn btn-secondary" href="https://wa.me/966555490800"><i data-lucide="message-circle"></i> تواصل واتساب</a>
     </div>
   </div>
 </section>
 
-<section id="services-highlights" class="section container section-with-pattern">
-    <div class="fade-in" style="position:relative; z-index:2;">
-      <h2 style="font-size:28px;text-align:center;">خدماتنا الرئيسية</h2>
-      <p class="lead" style="margin:6px auto 20px; text-align:center; max-width:580px; font-size:15px;">نقدم باقة متكاملة من الخدمات لتلبية كافة احتياجاتك القانونية والإدارية.</p>
-      <div class="swiper-container swiper-offer" style="margin-top:24px;">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">⚖️ استشارات قانونية</div><p class="lead" style="font-size:14px;">دعم مكتوب أو صوتي بمختلف فروع القانون.</p></div></div>
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">📄 صياغة العقود</div><p class="lead" style="font-size:14px;">عقود شراكة، توريد، عمل، عقارات، استثمار...</p></div></div>
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">🧾 مذكرات قانونية</div><p class="lead" style="font-size:14px;">دفاع، ردود، ومرافعات في جميع درجات التقاضي.</p></div></div>
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">🧑‍⚖️ تنفيذ الأحكام</div><p class="lead" style="font-size:14px;">متابعة الإجراءات حتى التنفيذ الكامل.</p></div></div>
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">🏢 تأسيس الشركات</div><p class="lead" style="font-size:14px;">تأسيس الكيانات واستخراج التراخيص.</p></div></div>
-          <div class="swiper-slide"><div class="card" style="text-align:center; height:100%;"><div class="badge" style="background:var(--brand);color:var(--dark);border-color:var(--brand);margin:0 auto 10px; font-size:13px; padding:6px 14px;">💼 الباقة القانونية</div><p class="lead" style="font-size:14px;">دعم شهري مستمر للمنشآت بأسعار مخصصة.</p></div></div>
+<section id="services-highlights" class="section" style="background: var(--color-surface);">
+  <div class="container">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خدماتنا المتخصصة</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
+        نقدم مجموعة شاملة من الخدمات القانونية والإدارية لتلبية كافة احتياجاتك المهنية بأعلى معايير الجودة والاحتراف
+      </p>
+    </div>
+
+    <!-- Main Service Categories -->
+    <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
+      
+      <!-- Legal Services Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('legal-services')" style="cursor: pointer; transition: var(--transition);">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">⚖️</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">الخدمات القانونية</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              استشارات قانونية – صياغة/مراجعة عقود – مذكرات ولوائح ودعاوى – تسجيل علامات – تحكيم ووساطة
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+      <!-- Government Transactions Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-transactions')" style="cursor: pointer;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏛️</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">التعقيب والمعاملات الحكومية</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              إنجاز معاملات – تراخيص وسجلات – تأشيرات وإقامات – خدمات "أمان ترافيك"
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
+        </div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+      <!-- Business Services Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('business-services')" style="cursor: pointer;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">💼</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">خدمات الأعمال</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              تأسيس شركات/مؤسسات – هيكلة وحوكمة – موارد بشرية – زكاة وضرائب
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
+        </div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+      <!-- Individual Services Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('individual-services')" style="cursor: pointer;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">👤</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">خدمات الأفراد</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              عقود إيجار – توكيلات – صكوك – خدمات عدلية
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
+        </div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+      <!-- Government Support Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-support')" style="cursor: pointer;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🎯</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">الدعم الحكومي والعمل الحر</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              حساب المواطن – الضمان – ريف – سكني – رخص العمل الحر
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
+        </div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+      <!-- Development Bank Financing Category -->
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('bank-financing')" style="cursor: pointer;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏦</div>
+          <div style="flex: 1;">
+            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">تمويل بنك التنمية</h3>
+            <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
+              الأسرة/الزواج/الترميم/المنشآت – الإعفاءات – إعادة الجدولة
+            </p>
+            <div class="service-cta" style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+              <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+            </div>
+          </div>
+        </div>
+        <div class="expand-indicator" style="text-align: center; margin-top: 16px; color: var(--color-accent); font-weight: 600;">
+          <i data-lucide="chevron-down" style="width: 20px;"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Special Highlight for Petitions (المعاريض) -->
+    <div class="card fade-in" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: white; text-align: center; margin-bottom: 32px;">
+      <h3 style="color: var(--color-accent); font-weight: 700; margin-bottom: 12px;">⚡ المعاريض</h3>
+      <p style="font-size: 1.1rem; margin-bottom: 16px;">زمن إنجاز ١–٢ يوم عمل</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn" style="background: var(--color-accent); color: var(--color-primary); font-weight: 600;">اطلب معروض الآن</a>
+        <a href="https://wa.me/966555490800" class="btn btn-secondary" style="border-color: var(--color-accent); color: var(--color-accent);">واتساب</a>
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- Detailed Service Sliders (Initially Hidden) -->
+<section id="service-details-container" style="display: none;">
+  
+  <!-- Legal Services Details -->
+  <div id="legal-services-details" class="service-details" style="background: var(--color-surface); padding: 48px 0; display: none;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h3 style="color: var(--color-primary); font-size: 2rem; font-weight: 700; margin-bottom: 12px;">الخدمات القانونية التفصيلية</h3>
+        <p style="color: var(--color-text-subtle); max-width: 600px; margin: 0 auto;">خدمات قانونية شاملة ومتخصصة لحماية حقوقك ومصالحك</p>
+      </div>
+      
+      <div class="swiper legal-services-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card card-service">
+              <div style="text-align: center;">
+                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
+                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">استشارات قانونية</h4>
+                <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">دعم مكتوب أو صوتي بمختلف فروع القانون</p>
+                
+                <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
+                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
+                    <li>وصف المشكلة القانونية</li>
+                    <li>الوثائق ذات الصلة</li>
+                    <li>تحديد نوع الاستشارة المطلوبة</li>
+                  </ul>
+                </div>
+                
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                  <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+                  <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="card card-service">
+              <div style="text-align: center;">
+                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📄</div>
+                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">صياغة ومراجعة العقود</h4>
+                <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">عقود شراكة، توريد، عمل، عقارات، استثمار</p>
+                
+                <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
+                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
+                    <li>نوع العقد المطلوب</li>
+                    <li>بيانات الأطراف</li>
+                    <li>تفاصيل الاتفاق</li>
+                  </ul>
+                </div>
+                
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                  <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+                  <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="card card-service">
+              <div style="text-align: center;">
+                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📋</div>
+                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">مذكرات ولوائح ودعاوى</h4>
+                <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">دفاع، ردود، ومرافعات في جميع درجات التقاضي</p>
+                
+                <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
+                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
+                    <li>تفاصيل القضية</li>
+                    <li>الأوراق القضائية</li>
+                    <li>المستندات المؤيدة</li>
+                  </ul>
+                </div>
+                
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                  <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+                  <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-slide">
+            <div class="card card-service">
+              <div style="text-align: center;">
+                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
+                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">تحكيم ووساطة</h4>
+                <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">حل النزاعات التجارية والمدنية خارج المحاكم</p>
+                
+                <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
+                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
+                    <li>طبيعة النزاع</li>
+                    <li>العقد الأساسي</li>
+                    <li>موافقة الأطراف</li>
+                  </ul>
+                </div>
+                
+                <div style="display: flex; gap: 8px; justify-content: center;">
+                  <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 16px;">اطلب الخدمة</a>
+                  <a href="https://wa.me/966555490800" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">واتساب</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next" style="color: var(--color-accent);"></div>
+        <div class="swiper-button-prev" style="color: var(--color-accent);"></div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Packages Section -->
+<section id="packages" class="section" style="background: var(--color-muted);">
+  <div class="container">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">باقاتنا المميزة</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
+        اختر الباقة التي تناسب احتياجاتك مع أسعار تنافسية وخدمات شاملة
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+      
+      <!-- Establishment Package -->
+      <div class="card card-service fade-in" style="text-align: center; position: relative;">
+        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏢</div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">باقة التأسيس</h3>
+        <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">تأسيس شركتك أو مؤسستك بكامل الخدمات</p>
+        
+        <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">سعر تنافسي</div>
+          <div style="color: var(--color-text-subtle); font-size: 0.85rem;">تواصل للحصول على عرض سعر</div>
+        </div>
+        
+        <ul style="text-align: right; margin-bottom: 24px; color: var(--color-text-subtle); font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;">✅ تأسيس الكيان القانوني</li>
+          <li style="margin-bottom: 8px;">✅ استخراج السجل التجاري</li>
+          <li style="margin-bottom: 8px;">✅ فتح الحساب البنكي</li>
+          <li style="margin-bottom: 8px;">✅ التسجيل في الضمان الاجتماعي</li>
+          <li style="margin-bottom: 8px;">✅ استخراج التراخيص المطلوبة</li>
+        </ul>
+        
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <a href="#" class="btn btn-primary">اطلب الباقة</a>
+          <a href="https://wa.me/966555490800" class="btn btn-secondary">واتساب</a>
+        </div>
+      </div>
+
+      <!-- Government Transactions Package -->
+      <div class="card card-service fade-in" style="text-align: center; position: relative;">
+        <div style="position: absolute; top: -12px; right: 12px; background: var(--color-accent); color: var(--color-primary); padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;">الأكثر طلباً</div>
+        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏛️</div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">باقة التعقيب</h3>
+        <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">إنجاز معاملاتك الحكومية بسرعة واحتراف</p>
+        
+        <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">سعر مرن</div>
+          <div style="color: var(--color-text-subtle); font-size: 0.85rem;">حسب نوع وعدد المعاملات</div>
+        </div>
+        
+        <ul style="text-align: right; margin-bottom: 24px; color: var(--color-text-subtle); font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;">✅ تراخيص وسجلات</li>
+          <li style="margin-bottom: 8px;">✅ تأشيرات وإقامات</li>
+          <li style="margin-bottom: 8px;">✅ خدمات أمان ترافيك</li>
+          <li style="margin-bottom: 8px;">✅ المعاملات البلدية</li>
+          <li style="margin-bottom: 8px;">✅ متابعة حتى الإنجاز</li>
+        </ul>
+        
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <a href="#" class="btn btn-primary">اطلب الباقة</a>
+          <a href="https://wa.me/966555490800" class="btn btn-secondary">واتساب</a>
+        </div>
+      </div>
+
+      <!-- Legal Package Basic -->
+      <div class="card card-service fade-in" style="text-align: center;">
+        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الأساسية</h3>
+        <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">دعم قانوني شامل لحاجاتك الأساسية</p>
+        
+        <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">شهرياً</div>
+          <div style="color: var(--color-text-subtle); font-size: 0.85rem;">استشارة للسعر</div>
+        </div>
+        
+        <ul style="text-align: right; margin-bottom: 24px; color: var(--color-text-subtle); font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;">✅ استشارات قانونية محدودة</li>
+          <li style="margin-bottom: 8px;">✅ مراجعة العقود الأساسية</li>
+          <li style="margin-bottom: 8px;">✅ صياغة المعاريض</li>
+          <li style="margin-bottom: 8px;">✅ المتابعة الأولية</li>
+          <li style="margin-bottom: 8px;">✅ دعم هاتفي</li>
+        </ul>
+        
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <a href="#" class="btn btn-primary">اطلب الباقة</a>
+          <a href="https://wa.me/966555490800" class="btn btn-secondary">واتساب</a>
+        </div>
+      </div>
+
+      <!-- Legal Package Extended -->
+      <div class="card card-service fade-in" style="text-align: center;">
+        <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الموسعة</h3>
+        <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">حلول قانونية شاملة للمنشآت الكبيرة</p>
+        
+        <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">مخصص</div>
+          <div style="color: var(--color-text-subtle); font-size: 0.85rem;">حسب حجم المنشأة</div>
+        </div>
+        
+        <ul style="text-align: right; margin-bottom: 24px; color: var(--color-text-subtle); font-size: 0.9rem;">
+          <li style="margin-bottom: 8px;">✅ استشارات قانونية غير محدودة</li>
+          <li style="margin-bottom: 8px;">✅ صياغة ومراجعة العقود</li>
+          <li style="margin-bottom: 8px;">✅ التمثيل القانوني</li>
+          <li style="margin-bottom: 8px;">✅ إدارة القضايا</li>
+          <li style="margin-bottom: 8px;">✅ دعم ٢٤/٧</li>
+        </ul>
+        
+        <div style="display: flex; gap: 8px; justify-content: center;">
+          <a href="#" class="btn btn-primary">اطلب الباقة</a>
+          <a href="https://wa.me/966555490800" class="btn btn-secondary">واتساب</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Work Steps Section -->
+<section id="work-steps" class="section" style="background: var(--color-surface);">
+  <div class="container">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خطوات العمل</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
+        نتبع منهجية واضحة ومنظمة لضمان إنجاز خدماتك بأعلى معايير الجودة والسرعة
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+      
+      <!-- Step 1 -->
+      <div class="fade-in" style="text-align: center;">
+        <div style="position: relative; margin-bottom: 24px;">
+          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+            01
+          </div>
+        </div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">طلب الخدمة</h3>
+        <p style="color: var(--color-text-subtle); line-height: 1.6;">تواصل معنا عبر الموقع أو الواتساب وحدد الخدمة التي تحتاجها بالتفصيل</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="fade-in" style="text-align: center;">
+        <div style="position: relative; margin-bottom: 24px;">
+          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+            02
+          </div>
+        </div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">مراجعة المتطلبات</h3>
+        <p style="color: var(--color-text-subtle); line-height: 1.6;">نراجع طلبك ونحدد المتطلبات والوثائق اللازمة مع تقديم عرض سعر واضح</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="fade-in" style="text-align: center;">
+        <div style="position: relative; margin-bottom: 24px;">
+          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+            03
+          </div>
+        </div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">التنفيذ والمتابعة</h3>
+        <p style="color: var(--color-text-subtle); line-height: 1.6;">نبدأ العمل على خدمتك فوراً مع إبقائك على اطلاع دائم بالتقدم المحرز</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="fade-in" style="text-align: center;">
+        <div style="position: relative; margin-bottom: 24px;">
+          <div style="background: linear-gradient(135deg, var(--color-accent) 0%, #E6D4A8 100%); color: var(--color-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+            ✓
+          </div>
+        </div>
+        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">التسليم والدعم</h3>
+        <p style="color: var(--color-text-subtle); line-height: 1.6;">نسلم الخدمة مكتملة مع تقديم الدعم اللازم وضمان الجودة</p>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="fade-in" style="text-align: center; margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); border-radius: var(--radius-card); color: white;">
+      <h3 style="color: var(--color-accent); font-weight: 700; margin-bottom: 16px;">جاهز للبدء؟</h3>
+      <p style="margin-bottom: 24px; opacity: 0.9;">تواصل معنا الآن واحصل على استشارة مجانية لتحديد أفضل خدمة تناسب احتياجاتك</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#contact" class="btn" style="background: var(--color-accent); color: var(--color-primary); font-weight: 600;">ابدأ الآن</a>
+        <a href="https://wa.me/966555490800" class="btn btn-secondary" style="border-color: var(--color-accent); color: var(--color-accent);">واتساب مباشر</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="section" style="background: var(--color-muted);">
+  <div class="container">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">الأسئلة الشائعة</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
+        إجابات سريعة على أكثر الأسئلة التي يطرحها عملاؤنا
+      </p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 16px;">
+      
+      <!-- FAQ Item 1 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq1')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كم يستغرق إنجاز المعاملات الحكومية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq1-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              مدة الإنجاز تختلف حسب نوع المعاملة والجهة المختصة. المعاملات البسيطة مثل تجديد الرخص تستغرق ١-٣ أيام عمل، بينما المعاملات المعقدة مثل التراخيص الجديدة قد تستغرق ١-٢ أسبوع. نلتزم بإعلامك بالمدة المتوقعة مقدماً.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq2')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل تقدمون استشارات قانونية فورية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq2-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              نعم، نوفر استشارات قانونية فورية عبر الهاتف أو الواتساب للحالات العاجلة. للاستشارات المعمقة التي تتطلب دراسة الوثائق، نحتاج ٢٤-٤٨ ساعة لتقديم رد مكتوب شامل.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq3')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كيف يتم تحديد أسعار الخدمات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq3-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              أسعارنا شفافة وتنافسية. نعتمد على عدة عوامل: نوع الخدمة، درجة التعقيد، الوقت المطلوب، والرسوم الحكومية إن وجدت. نقدم عرض سعر واضح قبل البدء بأي خدمة دون تكاليف خفية.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq4')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل يمكنني متابعة حالة طلبي؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq4-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              بالطبع! نوفر متابعة مستمرة لحالة طلبك عبر الواتساب أو الهاتف. ستحصل على تحديثات دورية بالتقدم المحرز، وسنعلمك فوراً عند اكتمال أي مرحلة من مراحل الخدمة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq5')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">ما هي وثائق التأسيس المطلوبة للشركات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq5-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              الوثائق المطلوبة تشمل: صور هوية الشركاء، عنوان المقر، عقد الإيجار، النشاط التجاري المطلوب، ورأس المال. نساعدك في تحضير جميع الوثائق وفق المتطلبات النظامية الحديثة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ CTA -->
+    <div class="fade-in" style="text-align: center; margin-top: 40px; padding: 24px; background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-accent); border-style: dashed;">
+      <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">لديك سؤال آخر؟</h4>
+      <p style="color: var(--color-text-subtle); margin-bottom: 16px;">لا تتردد في التواصل معنا للحصول على إجابة فورية</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/966555490800" class="btn btn-primary">اسأل عبر الواتساب</a>
+        <a href="tel:0555490800" class="btn btn-secondary">اتصل بنا مباشرة</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <section class="section-tight container">
-    <div class="glass-card fade-in floating-element" style="background: var(--dark); color: #fff; backdrop-filter: blur(15px);">>
+    <div class="glass-card fade-in floating-element" style="background: var(--dark); color: #fff; backdrop-filter: blur(15px);">
         <div class="grid grid-2" style="align-items: center;">
             <div>
                 <h2 style="color: #fff; font-size:26px;">من نحن؟</h2>
@@ -655,12 +1456,12 @@ footer a:hover{color:var(--brand);}
   </div>
 </footer>
 
-<!-- New Floating Icons -->
-<a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
-  <i class="fab fa-whatsapp"></i>
+<!-- Floating Contact Buttons -->
+<a href="https://wa.me/966555490800" class="whatsapp-float" target="_blank" title="واتساب" aria-label="تواصل عبر الواتساب">
+  <i data-lucide="message-circle"></i>
 </a>
-<a href="tel:0555490800" class="floating-icon call" title="اتصال">
-  <i class="fas fa-phone-alt"></i>
+<a href="tel:0555490800" class="call-float" title="اتصال" aria-label="اتصال هاتفي">
+  <i data-lucide="phone"></i>
 </a>
 <a href="#" class="backtotop" title="العودة للأعلى"><i data-lucide="arrow-up"></i></a>
 
@@ -752,6 +1553,142 @@ function setupMobileMenu(){
   });
 }
 
+// Service details toggle functionality
+function toggleServiceDetails(serviceId) {
+  const detailsContainer = document.getElementById('service-details-container');
+  const serviceDetails = document.getElementById(serviceId + '-details');
+  
+  if (!detailsContainer || !serviceDetails) return;
+  
+  // Check if this service is already open
+  const isCurrentlyOpen = serviceDetails.style.display === 'block';
+  
+  // Hide all service details first
+  const allDetails = detailsContainer.querySelectorAll('.service-details');
+  allDetails.forEach(detail => {
+    detail.style.display = 'none';
+  });
+  
+  if (!isCurrentlyOpen) {
+    // Show the container and the specific service details
+    detailsContainer.style.display = 'block';
+    serviceDetails.style.display = 'block';
+    
+    // Scroll to the details section
+    setTimeout(() => {
+      serviceDetails.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }, 100);
+    
+    // Initialize the swiper for this service if not already done
+    setupServiceSlider(serviceId);
+  } else {
+    // Hide the entire container if clicking the same service
+    detailsContainer.style.display = 'none';
+  }
+  
+  // Update chevron icons
+  updateChevronIcons(serviceId, !isCurrentlyOpen);
+}
+
+function updateChevronIcons(activeServiceId, isOpen) {
+  // Reset all chevrons to down
+  document.querySelectorAll('.expand-indicator i').forEach(icon => {
+    icon.setAttribute('data-lucide', 'chevron-down');
+  });
+  
+  // Update the active service chevron
+  if (isOpen) {
+    const activeCard = document.querySelector(`[onclick="toggleServiceDetails('${activeServiceId}')"]`);
+    if (activeCard) {
+      const chevron = activeCard.querySelector('.expand-indicator i');
+      if (chevron) {
+        chevron.setAttribute('data-lucide', 'chevron-up');
+      }
+    }
+  }
+  
+  // Re-render lucide icons
+  lucide.createIcons();
+}
+
+function setupServiceSlider(serviceId) {
+  const swiperSelector = `.${serviceId}-swiper`;
+  const existingSwiper = document.querySelector(swiperSelector);
+  
+  if (!existingSwiper) return;
+  
+  // Check if swiper is already initialized
+  if (existingSwiper.swiper) return;
+  
+  new Swiper(swiperSelector, {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    pagination: {
+      el: `${swiperSelector} .swiper-pagination`,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: `${swiperSelector} .swiper-button-next`,
+      prevEl: `${swiperSelector} .swiper-button-prev`,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      }
+    }
+  });
+}
+
+// FAQ toggle functionality
+function toggleFAQ(faqId) {
+  const answer = document.getElementById(faqId + '-answer');
+  const icon = document.querySelector(`[onclick="toggleFAQ('${faqId}')"] .faq-icon i`);
+  
+  if (!answer || !icon) return;
+  
+  const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-answer').forEach(faq => {
+    if (faq !== answer) {
+      faq.style.maxHeight = '0';
+    }
+  });
+  
+  // Reset all other icons to plus
+  document.querySelectorAll('.faq-icon i').forEach(i => {
+    if (i !== icon) {
+      i.setAttribute('data-lucide', 'plus');
+    }
+  });
+  
+  // Toggle current FAQ
+  if (isOpen) {
+    answer.style.maxHeight = '0';
+    icon.setAttribute('data-lucide', 'plus');
+  } else {
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.setAttribute('data-lucide', 'minus');
+  }
+  
+  // Re-render lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
 ready(()=>{
   lucide.createIcons();
   setupSliders();
@@ -760,18 +1697,25 @@ ready(()=>{
   setupMobileMenu();
 });
 
-// Preloader functionality
-window.onload = function() {
-  document.getElementById('preloader').style.opacity = 0;
-  setTimeout(function() {
-    document.getElementById('preloader').style.display = 'none';
-  }, 500);
-};
+// Page loader functionality
+window.addEventListener('load', function() {
+  const loader = document.querySelector('.page-loader');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('fade-out');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
+    }, 1200); // Wait 1.2 seconds as specified
+  }
+});
+
+// Add motion reduction support
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.setProperty('--transition', 'none');
+}
 </script>
 
-<!-- Preloader -->
-<div id="preloader">
-  <img src="images/horse-logo.png" id="preloader-logo" alt="loading">
-</div>
+
 
 </body></html>
