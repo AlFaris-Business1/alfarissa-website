@@ -1,286 +1,612 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <!-- SEO Meta Tags -->
-    <title>الباقات المتكاملة الشهرية - الفارس للأعمال للخدمات القانونية والإدارية</title>
-    <meta name="description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية مع دعم مستمر للمنشآت والأفراد. خدمات شاملة بأسعار مناسبة في المملكة العربية السعودية">
-    <meta name="keywords" content="باقات شهرية، خدمات قانونية، دعم مستمر، منشآت، أفراد، اشتراك شهري، خدمات إدارية">
-    <meta name="author" content="الفارس للأعمال">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://alfarissa.org/packages-page.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="الباقات المتكاملة الشهرية - الفارس للأعمال">
-    <meta property="og:description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية مع دعم مستمر للمنشآت والأفراد">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfarissa.org/packages-page.html">
-    <meta property="og:site_name" content="الفارس للأعمال">
-    <meta property="og:locale" content="ar_SA">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="الباقات المتكاملة الشهرية - الفارس للأعمال">
-    <meta name="twitter:description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية">
-    
-    <!-- Tailwind CSS CDN for styling -->
-    
-    <!-- Google Fonts for Noto Kufi Arabic -->
-    
-    <!-- Font Awesome for icons -->
-    
-        <!-- Enhanced Resource Loading with Fallbacks -->
-    <!-- Google Fonts for Noto Kufi Arabic with fallback -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Font Awesome with multiple CDN fallbacks -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';">
-    
-    <!-- Tailwind CSS with fallback -->
-    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/tailwind.min.js" onerror="loadTailwindFallback()"></script>
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="css/common.css">
-    
-    <!-- Resource Loading Fallbacks -->
-    <script>
-        function loadTailwindFallback() {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.tailwindcss.com';
-            script.onerror = function() {
-                console.warn('Tailwind CSS failed to load, using fallback styling');
-            };
-            document.head.appendChild(script);
-        }
-        
-        function checkFontLoading() {
-            if (!document.fonts || !document.fonts.check) return;
-            
-            setTimeout(() => {
-                if (!document.fonts.check('1em "Noto Kufi Arabic"')) {
-                    document.body.style.fontFamily = '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
-                    console.warn('Arabic font failed to load, using fallback');
-                }
-            }, 3000);
-        }
-        
-        document.addEventListener('DOMContentLoaded', checkFontLoading);
-    </script>
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "الباقات المتكاملة - الفارس للأعمال",
-        "description": "باقات شهرية متكاملة للخدمات القانونية والإدارية",
-        "url": "https://alfarissa.org/packages-page.html",
-        "serviceType": "باقات خدمات شهرية",
-        "provider": {
-            "@type": "LegalService",
-            "name": "الفارس للأعمال"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "المملكة العربية السعودية"
-        }
+<title>الفارس للأعمال — الباقات</title>
+<meta name="description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية مع دعم مستمر للمنشآت والأفراد في المملكة العربية السعودية."/>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://alfarissa.org/packages-page.html"/>
+<link rel="icon" href="images/horse-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="images/horse-logo.png">
+<link rel="shortcut icon" href="images/horse-logo.png" type="image/png">
+
+<!-- SEO/Social Media Meta Tags -->
+<meta property="og:title" content="الفارس للأعمال — الباقات"/>
+<meta property="og:description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية مع دعم مستمر للمنشآت والأفراد في المملكة العربية السعودية."/>
+<meta property="og:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+<meta property="og:url" content="https://alfarissa.org/packages-page.html"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="الفارس للأعمال — الباقات"/>
+<meta name="twitter:description" content="باقات شهرية متكاملة للخدمات القانونية والإدارية"/>
+<meta name="twitter:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root {
+  /* Professional Navy/White Identity Colors */
+  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
+  --color-accent: #FFFFFF;
+  --color-text: #0F172A; --color-text-subtle: #475569;
+  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
+  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
+  --radius-card: 1.25rem; --radius-button: 0.75rem;
+  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
+  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
+  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Legacy compatibility */
+  --brand: var(--color-accent); --brand-dark: #F0F0F0;
+  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
+  --bg: var(--color-bg); --border: var(--color-border);
+}
+
+*{box-sizing:border-box}
+html{direction:rtl;scroll-behavior:smooth}
+body{
+  margin:0; 
+  font-family:"Cairo", system-ui, -apple-system, sans-serif;
+  background:var(--color-bg); 
+  color:var(--color-text);
+  -webkit-font-smoothing:antialiased; 
+  text-rendering:optimizeLegibility;
+  line-height:1.6;
+}
+h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
+p{margin:.6em 0}
+a{color:inherit;text-decoration:none; transition: var(--transition);}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.section{padding:80px 0} .section-tight{padding:60px 0}
+
+/* --- Components --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border-radius:var(--radius-button); padding:12px 24px; font-size:15px; font-weight:600;
+  border:1px solid transparent; transition:var(--transition); white-space:nowrap;
+  text-decoration: none;
+}
+.btn-primary{
+  background:var(--color-primary);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{
+  background:var(--color-primary-ink); 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(255,255,255,0.1);
+}
+.btn-secondary{
+  background:transparent; 
+  color:var(--color-primary); 
+  border: 1px solid var(--color-border);
+}
+.btn-secondary:hover{
+  background:var(--color-primary); 
+  color:#fff; 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Header & Navigation --- */
+.topbar{background:var(--color-primary-ink);color:var(--color-text-subtle); font-size:12px;}
+.topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+.topbar-socials{display:flex; gap:12px;}
+.topbar-socials a:hover{color:var(--color-accent);}
+.header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.15); 
+  color:#fff;
+}
+.header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{
+  width:54px; height:54px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 50%, var(--color-primary-ink) 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(11,36,71,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.brand .logo img {
+    max-width: 70%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+.nav{
+    display:none;
+    flex-direction:column;
+    gap:16px;
+    font-size:14px;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    background:rgba(27,42,65,0.95);
+    padding:16px;
+    border-top:1px solid rgba(212,194,154,.3);
+    align-items:center;
+}
+.nav.open{display:flex}
+.nav a{color:#E2E8F0; position:relative; padding:8px 0; width:100%; text-align:center; font-size:13px;}
+.nav a:after{
+    content:''; position:absolute; bottom:0; right:0;
+    width:0; height:2px; background:var(--brand); transition:var(--transition);
+}
+.nav a:hover{color:#fff}
+.nav a.active:after, .nav a:hover:after{width:100%;}
+@media(min-width:992px){
+    .nav{
+        display:flex;
+        position:static;
+        flex-direction:row;
+        background:transparent;
+        padding:0;
+        border-top:none;
+        gap:24px;
     }
-    </script>
-    </head>
-<body class="text-[var(--color-primary-text)]">
+    .nav a{
+        width:auto;
+        padding:4px 0;
+        text-align:initial;
+        font-size:14px;
+    }
+}
 
-    <!-- Header (similar to homepage for consistency) -->
-    
-    <!-- Navigation Bar -->
-    <!-- Navigation Bar - Simplified -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-balance-scale-right ml-2"></i>
-                الفارس للأعمال
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="our-services-page.html">خدماتنا</a></li>
-                <li><a href="legal-services-page.html">قانونية</a></li>
-                <li><a href="packages-page.html" class="nav-active">الباقات</a></li>
-                <li><a href="index.html#contact" class="nav-contact-btn">تواصل معنا</a></li>
-            </ul>
-            <div class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+.menu-toggle{
+    background:none;
+    border:none;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.menu-toggle i{width:20px;height:20px}
+@media(min-width:992px){.menu-toggle{display:none}}
+.header-cta{display:none}
+@media(min-width:992px){.header-cta{display:block}}
+
+.brand-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.brand-tagline {
+    color: var(--brand);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: -2px;
+}
+
+/* Footer */
+footer{
+    background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-ink) 100%);
+    color:#fff; margin-top:48px; padding:60px 0 20px;
+    position: relative;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 42, 65, 0.92);
+}
+footer .container {
+    position: relative;
+    z-index: 2;
+}
+footer a:hover{color:var(--brand);}
+.footer-grid{display:grid;gap:32px}
+@media(min-width:992px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
+
+/* Main content styling */
+.main-content {
+  padding: 80px 0;
+  background: var(--color-bg);
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.page-header h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-subtle);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.content-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+}
+.content-section h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+/* Package cards */
+.packages-grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 32px;
+}
+@media(min-width:768px){.packages-grid{grid-template-columns: repeat(2, 1fr)}}
+@media(min-width:992px){.packages-grid{grid-template-columns: repeat(3, 1fr)}}
+.package-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  position: relative;
+  text-align: center;
+}
+.package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+.package-card.featured {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-muted) 100%);
+}
+.package-card.featured::before {
+  content: 'الأكثر طلباً';
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--color-primary);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.package-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.package-card h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+.package-features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+  text-align: right;
+}
+.package-features li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.package-features li:last-child {
+  border-bottom: none;
+}
+.package-features li i {
+  color: var(--color-success);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 40px;
+}
+.faq-item {
+  background: var(--color-muted);
+  border-radius: var(--radius-card);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.faq-question {
+  background: var(--color-primary);
+  color: white;
+  padding: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-answer {
+  padding: 20px;
+  background: var(--color-surface);
+}
+
+/* Floating action buttons */
+.floating-icon {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: var(--shadow-lg);
+}
+.floating-icon.whatsapp {
+  background: #25D366;
+  bottom: 20px;
+  right: 20px;
+}
+.floating-icon.call {
+  background: var(--color-primary);
+  bottom: 90px;
+  right: 20px;
+}
+.floating-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container row">
+    <div class="small" style="display:flex; align-items:center; gap:16px;">
+        <span><i class="fas fa-envelope" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</span>
+        <span><i class="fas fa-phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800</span>
+    </div>
+    <div class="topbar-socials">
+      <a href="#" title="Twitter"><i class="fab fa-twitter" style="width:16px;"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram" style="width:16px;"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin" style="width:16px;"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container row">
+    <a href="index.html" class="brand">
+      <div class="logo">
+        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+      </div>
+      <div>
+        <div class="brand-text">الفارس للأعمال</div>
+        <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="vision-page.html">من نحن</a>
+      <a href="our-services-page.html">الخدمات</a>
+      <a href="packages-page.html" class="active">الباقات</a>
+      <a href="legal-services-page.html">الخدمات القانونية</a>
+      <a href="index.html#contact">اتصل بنا</a>
+      <a href="faq-page.html">الأسئلة الشائعة</a>
     </nav>
+    <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
+  </div>
+</header>
 
-<main class="py-16 px-4 md:px-8 lg:px-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-8">الاشتراك بالباقات</h2>
-            <p class="text-lg text-[var(--color-secondary-text)] leading-relaxed max-w-4xl mx-auto mb-12">
-                نوفر باقات خدمية متكاملة مصممة خصيصًا للمنشآت والأفراد، لتوفير دعم قانوني وإداري مستمر بأفضل قيمة.
-            </p>
+<main class="main-content">
+  <div class="container">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>الباقات المتكاملة</h1>
+      <p>نوفر باقات خدمية متكاملة مصممة خصيصًا للمنشآت والأفراد، لتوفير دعم قانوني وإداري مستمر بأفضل قيمة.</p>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- بطاقة 1: الباقة الأساسية -->
-                <div class="bg-[var(--color-card-light-blue)] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-[var(--color-headings-cta)]">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 class="text-2xl font-amiri font-semibold mb-3">الباقة الأساسية</h3>
-                    <ul class="text-right space-y-3 text-lg font-arabic-text">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تنفيذ الطلبات ضمن ساعات العمل الرسمية.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تقارير موجزة دورية عن سير العمل.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعم فني ومساندة عبر البريد الإلكتروني.</li>
-                    </ul>
-                </div>
-                <!-- بطاقة 2: الباقة المتقدمة -->
-                <div class="bg-[var(--color-card-light-gray)] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-[var(--color-headings-cta)]">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="text-2xl font-amiri font-semibold mb-3">الباقة المتقدمة</h3>
-                    <ul class="text-right space-y-3 text-lg font-arabic-text">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> كل ما في الباقة الأساسية.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعم شخصي مع مدير حساب مخصص.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تقارير تفصيلية وخطط تحسين الأداء.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> أولوية في الرد على الاستفسارات والمكالمات.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> خصم خاص على خدمة الإقرارات الزكوية والضريبية.</li>
-                    </ul>
-                </div>
-                <!-- بطاقة 3: الباقة الشاملة -->
-                <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border-t-4 border-[var(--color-headings-cta)]">
-                    <div class="text-5xl mb-4 card-icon"><i class="fas fa-gem"></i></div>
-                    <h3 class="text-2xl font-amiri font-semibold mb-3">الباقة الشاملة</h3>
-                    <ul class="text-right space-y-3 text-lg font-arabic-text">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> كل ما في الباقة المتقدمة.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إدارة استباقية وحلول استراتيجية لمشاكلك.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> مراجعات دورية وتحديثات مستمرة للوضع القانوني.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> زيارات ميدانية واستشارات وجهًا لوجه عند الحاجة.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> خدمة إعداد وتقديم الإقرارات الزكوية والضريبية (شاملة).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- الأسئلة الشائعة للباقات (retained, but as simple FAQ items) -->
-            <div class="mt-16 text-right max-w-4xl mx-auto">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-8">أسئلة شائعة حول الباقات</h3>
-                <div class="faq-accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h4 class="font-amiri text-xl font-semibold">هل يمكنني تعديل باقتي لاحقًا؟</h4>
-                        <i class="fas fa-chevron-down accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="pb-4">نعم، يمكنك ترقية أو تخفيض باقتك في أي وقت حسب احتياجاتك المتغيرة، مع احتساب الفروقات بناءً على الشروط المتفق عليها.</p>
-                    </div>
-                </div>
-                <div class="faq-accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h4 class="font-amiri text-xl font-semibold">ما هي طرق الدفع المتاحة للاشتراك؟</h4>
-                        <i class="fas fa-chevron-down accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="pb-4">نوفر عدة طرق دفع مريحة تتضمن التحويل البنكي، وبطاقات الائتمان، وطرق دفع إلكترونية أخرى سيتم توضيحها لك عند الاشتراك.</p>
-                    </div>
-                </div>
-                <div class="faq-accordion-item">
-                    <div class="accordion-header" onclick="toggleAccordion(this)">
-                        <h4 class="font-amiri text-xl font-semibold">كيف يتم تحديد الأسعار المخصصة للباقات الشاملة؟</h4>
-                        <i class="fas fa-chevron-down accordion-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="pb-4">تعتمد الأسعار المخصصة على طبيعة وحجم الأعمال المطلوبة، وعدد الاستشارات، وحجم الدعم الشهري. سيتم تقديم عرض سعر تفصيلي بعد تقييم احتياجاتك.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-16">
-                <a href="https://wa.me/966555490800?text=مرحباً، أود الاشتراك في إحدى الباقات" class="btn-primary text-xl" target="_blank" rel="noopener">
-                    اشترك الآن <i class="fas fa-arrow-left mr-2"></i>
-                </a>
-                <p class="text-[var(--color-secondary-text)] text-sm mt-4 font-arabic-text">
-                    للمزيد من الاستفسارات، تواصل عبر <a href="mailto:legal@alfarissa.org" class="text-[var(--color-primary-text)] hover:underline">legal@alfarissa.org</a>
-                </p>
-            </div>
+    <!-- Packages Section -->
+    <div class="content-section">
+      <h2>اختر الباقة التي تناسب احتياجاتك</h2>
+      <div class="packages-grid">
+        <!-- Basic Package -->
+        <div class="package-card">
+          <div class="package-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>الباقة الأساسية</h3>
+          <p>مثالية للمنشآت الصغيرة والأفراد</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i> تنفيذ الطلبات ضمن ساعات العمل الرسمية</li>
+            <li><i class="fas fa-check-circle"></i> تقارير موجزة دورية عن سير العمل</li>
+            <li><i class="fas fa-check-circle"></i> دعم فني ومساندة عبر البريد الإلكتروني</li>
+            <li><i class="fas fa-check-circle"></i> استشارات قانونية أساسية شهرياً</li>
+          </ul>
+          <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الباقة الأساسية" class="btn btn-primary">
+            اطلب الباقة <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+          </a>
         </div>
-    </main>
 
-    <!-- Footer (similar to homepage for consistency) -->
-        <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <!-- عن الفارس للأعمال -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>عن الفارس للأعمال</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="our-services-page.html">خدماتنا</a></li>
-                        <li><a href="vision-page.html">رؤيتنا</a></li>
-                        <li><a href="licenses-page.html">التراخيص</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- روابط سريعة -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>روابط سريعة</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="index.html">الصفحة الرئيسية</a></li>
-                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                        <li><a href="government-transactions-page.html">تعقيب المعاملات الحكومية</a></li>
-                        <li><a href="packages-page.html">الاشتراك بالباقات</a></li>
-                        <li><a href="zakat-tax-page.html">الإقرارات الزكوية والضريبية</a></li>
-                        <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- معلومات التواصل ونموذج الاتصال -->
-            <div style="grid-column: span 2;">
-                <div class="footer-col-header">
-                    <h3>تواصل معنا</h3>
-                </div>
-                <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
-                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
-                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
-                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
-                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
-                </div>
-
-                <!-- نموذج التواصل السريع -->
-                <div class="footer-form-container">
-                    <h4>أرسل لنا رسالة سريعة</h4>
-                    <form>
-                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
-                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
-                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
-                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <!-- Advanced Package (Featured) -->
+        <div class="package-card featured">
+          <div class="package-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>الباقة المتقدمة</h3>
+          <p>الحل الأمثل للمنشآت المتوسطة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i> كل ما في الباقة الأساسية</li>
+            <li><i class="fas fa-check-circle"></i> دعم شخصي مع مدير حساب مخصص</li>
+            <li><i class="fas fa-check-circle"></i> تقارير تفصيلية وخطط تحسين الأداء</li>
+            <li><i class="fas fa-check-circle"></i> أولوية في الرد على الاستفسارات والمكالمات</li>
+            <li><i class="fas fa-check-circle"></i> خصم خاص على خدمة الإقرارات الزكوية والضريبية</li>
+          </ul>
+          <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الباقة المتقدمة" class="btn btn-primary">
+            اطلب الباقة <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+          </a>
         </div>
-        <!-- شريط سفلي لحقوق الملكية -->
-        <div class="footer-copyright">
-            جميع الحقوق محفوظة © الفارس للأعمال 2025
+
+        <!-- Comprehensive Package -->
+        <div class="package-card">
+          <div class="package-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <h3>الباقة الشاملة</h3>
+          <p>للمنشآت الكبيرة والمتطلبات المعقدة</p>
+          <ul class="package-features">
+            <li><i class="fas fa-check-circle"></i> كل ما في الباقة المتقدمة</li>
+            <li><i class="fas fa-check-circle"></i> إدارة استباقية وحلول استراتيجية لمشاكلك</li>
+            <li><i class="fas fa-check-circle"></i> مراجعات دورية وتحديثات مستمرة للوضع القانوني</li>
+            <li><i class="fas fa-check-circle"></i> زيارات ميدانية واستشارات وجهًا لوجه عند الحاجة</li>
+            <li><i class="fas fa-check-circle"></i> خدمة إعداد وتقديم الإقرارات الزكوية والضريبية (شاملة)</li>
+          </ul>
+          <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الباقة الشاملة" class="btn btn-primary">
+            اطلب الباقة <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
+    <!-- FAQ Section -->
+    <div class="content-section">
+      <h2>أسئلة شائعة حول الباقات</h2>
+      <div class="faq-section">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هل يمكنني تعديل باقتي لاحقًا؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>نعم، يمكنك ترقية أو تخفيض باقتك في أي وقت حسب احتياجاتك المتغيرة، مع احتساب الفروقات بناءً على الشروط المتفق عليها.</p>
+          </div>
+        </div>
 
-    <!-- New Floating Icons -->
-    <a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:0555490800" class="floating-icon call" title="اتصال">
-      <i class="fas fa-phone-alt"></i>
-    </a>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>ما هي طرق الدفع المتاحة للاشتراك؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>نوفر عدة طرق دفع مريحة تتضمن التحويل البنكي، وبطاقات الائتمان، وطرق دفع إلكترونية أخرى سيتم توضيحها لك عند الاشتراك.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>كيف يتم تحديد الأسعار المخصصة للباقات الشاملة؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>تعتمد الأسعار المخصصة على طبيعة وحجم الأعمال المطلوبة، وعدد الاستشارات، وحجم الدعم الشهري. سيتم تقديم عرض سعر تفصيلي بعد تقييم احتياجاتك.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div style="text-align: center; margin-top: 60px;">
+      <h2 style="color: var(--color-primary); margin-bottom: 16px;">جاهز للبدء؟</h2>
+      <p style="color: var(--color-text-subtle); margin-bottom: 32px;">تواصل معنا الآن للحصول على استشارة مجانية وتحديد الباقة المناسبة لك</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن باقاتكم" class="btn btn-primary">
+          تواصل عبر الواتساب <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>
+        </a>
+        <a href="mailto:legal@alfarissa.org" class="btn btn-secondary">
+          راسلنا بالإيميل <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال" style="width:48px;height:48px;filter:brightness(0) invert(1);">
+          <div style="color:#fff;font-weight:700;font-size:1.2rem;">الفارس للأعمال</div>
+        </a>
+        <p style="margin-bottom:16px;">ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom:16px;">روابط سريعة</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="index.html">الرئيسية</a>
+          <a href="our-services-page.html">الخدمات</a>
+          <a href="packages-page.html">الباقات</a>
+          <a href="faq-page.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-bottom:16px;">معلومات التواصل</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div>0555490800 | 0555648602</div>
+          <div>info@alfarissa.org</div>
+          <div>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);">
+      جميع الحقوق محفوظة © الفارس للأعمال 2025
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Icons -->
+<a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="tel:0555490800" class="floating-icon call" title="اتصال">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
+<script>
+// Simple menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('open');
+        });
+    }
+    
+    // FAQ toggle functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = this.querySelector('i');
+            
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            icon.style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+    });
+});
+</script>
+
 </body>
 </html>

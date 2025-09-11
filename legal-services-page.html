@@ -1,527 +1,569 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <!-- SEO Meta Tags -->
-    <title>الخدمات القانونية المتخصصة - الفارس للأعمال للاستشارات والتقاضي</title>
-    <meta name="description" content="خدمات قانونية متخصصة شاملة: استشارات قانونية، صياغة عقود، تقاضي في المحاكم العامة والتجارية والعمالية، تنفيذ أحكام، وقضايا الأحوال الشخصية في المملكة العربية السعودية">
-    <meta name="keywords" content="خدمات قانونية، استشارات قانونية، تقاضي، محامي، صياغة عقود، تنفيذ أحكام، محاكم عامة، محاكم تجارية، محاكم عمالية، أحوال شخصية">
-    <meta name="author" content="الفارس للأعمال">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://alfarissa.org/legal-services-page.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="الخدمات القانونية المتخصصة - الفارس للأعمال">
-    <meta property="og:description" content="خدمات قانونية متخصصة شاملة: استشارات، تقاضي، صياغة عقود، وتنفيذ أحكام في المملكة العربية السعودية">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfarissa.org/legal-services-page.html">
-    <meta property="og:site_name" content="الفارس للأعمال">
-    <meta property="og:locale" content="ar_SA">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="الخدمات القانونية المتخصصة - الفارس للأعمال">
-    <meta name="twitter:description" content="خدمات قانونية متخصصة شاملة في المملكة العربية السعودية">
-    
-    <!-- Tailwind CSS CDN for styling -->
-    
-    <!-- Google Fonts for Noto Kufi Arabic -->
-    
-    <!-- Font Awesome for icons -->
-    
-        <!-- Enhanced Resource Loading with Fallbacks -->
-    <!-- Google Fonts for Noto Kufi Arabic with fallback -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Font Awesome with multiple CDN fallbacks -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" onerror="this.onerror=null;this.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';">
-    
-    <!-- Tailwind CSS with fallback -->
-    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/tailwind.min.js" onerror="loadTailwindFallback()"></script>
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="css/common.css">
-    
-    <!-- Resource Loading Fallbacks -->
-    <script>
-        function loadTailwindFallback() {
-            const script = document.createElement('script');
-            script.src = 'https://cdn.tailwindcss.com';
-            script.onerror = function() {
-                console.warn('Tailwind CSS failed to load, using fallback styling');
-            };
-            document.head.appendChild(script);
-        }
-        
-        function checkFontLoading() {
-            if (!document.fonts || !document.fonts.check) return;
-            
-            setTimeout(() => {
-                if (!document.fonts.check('1em "Noto Kufi Arabic"')) {
-                    document.body.style.fontFamily = '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif';
-                    console.warn('Arabic font failed to load, using fallback');
-                }
-            }, 3000);
-        }
-        
-        document.addEventListener('DOMContentLoaded', checkFontLoading);
-    </script>
-    
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "الخدمات القانونية - الفارس للأعمال",
-        "description": "خدمات قانونية متخصصة شاملة في المملكة العربية السعودية",
-        "url": "https://alfarissa.org/legal-services-page.html",
-        "serviceType": [
-            "استشارات قانونية",
-            "صياغة عقود",
-            "التقاضي في المحاكم العامة",
-            "التقاضي في المحاكم التجارية", 
-            "التقاضي في المحاكم العمالية",
-            "قضايا الأحوال الشخصية",
-            "تنفيذ الأحكام القضائية"
-        ],
-        "areaServed": {
-            "@type": "Country",
-            "name": "المملكة العربية السعودية"
-        },
-        "provider": {
-            "@type": "LegalService",
-            "name": "الفارس للأعمال"
-        }
+<title>الفارس للأعمال — الخدمات القانونية</title>
+<meta name="description" content="خدمات قانونية متخصصة شاملة: استشارات قانونية، صياغة عقود، تقاضي في المحاكم، تنفيذ أحكام، وقضايا الأحوال الشخصية في المملكة العربية السعودية."/>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="https://alfarissa.org/legal-services-page.html"/>
+<link rel="icon" href="images/horse-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="images/horse-logo.png">
+<link rel="shortcut icon" href="images/horse-logo.png" type="image/png">
+
+<!-- SEO/Social Media Meta Tags -->
+<meta property="og:title" content="الفارس للأعمال — الخدمات القانونية"/>
+<meta property="og:description" content="خدمات قانونية متخصصة شاملة: استشارات قانونية، صياغة عقود، تقاضي في المحاكم، تنفيذ أحكام، وقضايا الأحوال الشخصية"/>
+<meta property="og:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+<meta property="og:url" content="https://alfarissa.org/legal-services-page.html"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="الفارس للأعمال — الخدمات القانونية"/>
+<meta name="twitter:description" content="خدمات قانونية متخصصة شاملة في المملكة العربية السعودية"/>
+<meta name="twitter:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root {
+  /* Professional Navy/White Identity Colors */
+  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
+  --color-accent: #FFFFFF;
+  --color-text: #0F172A; --color-text-subtle: #475569;
+  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
+  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
+  --radius-card: 1.25rem; --radius-button: 0.75rem;
+  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
+  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
+  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
+  /* Legacy compatibility */
+  --brand: var(--color-accent); --brand-dark: #F0F0F0;
+  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
+  --bg: var(--color-bg); --border: var(--color-border);
+}
+
+*{box-sizing:border-box}
+html{direction:rtl;scroll-behavior:smooth}
+body{
+  margin:0; 
+  font-family:"Cairo", system-ui, -apple-system, sans-serif;
+  background:var(--color-bg); 
+  color:var(--color-text);
+  -webkit-font-smoothing:antialiased; 
+  text-rendering:optimizeLegibility;
+  line-height:1.6;
+}
+h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
+p{margin:.6em 0}
+a{color:inherit;text-decoration:none; transition: var(--transition);}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.section{padding:80px 0} .section-tight{padding:60px 0}
+
+/* --- Components --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border-radius:var(--radius-button); padding:12px 24px; font-size:15px; font-weight:600;
+  border:1px solid transparent; transition:var(--transition); white-space:nowrap;
+  text-decoration: none;
+}
+.btn-primary{
+  background:var(--color-primary);
+  color:#fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{
+  background:var(--color-primary-ink); 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(255,255,255,0.1);
+}
+.btn-secondary{
+  background:transparent; 
+  color:var(--color-primary); 
+  border: 1px solid var(--color-border);
+}
+.btn-secondary:hover{
+  background:var(--color-primary); 
+  color:#fff; 
+  transform:translateY(-2px); 
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Header & Navigation --- */
+.topbar{background:var(--color-primary-ink);color:var(--color-text-subtle); font-size:12px;}
+.topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
+.topbar-socials{display:flex; gap:12px;}
+.topbar-socials a:hover{color:var(--color-accent);}
+.header{
+  position:sticky; top:0; z-index:50;
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
+  backdrop-filter:saturate(180%) blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.15); 
+  color:#fff;
+}
+.header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .logo{
+  width:54px; height:54px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 50%, var(--color-primary-ink) 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(11,36,71,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.brand .logo img {
+    max-width: 70%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+.nav{
+    display:none;
+    flex-direction:column;
+    gap:16px;
+    font-size:14px;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    background:rgba(27,42,65,0.95);
+    padding:16px;
+    border-top:1px solid rgba(212,194,154,.3);
+    align-items:center;
+}
+.nav.open{display:flex}
+.nav a{color:#E2E8F0; position:relative; padding:8px 0; width:100%; text-align:center; font-size:13px;}
+.nav a:after{
+    content:''; position:absolute; bottom:0; right:0;
+    width:0; height:2px; background:var(--brand); transition:var(--transition);
+}
+.nav a:hover{color:#fff}
+.nav a.active:after, .nav a:hover:after{width:100%;}
+@media(min-width:992px){
+    .nav{
+        display:flex;
+        position:static;
+        flex-direction:row;
+        background:transparent;
+        padding:0;
+        border-top:none;
+        gap:24px;
     }
-    </script>
-    </head>
-<body class="text-[var(--color-primary-text)]">
+    .nav a{
+        width:auto;
+        padding:4px 0;
+        text-align:initial;
+        font-size:14px;
+    }
+}
 
-    <!-- Header (similar to homepage for consistency) -->
-    
-    <!-- Navigation Bar - Simplified -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <i class="fas fa-balance-scale-right ml-2"></i>
-                الفارس للأعمال
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="our-services-page.html">خدماتنا</a></li>
-                <li><a href="legal-services-page.html" class="nav-active">قانونية</a></li>
-                <li><a href="packages-page.html">الباقات</a></li>
-                <li><a href="index.html#contact" class="nav-contact-btn">تواصل معنا</a></li>
-            </ul>
-            <div class="nav-mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+.menu-toggle{
+    background:none;
+    border:none;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.menu-toggle i{width:20px;height:20px}
+@media(min-width:992px){.menu-toggle{display:none}}
+.header-cta{display:none}
+@media(min-width:992px){.header-cta{display:block}}
+
+.brand-text {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.brand-tagline {
+    color: var(--brand);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: -2px;
+}
+
+/* Footer */
+footer{
+    background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-ink) 100%);
+    color:#fff; margin-top:48px; padding:60px 0 20px;
+    position: relative;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 42, 65, 0.92);
+}
+footer .container {
+    position: relative;
+    z-index: 2;
+}
+footer a:hover{color:var(--brand);}
+.footer-grid{display:grid;gap:32px}
+@media(min-width:992px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
+
+/* Main content styling */
+.main-content {
+  padding: 80px 0;
+  background: var(--color-bg);
+}
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.page-header h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-subtle);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.content-section {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+}
+.content-section h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+/* Service cards */
+.services-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+}
+@media(min-width:768px){.services-grid{grid-template-columns: repeat(2, 1fr)}}
+@media(min-width:992px){.services-grid{grid-template-columns: repeat(3, 1fr)}}
+.service-card {
+  background: var(--color-muted);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  border-left: 4px solid var(--color-primary);
+  transition: var(--transition);
+}
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.service-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-card i {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.service-features li {
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.service-features li i {
+  color: var(--color-success);
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* Floating action buttons */
+.floating-icon {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  z-index: 1000;
+  transition: var(--transition);
+  box-shadow: var(--shadow-lg);
+}
+.floating-icon.whatsapp {
+  background: #25D366;
+  bottom: 20px;
+  right: 20px;
+}
+.floating-icon.call {
+  background: var(--color-primary);
+  bottom: 90px;
+  right: 20px;
+}
+.floating-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container row">
+    <div class="small" style="display:flex; align-items:center; gap:16px;">
+        <span><i class="fas fa-envelope" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</span>
+        <span><i class="fas fa-phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800</span>
+    </div>
+    <div class="topbar-socials">
+      <a href="#" title="Twitter"><i class="fab fa-twitter" style="width:16px;"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram" style="width:16px;"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin" style="width:16px;"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container row">
+    <a href="index.html" class="brand">
+      <div class="logo">
+        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+      </div>
+      <div>
+        <div class="brand-text">الفارس للأعمال</div>
+        <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
+      </div>
+    </a>
+    <button class="menu-toggle" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="vision-page.html">من نحن</a>
+      <a href="our-services-page.html">الخدمات</a>
+      <a href="packages-page.html">الباقات</a>
+      <a href="legal-services-page.html" class="active">الخدمات القانونية</a>
+      <a href="index.html#contact">اتصل بنا</a>
+      <a href="faq-page.html">الأسئلة الشائعة</a>
     </nav>
+    <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
+  </div>
+</header>
 
-<main class="section-padding-y section-padding-x">
-        <!-- Hero Section - الخدمات القانونية -->
-        <section class="bg-[var(--color-background-light)] text-[var(--color-primary-text)] py-16 px-4 md:px-8 lg:px-16 rounded-xl shadow-md text-center section-margin-y section-padding-y">
-            <h2 class="text-4xl md:text-5xl font-amiri font-bold mb-4">خدماتنا القانونية</h2>
-            <p class="text-lg md:text-xl text-[var(--color-headings-cta)] mb-8 max-w-3xl mx-auto font-arabic-text">
-                نقدم لك الحلول القانونية المتكاملة لضمان حقوقك وحماية مصالحك في جميع المحاكم والجهات القضائية.
-            </p>
-            <button onclick="handleServiceRequest('استشارة قانونية عامة', this)" class="btn-primary text-xl font-arabic-text">
-                اطلب استشارتك الآن <i class="fas fa-arrow-left mr-2"></i>
-            </button>
-        </section>
-
-        <!-- لماذا تختارنا؟ -->
-        <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">لماذا تختار الفارس للأعمال في الجانب القانوني؟</h3>
-                <div class="flex flex-col md:flex-row md:space-x-4 md:space-x-reverse horizontal-cards-container">
-                    <!-- بطاقة 1 -->
-                    <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg flex-none md:flex-1 horizontal-card mb-4 md:mb-0 mr-4 md:mr-0">
-                        <div class="text-4xl mb-4 card-icon"><i class="fas fa-gavel"></i></div>
-                        <h4 class="text-xl font-amiri font-semibold mb-2">خبرة قضائية متعمقة</h4>
-                        <p class="text-[var(--color-secondary-text)] font-arabic-text">فريق قانوني بخبرة واسعة في الترافع أمام مختلف المحاكم بجميع درجاتها.</p>
-                    </div>
-                    <!-- بطاقة 2 -->
-                    <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg flex-none md:flex-1 horizontal-card mb-4 md:mb-0 mr-4 md:mr-0">
-                        <div class="text-4xl mb-4 card-icon"><i class="fas fa-book-reader"></i></div>
-                        <h4 class="text-xl font-amiri font-semibold mb-2">معرفة نظامية وشرعية</h4>
-                        <p class="text-[var(--color-secondary-text)] font-arabic-text">نوازن بين نص النظام والعدالة والواقع، مع مراعاة الجانب الشرعي.</p>
-                    </div>
-                    <!-- بطاقة 3 -->
-                    <div class="bg-[var(--color-background-light)] p-6 rounded-xl shadow-lg flex-none md:flex-1 horizontal-card mb-4 md:mb-0">
-                        <div class="text-4xl mb-4 card-icon"><i class="fas fa-search"></i></div>
-                        <h4 class="text-xl font-amiri font-semibold mb-2">حلول استباقية</h4>
-                        <p class="text-[var(--color-secondary-text)] font-arabic-text">نبحث عن كل الزوايا القانونية التي تخدم موقفك وتكشف الحق.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- مجالات عملنا في المحاكم - Enhanced Hierarchical Structure -->
-        <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-            <div class="container mx-auto text-center">
-                <h3 class="text-3xl md:text-4xl font-amiri font-bold mb-12">مجالات عملنا في المحاكم</h3>
-                <p class="text-lg text-[var(--color-primary-text)] leading-relaxed max-w-4xl mx-auto mb-12 font-arabic-text">
-                    نوفر لك الدعم والتمثيل القانوني المتكامل أمام مختلف المحاكم واللجان القضائية في المملكة. اختر المحكمة المناسبة لاستعراض خدماتها المتخصصة:
-                </p>
-
-                <!-- Enhanced Court Selection Grid -->
-                <div class="court-selection-grid">
-                    <!-- محكمة الأحوال الشخصية Card -->
-                    <div class="court-card" onclick="showCourtServices('personalStatus')">
-                        <i class="fas fa-users-cog court-icon"></i>
-                        <h4 class="court-title">محكمة الأحوال الشخصية</h4>
-                        <p class="court-description">قضايا الزواج والطلاق، الحضانة والنفقة، التركات والولاية</p>
-                    </div>
-                    
-                    <!-- المحاكم العامة Card -->
-                    <div class="court-card" onclick="showCourtServices('general')">
-                        <i class="fas fa-balance-scale court-icon"></i>
-                        <h4 class="court-title">المحاكم العامة</h4>
-                        <p class="court-description">القضايا العقارية، المطالبات المدنية، الملكية الفكرية</p>
-                    </div>
-                    
-                    <!-- المحاكم التجارية Card -->
-                    <div class="court-card" onclick="showCourtServices('commercial')">
-                        <i class="fas fa-handshake court-icon"></i>
-                        <h4 class="court-title">المحاكم التجارية</h4>
-                        <p class="court-description">النزاعات التجارية، إفلاس الشركات، العقود التجارية</p>
-                    </div>
-                    
-                    <!-- المحاكم العمالية Card -->
-                    <div class="court-card" onclick="showCourtServices('labor')">
-                        <i class="fas fa-users court-icon"></i>
-                        <h4 class="court-title">المحاكم العمالية</h4>
-                        <p class="court-description">منازعات العمل، المطالبات العمالية، عقود الاستقدام</p>
-                    </div>
-                </div>
-
-                <!-- Service Details Container -->
-                <div id="courtServicesContainer" class="service-details-container" style="display: none;">
-                    <div class="service-details-header" onclick="toggleServiceDetails()">
-                        <h4 id="selectedCourtTitle" class="text-xl font-bold text-right flex items-center justify-between">
-                            <span>تفاصيل الخدمات</span>
-                            <i class="fas fa-chevron-down transition-transform duration-300" id="toggleIcon"></i>
-                        </h4>
-                    </div>
-                    <div class="service-details-content" id="serviceDetailsContent">
-                        <div id="serviceDetailsGrid" class="service-details-grid">
-                            <!-- Service cards will be dynamically populated here -->
-                        </div>
-                        
-                        <!-- Contact Section -->
-                        <div class="text-center mt-8 p-6 bg-white rounded-lg border border-gray-200">
-                            <h5 class="text-lg font-bold mb-4" style="color: var(--color-primary-text);">
-                                جاهز لطلب الخدمة؟
-                            </h5>
-                            <p class="text-sm mb-4" style="color: var(--color-secondary-text);">
-                                اختر طريقة التواصل المناسبة لك
-                            </p>
-                            <button onclick="handleServiceRequest('الخدمات القانونية', this)" 
-                                    class="service-request-btn text-lg px-8 py-3">
-                                <i class="fab fa-whatsapp mr-2"></i>
-                                اطلب استشارتك الآن
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- تفاصيل خدمات المحاكم -->
-        <section class="bg-white rounded-xl shadow-md mx-4 md:mx-auto max-w-7xl section-margin-y section-padding-y section-padding-x">
-            <div class="container mx-auto">
-                <!-- محكمة الأحوال الشخصية Content -->
-                <div id="personalStatusContent" class="service-accordion-content-container">
-                    <div class="text-right border-b pb-8 border-gray-200">
-                        <h4 class="font-amiri font-bold text-2xl mb-6 text-[var(--color-primary-text)]"><i class="fas fa-users-cog ml-3"></i> تفاصيل خدمات محكمة الأحوال الشخصية</h4>
-                        <div class="detailed-service-list">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">قضايا الزواج والطلاق</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى إثبات الزواج والطلاق: إثبات عقود الزواج غير الموثقة، ودعاوى الطلاق الغيابي أو الشفهي.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إجراءات الخلع والفسخ القضائي: تمثيل قانوني في دعاوى الخلع، وفسخ عقد النكاح للضرر أو لعله.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى فسخ النكاح: لعدم الكفاءة أو العيوب المؤثرة، مع تقديم البينات القانونية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الأحوال الشخصية - الزواج والطلاق" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">الحقوق الأسرية بعد الانفصال</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> قضايا الحضانة: رفع دعاوى طلب الحضانة أو إسقاطها، والمنازعات المتعلقة بها، بما يضمن مصلحة المحضون.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تقدير النفقة الشرعية: دعاوى طلب النفقة للأبناء والزوجة، وتعديل قيمتها بناءً على المستجدات.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تنظيم مواعيد الزيارة: دعاوى المطالبة بحق الزيارة للأبناء أو تعديلها، بما يتوافق مع النظام.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الأحوال الشخصية - الحقوق بعد الطلاق" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">التركات والولاية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إثبات الوراثة وتصفية التركات: إصدار صكوك حصر الورثة، وقسمة المواريث بالتراضي أو قضاءً، مع مراعاة حقوق الجميع.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> قضايا الولاية والقوامة: دعاوى طلب الولاية على القصر أو المحجور عليهم، وإثبات القوامة، وإدارة أموالهم.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الأحوال الشخصية - التركات والولاية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">قضايا أخرى</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى العضل: تمثيل المتضررات من رفض الولي تزويجهن، ومتابعة الدعاوى حتى صدور الحكم.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إثبات النسب: القضايا المتعلقة بإثبات أو نفي النسب، وتقديم الأدلة اللازمة.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إصدار الصكوك والإجراءات الوقائية: استخراج صكوك الوصاية والغُيب، وتصحيح الأوضاع القانونية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الأحوال الشخصية الأخرى" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">استشارات متخصصة</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> استشارات قبل الزواج والطلاق: تقديم المشورة القانونية والشرعية لتفادي النزاعات المستقبلية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> صياغة اتفاقيات التسوية الودية: إعداد اتفاقيات شاملة لحل النزاعات الأسرية خارج المحكمة.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تمثيل الأطراف في جلسات الصلح والتوفيق الأُسري.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن استشارات الأحوال الشخصية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الأحوال الشخصية" class="btn-primary inline-flex items-center justify-center text-md md:text-lg mt-6" target="_blank" rel="noopener">
-                            اطلب استشارتك الآن لهذه المحكمة <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- المحاكم العامة Content -->
-                <div id="generalCourtContent" class="service-accordion-content-container">
-                    <div class="text-right border-b pb-8 border-gray-200">
-                        <h4 class="font-amiri font-bold text-2xl mb-6 text-[var(--color-primary-text)]"><i class="fas fa-balance-scale ml-3"></i> تفاصيل خدمات المحاكم العامة</h4>
-                        <div class="detailed-service-list">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">القضايا العقارية والملكية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى إثبات الملكية: إثبات ملكية العقارات والأموال المنقولة، وتصحيح الصكوك.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> منازعات العقارات: دعاوى الإفراغ، التعويض عن الأضرار العقارية، وحقوق الارتفاق والانتفاع.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إزالة الشيوع وقسمة الأموال المشتركة: رفع دعاوى القسمة الإجبارية أو بالاتفاق بين الشركاء.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن القضايا العقارية وملكية الأراضي" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">المطالبات المدنية والتعويضات</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى التعويض عن الأضرار: المطالبة بالتعويض المادي والمعنوي الناتج عن أخطاء مدنية (مثل حوادث السير، الأخطاء المهنية).</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> قضايا المطالبات المالية: تحصيل الديون، والوفاء بالعقود المدنية، والإخلال بالالتزامات.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> النزاعات المتعلقة بالوكالات: دعاوى إلغاء الوكالات، أو المطالبة بحقوق الوكيل/الموكل، وسوء استخدام الوكالة.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن المطالبات المدنية والتعويضات" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">تصحيح الأوضاع والإجراءات المدنية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى تصحيح صكوك الملكية: تعديل الأخطاء الإجرائية أو الجوهرية في الصكوك الشرعية أو الحكومية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> إثبات الوقائع: دعاوى إثبات الواقعة القضائية أو غير القضائية (مثل إثبات الشهادات أو العقود غير الموثقة).</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> الاعتراض على القرارات الإدارية: رفع دعاوى ضد القرارات الصادرة من الجهات الإدارية غير المشروعة أو المتجاوزة للسلطة.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن تصحيح الأوضاع المدنية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">قضايا الملكية الفكرية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> حماية العلامات التجارية: دعاوى التعدي على العلامات التجارية، ومتابعة تسجيلها.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> حقوق النشر والتأليف: حماية حقوق المؤلفين والمبدعين في أعمالهم الأدبية والفنية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> براءات الاختراع: تسجيل وحماية الابتكارات والاختراعات الصناعية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا الملكية الفكرية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا المحاكم العامة" class="btn-primary inline-flex items-center justify-center text-md md:text-lg mt-6" target="_blank" rel="noopener">
-                            اطلب استشارتك الآن لهذه المحكمة <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- المحاكم التجارية Content -->
-                <div id="commercialCourtContent" class="service-accordion-content-container">
-                    <div class="text-right border-b pb-8 border-gray-200">
-                        <h4 class="font-amiri font-bold text-2xl mb-6 text-[var(--color-primary-text)]"><i class="fas fa-handshake ml-3"></i> تفاصيل خدمات المحاكم التجارية</h4>
-                        <div class="detailed-service-list">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">منازعات الشركات</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى بين الشركاء: حل الخلافات المتعلقة بإدارة الشركة، توزيع الأرباح، أو تصفية الحصص.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تأسيس الشركات وتعديل عقودها: صياغة وتعديل عقود الشركات بأنواعها (مساهمة، ذات مسؤولية محدودة، تضامن).</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى الإفلاس والتصفية: تمثيل قانوني في قضايا إشهار الإفلاس، أو تصفية الشركات المتعثرة.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن منازعات الشركات" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">العقود والمطالبات التجارية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> صياغة ومراجعة العقود التجارية: عقود توريد، وكالات تجارية، توزيع، امتياز، وعقود استثمار.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> المطالبات المالية التجارية: تحصيل الديون التجارية والشيكات والسندات لأمر.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> منازعات الشحن والنقل: حل الخلافات المتعلقة بعقود الشحن البحري والجوي والبري.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن العقود والمطالبات التجارية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">المنافسة والممارسات التجارية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> قضايا المنافسة غير المشروعة: رفع الدعاوى لوقف الممارسات التجارية الضارة.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> حماية المستهلك: تمثيل الأطراف في قضايا الغش التجاري أو المنتجات المعيبة.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى العلامات التجارية المزورة: مكافحة التقليد والتعدي على الملكية الفكرية التجارية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن المنافسة والممارسات التجارية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">التحكيم التجاري</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تمثيل الأطراف في قضايا التحكيم التجاري الداخلي والدولي.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> صياغة شروط التحكيم في العقود التجارية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تنفيذ أحكام التحكيم الصادرة محلياً أو دولياً.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن التحكيم التجاري" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا المحاكم التجارية" class="btn-primary inline-flex items-center justify-center text-md md:text-lg mt-6" target="_blank" rel="noopener">
-                            اطلب استشارتك الآن لهذه المحكمة <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- المحاكم العمالية Content -->
-                <div id="laborCourtContent" class="service-accordion-content-container">
-                    <div class="text-right border-b pb-8 border-gray-200">
-                        <h4 class="font-amiri font-bold text-2xl mb-6 text-[var(--color-primary-text)]"><i class="fas fa-users ml-3"></i> تفاصيل خدمات المحاكم العمالية</h4>
-                        <div class="detailed-service-list">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">حقوق العمال</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> مطالبات الأجور والمكافآت: دعاوى المطالبة بالأجور المتأخرة، مكافأة نهاية الخدمة، وبدلات الإجازات المستحقة.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> نزاعات الفصل التعسفي: تمثيل الموظفين في دعاوى إنهاء الخدمة غير المشروع، والمطالبة بالتعويضات النظامية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> دعاوى إصابات العمل: المطالبة بالتعويض عن الأضرار الناتجة عن إصابات العمل والأمراض المهنية، ومتابعة التقارير الطبية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن حقوق العمال" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">تمثيل أصحاب العمل والعقود</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> صياغة ومراجعة عقود العمل: ضمان توافق العقود مع نظام العمل السعودي وحماية حقوق الطرفين بشكل دقيق.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تمثيل الشركات في النزاعات العمالية: الدفاع عن مصالح أصحاب العمل أمام المحاكم وهيئات تسوية الخلافات.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن تمثيل أصحاب العمل والعقود" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <div class="detailed-service-list mt-4">
-                            <h5 class="text-xl font-amiri font-semibold mb-3 text-right" style="color: var(--color-headings-cta);">الاستشارات العمالية</h5>
-                            <ul class="list-none space-y-2 text-right text-base font-arabic-text" style="color: white;">
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تقديم المشورة القانونية لأصحاب العمل والعمال بخصوص نظام العمل واللوائح التنفيذية.</li>
-                                <li class="flex items-start"><i class="fas fa-check-circle text-[var(--color-headings-cta)] ml-3 mt-1 flex-shrink-0"></i> تسوية النزاعات العمالية الودية: المساعدة في حل النزاعات قبل الوصول للمحكمة العمالية.</li>
-                            </ul>
-                            <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن الاستشارات العمالية" class="btn-request-granular" target="_blank" rel="noopener">اطلب هذه الخدمة</a>
-                        </div>
-                        <a href="https://wa.me/966555490800?text=مرحباً، أود الاستفسار عن قضايا المحاكم العمالية" class="btn-primary inline-flex items-center justify-center text-md md:text-lg mt-6" target="_blank" rel="noopener">
-                            اطلب استشارتك الآن لهذه المحكمة <i class="fas fa-arrow-left mr-2"></i>
-                        </a>
-                    </div>
-                </div>
-    </main>
-
-    <!-- خاتمة الصفحة (Sticky CTA for mobile) -->
-    <div class="sticky-cta md:hidden">
-        <button onclick="handleServiceRequest('الخدمات القانونية', this)" class="btn-primary w-full text-lg">
-            ابدأ المحادثة <i class="fas fa-comments mr-2"></i>
-        </button>
-        <p class="text-[var(--color-secondary-text)] text-xs mt-2 font-arabic-text">
-            جميع استفساراتك تعامل بسرية تامة.
-        </p>
+<main class="main-content">
+  <div class="container">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>الخدمات القانونية المتخصصة</h1>
+      <p>نقدم خدمات قانونية شاملة ومتخصصة بأعلى معايير الجودة والاحتراف لتلبية كافة احتياجاتكم القانونية.</p>
+      <a href="index.html#contact" class="btn btn-primary" style="margin-top: 24px;">
+        احصل على استشارة قانونية <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+      </a>
     </div>
+
+    <!-- Legal Services Section -->
+    <div class="content-section">
+      <h2>خدماتنا القانونية الشاملة</h2>
+      <div class="services-grid">
+        <!-- Legal Consulting -->
+        <div class="service-card">
+          <h3><i class="fas fa-gavel"></i> الاستشارات القانونية</h3>
+          <p>استشارات قانونية متخصصة في جميع المجالات القانونية والتجارية.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> استشارات فورية ومتخصصة</li>
+            <li><i class="fas fa-check-circle"></i> تحليل قانوني دقيق للقضايا</li>
+            <li><i class="fas fa-check-circle"></i> رأي قانوني مكتوب</li>
+            <li><i class="fas fa-check-circle"></i> متابعة مستمرة</li>
+          </ul>
+        </div>
+
+        <!-- Contract Drafting -->
+        <div class="service-card">
+          <h3><i class="fas fa-file-contract"></i> صياغة ومراجعة العقود</h3>
+          <p>صياغة ومراجعة العقود بكافة أنواعها وفقاً للأنظمة السعودية.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> عقود تجارية ومدنية</li>
+            <li><i class="fas fa-check-circle"></i> عقود العمل والشراكة</li>
+            <li><i class="fas fa-check-circle"></i> عقود الإيجار والبيع</li>
+            <li><i class="fas fa-check-circle"></i> مراجعة قانونية شاملة</li>
+          </ul>
+        </div>
+
+        <!-- Litigation -->
+        <div class="service-card">
+          <h3><i class="fas fa-balance-scale"></i> التقاضي والمرافعات</h3>
+          <p>تمثيل قانوني أمام جميع المحاكم ودرجات التقاضي.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> المحاكم العامة</li>
+            <li><i class="fas fa-check-circle"></i> المحاكم التجارية</li>
+            <li><i class="fas fa-check-circle"></i> المحاكم العمالية</li>
+            <li><i class="fas fa-check-circle"></i> المحاكم الإدارية</li>
+          </ul>
+        </div>
+
+        <!-- Legal Documents -->
+        <div class="service-card">
+          <h3><i class="fas fa-scroll"></i> المذكرات واللوائح</h3>
+          <p>إعداد المذكرات القانونية واللوائح الدفاعية بأعلى المعايير.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> مذكرات دفاعية</li>
+            <li><i class="fas fa-check-circle"></i> لوائح اعتراضية</li>
+            <li><i class="fas fa-check-circle"></i> مذكرات استئنافية</li>
+            <li><i class="fas fa-check-circle"></i> مذكرات نقضية</li>
+          </ul>
+        </div>
+
+        <!-- Execution -->
+        <div class="service-card">
+          <h3><i class="fas fa-hammer"></i> تنفيذ الأحكام</h3>
+          <p>متابعة تنفيذ الأحكام القضائية واستخراج الأوراق التنفيذية.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> تنفيذ الأحكام المدنية</li>
+            <li><i class="fas fa-check-circle"></i> تنفيذ الأحكام التجارية</li>
+            <li><i class="fas fa-check-circle"></i> تنفيذ الأحكام العمالية</li>
+            <li><i class="fas fa-check-circle"></i> المتابعة حتى التحصيل</li>
+          </ul>
+        </div>
+
+        <!-- Arbitration -->
+        <div class="service-card">
+          <h3><i class="fas fa-handshake"></i> التحكيم والوساطة</h3>
+          <p>حل النزاعات عبر التحكيم والوساطة بطريقة سريعة وفعالة.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> تحكيم تجاري</li>
+            <li><i class="fas fa-check-circle"></i> وساطة في النزاعات</li>
+            <li><i class="fas fa-check-circle"></i> حلول بديلة للتقاضي</li>
+            <li><i class="fas fa-check-circle"></i> توفير الوقت والتكلفة</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </section>
 
-    <!-- Footer (similar to homepage for consistency) -->
-        <!-- Footer -->
-    <footer class="main-footer">
-        <div class="footer-container">
-            <!-- عن الفارس للأعمال -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>عن الفارس للأعمال</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="our-services-page.html">خدماتنا</a></li>
-                        <li><a href="vision-page.html">رؤيتنا</a></li>
-                        <li><a href="licenses-page.html">التراخيص</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- روابط سريعة -->
-            <div>
-                <div class="footer-col-header">
-                    <h3>روابط سريعة</h3>
-                </div>
-                <div class="footer-col-content">
-                    <ul>
-                        <li><a href="index.html">الصفحة الرئيسية</a></li>
-                        <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
-                        <li><a href="government-transactions-page.html">تعقيب المعاملات الحكومية</a></li>
-                        <li><a href="packages-page.html">الاشتراك بالباقات</a></li>
-                        <li><a href="zakat-tax-page.html">الإقرارات الزكوية والضريبية</a></li>
-                        <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
-                        <li><a href="privacy-policy-page.html">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- معلومات التواصل ونموذج الاتصال -->
-            <div style="grid-column: span 2;">
-                <div class="footer-col-header">
-                    <h3>تواصل معنا</h3>
-                </div>
-                <div class="footer-col-content contact-info" style="margin-bottom: 32px;">
-                    <p><i class="fas fa-phone-alt"></i>0555490800</p>
-                    <p><i class="fas fa-mobile-alt"></i>0555648602</p>
-                    <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>legal@alfarissa.org</p>
-                    <p><i class="fas fa-envelope"></i>clients@alfarissa.org</p>
-                    <p style="margin-top: 16px;"><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي</p>
-                </div>
-
-                <!-- نموذج التواصل السريع -->
-                <div class="footer-form-container">
-                    <h4>أرسل لنا رسالة سريعة</h4>
-                    <form>
-                        <input type="text" name="fullName" placeholder="اسمك الكامل" class="form-input" required>
-                        <input type="tel" name="phoneNumber" placeholder="رقم جوالك" class="form-input" required>
-                        <textarea name="description" rows="3" placeholder="وصف موجز لطلبك" class="form-input"></textarea>
-                        <button type="submit" class="btn-primary" style="width: 100%; font-size: 1rem;">
-                            إرسال الطلب <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
+    <!-- Why Choose Us Section -->
+    <div class="content-section">
+      <h2>لماذا تختار خدماتنا القانونية؟</h2>
+      <div style="display: grid; gap: 20px; margin-top: 24px;">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <i class="fas fa-certificate" style="color: var(--color-primary); font-size: 1.5rem; margin-top: 4px;"></i>
+          <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 8px;">خبرة واسعة</h3>
+            <p>سنوات طويلة من الخبرة في المجال القانوني وفهم عميق للأنظمة السعودية.</p>
+          </div>
         </div>
-        <!-- شريط سفلي لحقوق الملكية -->
-        <div class="footer-copyright">
-            جميع الحقوق محفوظة © الفارس للأعمال 2025
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <i class="fas fa-clock" style="color: var(--color-primary); font-size: 1.5rem; margin-top: 4px;"></i>
+          <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 8px;">سرعة في الإنجاز</h3>
+            <p>التزام بالمواعيد المحددة وإنجاز المهام القانونية في أسرع وقت ممكن.</p>
+          </div>
         </div>
-    </footer>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <i class="fas fa-shield-alt" style="color: var(--color-primary); font-size: 1.5rem; margin-top: 4px;"></i>
+          <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 8px;">سرية تامة</h3>
+            <p>الحفاظ على سرية معلومات العملاء وفقاً لأعلى معايير المهنة القانونية.</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <i class="fas fa-users" style="color: var(--color-primary); font-size: 1.5rem; margin-top: 4px;"></i>
+          <div>
+            <h3 style="color: var(--color-primary); margin-bottom: 8px;">فريق متخصص</h3>
+            <p>فريق من المحامين والمستشارين القانونيين المتخصصين في مختلف المجالات.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Common JavaScript -->
-    <script src="js/common.js"></script>
+    <!-- CTA Section -->
+    <div style="text-align: center; margin-top: 60px;">
+      <h2 style="color: var(--color-primary); margin-bottom: 16px;">احصل على استشارة قانونية الآن</h2>
+      <p style="color: var(--color-text-subtle); margin-bottom: 32px;">تواصل معنا للحصول على استشارة قانونية متخصصة وحلول قانونية فعالة</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/966555490800?text=مرحباً، أحتاج استشارة قانونية" class="btn btn-primary">
+          استشارة عبر الواتساب <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>
+        </a>
+        <a href="mailto:legal@alfarissa.org" class="btn btn-secondary">
+          راسلنا بالإيميل <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال" style="width:48px;height:48px;filter:brightness(0) invert(1);">
+          <div style="color:#fff;font-weight:700;font-size:1.2rem;">الفارس للأعمال</div>
+        </a>
+        <p style="margin-bottom:16px;">ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
+      </div>
+      <div>
+        <h4 style="margin-bottom:16px;">روابط سريعة</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="index.html">الرئيسية</a>
+          <a href="our-services-page.html">الخدمات</a>
+          <a href="packages-page.html">الباقات</a>
+          <a href="faq-page.html">الأسئلة الشائعة</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="margin-bottom:16px;">معلومات التواصل</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div>0555490800 | 0555648602</div>
+          <div>info@alfarissa.org</div>
+          <div>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);">
+      جميع الحقوق محفوظة © الفارس للأعمال 2025
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Icons -->
+<a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="tel:0555490800" class="floating-icon call" title="اتصال">
+  <i class="fas fa-phone-alt"></i>
+</a>
+
+<script>
+// Simple menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
     
-    <!-- Initialize Contact System for This Page -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Replace existing WhatsApp links with contact modal system
-        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const serviceName = extractServiceNameFromUrl(this.href) || 'الخدمات القانونية';
-                showContactModal(serviceName);
-            });
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('open');
         });
-    });
-    </script>
+    }
+});
+</script>
 
-    <!-- New Floating Icons -->
-    <a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="tel:0555490800" class="floating-icon call" title="اتصال">
-      <i class="fas fa-phone-alt"></i>
-    </a>
 </body>
 </html>
