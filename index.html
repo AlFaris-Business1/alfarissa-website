@@ -485,6 +485,78 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   animation: float 6s ease-in-out infinite;
 }
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* RTL: left side for Arabic */
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366 0%, #1ebe57 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  transition: var(--transition);
+  animation: whatsappPulse 2s infinite;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float i {
+  color: white;
+  font-size: 28px;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Call Button */
+.call-float {
+  position: fixed;
+  bottom: 20px;
+  left: 90px; /* Next to WhatsApp button */
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #B8941F 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  z-index: 999;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.call-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+.call-float i {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
 /* Enhanced Testimonials Section */
 .testimonials-section {
   background: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 50%, #FBF7F1 100%);
@@ -1155,6 +1227,118 @@ footer a:hover{color:var(--brand);}
   </div>
 </section>
 
+<!-- FAQ Section -->
+<section id="faq" class="section" style="background: var(--color-muted);">
+  <div class="container">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">الأسئلة الشائعة</h2>
+      <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
+        إجابات سريعة على أكثر الأسئلة التي يطرحها عملاؤنا
+      </p>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 16px;">
+      
+      <!-- FAQ Item 1 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq1')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كم يستغرق إنجاز المعاملات الحكومية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq1-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              مدة الإنجاز تختلف حسب نوع المعاملة والجهة المختصة. المعاملات البسيطة مثل تجديد الرخص تستغرق ١-٣ أيام عمل، بينما المعاملات المعقدة مثل التراخيص الجديدة قد تستغرق ١-٢ أسبوع. نلتزم بإعلامك بالمدة المتوقعة مقدماً.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq2')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل تقدمون استشارات قانونية فورية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq2-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              نعم، نوفر استشارات قانونية فورية عبر الهاتف أو الواتساب للحالات العاجلة. للاستشارات المعمقة التي تتطلب دراسة الوثائق، نحتاج ٢٤-٤٨ ساعة لتقديم رد مكتوب شامل.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq3')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كيف يتم تحديد أسعار الخدمات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq3-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              أسعارنا شفافة وتنافسية. نعتمد على عدة عوامل: نوع الخدمة، درجة التعقيد، الوقت المطلوب، والرسوم الحكومية إن وجدت. نقدم عرض سعر واضح قبل البدء بأي خدمة دون تكاليف خفية.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq4')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل يمكنني متابعة حالة طلبي؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq4-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              بالطبع! نوفر متابعة مستمرة لحالة طلبك عبر الواتساب أو الهاتف. ستحصل على تحديثات دورية بالتقدم المحرز، وسنعلمك فوراً عند اكتمال أي مرحلة من مراحل الخدمة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq5')">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">ما هي وثائق التأسيس المطلوبة للشركات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+            <i data-lucide="plus" style="width: 20px;"></i>
+          </div>
+        </div>
+        <div id="faq5-answer" class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+          <div style="padding-top: 16px; border-top: 1px solid var(--color-border); margin-top: 16px;">
+            <p style="color: var(--color-text-subtle); line-height: 1.6; margin: 0;">
+              الوثائق المطلوبة تشمل: صور هوية الشركاء، عنوان المقر، عقد الإيجار، النشاط التجاري المطلوب، ورأس المال. نساعدك في تحضير جميع الوثائق وفق المتطلبات النظامية الحديثة.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FAQ CTA -->
+    <div class="fade-in" style="text-align: center; margin-top: 40px; padding: 24px; background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-accent); border-style: dashed;">
+      <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">لديك سؤال آخر؟</h4>
+      <p style="color: var(--color-text-subtle); margin-bottom: 16px;">لا تتردد في التواصل معنا للحصول على إجابة فورية</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/966555490800" class="btn btn-primary">اسأل عبر الواتساب</a>
+        <a href="tel:0555490800" class="btn btn-secondary">اتصل بنا مباشرة</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="section-tight container">
     <div class="glass-card fade-in floating-element" style="background: var(--dark); color: #fff; backdrop-filter: blur(15px);">
         <div class="grid grid-2" style="align-items: center;">
@@ -1272,12 +1456,12 @@ footer a:hover{color:var(--brand);}
   </div>
 </footer>
 
-<!-- New Floating Icons -->
-<a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank" title="واتساب">
-  <i class="fab fa-whatsapp"></i>
+<!-- Floating Contact Buttons -->
+<a href="https://wa.me/966555490800" class="whatsapp-float" target="_blank" title="واتساب" aria-label="تواصل عبر الواتساب">
+  <i data-lucide="message-circle"></i>
 </a>
-<a href="tel:0555490800" class="floating-icon call" title="اتصال">
-  <i class="fas fa-phone-alt"></i>
+<a href="tel:0555490800" class="call-float" title="اتصال" aria-label="اتصال هاتفي">
+  <i data-lucide="phone"></i>
 </a>
 <a href="#" class="backtotop" title="العودة للأعلى"><i data-lucide="arrow-up"></i></a>
 
@@ -1465,6 +1649,44 @@ function setupServiceSlider(serviceId) {
       }
     }
   });
+}
+
+// FAQ toggle functionality
+function toggleFAQ(faqId) {
+  const answer = document.getElementById(faqId + '-answer');
+  const icon = document.querySelector(`[onclick="toggleFAQ('${faqId}')"] .faq-icon i`);
+  
+  if (!answer || !icon) return;
+  
+  const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+  
+  // Close all other FAQs
+  document.querySelectorAll('.faq-answer').forEach(faq => {
+    if (faq !== answer) {
+      faq.style.maxHeight = '0';
+    }
+  });
+  
+  // Reset all other icons to plus
+  document.querySelectorAll('.faq-icon i').forEach(i => {
+    if (i !== icon) {
+      i.setAttribute('data-lucide', 'plus');
+    }
+  });
+  
+  // Toggle current FAQ
+  if (isOpen) {
+    answer.style.maxHeight = '0';
+    icon.setAttribute('data-lucide', 'plus');
+  } else {
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    icon.setAttribute('data-lucide', 'minus');
+  }
+  
+  // Re-render lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 ready(()=>{
