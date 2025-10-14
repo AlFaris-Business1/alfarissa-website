@@ -133,10 +133,11 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 .topbar-socials a:hover{color:var(--color-accent);}
 .header{
   position:sticky; top:0; z-index:50;
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
-  backdrop-filter:saturate(180%) blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.15); 
+  background:linear-gradient(135deg, var(--color-primary) 0%, #1E3A5F  50%, var(--color-primary-dark) 100%);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid rgba(212, 165, 116, 0.2); 
   color:#fff;
+  box-shadow: var(--shadow-lg);
 }
 .header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
 .brand{display:flex;align-items:center;gap:12px}
@@ -720,21 +721,20 @@ footer a:hover{color:var(--brand);}
   </div>
 </div>
 
-<section class="hero">
-  <div class="bg"></div><div class="overlay"></div>
-  <div class="container inner">
-    <h1 class="fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
-    <p class="fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
-    <div class="actions fade-in">
-      <a class="btn btn-primary" href="index.html#contact"><i data-lucide="file-text"></i> اطلب استشارة الآن</a>
-      <a class="btn btn-secondary" href="https://wa.me/966555490800"><i data-lucide="message-circle"></i> تواصل واتساب</a>
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1 class="hero-title fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
+    <p class="hero-subtitle fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
+    <div class="actions fade-in" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a class="btn btn-primary" href="index.html#contact">📋 اطلب استشارة الآن</a>
+      <a class="btn btn-secondary" href="https://wa.me/966555490800" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3);">💬 تواصل واتساب</a>
     </div>
   </div>
 </section>
 
-<section id="services-highlights" class="section" style="background: var(--color-surface);">
+<section id="services-highlights" class="section section-premium">
   <div class="container">
-    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px; position: relative; z-index: 2;">
       <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خدماتنا المتخصصة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         نقدم مجموعة شاملة من الخدمات القانونية والإدارية لتلبية كافة احتياجاتك المهنية بأعلى معايير الجودة والاحتراف
@@ -998,9 +998,9 @@ footer a:hover{color:var(--brand);}
 </section>
 
 <!-- Packages Section -->
-<section id="packages" class="section" style="background: var(--color-muted);">
+<section id="packages" class="section section-premium-alt">
   <div class="container">
-    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px; position: relative; z-index: 2;">
       <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">باقاتنا المميزة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         اختر الباقة التي تناسب احتياجاتك مع أسعار تنافسية وخدمات شاملة
