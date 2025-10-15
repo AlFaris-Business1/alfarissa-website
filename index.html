@@ -589,7 +589,7 @@ body{
   position: relative;
 }
 
-/* Islamic Geometric Background System */
+/* Islamic Geometric Background System - Enhanced Visibility */
 body::before {
   content: '';
   position: fixed;
@@ -598,22 +598,19 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.03;
-  background-image: 
-    radial-gradient(circle at 25% 25%, var(--color-primary) 1px, transparent 1px),
-    radial-gradient(circle at 75% 75%, var(--color-primary) 1px, transparent 1px),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230B2447' fill-opacity='0.4'%3E%3Cpolygon points='30,0 60,30 30,60 0,30'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 100px 100px, 100px 100px, 60px 60px;
-  background-position: 0 0, 50px 50px, 0 0;
-  animation: islamicPatternFloat 20s linear infinite;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='islamicMain' patternUnits='userSpaceOnUse' width='200' height='200'%3E%3C!-- النجمة الثمانية الإسلامية --%3E%3Cpath d='M100 20 L120 80 L180 80 L135 115 L155 175 L100 140 L45 175 L65 115 L20 80 L80 80 Z' fill='none' stroke='%23D4C29A' stroke-width='1.5' opacity='0.6'/%3E%3C!-- الأشكال الهندسية الداخلية --%3E%3Ccircle cx='100' cy='100' r='60' fill='none' stroke='%230B2447' stroke-width='1' opacity='0.4'/%3E%3Ccircle cx='100' cy='100' r='40' fill='none' stroke='%23D4C29A' stroke-width='0.8' opacity='0.5'/%3E%3Ccircle cx='100' cy='100' r='20' fill='none' stroke='%230B2447' stroke-width='0.6' opacity='0.3'/%3E%3C!-- المربعات المتداخلة --%3E%3Crect x='70' y='70' width='60' height='60' fill='none' stroke='%23D4C29A' stroke-width='0.8' opacity='0.4' transform='rotate(45 100 100)'/%3E%3Crect x='80' y='80' width='40' height='40' fill='none' stroke='%230B2447' stroke-width='0.6' opacity='0.3' transform='rotate(45 100 100)'/%3E%3C!-- الخطوط الشعاعية --%3E%3Cline x1='100' y1='40' x2='100' y2='160' stroke='%23D4C29A' stroke-width='0.5' opacity='0.3'/%3E%3Cline x1='40' y1='100' x2='160' y2='100' stroke='%23D4C29A' stroke-width='0.5' opacity='0.3'/%3E%3Cline x1='65' y1='65' x2='135' y2='135' stroke='%230B2447' stroke-width='0.4' opacity='0.2'/%3E%3Cline x1='135' y1='65' x2='65' y2='135' stroke='%230B2447' stroke-width='0.4' opacity='0.2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23islamicMain)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: islamicPatternFloat 25s linear infinite;
 }
 
 @keyframes islamicPatternFloat {
-  0% { background-position: 0 0, 50px 50px, 0 0; }
-  100% { background-position: 100px 100px, 150px 150px, 60px 60px; }
+  0% { background-position: 0 0; }
+  50% { background-position: 100px 100px; }
+  100% { background-position: 200px 200px; }
 }
 
-/* Enhanced Islamic Pattern Overlay */
+/* Enhanced Islamic Pattern Overlay - Secondary Layer */
 .islamic-bg-overlay {
   position: fixed;
   top: 0;
@@ -621,15 +618,59 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -2;
-  opacity: 0.02;
-  background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='islamic' patternUnits='userSpaceOnUse' width='120' height='120'%3E%3Cpath d='M60 0L120 60L60 120L0 60z' fill='none' stroke='%230B2447' stroke-width='0.5'/%3E%3Cpath d='M30 30L90 30L90 90L30 90z' fill='none' stroke='%230B2447' stroke-width='0.3'/%3E%3Ccircle cx='60' cy='60' r='20' fill='none' stroke='%230B2447' stroke-width='0.2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23islamic)'/%3E%3C/svg%3E");
-  animation: islamicGeometryRotate 30s linear infinite;
+  opacity: 0.06;
+  background: url("data:image/svg+xml,%3Csvg width='150' height='150' viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='islamicSecondary' patternUnits='userSpaceOnUse' width='150' height='150'%3E%3C!-- النموذج المتكرر للزخارف الإسلامية --%3E%3Cpath d='M75 15 L90 60 L135 60 L101.25 87.5 L116.25 132.5 L75 105 L33.75 132.5 L48.75 87.5 L15 60 L60 60 Z' fill='none' stroke='%23D4C29A' stroke-width='1.2' opacity='0.4'/%3E%3C!-- الدوائر المتداخلة --%3E%3Ccircle cx='75' cy='75' r='45' fill='none' stroke='%230B2447' stroke-width='0.8' opacity='0.3'/%3E%3Ccircle cx='75' cy='75' r='30' fill='none' stroke='%23D4C29A' stroke-width='0.6' opacity='0.4'/%3E%3Ccircle cx='75' cy='75' r='15' fill='none' stroke='%230B2447' stroke-width='0.4' opacity='0.2'/%3E%3C!-- المعيّنات الإسلامية --%3E%3Cpath d='M75 45 L105 75 L75 105 L45 75 Z' fill='none' stroke='%23D4C29A' stroke-width='0.8' opacity='0.3'/%3E%3Cpath d='M75 55 L95 75 L75 95 L55 75 Z' fill='none' stroke='%230B2447' stroke-width='0.6' opacity='0.2'/%3E%3C!-- التفاصيل الزخرفية --%3E%3Cpath d='M75 0 L75 150 M0 75 L150 75' stroke='%23D4C29A' stroke-width='0.4' opacity='0.2'/%3E%3Cpath d='M37.5 37.5 L112.5 112.5 M112.5 37.5 L37.5 112.5' stroke='%230B2447' stroke-width='0.3' opacity='0.15'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23islamicSecondary)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  animation: islamicGeometryRotate 35s linear infinite reverse;
 }
 
 @keyframes islamicGeometryRotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
+  0% { 
+    background-position: 0 0;
+    transform: rotate(0deg) scale(1); 
+  }
+  25% { 
+    background-position: 37.5px 37.5px;
+    transform: rotate(90deg) scale(1.05); 
+  }
+  50% { 
+    background-position: 75px 75px;
+    transform: rotate(180deg) scale(1.1); 
+  }
+  75% { 
+    background-position: 112.5px 112.5px;
+    transform: rotate(270deg) scale(1.05); 
+  }
+  100% { 
+    background-position: 150px 150px;
+    transform: rotate(360deg) scale(1); 
+  }
+}
+
+/* Third Layer - Subtle Corner Ornaments */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  opacity: 0.04;
+  background: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='islamicCorners' patternUnits='userSpaceOnUse' width='300' height='300'%3E%3C!-- زخارف الزوايا الإسلامية --%3E%3Cpath d='M50 50 Q100 0 150 50 Q200 0 250 50 Q250 100 250 150 Q200 200 150 150 Q100 200 50 150 Q50 100 50 50' fill='none' stroke='%23D4C29A' stroke-width='1' opacity='0.3'/%3E%3Cpath d='M75 75 Q112.5 37.5 150 75 Q187.5 37.5 225 75 Q225 112.5 225 150 Q187.5 187.5 150 150 Q112.5 187.5 75 150 Q75 112.5 75 75' fill='none' stroke='%230B2447' stroke-width='0.8' opacity='0.2'/%3E%3C!-- النقاط الزخرفية --%3E%3Ccircle cx='150' cy='50' r='3' fill='%23D4C29A' opacity='0.3'/%3E%3Ccircle cx='250' cy='150' r='3' fill='%23D4C29A' opacity='0.3'/%3E%3Ccircle cx='150' cy='250' r='3' fill='%23D4C29A' opacity='0.3'/%3E%3Ccircle cx='50' cy='150' r='3' fill='%23D4C29A' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23islamicCorners)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  animation: islamicCornersFloat 40s ease-in-out infinite;
+}
+
+@keyframes islamicCornersFloat {
+  0%, 100% { 
+    background-position: 0 0;
+    opacity: 0.04;
+  }
+  50% { 
+    background-position: 150px 150px;
+    opacity: 0.06;
+  }
 }
 h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
 p{margin:.6em 0}
