@@ -36,47 +36,17 @@
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+<!-- Common CSS -->
+<link rel="stylesheet" href="css/common.css">
+
 <!-- AOS Animation Library -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <style>
-:root {
-  /* Professional Navy/White Identity Colors */
-  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
-  --color-accent: #FFFFFF;
-  --color-text: #0F172A; --color-text-subtle: #475569;
-  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
-  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
-  --radius-card: 1.25rem; --radius-button: 0.75rem;
-  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
-  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
-  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
-  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Legacy compatibility */
-  --brand: var(--color-accent); --brand-dark: #F0F0F0;
-  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
-  --bg: var(--color-bg); --border: var(--color-border);
-  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
-  --shadow-card: var(--shadow-md);
-  --shadow-elev: var(--shadow-lg);
-}
-*{box-sizing:border-box}
-html{direction:rtl;scroll-behavior:smooth}
-body{
-  margin:0; font-family: var(--font-family-primary);
-  background: var(--color-bg); color:var(--color-text);
-  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-  line-height:1.6;
-}
-h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
-p{margin:.6em 0}
-a{color:inherit;text-decoration:none; transition: var(--transition);}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-.section{padding:80px 0} .section-tight{padding:60px 0}
+/* Page-specific overrides and components - using variables from common.css */
 
-/* --- Components --- */
+/* Page-specific button overrides */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
   border-radius:var(--r); padding:10px 20px; font-size:15px; font-weight:600;
@@ -532,30 +502,27 @@ footer a:hover{color:var(--brand);}
   </div>
 </div>
 
-<header class="header">
-  <div class="container row">
-    <a href="index.html" class="brand">
-      <div class="logo">
-        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
-      </div>
-      <div>
-        <div class="brand-text">الفارس للأعمال</div>
-        <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
-      </div>
-    </a>
-    <button class="menu-toggle" aria-label="القائمة"><i data-lucide="menu"></i></button>
-    <nav class="nav">
-      <a href="index.html">الرئيسية</a>
-      <a href="vision-page.html">من نحن</a>
-      <a href="our-services-page.html" class="active">الخدمات</a>
-      <a href="packages-page.html">الباقات</a>
-      <a href="legal-services-page.html">الخدمات القانونية</a>
-      <a href="index.html#contact">اتصل بنا</a>
-      <a href="faq-page.html">الأسئلة الشائعة</a>
-    </nav>
-    <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
-  </div>
-</header>
+<!-- Unified Navigation Header -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <i class="fas fa-balance-scale-right"></i>
+            الفارس للأعمال
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="vision-page.html">من نحن</a></li>
+            <li><a href="our-services-page.html" class="nav-active">الخدمات</a></li>
+            <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+            <li><a href="packages-page.html">الباقات</a></li>
+            <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+            <li><a href="index.html#contact" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
+        </ul>
+        <div class="nav-mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
 <div class="subnav">
   <div class="container row">
     <a href="legal-services-page.html">الخدمات القانونية</a>
@@ -828,42 +795,75 @@ footer a:hover{color:var(--brand);}
   </div>
 </section>
 
-<footer id="contact">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="index.html" class="brand" style="margin-bottom:12px;">
-            <div class="logo">
-                <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+<!-- Unified Footer -->
+<footer id="contact" class="main-footer">
+    <div class="footer-container">
+        <!-- عن الفارس للأعمال -->
+        <div>
+            <div class="footer-col-header">
+                <h3>عن الفارس للأعمال</h3>
             </div>
-            <div class="brand-text">الفارس للأعمال</div>
-        </a>
-        <p class="small" style="color:#cbd5e1;max-width:300px;">ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
-      </div>
-      <div>
-        <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">روابط سريعة</h4>
-        <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
-          <a href="index.html">الرئيسية</a>
-          <a href="our-services-page.html">الخدمات</a>
-          <a href="packages-page.html">الباقات</a>
-          <a href="faq-page.html">الأسئلة الشائعة</a>
+            <div class="footer-col-content">
+                <p>ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
+                <ul>
+                    <li><a href="our-services-page.html">خدماتنا</a></li>
+                    <li><a href="vision-page.html">رؤيتنا</a></li>
+                    <li><a href="packages-page.html">باقاتنا</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div>
-        <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">معلومات التواصل</h4>
-        <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
-          <div><i data-lucide="phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800 | 0555648602</div>
-          <div><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</div>
-          <div style="display:flex;"><i data-lucide="map-pin" style="width:14px; vertical-align:top; margin-left:4px; flex-shrink:0;"></i><span>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</span></div>
+        
+        <!-- روابط سريعة -->
+        <div>
+            <div class="footer-col-header">
+                <h3>روابط سريعة</h3>
+            </div>
+            <div class="footer-col-content">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="our-services-page.html">الخدمات</a></li>
+                    <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                    <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
+        
+        <!-- الخدمات -->
+        <div>
+            <div class="footer-col-header">
+                <h3>خدماتنا</h3>
+            </div>
+            <div class="footer-col-content">
+                <ul>
+                    <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+                    <li><a href="government-transactions-page.html">المعاملات الحكومية</a></li>
+                    <li><a href="zakat-tax-page.html">الزكاة والضرائب</a></li>
+                    <li><a href="licenses-page.html">التراخيص</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- معلومات التواصل -->
+        <div>
+            <div class="footer-col-header">
+                <h3>معلومات التواصل</h3>
+            </div>
+            <div class="footer-col-content contact-info">
+                <p><i class="fas fa-phone"></i>0555490800 | 0555648602</p>
+                <p><i class="fas fa-envelope"></i>info@alfarissa.org</p>
+                <p><i class="fas fa-map-marker-alt"></i>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</p>
+            </div>
+        </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>جميع الحقوق محفوظة © الفارس للأعمال 2025</div>
-      <div style="display:flex; gap:16px;"><a href="privacy-policy-page.html">سياسة الخصوصية</a> • <a href="terms-of-service-page.html">شروط الاستخدام</a></div>
+    <!-- Copyright -->
+    <div class="footer-copyright">
+        <p>جميع الحقوق محفوظة © الفارس للأعمال 2025</p>
+        <p>
+            <a href="privacy-policy-page.html">سياسة الخصوصية</a> • 
+            <a href="terms-of-service-page.html">شروط الاستخدام</a>
+        </p>
     </div>
-  </div>
 </footer>
 
 <!-- Floating Icons -->
