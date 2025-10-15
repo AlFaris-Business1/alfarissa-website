@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>تواصل معنا - الفارس للأعمال</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تواصل معنا – نحن هنا للإجابة على استفساراتكم وتقديم الدعم في الفارس للأعمال.">
+  <link rel="icon" href="images/horse-logo.png" type="image/png">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Override colours to ensure light mode -->
+  <style>
+    :root {
+      --color-bg: #F7F8FB;
+      --color-surface: #FFFFFF;
+      --color-text: #0F1A72;
+    }
+    .contact-hero {
+      background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+      color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .contact-hero h1 {
+      margin: 0 0 8px;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    .contact-hero p {
+      font-size: 1.1rem;
+      color: #f3f4f6;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 48px auto;
+      max-width: 1000px;
+      padding: 0 16px;
+    }
+    .contact-info, .contact-form-card {
+      background: var(--color-surface);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .contact-info h3, .contact-form-card h3 {
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    .contact-form-card form input, .contact-form-card form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f9fafb;
+    }
+    .contact-form-card form button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .contact-form-card form button:hover {
+      background: var(--color-accent);
+    }
+    footer {
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      padding: 32px 0;
+      margin-top: 64px;
+    }
+    footer p {
+      margin: 0;
+    }
+    /* Floating icon styles */
+    .floating-icon {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .floating-icon:hover {
+      transform: scale(1.1);
+    }
+    .floating-icon.whatsapp {
+      background-color: #25D366;
+      margin-bottom: 70px;
+    }
+    .floating-icon.call {
+      background-color: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container row">
+      <a href="index.html" class="brand">
+        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+      </a>
+      <div class="brand-text">
+        <div class="brand-name">الفارس للأعمال</div>
+        <div class="brand-tagline">تحت إشراف المحامي محمد الفارس</div>
+      </div>
+      <button class="menu-toggle" aria-label="القائمة" data-lucide="menu"></button>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="vision-page.html">من نحن</a>
+        <a href="our-services-page.html">الخدمات</a>
+        <a href="packages-page.html">الباقات</a>
+        <a href="contact-page.html" class="active">اتصل بنا</a>
+        <a href="faq-page.html">الأسئلة الشائعة</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>اتصل بنا</h1>
+      <p>يسعدنا تواصلك معنا لتقديم المساعدة والإجابة على استفساراتك في أسرع وقت.</p>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>معلومات التواصل</h3>
+        <p><strong>العنوان:</strong> جدة، المملكة العربية السعودية</p>
+        <p><strong>الهاتف:</strong> <a href="tel:0555490800">0555490800</a></p>
+        <p><strong>البريد الإلكتروني:</strong> <a href="mailto:info@alfarissa.org">info@alfarissa.org</a></p>
+      </div>
+      <div class="contact-form-card">
+        <h3>ارسل رسالة</h3>
+        <form action="mailto:info@alfarissa.org" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="الاسم الكامل" required>
+          <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+          <textarea name="message" placeholder="اكتب رسالتك هنا" rows="5" required></textarea>
+          <button type="submit">إرسال الرسالة</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 الفارس للأعمال. جميع الحقوق محفوظة.</p>
+  </footer>
+  <!-- Floating icons -->
+  <a href="https://wa.me/966555490800" class="floating-icon whatsapp" target="_blank"><i data-lucide="message-circle"></i></a>
+  <a href="tel:0555490800" class="floating-icon call" target="_blank"><i data-lucide="phone"></i></a>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
