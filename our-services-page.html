@@ -586,8 +586,75 @@ footer a:hover{color:var(--brand);}
   <div class="container">
     <div class="grid grid-2" style="gap: 32px;">
 
+      <!-- Documentation Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleService('documentation')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+          <i class="fas fa-file-contract service-icon"></i>
+          <h3 class="service-title">التوثيق</h3>
+          <p class="service-subtitle">توثيق العقود والوكالات والإقرارات</p>
+        </div>
+        <div class="sub-services" id="documentation">
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="200">
+            <h4 class="sub-service-title">إصدار الوكالات</h4>
+            <p class="sub-service-desc">إصدار وكالات عامة وخاصة معتمدة</p>
+            <button class="sub-service-btn" onclick="requestService('إصدار وكالة')">اطلب الآن</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="300">
+            <h4 class="sub-service-title">توثيق العقود</h4>
+            <p class="sub-service-desc">توثيق عقود بيع وشراء وشراكة وإيجار</p>
+            <button class="sub-service-btn" onclick="requestService('توثيق عقد')">ابدأ الخدمة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="400">
+            <h4 class="sub-service-title">إقرار التعهدات</h4>
+            <p class="sub-service-desc">توثيق الإقرارات والتعهدات الرسمية</p>
+            <button class="sub-service-btn" onclick="requestService('إقرار تعهد')">احجز الآن</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="500">
+            <h4 class="sub-service-title">الترجمة القانونية</h4>
+            <p class="sub-service-desc">ترجمة معتمدة للمستندات والعقود</p>
+            <button class="sub-service-btn" onclick="requestService('ترجمة قانونية')">تواصل معنا</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shop Licensing Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleService('shopLicensing')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);">
+          <i class="fas fa-store service-icon"></i>
+          <h3 class="service-title">تراخيص المحلات التجارية</h3>
+          <p class="service-subtitle">إصدار وتجديد جميع التراخيص للأعمال</p>
+        </div>
+        <div class="sub-services" id="shopLicensing">
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="200">
+            <h4 class="sub-service-title">ترخيص بلدي</h4>
+            <p class="sub-service-desc">استخراج وتجديد الرخص البلدية للمحلات</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص بلدي')">اطلب الترخيص</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="300">
+            <h4 class="sub-service-title">ترخيص الدفاع المدني</h4>
+            <p class="sub-service-desc">إصدار تراخيص الدفاع المدني للمحلات والمنشآت</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص دفاع مدني')">احصل على الترخيص</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="400">
+            <h4 class="sub-service-title">عقد النظافة</h4>
+            <p class="sub-service-desc">تنظيم عقود النظافة للمحلات والمنشآت</p>
+            <button class="sub-service-btn" onclick="requestService('عقد النظافة')">ابدأ الآن</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="500">
+            <h4 class="sub-service-title">شهادة الزكاة والدخل</h4>
+            <p class="sub-service-desc">الحصول على الشهادات النظامية للزكاة والدخل</p>
+            <button class="sub-service-btn" onclick="requestService('شهادة الزكاة والدخل')">اصدر الشهادة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="600">
+            <h4 class="sub-service-title">الرقم الضريبي</h4>
+            <p class="sub-service-desc">إصدار الرقم الضريبي للمنشأة</p>
+            <button class="sub-service-btn" onclick="requestService('الرقم الضريبي')">اطلب الخدمة</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Legal Services Card -->
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleService('legal')">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleService('legal')">
         <div class="service-card-header">
           <i class="fas fa-balance-scale service-icon"></i>
           <h3 class="service-title">الخدمات القانونية</h3>
@@ -618,7 +685,7 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Government Services Card -->
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200" onclick="toggleService('government')">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400" onclick="toggleService('government')">
         <div class="service-card-header" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
           <i class="fas fa-building service-icon"></i>
           <h3 class="service-title">الخدمات الحكومية</h3>
@@ -649,7 +716,7 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Tax & Zakat Services Card -->
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300" onclick="toggleService('zakat')">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500" onclick="toggleService('zakat')">
         <div class="service-card-header" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
           <i class="fas fa-calculator service-icon"></i>
           <h3 class="service-title">الزكاة والضرائب</h3>
@@ -680,7 +747,7 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Package Services Card -->
-      <div class="service-card" data-aos="fade-up" data-aos-delay="400" onclick="toggleService('packages')">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600" onclick="toggleService('packages')">
         <div class="service-card-header" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);">
           <i class="fas fa-handshake service-icon"></i>
           <h3 class="service-title">الباقات المتكاملة</h3>
