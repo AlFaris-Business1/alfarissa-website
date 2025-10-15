@@ -585,6 +585,7 @@ footer a:hover{color:var(--brand);}
 <section class="section">
   <div class="container">
     <div class="grid grid-2" style="gap: 32px;">
+      <!-- Note: Grid layout will automatically adjust to accommodate the additional service cards -->
 
       <!-- Documentation Services Card -->
       <div class="service-card" data-aos="fade-up" data-aos-delay="100" onclick="toggleService('documentation')">
@@ -746,8 +747,116 @@ footer a:hover{color:var(--brand);}
         </div>
       </div>
 
+      <!-- Enhanced Documentation Services Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="600" onclick="toggleService('documentationEnhanced')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);">
+          <i class="fas fa-file-signature service-icon"></i>
+          <h3 class="service-title">خدمة التوثيق المتخصصة</h3>
+          <p class="service-subtitle">توثيق شامل للوثائق والمستندات الرسمية</p>
+        </div>
+        <div class="sub-services" id="documentationEnhanced">
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="200">
+            <h4 class="sub-service-title">توثيق الوكالات الشرعية</h4>
+            <p class="sub-service-desc">إصدار الوكالات الشرعية العامة والخاصة وفقاً للأنظمة السعودية</p>
+            <button class="sub-service-btn" onclick="requestService('وكالة شرعية')">اطلب الوكالة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="300">
+            <h4 class="sub-service-title">صكوك الطلاق والخلع</h4>
+            <p class="sub-service-desc">استخراج وتوثيق صكوك الطلاق والخلع من المحاكم الشرعية</p>
+            <button class="sub-service-btn" onclick="requestService('صك طلاق')">احصل على الصك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="400">
+            <h4 class="sub-service-title">إثبات الوراثة والوصية</h4>
+            <p class="sub-service-desc">استخراج صكوك حصر الورثة وتوثيق الوصايا الشرعية</p>
+            <button class="sub-service-btn" onclick="requestService('حصر ورثة')">ابدأ الإجراء</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="500">
+            <h4 class="sub-service-title">شهادات الميلاد والوفاة</h4>
+            <p class="sub-service-desc">استخراج شهادات الميلاد والوفاة وتصديقها من الجهات المختصة</p>
+            <button class="sub-service-btn" onclick="requestService('شهادة ميلاد')">احجز موعد</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="600">
+            <h4 class="sub-service-title">توثيق الشهادات الأكاديمية</h4>
+            <p class="sub-service-desc">تصديق وتوثيق الشهادات الجامعية والأكاديمية للاستخدام الرسمي</p>
+            <button class="sub-service-btn" onclick="requestService('توثيق شهادة')">وثق شهادتك</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commercial Store Licensing Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="700" onclick="toggleService('commercialLicensing')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+          <i class="fas fa-store-alt service-icon"></i>
+          <h3 class="service-title">خدمة الرخص للمحلات التجارية</h3>
+          <p class="service-subtitle">رخص شاملة للأنشطة التجارية والمهنية</p>
+        </div>
+        <div class="sub-services" id="commercialLicensing">
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="200">
+            <h4 class="sub-service-title">ترخيص محلات البقالة والمواد الغذائية</h4>
+            <p class="sub-service-desc">استخراج تراخيص البلدية والصحة والدفاع المدني للمحلات الغذائية - المتطلبات: هوية المالك، عقد الإيجار، مخطط المحل</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص بقالة')">اطلب الترخيص</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="300">
+            <h4 class="sub-service-title">تراخيص المطاعم والمقاهي</h4>
+            <p class="sub-service-desc">رخص شاملة للمطاعم والكافيهات - المتطلبات: رخصة بلدية، شهادة صحية، ترخيص دفاع مدني، عقد الإيجار المصدق</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص مطعم')">احصل على الترخيص</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="400">
+            <h4 class="sub-service-title">تراخيص الصيدليات والعيادات</h4>
+            <p class="sub-service-desc">رخص المؤسسات الطبية والصيدلانية - المتطلبات: ترخيص وزارة الصحة، هوية الطبيب/الصيدلي، عقد العمل المصدق</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص صيدلية')">ابدأ التجهيز</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="500">
+            <h4 class="sub-service-title">تراخيص ورش السيارات والحرف</h4>
+            <p class="sub-service-desc">رخص الورش والأنشطة الحرفية - المتطلبات: موافقة بلدية، ترخيص دفاع مدني، تصريح بيئي، عقد إيجار مصدق</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص ورشة')">اطلب الموافقات</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-left" data-aos-delay="600">
+            <h4 class="sub-service-title">تراخيص الأنشطة التعليمية</h4>
+            <p class="sub-service-desc">رخص المعاهد والمراكز التعليمية - المتطلبات: موافقة وزارة التعليم، هويات المعلمين، عقود العمل، موافقة بلدية</p>
+            <button class="sub-service-btn" onclick="requestService('ترخيص تعليمي')">احجز استشارة</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Estate Registration Card -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="800" onclick="toggleService('realEstateRegistration')">
+        <div class="service-card-header" style="background: linear-gradient(135deg, #7C2D12 0%, #92400E 100%);">
+          <i class="fas fa-home service-icon"></i>
+          <h3 class="service-title">خدمة التسجيل العيني للعقار</h3>
+          <p class="service-subtitle">تسجيل وتوثيق الممتلكات العقارية</p>
+        </div>
+        <div class="sub-services" id="realEstateRegistration">
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="200">
+            <h4 class="sub-service-title">تسجيل الوحدات السكنية - الفلل</h4>
+            <p class="sub-service-desc">تسجيل عيني للفلل والمنازل المستقلة - الوثائق المطلوبة: صك الملكية، هوية المالك، كروكي المخطط، إفراغ عقاري</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل فيلا')">سجل الفيلا</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="300">
+            <h4 class="sub-service-title">تسجيل الوحدات السكنية - الشقق</h4>
+            <p class="sub-service-desc">تسجيل الشقق والوحدات السكنية - المتطلبات: عقد البيع، موافقة الجمعية التعاونية، رسم مساحي مصدق، براءة ذمة</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل شقة')">سجل الشقة</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="400">
+            <h4 class="sub-service-title">تسجيل الأراضي التجارية</h4>
+            <p class="sub-service-desc">تسجيل الأراضي للأنشطة التجارية - التفاصيل: تحديد نوع النشاط، موافقة البلدية، كشف حساب بنكي، ترخيص استثمار</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل أرض تجارية')">ابدأ التسجيل</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="500">
+            <h4 class="sub-service-title">تسجيل الأراضي الزراعية</h4>
+            <p class="sub-service-desc">توثيق الأراضي الزراعية - الإجراءات: تحديد المساحة، فحص جودة التربة، رخصة حفر بئر، تصريح ري من الوزارة</p>
+            <button class="sub-service-btn" onclick="requestService('تسجيل أرض زراعية')">وثق أرضك</button>
+          </div>
+          <div class="sub-service-item" data-aos="fade-right" data-aos-delay="600">
+            <h4 class="sub-service-title">تحديث صكوك الملكية</h4>
+            <p class="sub-service-desc">تحديث وتعديل صكوك الملكية القديمة - الخدمات: فرز الأراضي، تحديث البيانات، إضافة الورثة، تصحيح المساحات</p>
+            <button class="sub-service-btn" onclick="requestService('تحديث صك')">حدث الصك</button>
+          </div>
+        </div>
+      </div>
+
       <!-- Package Services Card -->
-      <div class="service-card" data-aos="fade-up" data-aos-delay="600" onclick="toggleService('packages')">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="900" onclick="toggleService('packages')">
         <div class="service-card-header" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);">
           <i class="fas fa-handshake service-icon"></i>
           <h3 class="service-title">الباقات المتكاملة</h3>
