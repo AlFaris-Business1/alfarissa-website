@@ -3,7 +3,15 @@ AlFaris Business (الفارس للأعمال) is a static HTML website for an A
 
 Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
 
+## Copilot Best Practices for This Repository
+- **Task Scope**: Focus on well-defined, specific tasks like content updates, HTML structure fixes, or styling adjustments
+- **Iterative Approach**: Make small, incremental changes and test frequently using the validation process below
+- **Arabic Content**: Always preserve RTL (right-to-left) text direction and Arabic language attributes
+- **Static Site Focus**: Remember this is a static HTML site - avoid suggesting complex build processes or frameworks
+- **Validation First**: Always run HTML validation and local testing before committing changes
+
 ## Working Effectively
+
 - **CRITICAL**: This is a static HTML website - NO BUILD PROCESS REQUIRED
 - Local development server setup:
   - `cd /home/runner/work/alfarissa-website/alfarissa-website`
@@ -19,7 +27,7 @@ Always reference these instructions first and fallback to search or bash command
 - Deployment to GitHub Pages is fully automated via GitHub Actions
 - **NO MANUAL BUILD STEPS REQUIRED** - files deploy directly as-is
 - GitHub Actions workflow: `.github/workflows/deploy.yml`
-- Deployment triggers on push to `store-layout` branch (not `main` branch)
+- Deployment triggers on push to `main` branch
 - Deployment time: ~2-3 minutes via GitHub Actions, NEVER CANCEL
 - Validation commands used in CI:
   - `echo "🚀 Preparing deployment at $(date -u)"`
@@ -129,4 +137,10 @@ After making changes, ALWAYS validate using browser testing:
 - HTML validation shows 1 expected error for Google verification file (google0cd875a98eac9549.html) - this is normal
 - CDN resources may fail to load in sandboxed environments - this doesn't affect functionality
 - Navigation links use `-page.html` suffix (e.g., `faq-page.html`, not `faq.html`)
-- Deployment workflow configured for `store-layout` branch, not `main` branch
+- Deployment workflow configured for `main` branch - pushes to main trigger automatic deployment
+
+<tool_calling>
+You have the capability to call multiple tools in a single response. For maximum efficiency, whenever you need to perform multiple independent operations, ALWAYS call tools simultaneously whenever the actions can be done in parallel rather than sequentially.
+Especially when exploring repository, searching, reading files, viewing directories, validating changes, reporting progress or replying to comments. For Example you can read 3 different files parallelly, or report progress and edit different files in parallel. Always report progress in parallel with other tool calls that follow it as it does not depend on the result of those calls.
+However, if some tool calls depend on previous calls to inform dependent values like the parameters, do NOT call these tools in parallel and instead call them sequentially.
+</tool_calling>
