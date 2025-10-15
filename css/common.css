@@ -3,19 +3,25 @@
 /* تحسين تحميل الخطوط وإضافة خطوط احتياطية */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
 
-/* Define custom CSS variables for the enhanced color palette */
+/* Enhanced Islamic Design System - Professional Color Palette */
 :root {
-    --color-background-light: #FBF7F1; /* Beige warm */
-    --color-background-gradient: linear-gradient(135deg, #FBF7F1 0%, #F5F1EB 100%);
-    --color-primary-text: #1B2A41; /* Dark blue */
+    /* Enhanced Professional Islamic Color System */
+    --color-background-light: #FDFCFA; /* Enhanced warm white */
+    --color-background-gradient: linear-gradient(135deg, #FDFCFA 0%, #F5F1EB 100%);
+    --color-primary-text: #1A202C; /* Enhanced contrast dark text */
     --color-primary-light: #2A3F5B; /* Lighter blue */
-    --color-headings-cta: #D4C29A; /* Light gold/creamy */
+    --color-headings-cta: #D4C29A; /* Islamic gold */
     --color-headings-cta-dark: #C0B08E; /* Darker gold */
-    --color-secondary-text: #2D3748; /* Much darker gray for better contrast */
+    --color-secondary-text: #4A5568; /* Better contrast gray */
     --color-accent: #E6D4A8; /* Light gold accent */
-    --color-success: #10b981; /* Green for success */
-    --color-warning: #f59e0b; /* Orange for warnings */
-    --color-border: rgba(212, 194, 154, 0.4); /* Stronger gold border */
+    --color-success: #16A34A; /* Enhanced green */
+    --color-warning: #F59E0B; /* Enhanced orange */
+    --color-border: rgba(212, 194, 154, 0.3); /* Islamic gold border */
+    
+    /* Islamic Design Elements */
+    --islamic-gold: #D4C29A; --islamic-gold-light: #E6D4A8; --islamic-gold-dark: #B8A882;
+    --islamic-navy: #0B2447; --islamic-navy-light: #112D60; --islamic-navy-dark: #081A33;
+    --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
     
     /* Enhanced Typography with fallbacks */
     --font-family-primary: 'Noto Kufi Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
@@ -82,6 +88,50 @@ body {
     text-rendering: optimizeLegibility;
     direction: rtl;
     unicode-bidi: embed;
+    position: relative;
+}
+
+/* Islamic Geometric Background System */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.03;
+    background-image: 
+        radial-gradient(circle at 25% 25%, var(--islamic-navy) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, var(--islamic-navy) 1px, transparent 1px),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230B2447' fill-opacity='0.4'%3E%3Cpolygon points='30,0 60,30 30,60 0,30'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100px 100px, 100px 100px, 60px 60px;
+    background-position: 0 0, 50px 50px, 0 0;
+    animation: islamicPatternFloat 20s linear infinite;
+}
+
+@keyframes islamicPatternFloat {
+    0% { background-position: 0 0, 50px 50px, 0 0; }
+    100% { background-position: 100px 100px, 150px 150px, 60px 60px; }
+}
+
+/* Enhanced Islamic Pattern Overlay */
+.islamic-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.02;
+    background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='islamic' patternUnits='userSpaceOnUse' width='120' height='120'%3E%3Cpath d='M60 0L120 60L60 120L0 60z' fill='none' stroke='%230B2447' stroke-width='0.5'/%3E%3Cpath d='M30 30L90 30L90 90L30 90z' fill='none' stroke='%230B2447' stroke-width='0.3'/%3E%3Ccircle cx='60' cy='60' r='20' fill='none' stroke='%230B2447' stroke-width='0.2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23islamic)'/%3E%3C/svg%3E");
+    animation: islamicGeometryRotate 30s linear infinite;
+}
+
+@keyframes islamicGeometryRotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
 /* Fallback classes for Tailwind-independent styling */
