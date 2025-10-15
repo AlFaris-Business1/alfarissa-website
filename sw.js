@@ -1,16 +1,17 @@
 // Enhanced Service Worker for Al Faris Business Website
 // Professional caching strategy with improved performance
 
-const CACHE_NAME = 'alfaris-website-v2.0';
-const STATIC_CACHE = 'alfaris-static-v2.0';
-const DYNAMIC_CACHE = 'alfaris-dynamic-v2.0';
+const CACHE_NAME = 'alfaris-website-v2.1';
+const STATIC_CACHE = 'alfaris-static-v2.1';
+const DYNAMIC_CACHE = 'alfaris-dynamic-v2.1';
 
 // Critical resources to cache immediately
 const criticalUrlsToCache = [
   '/',
   '/index.html',
   '/css/common.css',
-  '/js/common.js'
+  '/js/common.js',
+  '/images/alfaris-logo-new.png'
 ];
 
 // All pages to cache
@@ -29,6 +30,7 @@ const allUrlsToCache = [
   '/terms-of-service-page.html',
   '/css/common.css',
   '/js/common.js',
+  '/images/alfaris-logo-new.png',
   '/robots.txt',
   '/sitemap.xml'
 ];

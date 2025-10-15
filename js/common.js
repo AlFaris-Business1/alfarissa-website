@@ -710,3 +710,72 @@ function extractServiceNameFromUrl(url) {
     }
     return 'خدماتكم';
 }
+
+// Enhanced Lazy Loading Implementation for Better Performance
+function initializeLazyLoading() {
+    // Create intersection observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                
+                // Load the image
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                
+                // Add lazy class and loading attributes for native lazy loading fallback
+                if (!img.hasAttribute('loading')) {
+                    img.setAttribute('loading', 'lazy');
+                }
+                
+                img.classList.remove('lazy');
+                img.classList.add('lazy-loaded');
+                
+                // Stop observing this image
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
+
+    // Find all images that should be lazy loaded (excluding logos and critical images)
+    const lazyImages = document.querySelectorAll('img:not([data-critical]):not([src*="alfaris-logo-new.png"])');
+    
+    // Apply lazy loading to non-critical images
+    lazyImages.forEach(img => {
+        // Skip if already has loading=lazy or is in viewport
+        const rect = img.getBoundingClientRect();
+        const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (!inViewport && !img.hasAttribute('loading')) {
+            // Add lazy loading attribute
+            img.setAttribute('loading', 'lazy');
+            
+            // For additional optimization, use intersection observer for data-src images
+            if (img.dataset.src) {
+                img.classList.add('lazy');
+                imageObserver.observe(img);
+            }
+        }
+    });
+
+    // Add loading=lazy to external images
+    const externalImages = document.querySelectorAll('img[src*="https://i.postimg.cc"], img[src*="https://"], img[src*="http://"]');
+    externalImages.forEach(img => {
+        if (!img.hasAttribute('loading') && !img.src.includes('alfaris-logo-new.png')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+    
+    console.log(`✅ Lazy loading initialized for ${lazyImages.length} images`);
+}
+
+// Auto-initialize lazy loading on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a short moment for all images to be rendered
+    setTimeout(initializeLazyLoading, 100);
+});
