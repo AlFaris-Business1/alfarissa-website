@@ -22,67 +22,24 @@
 <meta name="twitter:description" content="الفارس للأعمال — نُقدّم لك الحل القانوني والإداري بثقة واحتراف في المملكة العربية السعودية."/>
 <meta name="twitter:image" content="https://i.postimg.cc/Nf6QqL14/1.png"/>
 
-<!-- Google Fonts -->
+<!-- استيراد النظام الموحّد للألوان والتصميم -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/common.css">
+
+<!-- Google Fonts مع نظام احتياطي -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- SwiperJS for Sliders -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-
 <style>
-:root {
-  /* Professional Navy/White Identity Colors */
-  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
-  --color-accent: #FFFFFF;
-  --color-text: #0F172A; --color-text-subtle: #475569;
-  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
-  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
-  --radius-card: 1.25rem; --radius-button: 0.75rem;
-  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
-  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
-  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
-  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Legacy compatibility */
-  --brand: var(--color-accent); --brand-dark: #F0F0F0;
-  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
-  --bg: var(--color-bg); --border: var(--color-border);
-  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
-  --shadow-card: var(--shadow-md);
-  --shadow-elev: var(--shadow-lg);
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0F1220; --color-surface: #111827;
-    --color-text: #F8FAFC; --color-text-subtle: #CBD5E1;
-    --color-border: #1F2937;
-  }
-}
-*{box-sizing:border-box}
-html{direction:rtl;scroll-behavior:smooth}
-body{
-  margin:0; 
-  font-family:"Cairo", system-ui, -apple-system, sans-serif;
-  background:var(--color-bg); 
-  color:var(--color-text);
-  -webkit-font-smoothing:antialiased; 
-  text-rendering:optimizeLegibility;
-  line-height:1.6;
-}
-h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
-p{margin:.6em 0}
-a{color:inherit;text-decoration:none; transition: var(--transition);}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
+/* أنماط خاصة بالصفحة الرئيسية فقط */
 .section{padding:80px 0} .section-tight{padding:60px 0}
 
 /* --- Components --- */
@@ -176,10 +133,11 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 .topbar-socials a:hover{color:var(--color-accent);}
 .header{
   position:sticky; top:0; z-index:50;
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
-  backdrop-filter:saturate(180%) blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.15); 
+  background:linear-gradient(135deg, var(--color-primary) 0%, #1E3A5F  50%, var(--color-primary-dark) 100%);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid rgba(212, 165, 116, 0.2); 
   color:#fff;
+  box-shadow: var(--shadow-lg);
 }
 .header .row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 0;position:relative}
 .brand{display:flex;align-items:center;gap:12px}
@@ -763,21 +721,20 @@ footer a:hover{color:var(--brand);}
   </div>
 </div>
 
-<section class="hero">
-  <div class="bg"></div><div class="overlay"></div>
-  <div class="container inner">
-    <h1 class="fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
-    <p class="fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
-    <div class="actions fade-in">
-      <a class="btn btn-primary" href="index.html#contact"><i data-lucide="file-text"></i> اطلب استشارة الآن</a>
-      <a class="btn btn-secondary" href="https://wa.me/966555490800"><i data-lucide="message-circle"></i> تواصل واتساب</a>
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1 class="hero-title fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
+    <p class="hero-subtitle fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
+    <div class="actions fade-in" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <a class="btn btn-primary" href="index.html#contact">📋 اطلب استشارة الآن</a>
+      <a class="btn btn-secondary" href="https://wa.me/966555490800" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3);">💬 تواصل واتساب</a>
     </div>
   </div>
 </section>
 
-<section id="services-highlights" class="section" style="background: var(--color-surface);">
+<section id="services-highlights" class="section section-premium">
   <div class="container">
-    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px; position: relative; z-index: 2;">
       <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خدماتنا المتخصصة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         نقدم مجموعة شاملة من الخدمات القانونية والإدارية لتلبية كافة احتياجاتك المهنية بأعلى معايير الجودة والاحتراف
@@ -1041,9 +998,9 @@ footer a:hover{color:var(--brand);}
 </section>
 
 <!-- Packages Section -->
-<section id="packages" class="section" style="background: var(--color-muted);">
+<section id="packages" class="section section-premium-alt">
   <div class="container">
-    <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
+    <div class="fade-in" style="text-align: center; margin-bottom: 48px; position: relative; z-index: 2;">
       <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">باقاتنا المميزة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         اختر الباقة التي تناسب احتياجاتك مع أسعار تنافسية وخدمات شاملة
