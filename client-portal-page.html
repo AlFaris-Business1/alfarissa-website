@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>بوابة العملاء - الفارس للأعمال</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="بوابة العملاء – تابع حالة طلباتك واستفساراتك وأحصل على الخدمات في الفارس للأعمال">
+  <link rel="canonical" href="https://alfarissa.org/client-portal-page.html">
+  <link rel="icon" href="images/alfaris-logo-new.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/alfaris-logo-new.png">
+  <link rel="shortcut icon" href="images/alfaris-logo-new.png" type="image/png">
+
+  <!-- SEO/Social Media Meta Tags -->
+  <meta property="og:title" content="بوابة العملاء - الفارس للأعمال">
+  <meta property="og:description" content="بوابة العملاء – تابع حالة طلباتك واستفساراتك وأحصل على الخدمات في الفارس للأعمال">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alfarissa.org/client-portal-page.html">
+  <meta property="og:site_name" content="الفارس للأعمال">
+  <meta property="og:locale" content="ar_SA">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="بوابة العملاء - الفارس للأعمال">
+  <meta name="twitter:description" content="بوابة العملاء – تابع حالة طلباتك واستفساراتك وأحصل على الخدمات في الفارس للأعمال">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      /* Professional Navy/White Identity Colors */
+      --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
+      --color-accent: #FFFFFF;
+      --color-text: #0F172A; --color-text-subtle: #475569;
+      --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
+      --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
+      --radius-card: 1.25rem; --radius-button: 0.75rem;
+      --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+      --shadow-md: 0 6px 16px rgba(15,23,42,.08);
+      --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
+      --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      
+      /* Legacy compatibility */
+      --brand: var(--color-accent); --brand-dark: #F0F0F0;
+      --dark: var(--color-primary); --sub: var(--color-text-subtle); 
+      --bg: var(--color-bg); --border: var(--color-border);
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
+      --shadow-card: var(--shadow-md);
+      --shadow-elev: var(--shadow-lg);
+    }
+
+    /* Dark Mode Support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0F1220; --color-surface: #111827;
+        --color-text: #F8FAFC; --color-text-subtle: #CBD5E1;
+        --color-border: #1F2937;
+      }
+    }
+
+    *{box-sizing:border-box}
+    html{direction:rtl;scroll-behavior:smooth}
+    body{
+      margin:0; 
+      font-family: 'Noto Kufi Arabic', Arial, sans-serif;
+      background:var(--color-bg); 
+      color:var(--color-text);
+      -webkit-font-smoothing:antialiased; 
+      text-rendering:optimizeLegibility;
+      line-height:1.6;
+    }
+    h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
+    p{margin:.6em 0}
+    a{color:inherit;text-decoration:none; transition: var(--transition);}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .section{padding:80px 0} .section-tight{padding:60px 0}
+
+    /* --- Components --- */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      border-radius:var(--radius-button); padding:12px 24px; font-size:15px; font-weight:600;
+      border:1px solid transparent; transition:var(--transition); white-space:nowrap;
+      text-decoration: none;
+    }
+    .btn-primary{
+      background:var(--color-primary);
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover{
+      background:var(--color-primary-ink);
+      transform:translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-secondary{
+      background:transparent;
+      color:var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+    .btn-secondary:hover{
+      background:var(--color-primary);
+      color:#fff;
+    }
+
+    /* Header */
+    .topbar{background:var(--dark);color:#cbd5e1;padding:8px 0;font-size:13px}
+    .topbar .row{display:flex;justify-content:space-between;align-items:center}
+    .topbar-socials{display:flex;gap:8px}
+    .topbar-socials a{color:#94a3b8;width:28px;height:28px;display:grid;place-items:center;border-radius:4px;transition:var(--transition)}
+    .topbar-socials a:hover{color:#fff;background:rgba(255,255,255,.1)}
+
+    header{
+        background:#fff; padding:0; position:sticky; top:0; z-index:30;
+        box-shadow:0 2px 8px rgba(0,0,0,.04); border-bottom:1px solid var(--border);
+    }
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px; color:var(--dark)}
+    .brand .logo{width:40px;height:40px;border-radius:var(--r-sm);background:var(--dark);display:grid;place-items:center;overflow:hidden;position:relative}
+    .brand .logo:after{
+        content:''; position:absolute; top:-50%; left:-50%;
+        width:200%; height:200%; 
+        background:linear-gradient(45deg, transparent, rgba(255,255,255,0.15), transparent);
+        animation:logoShine 4s ease-in-out infinite; pointer-events:none;
+    }
+    @keyframes logoShine{0%,100%{transform:translateX(-100%) translateY(-100%) rotate(45deg)}50%{transform:translateX(100%) translateY(100%) rotate(45deg)}}
+    .brand .logo img{max-width:70%;height:auto;filter:brightness(0) invert(1)}
+    .brand-text{display:flex;flex-direction:column}
+    .brand-tagline{font-size:10px;color:var(--sub);font-weight:400;margin-top:-2px}
+    .menu-toggle{display:block;background:none;border:none;padding:8px;color:var(--dark);cursor:pointer}
+    .nav{
+        display:none; flex-direction:column; gap:16px; font-size:14px;
+        position:absolute; top:100%; right:0; left:0;
+        background:rgba(27,42,65,0.95); padding:16px;
+        border-top:1px solid rgba(212,194,154,.3); align-items:center;
+    }
+    .nav.open{display:flex}
+    .nav a{color:#E2E8F0; position:relative; padding:8px 0; width:100%; text-align:center; font-size:13px;}
+    .nav a:after{
+        content:''; position:absolute; bottom:0; right:0;
+        width:0; height:2px; background:var(--brand); transition:var(--transition);
+    }
+    .nav a:hover{color:#fff}
+    .nav a.active:after, .nav a:hover:after{width:100%;}
+    @media(min-width:992px){
+        .nav{
+            display:flex; flex-direction:row; position:static;
+            background:transparent; padding:0; border:none; gap:24px;
+        }
+        .nav a{color:var(--dark); font-size:15px; padding:4px 0; width:auto; text-align:left;}
+        .menu-toggle{display:none}
+    }
+    .header-cta{display:none}
+    @media(min-width:992px){.header-cta{display:block}}
+
+    /* Portal Hero */
+    .portal-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%);
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    }
+    .portal-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .portal-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .portal-hero p {
+      font-size: 1.2rem;
+      color: #E2E8F0;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    /* Portal Cards */
+    .portal-section {
+      padding: 80px 0;
+    }
+    .portal-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .portal-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--color-border);
+    }
+    .portal-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .portal-card-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-soft));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: white;
+      font-size: 2rem;
+    }
+    .portal-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+    .portal-card p {
+      color: var(--color-text-subtle);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* Login Form */
+    .login-section {
+      background: var(--color-muted);
+      padding: 80px 0;
+    }
+    .login-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+    .form-group input {
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-button);
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(11, 36, 71, 0.1);
+    }
+
+    /* Footer */
+    footer{
+        background: var(--dark) url('https://i.postimg.cc/528wJJZd/Chat-GPT-Image-27-2025-07-04-32.png') center/cover no-repeat;
+        color:#fff; margin-top:48px; padding:60px 0 20px;
+        position: relative;
+    }
+    footer::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(27, 42, 65, 0.92);
+    }
+    footer .container {
+        position: relative;
+        z-index: 2;
+    }
+    footer a:hover{color:var(--brand);}
+    .footer-grid{display:grid;gap:32px}
+    @media(min-width:992px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
+    .footer-bottom{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);color:#94a3b8;font-size:14px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between; gap:12px;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .portal-hero h1 {
+        font-size: 2rem;
+      }
+      .portal-hero p {
+        font-size: 1rem;
+      }
+      .login-container {
+        margin: 0 16px;
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container row">
+      <div class="small" style="display:flex; align-items:center; gap:16px;">
+          <span><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</span>
+          <span><i data-lucide="phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800</span>
+      </div>
+      <div class="topbar-socials">
+        <a href="#" title="Twitter"><i data-lucide="twitter" style="width:16px;"></i></a>
+        <a href="#" title="Instagram"><i data-lucide="instagram" style="width:16px;"></i></a>
+        <a href="#" title="LinkedIn"><i data-lucide="linkedin" style="width:16px;"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="logo">
+          <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+        </div>
+        <div class="brand-text">
+          <div>الفارس للأعمال</div>
+          <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
+        </div>
+      </a>
+      <button class="menu-toggle" aria-label="القائمة"><i data-lucide="menu"></i></button>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="vision-page.html">من نحن</a>
+        <a href="our-services-page.html">الخدمات</a>
+        <a href="packages-page.html">الباقات</a>
+        <a href="client-portal-page.html" class="active">بوابة العملاء</a>
+        <a href="contact-page.html">اتصل بنا</a>
+        <a href="faq-page.html">الأسئلة الشائعة</a>
+      </nav>
+      <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
+    </div>
+  </header>
+
+  <!-- Portal Hero Section -->
+  <section class="portal-hero">
+    <div class="container">
+      <h1>بوابة العملاء</h1>
+      <p>مرحباً بك في بوابة العملاء الخاصة بالفارس للأعمال. يمكنك من خلالها متابعة طلباتك، والحصول على الخدمات، والتواصل معنا بسهولة.</p>
+      <a href="#services" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 32px;">
+        <i data-lucide="arrow-down" style="width:18px;"></i>
+        تصفح الخدمات
+      </a>
+    </div>
+  </section>
+
+  <!-- Portal Services Section -->
+  <section id="services" class="portal-section">
+    <div class="container">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 16px;">خدمات العملاء</h2>
+      <p style="text-align: center; color: var(--color-text-subtle); max-width: 600px; margin: 0 auto;">
+        نوفر لك جميع الأدوات والخدمات التي تحتاجها لإدارة أعمالك القانونية والإدارية بكفاءة عالية
+      </p>
+
+      <div class="portal-cards">
+        <!-- Service 1: Track Requests -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="clipboard-list"></i>
+          </div>
+          <h3>متابعة الطلبات</h3>
+          <p>تابع حالة جميع طلباتك وخدماتك المقدمة من خلال لوحة تحكم سهلة الاستخدام</p>
+          <a href="https://wa.me/966555490800?text=مرحباً، أود متابعة حالة طلبي" class="btn btn-primary" target="_blank">
+            متابعة الطلبات
+          </a>
+        </div>
+
+        <!-- Service 2: New Service Request -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="plus-circle"></i>
+          </div>
+          <h3>طلب خدمة جديدة</h3>
+          <p>احصل على استشارة قانونية أو اطلب خدمة إدارية جديدة من خلال نموذج بسيط وسريع</p>
+          <a href="index.html#contact" class="btn btn-primary">
+            طلب خدمة جديدة
+          </a>
+        </div>
+
+        <!-- Service 3: Documents -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="file-text"></i>
+          </div>
+          <h3>المستندات والوثائق</h3>
+          <p>احصل على جميع المستندات والوثائق المطلوبة لخدماتك بصيغة رقمية آمنة</p>
+          <a href="mailto:clients@alfarissa.org?subject=طلب المستندات" class="btn btn-primary">
+            طلب المستندات
+          </a>
+        </div>
+
+        <!-- Service 4: Legal Consultation -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="scales"></i>
+          </div>
+          <h3>الاستشارات القانونية</h3>
+          <p>احجز موعد استشارة قانونية مع فريقنا المتخصص لحل جميع تساؤلاتك القانونية</p>
+          <a href="legal-services-page.html" class="btn btn-primary">
+            الخدمات القانونية
+          </a>
+        </div>
+
+        <!-- Service 5: Government Services -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="building"></i>
+          </div>
+          <h3>التعقيب الحكومي</h3>
+          <p>خدمات التعقيب وإنجاز المعاملات الحكومية والإدارية بسرعة واحترافية عالية</p>
+          <a href="government-transactions-page.html" class="btn btn-primary">
+            الخدمات الحكومية
+          </a>
+        </div>
+
+        <!-- Service 6: Support -->
+        <div class="portal-card">
+          <div class="portal-card-icon">
+            <i data-lucide="headphones"></i>
+          </div>
+          <h3>الدعم الفني</h3>
+          <p>تواصل مع فريق الدعم الفني للحصول على المساعدة في أي وقت عبر قنوات متعددة</p>
+          <a href="https://wa.me/966555490800?text=مرحباً، أحتاج مساعدة في استخدام الموقع" class="btn btn-primary" target="_blank">
+            تواصل معنا
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Access Section -->
+  <section class="login-section">
+    <div class="container">
+      <div class="login-container">
+        <h2 style="text-align: center; margin-bottom: 16px; font-size: 2rem;">وصول سريع للخدمات</h2>
+        <p style="text-align: center; color: var(--color-text-subtle); margin-bottom: 32px;">
+          تواصل معنا مباشرة للحصول على خدماتك بأسرع وقت
+        </p>
+        
+        <div style="display: grid; gap: 16px;">
+          <a href="https://wa.me/966555490800" class="btn btn-primary" target="_blank" style="justify-content: center; padding: 16px;">
+            <i data-lucide="message-circle" style="width:20px;"></i>
+            واتساب
+          </a>
+          <a href="tel:0555490800" class="btn btn-secondary" style="justify-content: center; padding: 16px;">
+            <i data-lucide="phone" style="width:20px;"></i>
+            اتصال مباشر
+          </a>
+          <a href="mailto:clients@alfarissa.org" class="btn btn-secondary" style="justify-content: center; padding: 16px;">
+            <i data-lucide="mail" style="width:20px;"></i>
+            البريد الإلكتروني
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+          <p style="color: var(--color-text-subtle); font-size: 0.9rem;">
+            ساعات العمل: من السبت إلى الخميس، 8:00 صباحاً - 6:00 مساءً
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand" style="margin-bottom:12px;">
+              <div class="logo">
+                  <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
+              </div>
+              <div class="brand-text">الفارس للأعمال</div>
+          </a>
+          <p class="small" style="color:#cbd5e1;max-width:300px;">ننجز معاملاتك الحكومية والقانونية باحترافية ووقتٍ قياسي، لنكون شريكك الموثوق نحو النجاح.</p>
+        </div>
+        <div>
+          <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">روابط سريعة</h4>
+          <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
+            <a href="index.html">الرئيسية</a>
+            <a href="our-services-page.html">الخدمات</a>
+            <a href="packages-page.html">الباقات</a>
+            <a href="client-portal-page.html">بوابة العملاء</a>
+            <a href="faq-page.html">الأسئلة الشائعة</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-weight:700;margin-bottom:12px; font-size:18px;">معلومات التواصل</h4>
+          <div class="small" style="display:grid;gap:8px; color:#cbd5e1;">
+            <div><i data-lucide="phone" style="width:14px; vertical-align:middle; margin-left:4px;"></i> 0555490800 | 0555648602</div>
+            <div><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> info@alfarissa.org</div>
+            <div><i data-lucide="mail" style="width:14px; vertical-align:middle; margin-left:4px;"></i> clients@alfarissa.org</div>
+            <div style="display:flex;"><i data-lucide="map-pin" style="width:14px; vertical-align:top; margin-left:4px; flex-shrink:0;"></i><span>جدة – حي الحمدانية – شارع الحمدانية الفرعي – مبنى 6551 – الرمز البريدي 23761</span></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>جميع الحقوق محفوظة © الفارس للأعمال 2025</div>
+        <div style="display:flex; gap:16px;"><a href="privacy-policy-page.html">سياسة الخصوصية</a> • <a href="terms-of-service-page.html">شروط الاستخدام</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', function() {
+          nav.classList.toggle('open');
+        });
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
