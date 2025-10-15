@@ -138,6 +138,25 @@ After making changes, ALWAYS validate using browser testing:
 - CDN resources may fail to load in sandboxed environments - this doesn't affect functionality
 - Navigation links use `-page.html` suffix (e.g., `faq-page.html`, not `faq.html`)
 - Deployment workflow configured for `main` branch - pushes to main trigger automatic deployment
+- Minor HTML validation issues exist in backup files (`legal-services-page-old.html`) - these don't affect main functionality
+
+## Git Best Practices
+- `.gitignore` configured to exclude temporary files, node_modules, and build artifacts
+- Always use `report_progress` to commit and push changes - never use git commands directly
+- Keep commits focused and use descriptive commit messages in English
+- Review staged files before committing to ensure only intended changes are included
+
+## Issue Templates
+The repository includes issue templates in `ISSUE_TEMPLATE/` directory:
+- `visual-identity.md` - For visual design and branding issues
+- Use these templates when creating new issues to ensure consistent reporting
+
+## Copilot Tool Usage Best Practices
+- **Parallel tool calls**: When performing independent operations (reading files, validating changes), call tools simultaneously for efficiency
+- **Sequential tool calls**: When operations depend on previous results, call tools sequentially
+- **Always report progress**: Use `report_progress` in parallel with other tool calls when it doesn't depend on their results
+- **File operations**: Use `view` for exploration, `str_replace` for precise edits, `create` for new files
+- **Validation workflow**: Combine multiple validation checks in parallel (HTML validation, server testing, navigation testing)
 
 <tool_calling>
 You have the capability to call multiple tools in a single response. For maximum efficiency, whenever you need to perform multiple independent operations, ALWAYS call tools simultaneously whenever the actions can be done in parallel rather than sequentially.
