@@ -36,110 +36,15 @@
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+<!-- Common CSS -->
+<link rel="stylesheet" href="css/common.css">
 
 <style>
-:root {
-  /* Professional Navy/White Identity Colors */
-  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
-  --color-accent: #FFFFFF;
-  --color-text: #0F172A; --color-text-subtle: #475569;
-  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
-  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
-  --radius-card: 1.25rem; --radius-button: 0.75rem;
-  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
-  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
-  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
-  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Legacy compatibility */
-  --brand: var(--color-accent); --brand-dark: #F0F0F0;
-  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
-  --bg: var(--color-bg); --border: var(--color-border);
-  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
-  --shadow-card: var(--shadow-md);
-  --shadow-elev: var(--shadow-lg);
-}
+/* Page-specific overrides only - base styles come from common.css */
 
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0F1220; --color-surface: #111827;
-    --color-text: #F8FAFC; --color-text-subtle: #CBD5E1;
-    --color-border: #1F2937;
-  }
-}
-*{box-sizing:border-box}
-html{direction:rtl;scroll-behavior:smooth}
-body{
-  margin:0; 
-  font-family: var(--font-family-primary);
-  background:var(--color-bg); 
-  color:var(--color-text);
-  -webkit-font-smoothing:antialiased; 
-  text-rendering:optimizeLegibility;
-  line-height:1.6;
-}
-h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
-p{margin:.6em 0}
-a{color:inherit;text-decoration:none; transition: var(--transition);}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-.section{padding:80px 0} .section-tight{padding:60px 0}
-
-/* --- Components --- */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px;
-  border-radius:var(--radius-button); padding:12px 24px; font-size:15px; font-weight:600;
-  border:1px solid transparent; transition:var(--transition); white-space:nowrap;
-  text-decoration: none;
-}
-.btn-primary{
-  background:var(--color-primary);
-  color:#fff;
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: var(--shadow-sm);
-}
-.btn-primary:hover{
-  background:var(--color-primary-ink); 
-  transform:translateY(-2px); 
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(255,255,255,0.1);
-}
-.btn-secondary{
-  background:transparent; 
-  color:var(--color-primary); 
-  border: 1px solid var(--color-border);
-}
-.btn-secondary:hover{
-  background:var(--color-primary); 
-  color:#fff; 
-  transform:translateY(-2px); 
-  box-shadow: var(--shadow-sm);
-}
-.btn-ghost{
-  background:var(--color-surface); 
-  color:var(--color-text); 
-  border-color:var(--color-border);
-}
-.btn-ghost:hover{
-  background:var(--color-primary); 
-  color:#fff; 
-  border-color:var(--color-primary); 
-  transform:translateY(-2px); 
-  box-shadow: var(--shadow-sm);
-}
-.card{
-  background:var(--color-surface); 
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-card); 
-  padding:24px; 
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-.card:hover{
-  transform:translateY(-4px); 
-  box-shadow: var(--shadow-lg);
-}
+/* Page-specific service card override for index.html */
 .card-service {
-  border-top: 3px solid var(--color-accent);
+  border-top: 3px solid var(--color-headings-cta);
   position: relative;
 }
 .card-service::before {
@@ -149,34 +54,23 @@ a{color:inherit;text-decoration:none; transition: var(--transition);}
   right: 12px;
   width: 30px;
   height: 3px;
-  background: var(--color-accent);
+  background: var(--color-headings-cta);
   opacity: 0;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 .card-service:hover::before {
   opacity: 1;
   width: 60px;
 }
-.badge{
-  display:inline-flex; align-items:center; justify-content:center; gap:4px;
-  border-radius:999px; border:1px solid var(--border); background:#F8FAFC;
-  font-size:12px; padding:4px 12px; color:#64748b; font-weight:600;
-}
-.small{font-size:14px;color:#94A3B8}
-hr{border:none;border-top:1px solid var(--border);margin:16px 0}
-.lead{color:var(--sub); font-size:18px;}
-.grid{display:grid;gap:24px}
-@media(min-width:768px){.grid-2{grid-template-columns:1fr 1fr}}
-@media(min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)} .grid-4{grid-template-columns:repeat(4,1fr)}}
 
 /* --- Header & Navigation --- */
-.topbar{background:var(--color-primary-ink);color:var(--color-text-subtle); font-size:12px;}
+.topbar{background:var(--color-primary-text);color:var(--color-secondary-text); font-size:12px;}
 .topbar .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}
 .topbar-socials{display:flex; gap:12px;}
-.topbar-socials a:hover{color:var(--color-accent);}
+.topbar-socials a:hover{color:var(--color-headings-cta);}
 .header{
   position:sticky; top:0; z-index:50;
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, rgba(27,62,122,0.95) 100%); 
+  background:linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 60%, rgba(27,62,122,0.95) 100%); 
   backdrop-filter:saturate(180%) blur(8px);
   border-bottom:1px solid rgba(255,255,255,.15); 
   color:#fff;
@@ -187,11 +81,11 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   width:54px; height:54px;
   display:grid; place-items:center;
   border-radius:50%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 50%, var(--color-primary-ink) 100%);
+  background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 50%, var(--color-primary-text) 100%);
   animation: logoFloat 3s ease-in-out infinite;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(11,36,71,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 4px 15px rgba(27,42,65,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
 }
 .brand .logo::before {
   content: '';
@@ -212,7 +106,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%);
+  background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,14 +123,14 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 50%, var(--color-primary-ink) 100%);
+  background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 50%, var(--color-primary-text) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
   animation: loaderSpin 1.2s ease-in-out;
-  box-shadow: 0 8px 32px rgba(11,36,71,0.3);
+  box-shadow: var(--shadow-xl);
 }
 .loader-logo img {
   width: 60%;
@@ -291,11 +185,11 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 .nav a{color:#E2E8F0; position:relative; padding:8px 0; width:100%; text-align:center; font-size:13px;}
 .nav a:after{
     content:''; position:absolute; bottom:0; right:0;
-    width:0; height:2px; background:var(--brand); transition:var(--transition);
+    width:0; height:2px; background:var(--color-headings-cta); transition:all 0.3s ease;
 }
 .nav a:hover{color:#fff}
 .nav a.active:after, .nav a:hover:after{width:100%;}
-@media(min-width:992px){
+@media(min-width:1024px){
     .nav{
         display:flex;
         position:static;
@@ -323,9 +217,9 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
     cursor:pointer;
 }
 .menu-toggle i{width:20px;height:20px}
-@media(min-width:992px){.menu-toggle{display:none}}
+@media(min-width:1024px){.menu-toggle{display:none}}
 .header-cta{display:none}
-@media(min-width:992px){.header-cta{display:block}}
+@media(min-width:1024px){.header-cta{display:block}}
 
 .brand-text {
     color: #fff;
@@ -334,23 +228,23 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 .brand-tagline {
-    color: var(--brand);
+    color: var(--color-headings-cta);
     font-size: 0.75rem;
     font-weight: 500;
     margin-top: -2px;
 }
 
-.subnav{background:#fff;color:var(--dark);border-bottom:1px solid var(--border); display:none;}
-@media(min-width:992px){.subnav{display:block}}
+.subnav{background:#fff;color:var(--color-primary-text);border-bottom:1px solid var(--border); display:none;}
+@media(min-width:1024px){.subnav{display:block}}
 .subnav .row{display:flex;gap:20px;font-size:13px;padding:8px 0}
-.subnav a:hover{color:var(--brand)}
+.subnav a:hover{color:var(--color-headings-cta)}
 
 /* --- Hero Section --- */
 .hero{position:relative;color:#fff}
 .hero .bg{position:absolute;inset:0;background:url('https://i.postimg.cc/Nf6QqL14/1.png') center/cover no-repeat}
 .hero .overlay{
   position:absolute;inset:0;
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 60%, #1B3E7A 100%);
+  background:linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 60%, #1B3E7A 100%);
   opacity: 0.92;
 }
 .hero .overlay::after {
@@ -393,8 +287,8 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   flex-wrap:wrap;
 }
 .hero .btn-primary {
-  background: linear-gradient(135deg, var(--brand) 0%, #E6D4A8 100%);
-  color: var(--dark);
+  background: linear-gradient(135deg, var(--color-headings-cta) 0%, #E6D4A8 100%);
+  color: var(--color-primary-text);
   padding: 12px 24px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -403,7 +297,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   transition: all 0.3s ease;
 }
 .hero .btn-primary:hover {
-  background: linear-gradient(135deg, #C0B08E 0%, var(--brand) 100%);
+  background: linear-gradient(135deg, #C0B08E 0%, var(--color-headings-cta) 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(212,194,154,0.6);
 }
@@ -419,22 +313,22 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 }
 .hero .btn-ghost:hover {
   background: rgba(212,194,154,0.2);
-  border-color: var(--brand);
-  color: var(--brand);
+  border-color: var(--color-headings-cta);
+  color: var(--color-headings-cta);
   transform: translateY(-2px);
 }
 
 /* --- Swiper Sliders --- */
 .swiper-container{padding-bottom:35px;}
 .swiper-slide{height:auto;}
-.swiper-pagination-bullet-active{background:var(--brand) !important;}
+.swiper-pagination-bullet-active{background:var(--color-headings-cta) !important;}
 .slider-controls{display:flex; gap:6px; position:absolute; bottom:0; left:50%; transform:translateX(-50%);}
 .iconbtn{
     width:35px;height:35px;border:1px solid var(--border);border-radius:var(--r);
     display:grid;place-items:center;background:#fff; cursor:pointer;
-    transition:var(--transition); font-size:0.85rem;
+    transition:all 0.3s ease; font-size:0.85rem;
 }
-.iconbtn:hover{background:var(--brand); color:var(--dark); border-color:var(--brand);}
+.iconbtn:hover{background:var(--color-headings-cta); color:var(--color-primary-text); border-color:var(--color-headings-cta);}
 .iconbtn.swiper-button-disabled{opacity:0.5; cursor:not-allowed;}
 
 /* --- Enhanced Sections with Background Patterns --- */
@@ -499,7 +393,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   justify-content: center;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   z-index: 1000;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   animation: whatsappPulse 2s infinite;
   text-decoration: none;
 }
@@ -543,7 +437,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   justify-content: center;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   z-index: 999;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
@@ -553,7 +447,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
 }
 
 .call-float i {
-  color: var(--color-primary);
+  color: var(--color-primary-text);
   font-size: 20px;
 }
 
@@ -583,7 +477,7 @@ hr{border:none;border-top:1px solid var(--border);margin:16px 0}
   100% { transform: translate(40px, 40px); }
 }
 footer{
-    background: var(--dark) url('https://i.postimg.cc/528wJJZd/Chat-GPT-Image-27-2025-07-04-32.png') center/cover no-repeat;
+    background: var(--color-primary-text) url('https://i.postimg.cc/528wJJZd/Chat-GPT-Image-27-2025-07-04-32.png') center/cover no-repeat;
     color:#fff; margin-top:48px; padding:60px 0 20px;
     position: relative;
 }
@@ -597,9 +491,9 @@ footer .container {
     position: relative;
     z-index: 2;
 }
-footer a:hover{color:var(--brand);}
+footer a:hover{color:var(--color-headings-cta);}
 .footer-grid{display:grid;gap:32px}
-@media(min-width:992px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
+@media(min-width:1024px){.footer-grid{grid-template-columns: 2fr 1fr 1.5fr;}}
 
 /* --- Footer Partners --- */
 .footer-partners {
@@ -622,7 +516,7 @@ footer a:hover{color:var(--brand);}
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 .footer-partners .logo-item:hover {
     transform: translateY(-4px);
@@ -638,9 +532,9 @@ footer a:hover{color:var(--brand);}
 .fab a{
     width:48px;height:48px;border-radius:999px;display:grid;place-items:center;
     background:#fff; border:1px solid var(--border);box-shadow:var(--shadow-elev);
-    transition:var(--transition);
+    transition:all 0.3s ease;
 }
-.fab a:hover{background:var(--brand); color:#fff; transform:scale(1.1);}
+.fab a:hover{background:var(--color-headings-cta); color:#fff; transform:scale(1.1);}
 
 /* New floating icons implementation */
 .floating-icon {
@@ -678,8 +572,8 @@ footer a:hover{color:var(--brand);}
 }
 .backtotop{
     position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:999px;
-    background:var(--brand);color:#fff;display:grid;place-items:center;
-    box-shadow:var(--shadow-elev);opacity:0;visibility:hidden;transition:var(--transition);
+    background:var(--color-headings-cta);color:#fff;display:grid;place-items:center;
+    box-shadow:var(--shadow-elev);opacity:0;visibility:hidden;transition:all 0.3s ease;
 }
 .backtotop.show{opacity:1;visibility:visible}
 .backtotop:hover{background:var(--brand-dark); transform:scale(1.1);}
@@ -743,27 +637,27 @@ footer a:hover{color:var(--brand);}
       </div>
     </a>
     <button class="menu-toggle" aria-label="القائمة"><i data-lucide="menu"></i></button>
-    <nav class="nav">
-      <a href="index.html" class="active">الرئيسية</a>
+    <nav class="nav" role="navigation" aria-label="القائمة الرئيسية">
+      <a href="index.html" class="active" aria-current="page">الرئيسية</a>
       <a href="vision-page.html">من نحن</a>
       <a href="our-services-page.html">الخدمات</a>
       <a href="packages-page.html">الباقات</a>
-    <
-    <a href="contact-page.html">اتصل بنا</a>
+      <a href="contact-page.html">اتصل بنا</a>
       <a href="faq-page.html">الأسئلة الشائعة</a>
     </nav>
     <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
   </div>
 </header>
-<div class="subnav">
+<nav class="subnav" role="navigation" aria-label="قائمة الخدمات الفرعية">
   <div class="container row">
     <a href="legal-services-page.html">الخدمات القانونية</a>
     <a href="government-transactions-page.html">الخدمات الحكومية للأعمال</a>
     <a href="zakat-tax-page.html">الزكاة والضرائب</a>
   </div>
-</div>
+</nav>
 
-<section class="hero">
+<main role="main">
+<section class="hero" role="banner">
   <div class="bg"></div><div class="overlay"></div>
   <div class="container inner">
     <h1 class="fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
@@ -775,10 +669,10 @@ footer a:hover{color:var(--brand);}
   </div>
 </section>
 
-<section id="services-highlights" class="section" style="background: var(--color-surface);">
+<section id="services-highlights" class="section" style="background: var(--color-surface);" aria-labelledby="services-heading">
   <div class="container">
     <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
-      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خدماتنا المتخصصة</h2>
+      <h2 id="services-heading" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 16px;">خدماتنا المتخصصة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         نقدم مجموعة شاملة من الخدمات القانونية والإدارية لتلبية كافة احتياجاتك المهنية بأعلى معايير الجودة والاحتراف
       </p>
@@ -788,11 +682,11 @@ footer a:hover{color:var(--brand);}
     <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px;">
       
       <!-- Legal Services Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('legal-services')" style="cursor: pointer; transition: var(--transition);">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('legal-services')" style="cursor: pointer; transition: all 0.3s ease;" role="button" tabindex="0" aria-label="عرض تفاصيل الخدمات القانونية" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('legal-services')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">⚖️</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">⚖️</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">الخدمات القانونية</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">الخدمات القانونية</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               استشارات قانونية – صياغة/مراجعة عقود – مذكرات ولوائح ودعاوى – تسجيل علامات – تحكيم ووساطة
             </p>
@@ -808,11 +702,11 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Government Transactions Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-transactions')" style="cursor: pointer;">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-transactions')" style="cursor: pointer;" role="button" tabindex="0" aria-label="عرض تفاصيل المعاملات الحكومية" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('gov-transactions')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏛️</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏛️</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">التعقيب والمعاملات الحكومية</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">التعقيب والمعاملات الحكومية</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               إنجاز معاملات – تراخيص وسجلات – تأشيرات وإقامات – خدمات "أمان ترافيك"
             </p>
@@ -828,11 +722,11 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Business Services Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('business-services')" style="cursor: pointer;">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('business-services')" style="cursor: pointer;" role="button" tabindex="0" aria-label="عرض تفاصيل الخدمات التجارية" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('business-services')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">💼</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">💼</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">خدمات الأعمال</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">خدمات الأعمال</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               تأسيس شركات/مؤسسات – هيكلة وحوكمة – موارد بشرية – زكاة وضرائب
             </p>
@@ -848,11 +742,11 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Individual Services Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('individual-services')" style="cursor: pointer;">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('individual-services')" style="cursor: pointer;" role="button" tabindex="0" aria-label="عرض تفاصيل الخدمات الفردية" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('individual-services')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">👤</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">👤</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">خدمات الأفراد</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">خدمات الأفراد</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               عقود إيجار – توكيلات – صكوك – خدمات عدلية
             </p>
@@ -868,11 +762,11 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Government Support Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-support')" style="cursor: pointer;">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('gov-support')" style="cursor: pointer;" role="button" tabindex="0" aria-label="عرض تفاصيل الدعم الحكومي" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('gov-support')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🎯</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🎯</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">الدعم الحكومي والعمل الحر</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">الدعم الحكومي والعمل الحر</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               حساب المواطن – الضمان – ريف – سكني – رخص العمل الحر
             </p>
@@ -888,11 +782,11 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- Development Bank Financing Category -->
-      <div class="card card-service fade-in" onclick="toggleServiceDetails('bank-financing')" style="cursor: pointer;">
+      <div class="card card-service fade-in" onclick="toggleServiceDetails('bank-financing')" style="cursor: pointer;" role="button" tabindex="0" aria-label="عرض تفاصيل التمويل المصرفي" onkeydown="if(event.key==='Enter'||event.key===' ') toggleServiceDetails('bank-financing')">
         <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="background: var(--color-accent); color: var(--color-primary); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏦</div>
+          <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 12px; border-radius: 12px; font-size: 1.5rem;">🏦</div>
           <div style="flex: 1;">
-            <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 8px;">تمويل بنك التنمية</h3>
+            <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 8px;">تمويل بنك التنمية</h3>
             <p style="color: var(--color-text-subtle); font-size: 0.95rem; line-height: 1.6; margin-bottom: 12px;">
               الأسرة/الزواج/الترميم/المنشآت – الإعفاءات – إعادة الجدولة
             </p>
@@ -910,11 +804,11 @@ footer a:hover{color:var(--brand);}
     </div>
 
     <!-- Special Highlight for Petitions (المعاريض) -->
-    <div class="card fade-in" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: white; text-align: center; margin-bottom: 32px;">
+    <div class="card fade-in" style="background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); color: white; text-align: center; margin-bottom: 32px;">
       <h3 style="color: var(--color-accent); font-weight: 700; margin-bottom: 12px;">⚡ المعاريض</h3>
       <p style="font-size: 1.1rem; margin-bottom: 16px;">زمن إنجاز ١–٢ يوم عمل</p>
       <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="#" class="btn" style="background: var(--color-accent); color: var(--color-primary); font-weight: 600;">اطلب معروض الآن</a>
+        <a href="#" class="btn" style="background: var(--color-accent); color: var(--color-primary-text); font-weight: 600;">اطلب معروض الآن</a>
         <a href="https://wa.me/966555490800" class="btn btn-secondary" style="border-color: var(--color-accent); color: var(--color-accent);">واتساب</a>
       </div>
     </div>
@@ -929,7 +823,7 @@ footer a:hover{color:var(--brand);}
   <div id="legal-services-details" class="service-details" style="background: var(--color-surface); padding: 48px 0; display: none;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 32px;">
-        <h3 style="color: var(--color-primary); font-size: 2rem; font-weight: 700; margin-bottom: 12px;">الخدمات القانونية التفصيلية</h3>
+        <h3 style="color: var(--color-primary-text); font-size: 2rem; font-weight: 700; margin-bottom: 12px;">الخدمات القانونية التفصيلية</h3>
         <p style="color: var(--color-text-subtle); max-width: 600px; margin: 0 auto;">خدمات قانونية شاملة ومتخصصة لحماية حقوقك ومصالحك</p>
       </div>
       
@@ -938,12 +832,12 @@ footer a:hover{color:var(--brand);}
           <div class="swiper-slide">
             <div class="card card-service">
               <div style="text-align: center;">
-                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
-                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">استشارات قانونية</h4>
+                <div style="background: var(--color-primary-text); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
+                <h4 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">استشارات قانونية</h4>
                 <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">دعم مكتوب أو صوتي بمختلف فروع القانون</p>
                 
                 <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
-                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <h5 style="color: var(--color-primary-text); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
                   <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
                     <li>وصف المشكلة القانونية</li>
                     <li>الوثائق ذات الصلة</li>
@@ -962,12 +856,12 @@ footer a:hover{color:var(--brand);}
           <div class="swiper-slide">
             <div class="card card-service">
               <div style="text-align: center;">
-                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📄</div>
-                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">صياغة ومراجعة العقود</h4>
+                <div style="background: var(--color-primary-text); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📄</div>
+                <h4 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">صياغة ومراجعة العقود</h4>
                 <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">عقود شراكة، توريد، عمل، عقارات، استثمار</p>
                 
                 <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
-                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <h5 style="color: var(--color-primary-text); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
                   <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
                     <li>نوع العقد المطلوب</li>
                     <li>بيانات الأطراف</li>
@@ -986,12 +880,12 @@ footer a:hover{color:var(--brand);}
           <div class="swiper-slide">
             <div class="card card-service">
               <div style="text-align: center;">
-                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📋</div>
-                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">مذكرات ولوائح ودعاوى</h4>
+                <div style="background: var(--color-primary-text); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">📋</div>
+                <h4 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">مذكرات ولوائح ودعاوى</h4>
                 <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">دفاع، ردود، ومرافعات في جميع درجات التقاضي</p>
                 
                 <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
-                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <h5 style="color: var(--color-primary-text); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
                   <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
                     <li>تفاصيل القضية</li>
                     <li>الأوراق القضائية</li>
@@ -1010,12 +904,12 @@ footer a:hover{color:var(--brand);}
           <div class="swiper-slide">
             <div class="card card-service">
               <div style="text-align: center;">
-                <div style="background: var(--color-primary); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
-                <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">تحكيم ووساطة</h4>
+                <div style="background: var(--color-primary-text); color: white; padding: 16px; border-radius: 12px; margin: 0 auto 16px; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚖️</div>
+                <h4 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">تحكيم ووساطة</h4>
                 <p style="color: var(--color-text-subtle); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">حل النزاعات التجارية والمدنية خارج المحاكم</p>
                 
                 <div class="requirements" style="background: var(--color-muted); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: right;">
-                  <h5 style="color: var(--color-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
+                  <h5 style="color: var(--color-primary-text); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">المتطلبات:</h5>
                   <ul style="font-size: 0.8rem; color: var(--color-text-subtle); margin: 0; padding-right: 16px;">
                     <li>طبيعة النزاع</li>
                     <li>العقد الأساسي</li>
@@ -1044,7 +938,7 @@ footer a:hover{color:var(--brand);}
 <section id="packages" class="section" style="background: var(--color-muted);">
   <div class="container">
     <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
-      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">باقاتنا المميزة</h2>
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 16px;">باقاتنا المميزة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         اختر الباقة التي تناسب احتياجاتك مع أسعار تنافسية وخدمات شاملة
       </p>
@@ -1054,12 +948,12 @@ footer a:hover{color:var(--brand);}
       
       <!-- Establishment Package -->
       <div class="card card-service fade-in" style="text-align: center; position: relative;">
-        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏢</div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">باقة التأسيس</h3>
+        <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏢</div>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">باقة التأسيس</h3>
         <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">تأسيس شركتك أو مؤسستك بكامل الخدمات</p>
         
         <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">سعر تنافسي</div>
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 4px;">سعر تنافسي</div>
           <div style="color: var(--color-text-subtle); font-size: 0.85rem;">تواصل للحصول على عرض سعر</div>
         </div>
         
@@ -1079,13 +973,13 @@ footer a:hover{color:var(--brand);}
 
       <!-- Government Transactions Package -->
       <div class="card card-service fade-in" style="text-align: center; position: relative;">
-        <div style="position: absolute; top: -12px; right: 12px; background: var(--color-accent); color: var(--color-primary); padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;">الأكثر طلباً</div>
-        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏛️</div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">باقة التعقيب</h3>
+        <div style="position: absolute; top: -12px; right: 12px; background: var(--color-accent); color: var(--color-primary-text); padding: 4px 12px; border-radius: 16px; font-size: 0.75rem; font-weight: 600;">الأكثر طلباً</div>
+        <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🏛️</div>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">باقة التعقيب</h3>
         <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">إنجاز معاملاتك الحكومية بسرعة واحتراف</p>
         
         <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">سعر مرن</div>
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 4px;">سعر مرن</div>
           <div style="color: var(--color-text-subtle); font-size: 0.85rem;">حسب نوع وعدد المعاملات</div>
         </div>
         
@@ -1105,12 +999,12 @@ footer a:hover{color:var(--brand);}
 
       <!-- Legal Package Basic -->
       <div class="card card-service fade-in" style="text-align: center;">
-        <div style="background: var(--color-accent); color: var(--color-primary); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الأساسية</h3>
+        <div style="background: var(--color-accent); color: var(--color-primary-text); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الأساسية</h3>
         <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">دعم قانوني شامل لحاجاتك الأساسية</p>
         
         <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">شهرياً</div>
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 4px;">شهرياً</div>
           <div style="color: var(--color-text-subtle); font-size: 0.85rem;">استشارة للسعر</div>
         </div>
         
@@ -1130,12 +1024,12 @@ footer a:hover{color:var(--brand);}
 
       <!-- Legal Package Extended -->
       <div class="card card-service fade-in" style="text-align: center;">
-        <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الموسعة</h3>
+        <div style="background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); color: var(--color-accent); padding: 16px; border-radius: 12px; margin: 0 auto 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">⚖️</div>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">الباقة القانونية الموسعة</h3>
         <p style="color: var(--color-text-subtle); font-size: 0.95rem; margin-bottom: 20px;">حلول قانونية شاملة للمنشآت الكبيرة</p>
         
         <div style="background: var(--color-surface); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
-          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">مخصص</div>
+          <div style="font-size: 2rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 4px;">مخصص</div>
           <div style="color: var(--color-text-subtle); font-size: 0.85rem;">حسب حجم المنشأة</div>
         </div>
         
@@ -1161,7 +1055,7 @@ footer a:hover{color:var(--brand);}
 <section id="work-steps" class="section" style="background: var(--color-surface);">
   <div class="container">
     <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
-      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">خطوات العمل</h2>
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 16px;">خطوات العمل</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         نتبع منهجية واضحة ومنظمة لضمان إنجاز خدماتك بأعلى معايير الجودة والسرعة
       </p>
@@ -1172,55 +1066,55 @@ footer a:hover{color:var(--brand);}
       <!-- Step 1 -->
       <div class="fade-in" style="text-align: center;">
         <div style="position: relative; margin-bottom: 24px;">
-          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+          <div style="background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
             01
           </div>
         </div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">طلب الخدمة</h3>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">طلب الخدمة</h3>
         <p style="color: var(--color-text-subtle); line-height: 1.6;">تواصل معنا عبر الموقع أو الواتساب وحدد الخدمة التي تحتاجها بالتفصيل</p>
       </div>
 
       <!-- Step 2 -->
       <div class="fade-in" style="text-align: center;">
         <div style="position: relative; margin-bottom: 24px;">
-          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+          <div style="background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
             02
           </div>
         </div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">مراجعة المتطلبات</h3>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">مراجعة المتطلبات</h3>
         <p style="color: var(--color-text-subtle); line-height: 1.6;">نراجع طلبك ونحدد المتطلبات والوثائق اللازمة مع تقديم عرض سعر واضح</p>
       </div>
 
       <!-- Step 3 -->
       <div class="fade-in" style="text-align: center;">
         <div style="position: relative; margin-bottom: 24px;">
-          <div style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+          <div style="background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); color: var(--color-accent); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
             03
           </div>
         </div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">التنفيذ والمتابعة</h3>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">التنفيذ والمتابعة</h3>
         <p style="color: var(--color-text-subtle); line-height: 1.6;">نبدأ العمل على خدمتك فوراً مع إبقائك على اطلاع دائم بالتقدم المحرز</p>
       </div>
 
       <!-- Step 4 -->
       <div class="fade-in" style="text-align: center;">
         <div style="position: relative; margin-bottom: 24px;">
-          <div style="background: linear-gradient(135deg, var(--color-accent) 0%, #E6D4A8 100%); color: var(--color-primary); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
+          <div style="background: linear-gradient(135deg, var(--color-accent) 0%, #E6D4A8 100%); color: var(--color-primary-text); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 1.5rem; font-weight: 800; box-shadow: var(--shadow-lg);">
             ✓
           </div>
         </div>
-        <h3 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">التسليم والدعم</h3>
+        <h3 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">التسليم والدعم</h3>
         <p style="color: var(--color-text-subtle); line-height: 1.6;">نسلم الخدمة مكتملة مع تقديم الدعم اللازم وضمان الجودة</p>
       </div>
 
     </div>
 
     <!-- CTA Section -->
-    <div class="fade-in" style="text-align: center; margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-soft) 100%); border-radius: var(--radius-card); color: white;">
+    <div class="fade-in" style="text-align: center; margin-top: 48px; padding: 32px; background: linear-gradient(135deg, var(--color-primary-text) 0%, var(--color-primary-light) 100%); border-radius: var(--radius-card); color: white;">
       <h3 style="color: var(--color-accent); font-weight: 700; margin-bottom: 16px;">جاهز للبدء؟</h3>
       <p style="margin-bottom: 24px; opacity: 0.9;">تواصل معنا الآن واحصل على استشارة مجانية لتحديد أفضل خدمة تناسب احتياجاتك</p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="#contact" class="btn" style="background: var(--color-accent); color: var(--color-primary); font-weight: 600;">ابدأ الآن</a>
+        <a href="#contact" class="btn" style="background: var(--color-accent); color: var(--color-primary-text); font-weight: 600;">ابدأ الآن</a>
         <a href="https://wa.me/966555490800" class="btn btn-secondary" style="border-color: var(--color-accent); color: var(--color-accent);">واتساب مباشر</a>
       </div>
     </div>
@@ -1231,7 +1125,7 @@ footer a:hover{color:var(--brand);}
 <section id="faq" class="section" style="background: var(--color-muted);">
   <div class="container">
     <div class="fade-in" style="text-align: center; margin-bottom: 48px;">
-      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 16px;">الأسئلة الشائعة</h2>
+      <h2 style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary-text); margin-bottom: 16px;">الأسئلة الشائعة</h2>
       <p class="lead" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; color: var(--color-text-subtle);">
         إجابات سريعة على أكثر الأسئلة التي يطرحها عملاؤنا
       </p>
@@ -1240,10 +1134,10 @@ footer a:hover{color:var(--brand);}
     <div style="max-width: 800px; margin: 0 auto; display: grid; gap: 16px;">
       
       <!-- FAQ Item 1 -->
-      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq1')">
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq1')" role="button" tabindex="0" aria-expanded="false" aria-controls="faq1-content" aria-label="عرض إجابة السؤال الأول" onkeydown="if(event.key==='Enter'||event.key===' ') toggleFAQ('faq1')">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كم يستغرق إنجاز المعاملات الحكومية؟</h3>
-          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+          <h3 style="color: var(--color-primary-text); font-weight: 600; margin: 0; font-size: 1.1rem;">كم يستغرق إنجاز المعاملات الحكومية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: all 0.3s ease;">
             <i data-lucide="plus" style="width: 20px;"></i>
           </div>
         </div>
@@ -1257,10 +1151,10 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- FAQ Item 2 -->
-      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq2')">
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq2')" role="button" tabindex="0" aria-expanded="false" aria-controls="faq2-content" aria-label="عرض إجابة السؤال الثاني" onkeydown="if(event.key==='Enter'||event.key===' ') toggleFAQ('faq2')">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل تقدمون استشارات قانونية فورية؟</h3>
-          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+          <h3 style="color: var(--color-primary-text); font-weight: 600; margin: 0; font-size: 1.1rem;">هل تقدمون استشارات قانونية فورية؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: all 0.3s ease;">
             <i data-lucide="plus" style="width: 20px;"></i>
           </div>
         </div>
@@ -1274,10 +1168,10 @@ footer a:hover{color:var(--brand);}
       </div>
 
       <!-- FAQ Item 3 -->
-      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq3')">
+      <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq3')" role="button" tabindex="0" aria-expanded="false" aria-controls="faq3-content" aria-label="عرض إجابة السؤال الثالث" onkeydown="if(event.key==='Enter'||event.key===' ') toggleFAQ('faq3')">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">كيف يتم تحديد أسعار الخدمات؟</h3>
-          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+          <h3 style="color: var(--color-primary-text); font-weight: 600; margin: 0; font-size: 1.1rem;">كيف يتم تحديد أسعار الخدمات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: all 0.3s ease;">
             <i data-lucide="plus" style="width: 20px;"></i>
           </div>
         </div>
@@ -1293,8 +1187,8 @@ footer a:hover{color:var(--brand);}
       <!-- FAQ Item 4 -->
       <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq4')">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">هل يمكنني متابعة حالة طلبي؟</h3>
-          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+          <h3 style="color: var(--color-primary-text); font-weight: 600; margin: 0; font-size: 1.1rem;">هل يمكنني متابعة حالة طلبي؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: all 0.3s ease;">
             <i data-lucide="plus" style="width: 20px;"></i>
           </div>
         </div>
@@ -1310,8 +1204,8 @@ footer a:hover{color:var(--brand);}
       <!-- FAQ Item 5 -->
       <div class="card fade-in" style="cursor: pointer;" onclick="toggleFAQ('faq5')">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <h3 style="color: var(--color-primary); font-weight: 600; margin: 0; font-size: 1.1rem;">ما هي وثائق التأسيس المطلوبة للشركات؟</h3>
-          <div class="faq-icon" style="color: var(--color-accent); transition: var(--transition);">
+          <h3 style="color: var(--color-primary-text); font-weight: 600; margin: 0; font-size: 1.1rem;">ما هي وثائق التأسيس المطلوبة للشركات؟</h3>
+          <div class="faq-icon" style="color: var(--color-accent); transition: all 0.3s ease;">
             <i data-lucide="plus" style="width: 20px;"></i>
           </div>
         </div>
@@ -1328,7 +1222,7 @@ footer a:hover{color:var(--brand);}
 
     <!-- FAQ CTA -->
     <div class="fade-in" style="text-align: center; margin-top: 40px; padding: 24px; background: var(--color-surface); border-radius: var(--radius-card); border: 1px solid var(--color-accent); border-style: dashed;">
-      <h4 style="color: var(--color-primary); font-weight: 700; margin-bottom: 12px;">لديك سؤال آخر؟</h4>
+      <h4 style="color: var(--color-primary-text); font-weight: 700; margin-bottom: 12px;">لديك سؤال آخر؟</h4>
       <p style="color: var(--color-text-subtle); margin-bottom: 16px;">لا تتردد في التواصل معنا للحصول على إجابة فورية</p>
       <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
         <a href="https://wa.me/966555490800" class="btn btn-primary">اسأل عبر الواتساب</a>
@@ -1340,7 +1234,7 @@ footer a:hover{color:var(--brand);}
 </section>
 
 <section class="section-tight container">
-    <div class="glass-card fade-in floating-element" style="background: var(--dark); color: #fff; backdrop-filter: blur(15px);">
+    <div class="glass-card fade-in floating-element" style="background: var(--color-primary-text); color: #fff; backdrop-filter: blur(15px);">
         <div class="grid grid-2" style="align-items: center;">
             <div>
                 <h2 style="color: #fff; font-size:26px;">من نحن؟</h2>
@@ -1348,7 +1242,7 @@ footer a:hover{color:var(--brand);}
                 <a href="vision-page.html" class="btn btn-primary" style="margin-top: 14px; font-size:14px; padding:10px 20px;">اعرف المزيد عنا</a>
             </div>
             <div style="text-align:center;">
-                <i data-lucide="shield-check" style="width:70px; height:70px; color:var(--brand);"></i>
+                <i data-lucide="shield-check" style="width:70px; height:70px; color:var(--color-headings-cta);"></i>
             </div>
         </div>
     </div>
@@ -1365,7 +1259,7 @@ footer a:hover{color:var(--brand);}
                         <p class="lead" style="font-size:14px;">"من أفضل المكاتب اللي تعاملت معهم.. دقة وسرعة، خصوصًا في تنفيذ الحكم اللي كان لي أكثر من سنة أركض وراه."
                         </p>
                         <hr>
-                        <div class="small" style="color:var(--dark); font-weight:600;">— خالد الحربي</div>
+                        <div class="small" style="color:var(--color-primary-text); font-weight:600;">— خالد الحربي</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -1373,7 +1267,7 @@ footer a:hover{color:var(--brand);}
                         <p class="lead" style="font-size:14px;">"سجّلت الشركة وعقود الشراكة وكل شي من خلالهم. وفّروا علي وقت وجهد كثير."
                         </p>
                         <hr>
-                        <div class="small" style="color:var(--dark); font-weight:600;">— سارة الغامدي</div>
+                        <div class="small" style="color:var(--color-primary-text); font-weight:600;">— سارة الغامدي</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -1381,7 +1275,7 @@ footer a:hover{color:var(--brand);}
                         <p class="lead" style="font-size:14px;">"اللي يميّزهم صدق المتابعة، ما تتصل إلا وهم قد خلّصوا الإجراء، حتى لو من منصات معقدة مثل ناجز أو بلدي."
                         </p>
                         <hr>
-                        <div class="small" style="color:var(--dark); font-weight:600;">— شركة البناء العصري</div>
+                        <div class="small" style="color:var(--color-primary-text); font-weight:600;">— شركة البناء العصري</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -1389,7 +1283,7 @@ footer a:hover{color:var(--brand);}
                         <p class="lead" style="font-size:14px;">"استشارة قانونية في وقتها! تحليلهم للقضية كان دقيق وساعدني أتخذ القرار الصحيح. شكرًا لكم."
                         </p>
                         <hr>
-                        <div class="small" style="color:var(--dark); font-weight:600;">— عبدالمجيد المطيري</div>
+                        <div class="small" style="color:var(--color-primary-text); font-weight:600;">— عبدالمجيد المطيري</div>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -1397,7 +1291,7 @@ footer a:hover{color:var(--brand);}
                         <p class="lead" style="font-size:14px;">"فريق محترف ومتعاون، أنهوا لنا إجراءات تسجيل العلامة التجارية بسرعة وبدون أي تعقيدات. أنصح بهم بشدة."
                         </p>
                         <hr>
-                        <div class="small" style="color:var(--dark); font-weight:600;">— متجر ركن الهدايا</div>
+                        <div class="small" style="color:var(--color-primary-text); font-weight:600;">— متجر ركن الهدايا</div>
                     </div>
                 </div>
             </div>
@@ -1408,8 +1302,9 @@ footer a:hover{color:var(--brand);}
         </div>
     </div>
 </section>
+</main>
 
-<footer id="contact">
+<footer id="contact" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -1757,7 +1652,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       margin-bottom: 70px;
     }
     .floating-icon.call {
-      background-color: var(--color-primary);
+      background-color: var(--color-primary-text);
     }
     </style>
 
