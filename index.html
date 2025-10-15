@@ -36,48 +36,15 @@
 <!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+<!-- Common CSS -->
+<link rel="stylesheet" href="css/common.css">
 
 <style>
-:root {
-  /* Professional Navy/White Identity Colors */
-  --color-primary: #0B2447; --color-primary-ink: #081A33; --color-primary-soft: #112D60;
-  --color-accent: #FFFFFF;
-  --color-text: #0F172A; --color-text-subtle: #475569;
-  --color-bg: #F6F7FB; --color-surface: #FFFFFF; --color-muted: #F1F5F9; --color-border: #E2E8F0;
-  --color-success: #16A34A; --color-info: #0EA5E9; --color-warn: #F59E0B; --color-danger: #DC2626;
-  --radius-card: 1.25rem; --radius-button: 0.75rem;
-  --shadow-sm: 0 2px 8px rgba(15,23,42,.06);
-  --shadow-md: 0 6px 16px rgba(15,23,42,.08);
-  --shadow-lg: 0 12px 28px rgba(15,23,42,.10);
-  --transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Legacy compatibility */
-  --brand: var(--color-accent); --brand-dark: #F0F0F0;
-  --dark: var(--color-primary); --sub: var(--color-text-subtle); 
-  --bg: var(--color-bg); --border: var(--color-border);
-  --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px;
-  --shadow-card: var(--shadow-md);
-  --shadow-elev: var(--shadow-lg);
-}
-
-/* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0F1220; --color-surface: #111827;
-    --color-text: #F8FAFC; --color-text-subtle: #CBD5E1;
-    --color-border: #1F2937;
-  }
-}
-*{box-sizing:border-box}
-html{direction:rtl;scroll-behavior:smooth}
+/* Page-specific overrides and components - using variables from common.css */
 body{
-  margin:0; 
   font-family: var(--font-family-primary);
   background:var(--color-bg); 
   color:var(--color-text);
-  -webkit-font-smoothing:antialiased; 
-  text-rendering:optimizeLegibility;
-  line-height:1.6;
 }
 h1,h2,h3,h4{line-height:1.4; font-weight:800; margin:0}
 p{margin:.6em 0}
@@ -731,29 +698,27 @@ footer a:hover{color:var(--brand);}
   </div>
 </div>
 
-<header class="header">
-  <div class="container row">
-    <a href="index.html" class="brand">
-      <div class="logo">
-        <img src="images/alfaris-logo-new.png" alt="شعار الفارس للأعمال">
-      </div>
-      <div>
-        <div class="brand-text">الفارس للأعمال</div>
-        <div class="brand-tagline">تحت إشراف شركة المحامي محمد الفارس</div>
-      </div>
-    </a>
-    <button class="menu-toggle" aria-label="القائمة"><i data-lucide="menu"></i></button>
-    <nav class="nav">
-      <a href="index.html" class="active">الرئيسية</a>
-      <a href="vision-page.html">من نحن</a>
-      <a href="our-services-page.html">الخدمات</a>
-      <a href="packages-page.html">الباقات</a>
-    <a href="contact-page.html">اتصل بنا</a>
-      <a href="faq-page.html">الأسئلة الشائعة</a>
-    </nav>
-    <div class="header-cta"><a class="btn btn-primary" href="index.html#contact">اطلب استشارة</a></div>
-  </div>
-</header>
+<!-- Unified Navigation Header -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <i class="fas fa-balance-scale-right"></i>
+            الفارس للأعمال
+        </a>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-active">الرئيسية</a></li>
+            <li><a href="vision-page.html">من نحن</a></li>
+            <li><a href="our-services-page.html">الخدمات</a></li>
+            <li><a href="legal-services-page.html">الخدمات القانونية</a></li>
+            <li><a href="packages-page.html">الباقات</a></li>
+            <li><a href="faq-page.html">الأسئلة الشائعة</a></li>
+            <li><a href="index.html#contact" target="_blank" rel="noopener" class="nav-contact-btn">تواصل معنا</a></li>
+        </ul>
+        <div class="nav-mobile-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
 <div class="subnav">
   <div class="container row">
     <a href="legal-services-page.html">الخدمات القانونية</a>
