@@ -1,0 +1,57 @@
+{
+  "name": "الفارس للأعمال - مكتب محاماة واستشارات قانونية",
+  "short_name": "الفارس للأعمال",
+  "description": "مكتب محاماة رائد في جدة يقدم خدمات قانونية واستشارات احترافية وتعقيب معاملات حكومية",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0B2447",
+  "background_color": "#FDFCFA",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/alfaris-logo-new.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/alfaris-logo-new.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/alfaris-logo-new.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "apple-touch-icon"
+    }
+  ],
+  "categories": ["legal", "business", "professional"],
+  "shortcuts": [
+    {
+      "name": "استشارة قانونية",
+      "short_name": "استشارة",
+      "description": "احصل على استشارة قانونية فورية",
+      "url": "/legal-services-page.html",
+      "icons": [{"src": "/images/alfaris-logo-new.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "معاملات حكومية", 
+      "short_name": "تعقيب",
+      "description": "خدمات تعقيب المعاملات الحكومية",
+      "url": "/government-transactions-page.html",
+      "icons": [{"src": "/images/alfaris-logo-new.png", "sizes": "96x96"}]
+    },
+    {
+      "name": "اتصل بنا",
+      "short_name": "اتصال",
+      "description": "تواصل معنا مباشرة",
+      "url": "tel:+966555490800",
+      "icons": [{"src": "/images/alfaris-logo-new.png", "sizes": "96x96"}]
+    }
+  ]
+}
