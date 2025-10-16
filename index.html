@@ -2214,14 +2214,22 @@ function setupMobileMenu(){
     const icon=toggle.querySelector('i');
     const isOpen=nav.classList.contains('open');
     icon.setAttribute('data-lucide',isOpen?'x':'menu');
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    } else {
+      initializeIconFallbacks();
+    }
   });
   nav.querySelectorAll('a').forEach(link=>{
     link.addEventListener('click',()=>{
       nav.classList.remove('open');
       const icon=toggle.querySelector('i');
       icon.setAttribute('data-lucide','menu');
-      lucide.createIcons();
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      } else {
+        initializeIconFallbacks();
+      }
     });
   });
 }
@@ -2284,7 +2292,11 @@ function updateChevronIcons(activeServiceId, isOpen) {
   }
   
   // Re-render lucide icons
-  lucide.createIcons();
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  } else {
+    initializeIconFallbacks();
+  }
 }
 
 function setupServiceSlider(serviceId) {
@@ -2359,27 +2371,101 @@ function toggleFAQ(faqId) {
   // Re-render lucide icons
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
+  } else {
+    initializeIconFallbacks();
   }
 }
 
-ready(()=>{
-  lucide.createIcons();
-  setupSliders();
-  setupBackToTop();
-  setupScrollAnimations();
-  setupMobileMenu();
+// Enhanced icon fallback system for when Lucide doesn't load
+function initializeIconFallbacks() {
+  // Define fallback icons using Unicode characters and FontAwesome alternatives
+  const iconFallbacks = {
+    'mail': '✉️',
+    'phone': '📞', 
+    'twitter': '🐦',
+    'instagram': '📸',
+    'linkedin': '💼',
+    'menu': '☰',
+    'x': '✕',
+    'chevron-down': '▼',
+    'chevron-up': '▲',
+    'plus': '+',
+    'minus': '−',
+    'file-text': '📄',
+    'message-circle': '💬',
+    'shield-check': '🛡️',
+    'arrow-right': '←', // RTL reversed
+    'arrow-left': '→',  // RTL reversed
+    'arrow-up': '↑',
+    'map-pin': '📍'
+  };
+
+  // Find all elements with data-lucide attributes
+  const lucideElements = document.querySelectorAll('[data-lucide]');
+  
+  lucideElements.forEach(element => {
+    const iconName = element.getAttribute('data-lucide');
+    const fallbackIcon = iconFallbacks[iconName] || '●';
+    
+    // Apply fallback content
+    if (element.tagName === 'I') {
+      element.textContent = fallbackIcon;
+      element.style.fontFamily = '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+      element.style.fontStyle = 'normal';
+      element.style.fontSize = '1.2em';
+    } else {
+      element.innerHTML = `<span style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; font-style: normal;">${fallbackIcon}</span>`;
+    }
+  });
+  
+  console.log(`✅ Applied fallbacks to ${lucideElements.length} icons`);
+}
+
+// Enhanced ready function with better error handling
+ready(() => {
+  try {
+    // Try to initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+      console.log('✅ Lucide icons loaded successfully');
+    } else {
+      console.log('⚠️ Lucide not available, using fallbacks');
+      initializeIconFallbacks();
+    }
+    
+    // Initialize other components with error handling
+    try { setupSliders(); } catch (e) { console.warn('Slider setup failed:', e); }
+    try { setupBackToTop(); } catch (e) { console.warn('Back to top setup failed:', e); }
+    try { setupScrollAnimations(); } catch (e) { console.warn('Scroll animations setup failed:', e); }
+    try { setupMobileMenu(); } catch (e) { console.warn('Mobile menu setup failed:', e); }
+    
+  } catch (error) {
+    console.error('❌ Critical initialization error:', error);
+    // Apply fallbacks as last resort
+    initializeIconFallbacks();
+  }
 });
 
-// Page loader functionality
+// Page loader functionality with fallback handling
 window.addEventListener('load', function() {
-  const loader = document.querySelector('.page-loader');
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add('fade-out');
+  try {
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
       setTimeout(() => {
-        loader.style.display = 'none';
+        loader.classList.add('fade-out');
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 300);
       }, 500);
-    }, 1200); // Wait 1.2 seconds as specified
+    }
+    
+    // Apply icon fallbacks if Lucide still hasn't loaded after page load
+    if (typeof lucide === 'undefined') {
+      initializeIconFallbacks();
+    }
+    
+  } catch (error) {
+    console.warn('Page loader error:', error);
   }
 });
 
