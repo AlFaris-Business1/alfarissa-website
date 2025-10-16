@@ -2394,8 +2394,8 @@ function initializeIconFallbacks() {
     'file-text': '📄',
     'message-circle': '💬',
     'shield-check': '🛡️',
-    'arrow-right': '←', // RTL reversed
-    'arrow-left': '→',  // RTL reversed
+    'arrow-right': '→', // Right arrow in RTL
+    'arrow-left': '←',  // Left arrow in RTL
     'arrow-up': '↑',
     'map-pin': '📍'
   };
@@ -2414,7 +2414,13 @@ function initializeIconFallbacks() {
       element.style.fontStyle = 'normal';
       element.style.fontSize = '1.2em';
     } else {
-      element.innerHTML = `<span style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; font-style: normal;">${fallbackIcon}</span>`;
+      // Safely create span element to avoid XSS
+      const span = document.createElement('span');
+      span.style.fontFamily = '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif';
+      span.style.fontStyle = 'normal';
+      span.textContent = fallbackIcon;
+      element.innerHTML = '';
+      element.appendChild(span);
     }
   });
   
@@ -2434,10 +2440,18 @@ ready(() => {
     }
     
     // Initialize other components with error handling
-    try { setupSliders(); } catch (e) { console.warn('Slider setup failed:', e); }
-    try { setupBackToTop(); } catch (e) { console.warn('Back to top setup failed:', e); }
-    try { setupScrollAnimations(); } catch (e) { console.warn('Scroll animations setup failed:', e); }
-    try { setupMobileMenu(); } catch (e) { console.warn('Mobile menu setup failed:', e); }
+    const safeCall = (fn, name) => {
+      try { 
+        fn(); 
+      } catch (e) { 
+        console.warn(`${name} setup failed:`, e); 
+      }
+    };
+    
+    safeCall(setupSliders, 'Slider');
+    safeCall(setupBackToTop, 'Back to top');
+    safeCall(setupScrollAnimations, 'Scroll animations');
+    safeCall(setupMobileMenu, 'Mobile menu');
     
   } catch (error) {
     console.error('❌ Critical initialization error:', error);
