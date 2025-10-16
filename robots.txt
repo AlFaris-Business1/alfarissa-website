@@ -1,15 +1,68 @@
+# Advanced SEO Robots.txt for Al Faris Business Website
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://alfarissa-website.netlify.app/sitemap.xml
+# Primary Sitemap Location
+Sitemap: https://alfarissa.org/sitemap.xml
+
+# Alternative Sitemap Sources
+Sitemap: https://alfarissa.org/sitemap-images.xml
+Sitemap: https://alfarissa.org/sitemap-news.xml
+
+# Disallow private/admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /tmp/
+Disallow: /test/
 
 # Disallow search engine crawling of certain files
 Disallow: /google0cd875a98eac9549.html
+Disallow: /*.pdf$
+Disallow: /search?
+Disallow: /*?utm_*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
 
-# Allow crawling of main content
+# Allow crawling of main content and assets
 Allow: /*.html
 Allow: /*.css
 Allow: /*.js
 Allow: /css/
 Allow: /js/
+Allow: /images/
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+Allow: /favicon.ico
+Allow: /site.webmanifest
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot  
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block harmful bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Cache directive
+# Cache: public, max-age=3600

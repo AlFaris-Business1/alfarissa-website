@@ -1,69 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage - Highest Priority -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://alfarissa.org/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/alfaris-logo-new.png</image:loc>
+      <image:title>الفارس للأعمال - مكتب محاماة جدة</image:title>
+      <image:caption>شعار الفارس للأعمال - مكتب محاماة واستشارات قانونية في جدة</image:caption>
+    </image:image>
   </url>
+
+  <!-- Main Service Pages - High Priority -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/our-services-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://alfarissa.org/our-services-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/services-overview.jpg</image:loc>
+      <image:title>خدماتنا المتخصصة</image:title>
+    </image:image>
   </url>
+  
   <url>
-    <loc>https://alfarissa-website.netlify.app/legal-services-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://alfarissa.org/legal-services-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/legal-services.jpg</image:loc>
+      <image:title>الخدمات القانونية</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://alfarissa.org/government-transactions-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/government-services.jpg</image:loc>
+      <image:title>المعاملات الحكومية</image:title>
+    </image:image>
   </url>
+
+  <!-- Service Package Pages -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/government-transactions-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://alfarissa-website.netlify.app/packages-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/packages-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
-    <loc>https://alfarissa-website.netlify.app/zakat-tax-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/zakat-tax-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
-    <loc>https://alfarissa-website.netlify.app/licenses-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>quarterly</changefreq>
+    <loc>https://alfarissa.org/licenses-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Company Information Pages -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/vision-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/vision-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Support Pages -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/faq-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/faq-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Legal Pages -->
   <url>
-    <loc>https://alfarissa-website.netlify.app/privacy-policy-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/privacy-policy-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  
   <url>
-    <loc>https://alfarissa-website.netlify.app/terms-of-service-page.html</loc>
-    <lastmod>2025-08-08</lastmod>
+    <loc>https://alfarissa.org/terms-of-service-page.html</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
+  <!-- Alternative Pages -->
+  <url>
+    <loc>https://alfarissa.org/legal-services-page-old.html</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Contact & Location Information -->
+  <url>
+    <loc>https://alfarissa.org/contact</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

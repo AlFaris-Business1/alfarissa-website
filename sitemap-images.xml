@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://alfarissa.org/</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/alfaris-logo-new.png</image:loc>
+      <image:title>شعار الفارس للأعمال</image:title>
+      <image:caption>شعار مكتب محاماة الفارس للأعمال في جدة، المملكة العربية السعودية</image:caption>
+      <image:geo_location>جدة، المملكة العربية السعودية</image:geo_location>
+      <image:license>https://alfarissa.org/terms-of-service</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/hero-background.jpg</image:loc>
+      <image:title>مكتب الفارس للأعمال</image:title>
+      <image:caption>صورة لمكتب الفارس للأعمال - مكتب محاماة واستشارات قانونية في جدة</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/legal-services-icon.svg</image:loc>
+      <image:title>أيقونة الخدمات القانونية</image:title>
+      <image:caption>أيقونة تمثل خدمات الاستشارات القانونية المتخصصة</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/government-services-icon.svg</image:loc>
+      <image:title>أيقونة المعاملات الحكومية</image:title>
+      <image:caption>أيقونة تمثل خدمات تعقيب المعاملات الحكومية والإدارية</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Legal Services Page Images -->
+  <url>
+    <loc>https://alfarissa.org/legal-services-page.html</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/legal-consultation.jpg</image:loc>
+      <image:title>استشارة قانونية</image:title>
+      <image:caption>جلسة استشارة قانونية مع المحامي في مكتب الفارس للأعمال</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/contract-drafting.jpg</image:loc>
+      <image:title>صياغة العقود</image:title>
+      <image:caption>عملية صياغة ومراجعة العقود القانونية بطريقة احترافية</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/court-representation.jpg</image:loc>
+      <image:title>التمثيل أمام المحاكم</image:title>
+      <image:caption>خدمات التمثيل القانوني أمام المحاكم السعودية</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Government Services Page Images -->
+  <url>
+    <loc>https://alfarissa.org/government-transactions-page.html</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/government-building.jpg</image:loc>
+      <image:title>المعاملات الحكومية</image:title>
+      <image:caption>مبنى حكومي يمثل الجهات التي نتعامل معها في تعقيب المعاملات</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/business-license.jpg</image:loc>
+      <image:title>تراخيص الأعمال</image:title>
+      <image:caption>إصدار وتجديد تراخيص الأعمال والشركات</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/ministry-commerce.jpg</image:loc>
+      <image:title>وزارة التجارة</image:title>
+      <image:caption>خدمات التعقيب مع وزارة التجارة والاستثمار السعودية</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Overview Page Images -->
+  <url>
+    <loc>https://alfarissa.org/our-services-page.html</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/services-overview.jpg</image:loc>
+      <image:title>خدماتنا المتخصصة</image:title>
+      <image:caption>نظرة شاملة على جميع الخدمات القانونية والإدارية التي نقدمها</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/professional-team.jpg</image:loc>
+      <image:title>فريق العمل المحترف</image:title>
+      <image:caption>فريق من المحامين والمستشارين المتخصصين في الفارس للأعمال</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Company Information Images -->
+  <url>
+    <loc>https://alfarissa.org/vision-page.html</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/company-vision.jpg</image:loc>
+      <image:title>رؤية الشركة</image:title>
+      <image:caption>رؤية شركة الفارس للأعمال في تقديم أفضل الخدمات القانونية</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/office-jeddah.jpg</image:loc>
+      <image:title>مكتب جدة</image:title>
+      <image:caption>مقر شركة الفارس للأعمال في حي الحمدانية، جدة</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Certification and Licensing Images -->
+  <url>
+    <loc>https://alfarissa.org/licenses-page.html</loc>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/ministry-justice-license.jpg</image:loc>
+      <image:title>ترخيص وزارة العدل</image:title>
+      <image:caption>ترخيص مزاولة المهنة من وزارة العدل السعودية</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://alfarissa.org/images/bar-association.jpg</image:loc>
+      <image:title>عضوية نقابة المحامين</image:title>
+      <image:caption>عضوية نقابة المحامين السعودية</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
