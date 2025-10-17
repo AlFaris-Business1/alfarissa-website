@@ -1437,14 +1437,165 @@ footer a:hover{color:var(--brand);}
 </div>
 
 <section class="hero">
-  <div class="bg"></div><div class="overlay"></div>
+  <div class="bg" style="background: url('https://i.postimg.cc/Nf6QqL14/1.png') center/cover no-repeat;"></div><div class="overlay"></div>
   <div class="container inner">
-    <h1 class="fade-in">حلول قانونية وإدارية متكاملة تُنجز عملك بسرعة واحتراف</h1>
-    <p class="fade-in">نقدم في الفارس للأعمال خدمات قانونية وتعقيب ومعاريض وحلول أعمال، بهوية سعودية ومعايير احترافية عالية، وتجربة رقمية سلسة.</p>
+    <h1 class="fade-in">خدماتنا المتكاملة</h1>
+    <p class="fade-in">أكبر القسم الذي يناسب احتياجاتك، والتعرض باقة خدماتنا المصممة لتلبية متطلبات الأفراد والمنشآت في المملكة</p>
     <div class="actions fade-in">
-      <a class="btn btn-primary" href="index.html#contact"><i data-lucide="file-text"></i> اطلب استشارة الآن</a>
-      <a class="btn btn-secondary" href="https://wa.me/966555490800"><i data-lucide="message-circle"></i> تواصل واتساب</a>
+      <a class="btn btn-primary" href="#contact">اطلب استشارة</a>
     </div>
+  </div>
+</section>
+
+<!-- Service Categories Section -->
+<section class="services-section" style="padding: 60px 0; background: #f8f9fa;">
+  <div class="container">
+    
+    <!-- Legal Services -->
+    <div class="service-category" style="margin-bottom: 32px;">
+      <div class="category-header" onclick="toggleCategory('legal-services')" style="background: #1B3E7A; color: white; padding: 20px; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(27,62,122,0.3);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 24px;">⚖️</div>
+          <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">الخدمات القانونية</h3>
+        </div>
+        <div class="expand-arrow" style="font-size: 20px; transition: transform 0.3s;">▼</div>
+      </div>
+      <div class="category-content" id="legal-services" style="display: none; padding: 24px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          
+          <div class="service-card" style="background: #4A90E2; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(74,144,226,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">تسديد الالتزام</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">متابعة ملفاتك لدراسة الالتزام والسداد المتحدة العامة لحماية العقود</p>
+          </div>
+          
+          <div class="service-card" style="background: #5A67D8; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(90,103,216,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">📝</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">صياغة المذكرات</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">خدمة صياغة جميع أنواع المذكرات القانونية اللازمة ولوائح وخدمات قانونية</p>
+          </div>
+          
+          <div class="service-card" style="background: #2B6CB0; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(43,108,176,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">📄</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">صياغة العقود</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">صياغة ومراجعة جميع أنواع العقود القانونية خدمات</p>
+          </div>
+          
+          <div class="service-card" style="background: #3182CE; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(49,130,206,0.3);">
+            <div style="margin: 0; font-size: 0.9rem; opacity: 0.9;">خدمة صياغة العقود الشخصية</div>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">التمثيل في قضايا الأحوال الشخصية والطلاق</p>
+          </div>
+          
+          <div class="service-card" style="background: #2C5282; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(44,82,130,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">🏛️</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">القضايا العقارية</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">التمثيل في القضايا العقارية ومنازعات العقد العقارية</p>
+          </div>
+          
+          <div class="service-card" style="background: #1A365D; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(26,54,93,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">القضايا المدنية</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">التمثيل في جميع القضايا المدنية أمام المحاكم المختصة</p>
+          </div>
+          
+          <div class="service-card" style="background: #4C51BF; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(76,81,191,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">الباقة القانونية الشاملة</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">تقديم دعم قانوني شامل لمؤسستك بعقد سنوي تحت جميع أحداث</p>
+          </div>
+          
+          <div class="service-card" style="background: #667EEA; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(102,126,234,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">📋</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">إعداد اللوائح الداخلية</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">صياغة اللوائح الداخلية للمؤسسات والشركات لتنظيم العمل الداخلي</p>
+          </div>
+          
+          <div class="service-card" style="background: #764AF1; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(118,74,241,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">🔐</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">تحصيل الديون</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">اتخاذ الإجراءات القانونية المناسبة لتحصيل الديون المستحقة للدائرة المالية</p>
+          </div>
+          
+          <div class="service-card" style="background: #9333EA; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(147,51,234,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">🔍</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">الخدمات الخاصة</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">الاعتراض والتمييز في محكمة التمييز ومحكمة المحلية أمام المحاكم المختصة</p>
+          </div>
+          
+          <div class="service-card" style="background: #7C3AED; color: white; padding: 24px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 12px rgba(124,58,237,0.3);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+            <h4 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 600;">الخدمات الخاصة</h4>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">الاعتراض والتمييز في محكمة التمييز ومحكمة المحلية أمام المحاكم المختصة</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Government Services for Business -->
+    <div class="service-category" style="margin-bottom: 32px;">
+      <div class="category-header" onclick="toggleCategory('government-services')" style="background: #2563EB; color: white; padding: 20px; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(37,99,235,0.3);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 24px;">🏛️</div>
+          <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">الخدمات الحكومية للأعمال</h3>
+        </div>
+        <div class="expand-arrow" style="font-size: 20px; transition: transform 0.3s;">▼</div>
+      </div>
+      <div class="category-content" id="government-services" style="display: none; padding: 24px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Government service cards would go here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Government Services for Individuals -->
+    <div class="service-category" style="margin-bottom: 32px;">
+      <div class="category-header" onclick="toggleCategory('individual-services')" style="background: #DC2626; color: white; padding: 20px; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(220,38,38,0.3);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 24px;">👤</div>
+          <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">الخدمات الحكومية للأفراد</h3>
+        </div>
+        <div class="expand-arrow" style="font-size: 20px; transition: transform 0.3s;">▼</div>
+      </div>
+      <div class="category-content" id="individual-services" style="display: none; padding: 24px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Individual service cards would go here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Government Support and Freelance -->
+    <div class="service-category" style="margin-bottom: 32px;">
+      <div class="category-header" onclick="toggleCategory('support-services')" style="background: #059669; color: white; padding: 20px; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(5,150,105,0.3);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 24px;">🎯</div>
+          <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">خدمات الدعم الحكومي والعمل الحر</h3>
+        </div>
+        <div class="expand-arrow" style="font-size: 20px; transition: transform 0.3s;">▼</div>
+      </div>
+      <div class="category-content" id="support-services" style="display: none; padding: 24px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Support service cards would go here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Petitions and Reports -->
+    <div class="service-category" style="margin-bottom: 32px;">
+      <div class="category-header" onclick="toggleCategory('petition-services')" style="background: #D97706; color: white; padding: 20px; border-radius: 12px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(217,119,6,0.3);">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="font-size: 24px;">📝</div>
+          <h3 style="margin: 0; font-size: 1.5rem; font-weight: 700;">المعاريض والتقارير</h3>
+        </div>
+        <div class="expand-arrow" style="font-size: 20px; transition: transform 0.3s;">▼</div>
+      </div>
+      <div class="category-content" id="petition-services" style="display: none; padding: 24px; background: white; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Petition service cards would go here -->
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2381,6 +2532,61 @@ window.addEventListener('load', function() {
       }, 500);
     }, 1200); // Wait 1.2 seconds as specified
   }
+});
+
+// Category toggle functionality for new service sections
+function toggleCategory(categoryId) {
+  const categoryContent = document.getElementById(categoryId);
+  const header = categoryContent.previousElementSibling;
+  const arrow = header.querySelector('.expand-arrow');
+  
+  if (categoryContent.style.display === 'none' || categoryContent.style.display === '') {
+    categoryContent.style.display = 'block';
+    arrow.style.transform = 'rotate(180deg)';
+    
+    // Smooth expand animation
+    categoryContent.style.maxHeight = '0px';
+    categoryContent.style.overflow = 'hidden';
+    categoryContent.style.transition = 'max-height 0.5s ease-in-out';
+    
+    setTimeout(() => {
+      categoryContent.style.maxHeight = categoryContent.scrollHeight + 'px';
+    }, 10);
+    
+    setTimeout(() => {
+      categoryContent.style.maxHeight = 'none';
+      categoryContent.style.overflow = 'visible';
+    }, 500);
+  } else {
+    categoryContent.style.maxHeight = categoryContent.scrollHeight + 'px';
+    categoryContent.style.overflow = 'hidden';
+    categoryContent.style.transition = 'max-height 0.5s ease-in-out';
+    
+    setTimeout(() => {
+      categoryContent.style.maxHeight = '0px';
+    }, 10);
+    
+    setTimeout(() => {
+      categoryContent.style.display = 'none';
+      arrow.style.transform = 'rotate(0deg)';
+    }, 500);
+  }
+}
+
+// Service card hover effects
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceCards = document.querySelectorAll('.service-card');
+  serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-5px) scale(1.02)';
+      this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) scale(1)';
+      this.style.boxShadow = this.style.boxShadow.replace('0 8px 25px rgba(0,0,0,0.2)', '');
+    });
+  });
 });
 
 // Add motion reduction support
