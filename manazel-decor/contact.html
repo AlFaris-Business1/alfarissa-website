@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تواصل معنا | منازل للديكور</title>
+    <meta
+      name="description"
+      content="تواصل مع فريق منازل للديكور عبر الهاتف أو البريد الإلكتروني أو من خلال نموذج الاستشارة المجانية."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-wrap">
+        <a href="index.html" class="brand" aria-label="منازل للديكور">
+          <span class="brand-mark">MD</span>
+          <span>منازل للديكور</span>
+        </a>
+        <nav class="main-nav" aria-label="القائمة الرئيسية">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="index.html">الرئيسية</a></li>
+            <li><a class="nav-link" href="services.html">خدماتنا</a></li>
+            <li><a class="nav-link" href="portfolio.html">أعمالنا</a></li>
+            <li><a class="nav-link" href="about.html">من نحن</a></li>
+            <li><a class="nav-link active" href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+        <div class="header-cta">
+          <a class="btn btn-primary" href="#consult">اطلب تصميمك</a>
+        </div>
+        <button class="menu-toggle" aria-label="فتح وإغلاق القائمة">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero" style="background-image: linear-gradient(135deg, rgba(15, 17, 20, 0.85), rgba(15, 17, 20, 0.7)), url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=80');">
+        <div class="container">
+          <h1>تواصل معنا</h1>
+          <p>يسعدنا سماع رؤيتكم وتحويلها إلى مساحة نابضة بالحياة. تواصل معنا عبر القنوات التالية.</p>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="consult">
+        <div class="container contact-layout">
+          <div class="contact-card fade-in">
+            <h2>معلومات التواصل</h2>
+            <p>فريق خدمة العملاء جاهز للإجابة على استفساراتكم اليومية من الساعة 9 صباحاً وحتى 10 مساءً.</p>
+            <div class="contact-info">
+              <div>
+                <strong>الجوال المباشر</strong>
+                <a href="tel:0507527776">0507527776</a>
+              </div>
+              <div>
+                <strong>الإدارة</strong>
+                <a href="tel:0555490800">0555490800</a>
+                <a href="tel:0557464232">0557464232</a>
+              </div>
+              <div>
+                <strong>البريد الإلكتروني</strong>
+                <a href="mailto:projects@manazeldecor.com">projects@manazeldecor.com</a>
+              </div>
+              <div>
+                <strong>العنوان</strong>
+                <p>الرياض – حي الياسمين، مجمع الأعمال الراقي – الطابق الرابع</p>
+              </div>
+              <div>
+                <strong>أوقات العمل</strong>
+                <p>الأحد – الخميس: 9 صباحاً – 10 مساءً | الجمعة: مغلق</p>
+              </div>
+            </div>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.265201452778!2d46.6752963753898!3d24.83704664636177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1b35e5aaf08b%3A0x8d0360df23883228!2sRiyadh!5e0!3m2!1sar!2ssa!4v1700000000000!5m2!1sar!2ssa"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="موقع منازل للديكور على الخريطة"
+              ></iframe>
+            </div>
+          </div>
+          <div class="form-card fade-in">
+            <h2>نموذج طلب استشارة</h2>
+            <p>املأ البيانات التالية وسيقوم فريقنا بالتواصل معك لتحديد موعد الاستشارة المجانية.</p>
+            <form id="contact-form">
+              <div class="grid" style="gap: 1.5rem;">
+                <div class="form-group">
+                  <label for="name">الاسم الكامل</label>
+                  <input type="text" id="name" name="name" placeholder="اكتب اسمك" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">رقم الجوال</label>
+                  <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">البريد الإلكتروني</label>
+                  <input type="email" id="email" name="email" placeholder="example@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="service">نوع الخدمة</label>
+                  <select id="service" name="service" required>
+                    <option value="">اختر الخدمة المطلوبة</option>
+                    <option value="تصميم فيلا">تصميم فيلا</option>
+                    <option value="تصميم شقة">تصميم شقة</option>
+                    <option value="تصميم مكتب">تصميم مكتب</option>
+                    <option value="تنفيذ بديل الخشب">تنفيذ بديل الخشب</option>
+                    <option value="أعمال جبسية">أعمال جبسية</option>
+                    <option value="تنسيق خارجي">تنسيق خارجي</option>
+                  </select>
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1;">
+                  <label for="message">رسالتك</label>
+                  <textarea id="message" name="message" rows="5" placeholder="صف المشروع أو احتياجاتك" required></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">إرسال</button>
+              </div>
+            </form>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">
+              عند إرسال النموذج يتم فتح تطبيق البريد لديك مع تعبئة البيانات تلقائياً لإرسالها إلى فريقنا.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a href="index.html" class="brand" aria-label="منازل للديكور">
+              <span class="brand-mark">MD</span>
+              <span>منازل للديكور</span>
+            </a>
+            <p>
+              شركة سعودية متخصصة في التصميم الداخلي الفاخر وتحويل المساحات السكنية والتجارية إلى تجارب استثنائية.
+            </p>
+          </div>
+          <div>
+            <h4>روابط سريعة</h4>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="services.html">خدماتنا</a></li>
+              <li><a href="portfolio.html">أعمالنا</a></li>
+              <li><a href="about.html">من نحن</a></li>
+              <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>تواصل معنا</h4>
+            <div class="contact-info">
+              <a href="tel:0507527776">0507527776</a>
+              <a href="tel:0555490800">0555490800</a>
+              <a href="tel:0557464232">0557464232</a>
+              <a href="mailto:projects@manazeldecor.com">projects@manazeldecor.com</a>
+              <p>الرياض – حي الياسمين، مجمع الأعمال الراقي</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">جميع الحقوق محفوظة © منازل للديكور 2024</div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
