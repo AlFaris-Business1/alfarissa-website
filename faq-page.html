@@ -208,13 +208,16 @@
       font-size: 2.5rem;
       color: var(--color-primary);
       margin-bottom: 16px;
+      font-weight: 900;
+      text-shadow: 0 2px 4px rgba(11,36,71,0.1);
     }
     
     .faq-header p{
       font-size: 1.2rem;
-      color: var(--color-text-subtle);
+      color: #1E293B;
       max-width: 600px;
       margin: 0 auto 32px;
+      line-height: 1.8;
     }
     
     .faq-search{
@@ -225,18 +228,23 @@
     .faq-search input{
       width: 100%;
       padding: 16px 24px;
-      border: 2px solid var(--color-border);
+      border: 2px solid #CBD5E1;
       border-radius: var(--radius-card);
       font-size: 16px;
       background: var(--color-surface);
-      color: var(--color-text);
+      color: #0F172A;
       transition: var(--transition);
+      font-weight: 500;
     }
     
     .faq-search input:focus{
       outline: none;
       border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px rgba(11,36,71,0.1);
+      box-shadow: 0 0 0 4px rgba(11,36,71,0.15);
+    }
+    
+    .faq-search input::placeholder{
+      color: #64748B;
     }
     
     .faq-categories{
@@ -248,39 +256,46 @@
     }
     
     .faq-category{
-      padding: 10px 20px;
-      border: 2px solid var(--color-border);
+      padding: 12px 24px;
+      border: 2px solid #CBD5E1;
       border-radius: 25px;
       background: var(--color-surface);
-      color: var(--color-text);
-      font-weight: 600;
+      color: #1E293B;
+      font-weight: 700;
       cursor: pointer;
       transition: var(--transition);
       font-size: 14px;
     }
     
-    .faq-category:hover,
+    .faq-category:hover{
+      background: #F1F5F9;
+      border-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(11,36,71,0.12);
+    }
+    
     .faq-category.active{
       background: var(--color-primary);
       color: #fff;
       border-color: var(--color-primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 6px 16px rgba(11,36,71,0.25);
     }
     
     .faq-item{
       background: var(--color-surface);
-      border: 1px solid var(--color-border);
+      border: 2px solid #E2E8F0;
       border-radius: var(--radius-card);
       margin-bottom: 16px;
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 2px 8px rgba(15,23,42,0.08);
       transition: var(--transition);
     }
     
     .faq-item:hover{
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 8px 24px rgba(11,36,71,0.15);
       border-color: var(--color-primary);
+      transform: translateY(-2px);
     }
     
     .faq-question{
@@ -299,28 +314,33 @@
     
     .faq-question h3{
       font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--color-text);
+      font-weight: 700;
+      color: #0F172A;
       margin: 0;
       flex: 1;
+      line-height: 1.5;
     }
     
     .faq-icon{
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background: var(--color-primary);
       color: #fff;
-      font-size: 14px;
+      font-size: 18px;
+      font-weight: 700;
       transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(11,36,71,0.2);
+      flex-shrink: 0;
     }
     
     .faq-item.active .faq-icon{
       transform: rotate(45deg);
-      background: var(--color-primary);
+      background: #081A33;
+      box-shadow: 0 4px 12px rgba(11,36,71,0.3);
     }
     
     .faq-answer{
@@ -336,8 +356,9 @@
     
     .faq-answer-content{
       padding: 0 24px 24px;
-      color: var(--color-text);
-      line-height: 1.7;
+      color: #334155;
+      line-height: 1.8;
+      font-size: 15px;
     }
 
     /* Footer */
@@ -367,34 +388,63 @@
     /* Floating buttons */
     .floating-btn{
       position: fixed;
-      right: 20px;
-      width: 60px;
-      height: 60px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 28px;
       color: #fff;
       text-decoration: none;
-      box-shadow: var(--shadow-lg);
-      transition: var(--transition);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 1000;
+      border: 3px solid rgba(255,255,255,0.3);
     }
     
     .floating-btn:hover{
-      transform: scale(1.1);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      transform: scale(1.15) translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    
+    .floating-btn:active{
+      transform: scale(1.05);
     }
     
     .whatsapp-btn{
-      bottom: 90px;
-      background: #25D366;
+      bottom: 100px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    }
+    
+    .whatsapp-btn:hover{
+      background: linear-gradient(135deg, #20BA5A 0%, #0F7A6A 100%);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.4);
     }
     
     .call-btn{
-      bottom: 20px;
-      background: var(--color-primary);
+      bottom: 24px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-ink) 100%);
+    }
+    
+    .call-btn:hover{
+      background: linear-gradient(135deg, var(--color-primary-soft) 0%, var(--color-primary) 100%);
+      box-shadow: 0 12px 40px rgba(11,36,71,0.4);
+    }
+    
+    /* Floating button animation */
+    @keyframes float-pulse{
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    .floating-btn{
+      animation: float-pulse 3s ease-in-out infinite;
+    }
+    
+    .floating-btn:hover{
+      animation: none;
     }
 
     @media (max-width: 768px) {
